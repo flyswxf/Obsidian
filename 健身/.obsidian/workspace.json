@@ -1,0 +1,201 @@
+{
+  "main": {
+    "id": "600b4afc6030ffc1",
+    "type": "split",
+    "children": [
+      {
+        "id": "bd98144521311543",
+        "type": "tabs",
+        "children": [
+          {
+            "id": "b5b5513039bcb766",
+            "type": "leaf",
+            "state": {
+              "type": "graph",
+              "state": {},
+              "icon": "lucide-git-fork",
+              "title": "关系图谱"
+            }
+          }
+        ]
+      }
+    ],
+    "direction": "vertical"
+  },
+  "left": {
+    "id": "d84cbbb1c338352f",
+    "type": "split",
+    "children": [
+      {
+        "id": "720f8db0a89ad944",
+        "type": "tabs",
+        "children": [
+          {
+            "id": "644b1bb9ba38a1cb",
+            "type": "leaf",
+            "state": {
+              "type": "file-explorer",
+              "state": {
+                "sortOrder": "alphabetical",
+                "autoReveal": false
+              },
+              "icon": "lucide-folder-closed",
+              "title": "文件列表"
+            }
+          },
+          {
+            "id": "0907be929c4be91d",
+            "type": "leaf",
+            "state": {
+              "type": "search",
+              "state": {
+                "query": "",
+                "matchingCase": false,
+                "explainSearch": false,
+                "collapseAll": false,
+                "extraContext": false,
+                "sortOrder": "alphabetical"
+              },
+              "icon": "lucide-search",
+              "title": "搜索"
+            }
+          },
+          {
+            "id": "0ec94cc9f1d34c92",
+            "type": "leaf",
+            "state": {
+              "type": "bookmarks",
+              "state": {},
+              "icon": "lucide-bookmark",
+              "title": "Bookmarks"
+            }
+          }
+        ]
+      }
+    ],
+    "direction": "horizontal",
+    "width": 300
+  },
+  "right": {
+    "id": "f2e89e2e6fbc5cd7",
+    "type": "split",
+    "children": [
+      {
+        "id": "aadeae4857d83ed5",
+        "type": "tabs",
+        "children": [
+          {
+            "id": "59257db9d0234438",
+            "type": "leaf",
+            "state": {
+              "type": "backlink",
+              "state": {
+                "file": "训练计划.md",
+                "collapseAll": false,
+                "extraContext": false,
+                "sortOrder": "alphabetical",
+                "showSearch": false,
+                "searchQuery": "",
+                "backlinkCollapsed": false,
+                "unlinkedCollapsed": true
+              },
+              "icon": "links-coming-in",
+              "title": "训练计划 的反向链接列表"
+            }
+          },
+          {
+            "id": "92eb5705ecea080b",
+            "type": "leaf",
+            "state": {
+              "type": "outgoing-link",
+              "state": {
+                "linksCollapsed": false,
+                "unlinkedCollapsed": true
+              },
+              "icon": "links-going-out",
+              "title": "Outgoing links"
+            }
+          },
+          {
+            "id": "a5b63781860c1318",
+            "type": "leaf",
+            "state": {
+              "type": "tag",
+              "state": {
+                "sortOrder": "frequency",
+                "useHierarchy": true,
+                "showSearch": false,
+                "searchQuery": ""
+              },
+              "icon": "lucide-tags",
+              "title": "Tags"
+            }
+          },
+          {
+            "id": "29a8dd1305a36a02",
+            "type": "leaf",
+            "state": {
+              "type": "outline",
+              "state": {
+                "followCursor": false,
+                "showSearch": false,
+                "searchQuery": ""
+              },
+              "icon": "lucide-list",
+              "title": "Outline"
+            }
+          }
+        ]
+      }
+    ],
+    "direction": "horizontal",
+    "width": 300,
+    "collapsed": true
+  },
+  "left-ribbon": {
+    "hiddenItems": {
+      "switcher:打开快速切换": false,
+      "graph:查看关系图谱": false,
+      "canvas:新建白板": false,
+      "daily-notes:打开/创建今天的日记": false,
+      "templates:插入模板": false,
+      "command-palette:打开命令面板": false
+    }
+  },
+  "active": "b5b5513039bcb766",
+  "lastOpenFiles": [
+    "训练计划.md",
+    "臀腿训练/臀腿训练.md",
+    "背部训练/引体向上.md",
+    "单侧力量训练.md",
+    "臀腿训练/哑铃杠铃深蹲.md",
+    "未命名",
+    "核心训练/核心训练.md",
+    "图片/引体计划3.png",
+    "图片/引体计划2.png",
+    "图片/引体计划1.png",
+    "背部训练",
+    "图片/保加利亚蹲.png",
+    "图片/哑铃深蹲.png",
+    "哑铃/杠铃深蹲.md",
+    "哑铃",
+    "臀腿训练",
+    "核心训练",
+    "核心训练/腹肌轮.md",
+    "核心训练/动态死虫.md",
+    "核心训练/单边划船 + 平板支撑.md",
+    "图片/腹肌轮.png",
+    "图片/死虫.png",
+    "图片/单边划船1.png",
+    "图片/单边划船2.png",
+    "核心训练/侧支撑.md",
+    "未命名 1.md",
+    "Welcome.md",
+    "图片",
+    "测支撑.md",
+    "video/侧支撑.mp4",
+    "video/死虫.mp4",
+    "video/无标题视频——使用Clipchamp制作.mp4",
+    "video"
+  ]
+}

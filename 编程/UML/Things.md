@@ -1,0 +1,4 @@
+- Structural things 
+- Behavioral things
+- Grouping things
+- Annotational things

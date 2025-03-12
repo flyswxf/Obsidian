@@ -1,0 +1,209 @@
+{
+  "main": {
+    "id": "36738fbfe202ec9a",
+    "type": "split",
+    "children": [
+      {
+        "id": "f48ec3e056b092c4",
+        "type": "tabs",
+        "children": [
+          {
+            "id": "ee1c9d2f7f285029",
+            "type": "leaf",
+            "state": {
+              "type": "markdown",
+              "state": {
+                "file": "形式化/证明E是变式.md",
+                "mode": "source",
+                "source": false
+              },
+              "icon": "lucide-file",
+              "title": "证明E是变式"
+            }
+          },
+          {
+            "id": "b414ef66a9499e0c",
+            "type": "leaf",
+            "state": {
+              "type": "markdown",
+              "state": {
+                "file": "保研/准备方向.md",
+                "mode": "source",
+                "source": false
+              },
+              "icon": "lucide-file",
+              "title": "准备方向"
+            }
+          }
+        ],
+        "currentTab": 1
+      }
+    ],
+    "direction": "vertical"
+  },
+  "left": {
+    "id": "9c3f87dbcc694097",
+    "type": "split",
+    "children": [
+      {
+        "id": "bf7d5ee44ab72fba",
+        "type": "tabs",
+        "children": [
+          {
+            "id": "307dad844bb712a0",
+            "type": "leaf",
+            "state": {
+              "type": "file-explorer",
+              "state": {
+                "sortOrder": "alphabetical",
+                "autoReveal": false
+              },
+              "icon": "lucide-folder-closed",
+              "title": "文件列表"
+            }
+          },
+          {
+            "id": "662cca07abd78335",
+            "type": "leaf",
+            "state": {
+              "type": "search",
+              "state": {
+                "query": "tag:",
+                "matchingCase": false,
+                "explainSearch": false,
+                "collapseAll": false,
+                "extraContext": false,
+                "sortOrder": "alphabetical"
+              },
+              "icon": "lucide-search",
+              "title": "搜索"
+            }
+          },
+          {
+            "id": "a417f36682ee5b8a",
+            "type": "leaf",
+            "state": {
+              "type": "bookmarks",
+              "state": {},
+              "icon": "lucide-bookmark",
+              "title": "书签"
+            }
+          }
+        ]
+      }
+    ],
+    "direction": "horizontal",
+    "width": 300
+  },
+  "right": {
+    "id": "ee32da0895aafc1f",
+    "type": "split",
+    "children": [
+      {
+        "id": "74ab72df643a65e8",
+        "type": "tabs",
+        "children": [
+          {
+            "id": "48c91f1a848cb074",
+            "type": "leaf",
+            "state": {
+              "type": "backlink",
+              "state": {
+                "file": "UML/Building blocks.md",
+                "collapseAll": false,
+                "extraContext": false,
+                "sortOrder": "alphabetical",
+                "showSearch": false,
+                "searchQuery": "",
+                "backlinkCollapsed": false,
+                "unlinkedCollapsed": true
+              },
+              "icon": "links-coming-in",
+              "title": "Building blocks 的反向链接列表"
+            }
+          },
+          {
+            "id": "8f4ceb3e129a18e0",
+            "type": "leaf",
+            "state": {
+              "type": "outgoing-link",
+              "state": {
+                "file": "UML/Building blocks.md",
+                "linksCollapsed": false,
+                "unlinkedCollapsed": true
+              },
+              "icon": "links-going-out",
+              "title": "Building blocks 的出链列表"
+            }
+          },
+          {
+            "id": "e872cd5cd062df1a",
+            "type": "leaf",
+            "state": {
+              "type": "tag",
+              "state": {
+                "sortOrder": "frequency",
+                "useHierarchy": true,
+                "showSearch": false,
+                "searchQuery": ""
+              },
+              "icon": "lucide-tags",
+              "title": "标签"
+            }
+          },
+          {
+            "id": "f07ae0a43cc2dbba",
+            "type": "leaf",
+            "state": {
+              "type": "outline",
+              "state": {
+                "file": "UML/Building blocks.md",
+                "followCursor": false,
+                "showSearch": false,
+                "searchQuery": ""
+              },
+              "icon": "lucide-list",
+              "title": "Building blocks 的大纲"
+            }
+          }
+        ]
+      }
+    ],
+    "direction": "horizontal",
+    "width": 300,
+    "collapsed": true
+  },
+  "left-ribbon": {
+    "hiddenItems": {
+      "switcher:打开快速切换": false,
+      "graph:查看关系图谱": false,
+      "canvas:新建白板": false,
+      "daily-notes:打开/创建今天的日记": false,
+      "templates:插入模板": false,
+      "command-palette:打开命令面板": false
+    }
+  },
+  "active": "b414ef66a9499e0c",
+  "lastOpenFiles": [
+    "形式化/证明E是变式.md",
+    "保研/准备方向.md",
+    "保研",
+    "形式化/程序正确性验证引理.md",
+    "形式化/证明Q是不变式.md",
+    "编程问题/云服务器无法正常连接.md",
+    "编程问题/云服务异常断开.md",
+    "形式化/变式(variant).md",
+    "形式化/Pre^非P^Q可推出Post.md",
+    "形式化/不变式(invariant).md",
+    "UML/Building blocks.md",
+    "UML/Four basic principles of modeling.md",
+    "UML/Things.md",
+    "UML/three major elements.md",
+    "不变式(invariant).md",
+    "Pre , $/neg P$, Q $/vdash$ Post.md",
+    "Pre , $/neg P$, Q $",
+    "Pre , $",
+    "形式化",
+    "编程问题"
+  ]
+}
