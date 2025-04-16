@@ -13,12 +13,26 @@
             "state": {
               "type": "markdown",
               "state": {
-                "file": "数据库/E-R模型/关系(Relation).md",
+                "file": "数据库/关系型数据库设计/关系模式/键.md",
                 "mode": "source",
                 "source": false
               },
               "icon": "lucide-file",
-              "title": "关系(Relation)"
+              "title": "键"
+            }
+          },
+          {
+            "id": "f2c00eb0c05369f1",
+            "type": "leaf",
+            "state": {
+              "type": "markdown",
+              "state": {
+                "file": "形式化/变式(variant).md",
+                "mode": "source",
+                "source": false
+              },
+              "icon": "lucide-file",
+              "title": "变式(variant)"
             }
           },
           {
@@ -35,7 +49,8 @@
               "title": "三元组关系"
             }
           }
-        ]
+        ],
+        "currentTab": 1
       }
     ],
     "direction": "vertical"
@@ -92,7 +107,7 @@
       }
     ],
     "direction": "horizontal",
-    "width": 300
+    "width": 297.5
   },
   "right": {
     "id": "ee32da0895aafc1f",
@@ -108,7 +123,7 @@
             "state": {
               "type": "backlink",
               "state": {
-                "file": "数据库/泛化.md",
+                "file": "数据库/关系型数据库设计/范式/BCNF.md",
                 "collapseAll": false,
                 "extraContext": false,
                 "sortOrder": "alphabetical",
@@ -118,7 +133,7 @@
                 "unlinkedCollapsed": true
               },
               "icon": "links-coming-in",
-              "title": "泛化 的反向链接列表"
+              "title": "BCNF 的反向链接列表"
             }
           },
           {
@@ -127,12 +142,12 @@
             "state": {
               "type": "outgoing-link",
               "state": {
-                "file": "UML/Building blocks.md",
+                "file": "数据库/关系型数据库设计/范式/BCNF.md",
                 "linksCollapsed": false,
                 "unlinkedCollapsed": true
               },
               "icon": "links-going-out",
-              "title": "Building blocks 的出链列表"
+              "title": "BCNF 的出链列表"
             }
           },
           {
@@ -156,16 +171,17 @@
             "state": {
               "type": "outline",
               "state": {
-                "file": "数据库/泛化.md",
+                "file": "数据库/关系型数据库设计/范式/BCNF.md",
                 "followCursor": false,
                 "showSearch": false,
                 "searchQuery": ""
               },
               "icon": "lucide-list",
-              "title": "泛化 的大纲"
+              "title": "BCNF 的大纲"
             }
           }
-        ]
+        ],
+        "currentTab": 3
       }
     ],
     "direction": "horizontal",
@@ -182,51 +198,53 @@
       "command-palette:打开命令面板": false
     }
   },
-  "active": "a68e1ff30d2b3a86",
+  "active": "307dad844bb712a0",
   "lastOpenFiles": [
-    "数据库/E-R模型/实体(Entity).md",
-    "数据库/E-R模型/关系(Relation).md",
-    "数据库/E-R模型/多重性.md",
-    "数据库/E-R模型/E-R模型转换数据库.md",
-    "数据库/E-R模型/E-R模型.md",
-    "Pasted image 20250328164215.png",
-    "Pasted image 20250328164211.png",
-    "Pasted image 20250328164156.png",
-    "Pasted image 20250328163919.png",
-    "Pasted image 20250328163913.png",
-    "Pasted image 20250328163240.png",
-    "Pasted image 20250328163022.png",
-    "数据库/泛化.md",
-    "数据库/关系.md",
-    "数据库/关系代数.md",
-    "数据库/聚合函数.md",
-    "数据库/联系集(Relationship Sets).md",
-    "数据库/去重.md",
-    "数据库/弱实体集.md",
-    "数据库/三元组关系.md",
-    "数据库/未命名.md",
-    "数据库/select.md",
-    "数据库/E-R模型",
-    "UML/关联关系的修饰.md",
-    "UML/公共机制.md",
-    "UML/参与者Actor.md",
-    "Pasted image 20250328162245.png",
-    "Pasted image 20250328162228.png",
-    "Pasted image 20250328161900.png",
-    "数据库/集合操作.md",
-    "未命名.md",
-    "UML/关系.md",
-    "UML/用例描述.md",
-    "UML/用例Use Case.md",
-    "形式化/证明E是变式.md",
+    "形式化/不变式(invariant).md",
+    "形式化/程序正确性验证引理.md",
+    "形式化/反证法的形式化表示.md",
+    "形式化/非确定赋值.md",
+    "形式化/集合的表示法.md",
+    "形式化/全程量词的翻译.md",
+    "形式化/数组最小值算法的证明.md",
+    "形式化/搜索算法的形式化.md",
+    "形式化/搜索算法i!=0的证明.md",
+    "形式化/Pre^非P^Q可推出Post.md",
+    "形式化/if...then的翻译.md",
     "形式化/证明Q是不变式.md",
+    "形式化/证明E是变式.md",
+    "形式化/变式(variant).md",
+    "数据库/关系型数据库设计/范式/BCNF.md",
+    "数据库/关系型数据库设计/范式/3NF.md",
+    "数据库/关系型数据库设计/范式/3NF分解.md",
+    "数据库/关系型数据库设计/范式/BCNF分解.md",
+    "数据库/关系型数据库设计/函数依赖/无损分解（Lossless Decomposition）的判定.md",
+    "数据库/关系型数据库设计/关系模式/键.md",
+    "数据库/关系型数据库设计/函数依赖/属性集.md",
+    "数据库/关系型数据库设计/函数依赖/平凡依赖.md",
+    "数据库/关系型数据库设计/函数依赖/函数依赖集.md",
+    "数据库/关系型数据库设计/函数依赖/多余属性（Extraneous Attributes）.md",
+    "数据库/关系型数据库设计/函数依赖/规范覆盖.md",
+    "数据库/关系型数据库设计/函数依赖/保持函数依赖(Dependency Preservation).md",
+    "数据库/关系型数据库设计/关系模式",
+    "数据库/关系型数据库设计",
+    "Pasted image 20250415185856.png",
+    "Pasted image 20250415185731.png",
+    "Pasted image 20250415185726.png",
+    "Pasted image 20250415183738.png",
+    "Pasted image 20250415183505.png",
+    "Pasted image 20250415181503.png",
+    "Pasted image 20250415180519.png",
+    "数据库/图片/投影.png",
+    "Pasted image 20250321151642.png",
+    "Pasted image 20250320202323.png",
+    "数据库/关系型数据库设计/函数依赖",
+    "数据库/关系型数据库设计/范式",
+    "数据库/E-R模型",
     "arkts",
     "Pasted image 20250308144357-b291358a0329.png.qkdownloading",
     "数据库",
     "保研",
-    "Pre , $/neg P$, Q $",
-    "Pre , $",
-    "形式化",
-    "编程问题"
+    "Pre , $/neg P$, Q $"
   ]
 }
