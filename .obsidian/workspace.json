@@ -4,21 +4,21 @@
     "type": "split",
     "children": [
       {
-        "id": "ada490d129c6a657",
+        "id": "d5c8db1ddfe66b5b",
         "type": "tabs",
         "children": [
           {
-            "id": "233642df69685ad9",
+            "id": "f62bdc83a866795d",
             "type": "leaf",
             "state": {
               "type": "markdown",
               "state": {
-                "file": "编程/保研/准备方向.md",
+                "file": "编程/UML/用例图/用例Use Case.md",
                 "mode": "source",
                 "source": false
               },
               "icon": "lucide-file",
-              "title": "准备方向"
+              "title": "用例Use Case"
             }
           }
         ]
@@ -168,6 +168,33 @@
       "command-palette:打开命令面板": false
     }
   },
-  "active": "233642df69685ad9",
-  "lastOpenFiles": []
+  "active": "9a8b880fd9a3e0dd",
+  "lastOpenFiles": [
+    "编程/UML/用例图/用例图.md",
+    "编程/UML/关系.md",
+    "编程/UML/用例图/参与者Actor.md",
+    "编程/UML/用例图/参与者中的panel和controller.md",
+    "编程/UML/用例图/用例Use Case.md",
+    "编程/UML/用例描述.md",
+    "编程/UML/用例模型.md",
+    "编程/UML/用例图",
+    "编程/UML/类图",
+    "编程/UML/关联关系的修饰.md",
+    "编程/UML/公共机制.md",
+    "编程/数据库/关系型数据库设计/范式/BCNF分解.md",
+    "编程/数据库/关系型数据库设计/函数依赖/规范覆盖.md",
+    "编程/数据库/关系型数据库设计/范式/BCNF.md",
+    "编程/数据库/关系型数据库设计/范式/3NF.md",
+    "编程/数据库/关系型数据库设计/范式/3NF分解.md",
+    "编程/编程问题/云服务器无法正常连接.md",
+    "编程/编程问题/查看后台程序是否在运行.md",
+    "编程/形式化/搜索算法的形式化.md",
+    "编程/形式化/集合的表示法.md",
+    "编程/形式化/反证法的形式化表示.md",
+    "编程/形式化/变式(variant).md",
+    "Button中添加子组件.md",
+    "编程/arkts",
+    "Essentials of Strength Training and Conditioning 4th Edition With Web Resource (G. Gregory Haff, N. Travis Triplett (eds.)) (Z-Library).pdf",
+    "编程/保研/准备方向.md"
+  ]
 }
