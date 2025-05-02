@@ -5,6 +5,7 @@
 	- `where course.id in/not in(select ID from teaches where year=2024)`
 	- `where name not in ('Mozart', 'Einstein')`
 	- `where (course_id, sec_id, semester, year) in (select course_id, sec_id, semester, year from teaches where teaches.ID= '10101')`
+	- `select course_id from course where lower(title) like '%advanced%'`
 - `as`: 重命名
 	- 跟在select后, 或是from后都可以, 如`select A as S`,也可以`select A from R1 as R`
 	- 用于重命名avg()等函数, 因为函数不会给新属性一个正常名字. 可以`select avg(A) as avg_A`
@@ -33,4 +34,9 @@
 		`select A from R1 as S,R2 as T where S.SCORE>T.SCORE`
 		将自身与自身做笛卡尔积
 3. 有全部
-		`not exist (select *) except (select .. where)`
+		`not exist (select * from ..) except (select .. from .. where .. )`
+4. 一个都没有
+		`(select .. from ..) except (select .. from .. where ..)`
+5. 最小的
+		`select .. from r where A = (select min(A) from r)` 
+		![[Pasted image 20250423182202.png]]
