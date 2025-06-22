@@ -16,4 +16,5 @@
 	- Undo该操作
 	- Log记录CLR
 	- 将[[基于日志的恢复#^798544|prevLSN]]加入ToUndo
+	- 如果没有prevLSN（该LSN的上一条是begin），则再Log写一条\<Ti end>
 4. 在ToUndo中移除该LSN
