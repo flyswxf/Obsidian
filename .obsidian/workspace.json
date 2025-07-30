@@ -128,12 +128,12 @@
             "state": {
               "type": "outgoing-link",
               "state": {
-                "file": "编程/保研/准备方向.md",
+                "file": "编程/MetaGPT/colab跑metagpt.md",
                 "linksCollapsed": false,
                 "unlinkedCollapsed": true
               },
               "icon": "links-going-out",
-              "title": "准备方向 的出链列表"
+              "title": "colab跑metagpt 的出链列表"
             }
           },
           {
@@ -166,7 +166,8 @@
               "title": "准备方向 的大纲"
             }
           }
-        ]
+        ],
+        "currentTab": 1
       }
     ],
     "direction": "horizontal",

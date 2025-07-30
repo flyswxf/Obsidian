@@ -9,9 +9,8 @@
 **重复执行以下步骤**, 直到ToUndo为空
 1. 选择ToUndo中最大的LSN(最近的操作)
 2. 如果该LSN是[[基于日志的恢复#^fea3c9|CLR]]
-	(CLR不undo, 只是寻找\<Ti End>)
-	- 如果CLR的undonextLSN**为空**(这是最后的CLR), Log记录\<Ti End>
-	- 如果CLR的undonextLSN**不为空**, 将CLR的undonextLSN加入ToUndo
+	- 如果CLR的undonextLSN**为空**(这是最后的CLR,Ti的undo已经完成了), Log记录\<Ti End>
+	- 如果CLR的undonextLSN**不为空**, 将CLR的undonextLSN加入ToUndo(继续Ti未完成的undo)
 3. 如果该LSN是更新操作
 	- Undo该操作
 	- Log记录CLR
