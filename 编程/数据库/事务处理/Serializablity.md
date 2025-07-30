@@ -1,4 +1,4 @@
-![[Pasted image 20250604145936.png]]
+![[Serializable_Schedules_Conflict_Serializability_Ch_1.png]]
 ## 冲突可串行化Conflict Serializablity
 #### 指令间冲突:
 - 两个指令属于不同的[[事务Transaction|事务]]

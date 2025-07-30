@@ -41,5 +41,5 @@ convergent: rodin会检查变式, 确保progress会终止
 
 ## 第三步
 - Removing non-determinacy: 将非确定赋值:$\in$替换为确定的赋值:=
-	- ![[Pasted image 20250529215122.png]]
-	- ![[Pasted image 20250529214926.png]]
+	- ![[progress-refinement-algorithms.png.png]]
+	- ![[progress-refinement-algorithms.png_1.png]]

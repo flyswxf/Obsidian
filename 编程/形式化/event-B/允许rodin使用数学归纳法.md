@@ -1,2 +1,2 @@
 在context中添加axiom:
-![[Pasted image 20250527191152.png]]
+![[mathematical-logic-axioms-20250527.png.png]]

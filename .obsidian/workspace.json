@@ -20,23 +20,8 @@
               "icon": "lucide-file",
               "title": "cond_emb_ret.ipynb"
             }
-          },
-          {
-            "id": "b0ce03a22f692492",
-            "type": "leaf",
-            "state": {
-              "type": "markdown",
-              "state": {
-                "file": "GraphCare/cond_emb_ret.ipynb.md",
-                "mode": "source",
-                "source": false
-              },
-              "icon": "lucide-file",
-              "title": "cond_emb_ret.ipynb"
-            }
           }
-        ],
-        "currentTab": 1
+        ]
       }
     ],
     "direction": "vertical"
@@ -128,12 +113,11 @@
             "state": {
               "type": "outgoing-link",
               "state": {
-                "file": "编程/MetaGPT/colab跑metagpt.md",
                 "linksCollapsed": false,
                 "unlinkedCollapsed": true
               },
               "icon": "links-going-out",
-              "title": "colab跑metagpt 的出链列表"
+              "title": "出链"
             }
           },
           {
@@ -183,53 +167,53 @@
       "command-palette:打开命令面板": false
     }
   },
-  "active": "b0ce03a22f692492",
+  "active": "9a8b880fd9a3e0dd",
   "lastOpenFiles": [
-    "GraphCare/graph_gen.ipynb.md",
-    "GraphCare/resources/ATC.csv.md",
-    "GraphCare/UMLS/umls_sim_retriever.py.md",
-    "GraphCare/umls_sampling.py.md",
-    "GraphCare/cond_emb_ret.ipynb.md",
-    "GraphCare/proc_emb_ret.ipynb.md",
-    "GraphCare/data_prepare.py.md",
-    "GraphCare/graphcare.py.md",
-    "GraphCare/UMLS/umls_emb_ret.py.md",
-    "GraphCare/UMLS/ehr_emb_ret.ipynb.md",
-    "GraphCare/UMLS/concept_names.txt.md",
-    "GraphCare/resources/CCSCM.csv.md",
-    "graphs/condition/CCSCM/entity_embedding.pkl.md",
-    "graphs/condition/CCSCM",
-    "graphs/condition",
-    "graphs",
-    "GraphCare/resources/CCSPROC.csv.md",
-    "GraphCare/resources",
-    "GraphCare/resource",
-    "GraphCare/新建文件夹",
-    "GraphCare/UMLS",
-    "编程/算法/move.md",
-    "GraphCare",
-    "编程/数据库/恢复算法/Redo.md",
-    "编程/算法",
-    "未命名",
-    "编程/数据库/恢复算法/分析.md",
-    "编程/数据库/恢复算法/ARIES算法.md",
-    "编程/数据库/恢复算法/Undo.md",
-    "编程/数据库/恢复算法/SQLite.md",
-    "编程/UML/期末复习.md",
-    "Pasted image 20250622184644.png",
-    "编程/数据库/恢复算法/Checkpoint.md",
-    "编程/数据库/恢复算法/Shadow Paging.md",
-    "编程/数据库/恢复算法/基于日志的恢复.md",
-    "编程/数据库/恢复算法/内存管理协议.md",
-    "编程/数据库/事务处理/隔离级别Isolation level.md",
-    "Pasted image 20250622152959.png",
-    "Pasted image 20250621224738.png",
-    "Pasted image 20250621222929.png",
-    "Pasted image 20250621222535.png",
-    "Pasted image 20250621222339.png",
-    "Pasted image 20250621222312.png",
-    "Pasted image 20250621221649.png",
-    "Pasted image 20250621220042.png",
-    "Pasted image 20250621214920.png"
+    "编程_backup/算法/move.md",
+    "编程_backup/算法",
+    "健身/臀腿训练/保加利亚蹲训练视频截图.png",
+    "健身/臀腿训练/哑铃深蹲教程视频截图.png",
+    "健身/背部训练/引体计划21-30天训练计划.png",
+    "健身/背部训练/引体训练计划1-20天.png",
+    "健身/背部训练/引体训练计划1-10天.png",
+    "健身/核心训练/腹肌轮平板支撑训练指导.png",
+    "健身/核心训练/单边划船训练.png",
+    "健身/核心训练/单边划船平板支撑训练.png",
+    "健身/核心训练/死虫进阶版运动指导.png",
+    "编程/UML/交互图/顺序图/UML-Course-Registration-Sequence-Diagram.png.png",
+    "编程/形式化/证明规则.md",
+    "编程/形式化/算法证明案例/搜索算法i!=0的证明.md",
+    "编程/形式化/算法证明案例/搜索算法的形式化.md",
+    "编程/形式化/算法证明案例/数组最小值算法的证明.md",
+    "编程/编程问题/云服务异常断开.md",
+    "编程_backup/编程问题/查看后台程序是否在运行.md",
+    "编程_backup/编程问题/服务器ssh证书过期.md",
+    "编程_backup/编程问题/云服务异常断开.md",
+    "编程_backup/编程问题/云服务器无法正常连接.md",
+    "编程_backup/编程问题",
+    "编程_backup/数据库/关系型数据库设计/范式/BCNF分解.md",
+    "编程_backup/数据库/关系型数据库设计/范式/BCNF.md",
+    "编程_backup/数据库/关系型数据库设计/范式/3NF分解.md",
+    "编程_backup/数据库/关系型数据库设计/范式/3NF.md",
+    "编程_backup/数据库/关系型数据库设计/函数依赖/规范覆盖.md",
+    "编程_backup/数据库/关系型数据库设计/函数依赖/无损分解（Lossless Decomposition）的判定.md",
+    "编程_backup/数据库/关系型数据库设计/函数依赖/平凡依赖.md",
+    "编程_backup/数据库/关系型数据库设计/函数依赖/属性集.md",
+    "编程_backup/数据库/关系型数据库设计/函数依赖/函数依赖集.md",
+    "编程_backup/数据库/关系型数据库设计/函数依赖/保持函数依赖(Dependency Preservation).md",
+    "编程_backup/数据库/关系型数据库设计/关系模式/键.md",
+    "编程_backup/数据库/索引/索引.md",
+    "编程_backup/数据库/数据库操作/集合操作.md",
+    "编程_backup/数据库/数据库操作/聚合函数.md",
+    "编程_backup/数据库/数据库操作/去重.md",
+    "编程_backup/数据库/数据库操作/with.md",
+    "编程_backup/数据库/关系型数据库设计/范式",
+    "编程_backup/数据库/关系型数据库设计/函数依赖",
+    "编程_backup/数据库/关系型数据库设计/关系模式",
+    "编程_backup/数据库/索引",
+    "编程_backup/数据库/数据库操作",
+    "编程_backup/数据库/恢复算法",
+    "编程_backup/数据库/并行控制",
+    "编程_backup/数据库/图片"
   ]
 }

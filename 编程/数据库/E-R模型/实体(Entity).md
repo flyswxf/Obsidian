@@ -1,9 +1,9 @@
 表示现实世界中可区分的独立对象，如“学生”“课程”“订单”等。
-![[Pasted image 20250328161900.png]]
+![[instructor_entity_attributes.png.png]]
 
 ## 实体具有**属性**
 描述实体的特征，如学生的“学号”“姓名”“年龄”等
-![[Pasted image 20250328162245.png]]
+![[entity-attribute-classification.png.png]]
 除了属性的结构分类, 还有属性的键值分类
 可分为
 - **主键**: 
@@ -15,4 +15,4 @@
 
 
 当多个实体同时要和另一个实体有关系时, 可以用聚合(Aggregation)将多个实体框起来, 再与另一个实体联系起来
-![[Pasted image 20250415185856.png]]
+![[entity_relationship_diagram_projects_evaluation_ag.png]]

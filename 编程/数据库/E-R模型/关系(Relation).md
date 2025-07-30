@@ -1,7 +1,7 @@
 表示实体之间的联系，如“学生选修课程”“员工属于部门”等
-![[Pasted image 20250328163022.png]]
+![[entity-relationship-diagram-student-instructor-adv_1.png]]
 用菱形表示, 连接**两个或多个**实体, 也可以连接**关系**
-![[Pasted image 20250415180519.png]]
+![[advisor-student-entity-relationship-diagram.png.png]]
 (此图中date为**关系本身的属性**)
 
 - 连接的方式: [[多重性]]
@@ -10,5 +10,5 @@
 
 
 关系可以是**与自身的**
-![[Pasted image 20250328163240.png]]
+![[course-relation-diagram-ER.png.png]]
 

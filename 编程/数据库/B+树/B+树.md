@@ -9,7 +9,7 @@
 ### 性质
 - 平衡树, 每个叶子节点的高度一致
 - #### n代表B+树节点存放的最大指针数量
-  ![[Pasted image 20250517151531.png]]
+  ![[B+Tree-Pointers-Structure.png.png]]
 - 中间节点有\[$\left \lceil \frac{n}{2}  \right \rceil$, n]个子节点(pointers)
 - 叶子节点有\[$\left \lceil \frac{n-1}{2}  \right \rceil$, n-1]个值(search-key values)
 

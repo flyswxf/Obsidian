@@ -50,7 +50,7 @@ openMP控制并行的编译指令, 格式如下:
 	- 循环下标通常在并行区域外部定义(是共享的), 但是for指令会自动转换为私有的(相当于`private(i)`)
 	- for自动做了任务分解, 如图
 	- 通过`schedule(type, chunk_size)`规定任务分配的规则
-	- ![[Pasted image 20250614202809.png]]
+	- ![[OpenMP-Parallel-For-Loop-Task-Distribution.png.png]]
 - 当for循环内有一个共享变量, 需要显式声明, reduction会自动完成临界区域控制
 	- `#pragma omp parallel for reduction (+:sum)`
 		- 对共享变量使用的计算(+, -,\*)

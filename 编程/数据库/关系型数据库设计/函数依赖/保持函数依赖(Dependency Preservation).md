@@ -53,7 +53,7 @@
 4. 如果能让a' => a ∪ b, 那么这个分解保持函数依赖
 
 ### 例子:
-![[Pasted image 20250417193312.png]]
+![[[关系转换图-节点与边.png].png]]
 
 
 还可查看[BCNF Decomposition | A step by step approach – Data Science Duniya](https://ashutoshtripathi.com/gate/dbms/normalization-normal-forms/procedure-to-decompose-a-given-relation-in-bcnf-bcnf-algorithm/)
