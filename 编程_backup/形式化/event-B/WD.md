@@ -1,1 +1,0 @@
-形如$Pre, P, Q\vdash i\in 0..n-1$
