@@ -4,21 +4,17 @@
     "type": "split",
     "children": [
       {
-        "id": "d5c8db1ddfe66b5b",
+        "id": "1adc5dfc28dcdc69",
         "type": "tabs",
         "children": [
           {
-            "id": "f62bdc83a866795d",
+            "id": "7e2f30fa39229117",
             "type": "leaf",
             "state": {
-              "type": "markdown",
-              "state": {
-                "file": "GraphCare/cond_emb_ret.ipynb.md",
-                "mode": "source",
-                "source": false
-              },
+              "type": "empty",
+              "state": {},
               "icon": "lucide-file",
-              "title": "cond_emb_ret.ipynb"
+              "title": "新标签页"
             }
           }
         ]
@@ -159,6 +155,7 @@
   },
   "left-ribbon": {
     "hiddenItems": {
+      "bases:创建新数据库": false,
       "switcher:打开快速切换": false,
       "graph:查看关系图谱": false,
       "canvas:新建白板": false,
@@ -169,6 +166,11 @@
   },
   "active": "9a8b880fd9a3e0dd",
   "lastOpenFiles": [
+    "编程/算法/atan2.md",
+    "编程/算法/除法逆元.md",
+    "编程/算法/move.md",
+    "编程/算法/遍历圆.md",
+    "GraphCare/cond_emb_ret.ipynb.md",
     "编程_backup/算法/move.md",
     "编程_backup/算法",
     "健身/臀腿训练/保加利亚蹲训练视频截图.png",
@@ -202,11 +204,6 @@
     "编程_backup/数据库/关系型数据库设计/函数依赖/函数依赖集.md",
     "编程_backup/数据库/关系型数据库设计/函数依赖/保持函数依赖(Dependency Preservation).md",
     "编程_backup/数据库/关系型数据库设计/关系模式/键.md",
-    "编程_backup/数据库/索引/索引.md",
-    "编程_backup/数据库/数据库操作/集合操作.md",
-    "编程_backup/数据库/数据库操作/聚合函数.md",
-    "编程_backup/数据库/数据库操作/去重.md",
-    "编程_backup/数据库/数据库操作/with.md",
     "编程_backup/数据库/关系型数据库设计/范式",
     "编程_backup/数据库/关系型数据库设计/函数依赖",
     "编程_backup/数据库/关系型数据库设计/关系模式",
