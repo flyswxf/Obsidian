@@ -4,24 +4,53 @@
     "type": "split",
     "children": [
       {
-        "id": "1adc5dfc28dcdc69",
+        "id": "50e105da2983ba97",
         "type": "tabs",
         "children": [
           {
-            "id": "7e2f30fa39229117",
+            "id": "d1a5cd1a18c2add0",
             "type": "leaf",
             "state": {
               "type": "markdown",
               "state": {
-                "file": "编程/Maude/命名 Identifier.md",
+                "file": "编程/程序测试/上课.md",
                 "mode": "source",
                 "source": false
               },
               "icon": "lucide-file",
-              "title": "命名 Identifier"
+              "title": "上课"
+            }
+          },
+          {
+            "id": "0e9c653e5aa678ed",
+            "type": "leaf",
+            "state": {
+              "type": "markdown",
+              "state": {
+                "file": "编程/程序测试/组合测试策略-Combination Strategies.md",
+                "mode": "source",
+                "source": false
+              },
+              "icon": "lucide-file",
+              "title": "组合测试策略-Combination Strategies"
+            }
+          },
+          {
+            "id": "a39975873f85f298",
+            "type": "leaf",
+            "state": {
+              "type": "markdown",
+              "state": {
+                "file": "编程/Maude/Maude如何使用.md",
+                "mode": "source",
+                "source": false
+              },
+              "icon": "lucide-file",
+              "title": "Maude如何使用"
             }
           }
-        ]
+        ],
+        "currentTab": 2
       }
     ],
     "direction": "vertical"
@@ -113,12 +142,12 @@
             "state": {
               "type": "outgoing-link",
               "state": {
-                "file": "编程/Maude/命名 Identifier.md",
+                "file": "编程/Maude/Maude如何使用.md",
                 "linksCollapsed": false,
                 "unlinkedCollapsed": true
               },
               "icon": "links-going-out",
-              "title": "命名 Identifier 的出链列表"
+              "title": "Maude如何使用 的出链列表"
             }
           },
           {
@@ -156,7 +185,7 @@
       }
     ],
     "direction": "horizontal",
-    "width": 300
+    "width": 200
   },
   "left-ribbon": {
     "hiddenItems": {
@@ -169,53 +198,53 @@
       "command-palette:打开命令面板": false
     }
   },
-  "active": "7e2f30fa39229117",
+  "active": "a39975873f85f298",
   "lastOpenFiles": [
-    "编程/Maude/数据类型 Sort.md",
-    "编程/Maude/关系 Subsort.md",
-    "编程/Maude/命名 Identifier.md",
-    "编程/Maude/转义.md",
-    "编程/算法/emplace_back.md",
-    "编程/算法/Lambda表达式语法结构.md",
-    "编程/UML/交互图/顺序图/顺序图.md",
-    "编程/算法/resize.md",
-    "编程/算法/atan2.md",
-    "编程/算法/bitset.md",
-    "编程/算法/map.md",
-    "编程/算法/multiset.md",
-    "编程/算法/move.md",
-    "编程/Maude/类别 Kind.md",
-    "编程/Maude/操作符 Operator.md",
-    "编程/Maude/Subsort.md",
-    "编程/服务器问题/Maven 配置.md",
+    "编程/Maude/运算优先级.md",
+    "编程/Maude/Maude如何使用.md",
+    "编程/Maude/逻辑符号.md",
+    "编程/Maude/等式与成员关系.md",
+    "编程/Maude/多种写法.md",
+    "编程/Maude/基本符号/类别 Kind.md",
+    "编程/Maude/基本符号/关系 Subsort.md",
+    "编程/Maude/例子/SIMPLE_NAT.md",
+    "编程/Maude/基本符号/模块 Modules.md",
+    "编程/Maude/基本符号/操作符 Operator.md",
+    "编程/Maude/基本符号/等式 Equation.md",
+    "编程/程序测试/边界测试.md",
+    "编程/程序测试/上课.md",
+    "编程/程序测试/组合测试策略-Combination Strategies.md",
+    "编程/程序测试/RIP 模型.md",
+    "编程/程序测试/划分测试.md",
+    "编程/程序测试/错误.md",
+    "编程/程序测试/程序测试.md",
+    "编程/程序测试/测试用例.md",
+    "作业的临时文件夹/Homework3.md",
+    "编程/算法设计与分析/时间复杂度/主方法 Master method.md",
+    "编程/算法设计与分析/时间复杂度/Omega-notation.md",
+    "Pasted image 20251012195627.png",
+    "Pasted image 20251012194524.png",
+    "编程/算法设计与分析/典型算法/最大子数组(分治).md",
+    "Pasted image 20251012192005.png",
+    "Pasted image 20251012190140.png",
+    "编程/算法设计与分析/典型算法/堆排序.md",
+    "作业的临时文件夹/Homework2.md",
+    "Pasted image 20251012140742.png",
+    "Pasted image 20251012135441.png",
+    "Pasted image 20251012134119.png",
+    "编程/算法设计与分析/时间复杂度/Asymptotic-notations-relations.md",
+    "编程/算法设计与分析/典型算法",
+    "编程/算法设计与分析/时间复杂度",
+    "Pasted image 20251012125603.png",
+    "Pasted image 20251012105508.png",
+    "Pasted image 20251011181430.png",
+    "编程/Maude/例子",
+    "编程/Maude/基本符号",
+    "编程/算法设计与分析",
+    "作业的临时文件夹",
+    "编程/数据挖掘",
     "编程/Maude",
     "未命名 1",
-    "编程/服务器问题/个人测试证书管理-SSH证书申请与部署.png",
-    "编程/服务器问题/服务器ssh证书过期.md",
-    "编程/服务器问题/云服务异常断开.md",
-    "编程/服务器问题/云服务器无法正常连接.md",
-    "编程/服务器问题/查看后台程序是否在运行.md",
-    "编程/服务器问题/Clash Verge Rev 安装与使用指南.md",
-    "编程/服务器问题/C++配置文件.md",
-    "编程/程序测试/测试用例.md",
-    "编程/UML/期末复习.md",
-    "编程/UML/交互图/消息.md",
-    "编程/UML/交互图/procedure_call_flow_chart.png_1.png",
-    "编程/UML/交互图/顺序图/sequence_diagram_UML_class_relationships.png.png",
-    "编程/UML/交互图/顺序图/Sale-Sequence-Diagram.png.png",
-    "编程/UML/交互图/顺序图/UML序列图-图书搜索用例_1.png",
-    "编程/UML/交互图/顺序图/UML顺序图-订单处理流程_2.png",
-    "编程/UML/交互图/顺序图/UML-Course-Registration-Sequence-Diagram.png.png",
-    "编程/UML/交互图/Sequence-Message-Link-Flow-Diagram-AirTrafficPlann_1.png",
-    "编程/程序测试/Ch1-Effective and Systematic  Software Testing.pdf",
-    "Pasted image 20250824170150.png",
-    "编程/程序测试",
-    "未命名",
-    "Pasted image 20250821163846.png",
-    "Essentials of Strength Training and Conditioning 4th Edition With Web Resource (G. Gregory Haff, N. Travis Triplett (eds.)) (Z-Library).pdf",
-    "编程/算法/IDE",
-    "编程/服务器问题",
-    "编程_backup/算法",
-    "编程_backup/编程问题"
+    "编程/程序测试/Ch1-Effective and Systematic  Software Testing.pdf"
   ]
 }

@@ -5,6 +5,7 @@ Subsort 关系类似于集合的子集关系，在 Sort 之间建立偏序关系
 ```maude
 subsort Sort-1 < Sort-2 .
 ```
+- 含义: Sort-1这一类型的所有元素属于Sort-2这一类型
 
 **示例：**
 ```maude

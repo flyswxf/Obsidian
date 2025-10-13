@@ -11,12 +11,14 @@
             "id": "591a99fb64e9a8e8",
             "type": "leaf",
             "state": {
-              "type": "image",
+              "type": "markdown",
               "state": {
-                "file": "Pasted image 20250622223005.png"
+                "file": "UML/用例图/用例图.md",
+                "mode": "source",
+                "source": false
               },
-              "icon": "lucide-image",
-              "title": "Pasted image 20250622223005"
+              "icon": "lucide-file",
+              "title": "用例图"
             }
           }
         ]
@@ -159,6 +161,7 @@
   },
   "left-ribbon": {
     "hiddenItems": {
+      "bases:创建新数据库": false,
       "switcher:打开快速切换": false,
       "graph:查看关系图谱": false,
       "canvas:新建白板": false,
@@ -169,6 +172,8 @@
   },
   "active": "591a99fb64e9a8e8",
   "lastOpenFiles": [
+    "UML/构件图/构件图.md",
+    "UML/构件图/接口.md",
     "Pasted image 20250616205058.png",
     "Pasted image 20250622223005.png",
     "Pasted image 20250616190143.png",
@@ -179,7 +184,6 @@
     "Pasted image 20250516163033.png",
     "Pasted image 20250526134419.png",
     "Pasted image 20250529195721.png",
-    "Pasted image 20250616173403.png",
     "UML/期末复习.md",
     "UML/部署图/部署图.md",
     "UML/用例模型.md",
@@ -204,7 +208,6 @@
     "数据库/事务处理/Serializablity.md",
     "数据库/事务处理/ACID Properties.md",
     "数据库/事务处理/无级联调度.md",
-    "数据库/事务处理/事务Transaction.md",
     "UML/交互图/顺序图/未命名",
     "数据库/恢复算法",
     "UML/部署图",
