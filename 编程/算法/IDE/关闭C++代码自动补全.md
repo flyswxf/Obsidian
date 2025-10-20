@@ -3,4 +3,4 @@
 2. 在搜索框中输入 `autocomplete`
 3. 找到相关设置并设置为`disabled`：
 
-![[Pasted image 20250824170326.png]]
+![[禁用自动补全设置.png]]

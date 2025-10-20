@@ -41,6 +41,9 @@ op false : -> Bool .
 ```
 
 ### 2. 前缀形式 (Prefix Form)
+
+^d1eec5
+
 操作符名称中**不包含下划线**的操作符为前缀形式。
 
 ```maude

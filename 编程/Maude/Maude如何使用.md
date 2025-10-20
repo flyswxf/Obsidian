@@ -1,0 +1,10 @@
+- 打开docker engine
+- 打开终端运行`docker compose run --rm code`, 进入环境
+- 运行`Maude`打开maude
+- 两种加载`.maude`代码的方式
+	- 复制全部`.maude`代码, 粘贴到终端
+		- maude会提示如果代码的错误和警告, **有些警告对结果是无影响的**
+	- ...
+- 使用`reduce`或`red`命令让maude使用当前[[模块 Modules|模块]]对字符串进行解析
+	- `reduce s s 0 .`
+	- `red sorting(1,3,2) .`

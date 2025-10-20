@@ -13,44 +13,15 @@
             "state": {
               "type": "markdown",
               "state": {
-                "file": "编程/程序测试/上课.md",
+                "file": "编程/UML/交互图/顺序图/控制焦点.md",
                 "mode": "source",
                 "source": false
               },
               "icon": "lucide-file",
-              "title": "上课"
-            }
-          },
-          {
-            "id": "0e9c653e5aa678ed",
-            "type": "leaf",
-            "state": {
-              "type": "markdown",
-              "state": {
-                "file": "编程/程序测试/组合测试策略-Combination Strategies.md",
-                "mode": "source",
-                "source": false
-              },
-              "icon": "lucide-file",
-              "title": "组合测试策略-Combination Strategies"
-            }
-          },
-          {
-            "id": "a39975873f85f298",
-            "type": "leaf",
-            "state": {
-              "type": "markdown",
-              "state": {
-                "file": "编程/Maude/Maude如何使用.md",
-                "mode": "source",
-                "source": false
-              },
-              "icon": "lucide-file",
-              "title": "Maude如何使用"
+              "title": "控制焦点"
             }
           }
-        ],
-        "currentTab": 2
+        ]
       }
     ],
     "direction": "vertical"
@@ -107,7 +78,7 @@
       }
     ],
     "direction": "horizontal",
-    "width": 246.5110321044922
+    "width": 200
   },
   "right": {
     "id": "863384f6e75d11da",
@@ -142,12 +113,12 @@
             "state": {
               "type": "outgoing-link",
               "state": {
-                "file": "编程/Maude/Maude如何使用.md",
+                "file": "编程/UML/交互图/顺序图/控制焦点.md",
                 "linksCollapsed": false,
                 "unlinkedCollapsed": true
               },
               "icon": "links-going-out",
-              "title": "Maude如何使用 的出链列表"
+              "title": "控制焦点 的出链列表"
             }
           },
           {
@@ -198,53 +169,53 @@
       "command-palette:打开命令面板": false
     }
   },
-  "active": "a39975873f85f298",
+  "active": "d1a5cd1a18c2add0",
   "lastOpenFiles": [
-    "编程/Maude/运算优先级.md",
-    "编程/Maude/Maude如何使用.md",
-    "编程/Maude/逻辑符号.md",
-    "编程/Maude/等式与成员关系.md",
-    "编程/Maude/多种写法.md",
-    "编程/Maude/基本符号/类别 Kind.md",
-    "编程/Maude/基本符号/关系 Subsort.md",
-    "编程/Maude/例子/SIMPLE_NAT.md",
-    "编程/Maude/基本符号/模块 Modules.md",
-    "编程/Maude/基本符号/操作符 Operator.md",
-    "编程/Maude/基本符号/等式 Equation.md",
-    "编程/程序测试/边界测试.md",
-    "编程/程序测试/上课.md",
-    "编程/程序测试/组合测试策略-Combination Strategies.md",
-    "编程/程序测试/RIP 模型.md",
-    "编程/程序测试/划分测试.md",
-    "编程/程序测试/错误.md",
-    "编程/程序测试/程序测试.md",
-    "编程/程序测试/测试用例.md",
-    "作业的临时文件夹/Homework3.md",
-    "编程/算法设计与分析/时间复杂度/主方法 Master method.md",
-    "编程/算法设计与分析/时间复杂度/Omega-notation.md",
-    "Pasted image 20251012195627.png",
-    "Pasted image 20251012194524.png",
-    "编程/算法设计与分析/典型算法/最大子数组(分治).md",
-    "Pasted image 20251012192005.png",
-    "Pasted image 20251012190140.png",
-    "编程/算法设计与分析/典型算法/堆排序.md",
-    "作业的临时文件夹/Homework2.md",
-    "Pasted image 20251012140742.png",
-    "Pasted image 20251012135441.png",
-    "Pasted image 20251012134119.png",
-    "编程/算法设计与分析/时间复杂度/Asymptotic-notations-relations.md",
-    "编程/算法设计与分析/典型算法",
-    "编程/算法设计与分析/时间复杂度",
-    "Pasted image 20251012125603.png",
-    "Pasted image 20251012105508.png",
-    "Pasted image 20251011181430.png",
-    "编程/Maude/例子",
-    "编程/Maude/基本符号",
-    "编程/算法设计与分析",
-    "作业的临时文件夹",
-    "编程/数据挖掘",
-    "编程/Maude",
-    "未命名 1",
-    "编程/程序测试/Ch1-Effective and Systematic  Software Testing.pdf"
+    "编程/UML/交互图/顺序图/控制块.md",
+    "编程/UML/构件图/接口.md",
+    "编程/UML/构件图/构件图.md",
+    "编程/UML/构件图/构件模型示意图.png",
+    "编程/UML/构件图/构件.md",
+    "编程/UML/构件图/包.md",
+    "编程/UML/构件图/半色调接口图.png",
+    "编程/算法/除法逆元.md",
+    "编程/算法/乘法逆元定义.png",
+    "编程/服务器问题/文件上传操作菜单.png",
+    "编程/服务器问题/证书路径配置说明.png",
+    "编程/数据库/恢复算法/事务日志流程图.png",
+    "编程/数据库/并行控制/锁冲突矩阵图.png",
+    "编程/数据库/事务处理/写偏斜事务逻辑示.png",
+    "编程/数据库/E-R模型/实体关系图.png",
+    "编程/数据库/E-R模型/课程章节实体关系.png",
+    "Pasted image 20250621153916.png.crdownload",
+    "Pasted image 20250621220042.png.crdownload",
+    "Pasted image 20250611204636.png.crdownload",
+    "Pasted image 20250611204213.png.crdownload",
+    "Pasted image 20250621214920.png.crdownload",
+    "Pasted image 20250611205131.png.crdownload",
+    "Pasted image 20250621152130.png.crdownload",
+    "Pasted image 20250611204755.png.crdownload",
+    "Pasted image 20250611204718.png.crdownload",
+    "Pasted image 20250419221917.png.crdownload",
+    "编程/服务器问题/Maven 配置.md",
+    "编程/服务器问题/Clash Verge Rev 安装与使用指南.md",
+    "编程/服务器问题/查看后台程序是否在运行.md",
+    "编程/服务器问题/服务器ssh证书过期.md",
+    "编程/服务器问题/C++配置文件.md",
+    "编程/UML/用例图/参与者中的panel和controller.md",
+    "编程/UML/用例图/协作.md",
+    "编程/UML/用例图/酒店预约系统用例描述.md",
+    "编程/UML/用例图/参与者.md",
+    "编程/UML/活动图/起始终止点.md",
+    "编程/UML/活动图/活动图.md",
+    "编程/UML/活动图/活动节点.md",
+    "编程/UML/活动图/分支.md",
+    "编程/UML/活动图/分岔和汇合.md",
+    "编程/UML/部署图/连接.md",
+    "编程/UML/部署图/节点.md",
+    "编程/UML/部署图/部署图.md",
+    "编程/形式化/event-B/合并规则Merging Rules.md",
+    "编程/形式化/event-B/含除法的证明.md",
+    "编程/形式化/作业/王宇飞-10235101413-作业2.md"
   ]
 }
