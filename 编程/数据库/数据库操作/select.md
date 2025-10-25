@@ -39,4 +39,4 @@
 		`(select .. from ..) except (select .. from .. where ..)`
 5. 最小的
 		`select .. from r where A = (select min(A) from r)` 
-		![[SQL最小工资单公司查询_1.png]]
+		![[最小薪资公司查询.png]]
