@@ -32,6 +32,13 @@
   ```
   - `export http_proxy=...` 和 `export https_proxy=...`：设置终端的 HTTP/HTTPS 代理，使命令行流量通过 clash-verge 代理端口转发。
 
+- 若要在本机（windows环境）使用代理，且不使用clash verge自带的全局代理功能：
+
+```bash
+$env:http_proxy='http://127.0.0.1:7897'
+$env:https_proxy='http://127.0.0.1:7897'
+```
+
 - 至此，设置完成，可正常使用。
 
 ---
