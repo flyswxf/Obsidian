@@ -1,25 +1,9 @@
 ## 概述
 Kind（类别）是 Maude 成员等价逻辑（membership equational logic）的核心概念。Kind 将 Sort 分组为等价类，用于处理错误项和部分操作。
 
-## 理论基础
-
-### 成员等价逻辑
-Maude 的底层逻辑是成员等价逻辑，在这个逻辑中：
-- Sort 被分组为称为 Kind 的等价类
-- 两个 Sort 属于同一等价类当且仅当它们属于同一连通分量
-
-### Kind 与连通分量的关系
-- **用户定义**：Sort 是用户定义的
-- **隐式关联**：Kind 与 Sort 的连通分量隐式关联
-- **错误超类型**：Kind 被视为错误超类型（error supersorts）
+**Maude对于Kind不会报错, 但也不会继续reduce.**
 
 ## Kind 的命名和表示
-
-### 命名规则
-Kind 不是独立显式命名的，而是通过以下方式标识：
-- 用方括号 `[...]` 包围一个或多个 Sort 名称
-- 多个 Sort 名称用逗号分隔
-- 可以使用连通分量中的任意 Sort 名称
 
 ### 表示方法
 ```maude
@@ -27,11 +11,6 @@ Kind 不是独立显式命名的，而是通过以下方式标识：
 [NzNat]         // 等价表示
 [Nat, NzNat]    // 多个 Sort 表示同一 Kind
 ```
-
-### 规范表示
-Maude 使用规范表示来打印 Kind：
-- 使用连通分量中**最大元素**的逗号分隔列表
-- 确保表示的唯一性和一致性
 
 ## 错误项和未定义项
 
@@ -129,26 +108,6 @@ ops _and_ : Bool Bool -> Bool .
 // ops _+_ : [Nat] [Nat] -> [Nat] .
 // ops _and_ : [Bool] [Bool] -> [Bool] .
 ```
-
-## 连通分量示例
-
-### 数值类型连通分量
-```
-        Int
-       /   \
-     Nat   NzInt
-    /  \   /
- Zero  NzNat
-```
-**对应 Kind**：`[Int]` 或 `[Int, Nat, NzNat, Zero, NzInt]`
-
-### 逻辑类型连通分量
-```
- Prop
-  |
- Bool
-```
-**对应 Kind**：`[Prop]` 或 `[Prop, Bool]`
 
 ## 最佳实践
 

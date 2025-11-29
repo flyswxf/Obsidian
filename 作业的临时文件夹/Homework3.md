@@ -191,7 +191,7 @@ b) $$T(n)=T(7n/10)+n$$
 
 c) $$T(n)=16T(n/4)+n^2$$
 - 根据主定理, $a=16, b=4,\; n^{\log_b a}=n^{\log_4 16}=n^2$; 与 $f(n)$ 同阶
-- 因此：$$T(n)=  \Theta\big(n^{\log_b a}\,(\lg n)^{k+1}\big). \Theta\big(n^2\lg n\big).$$
+- 因此：$$T(n)=  \Theta\big(n^{\log_b a}\,(\lg n)^{k+1}\big)= \Theta\big(n^2\lg n\big).$$
 
 d) $$T(n)=7T(n/3)+n^2$$
 - 根据主定理, $a=7, b=3,\; n^{\log_b a}=n^{\log_3 7}\approx n^{1.771}$; $f(n)=n^2$, 多项式更大

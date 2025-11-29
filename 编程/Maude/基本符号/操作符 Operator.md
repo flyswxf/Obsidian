@@ -104,54 +104,6 @@ ops _+_ _*_ _-_ : Nat Nat -> Nat .
 ops _and_ _or_ : Bool Bool -> Bool .
 ```
 
-## 多标识符操作符
-
-### 基本概念
-操作符名称可以由多个标识符组成，包含空格或特殊字符。
-
-### 自然语言风格操作符
-```maude
-op [_] and then [_] : Command Command -> Command .
-```
-
-**等价的单标识符形式：**
-```maude
-op '[_']and'then'[_'] : Command Command -> Command .
-```
-
-### 包含括号的操作符
-如果操作符语法本身包含括号，需要额外的括号包围：
-
-```maude
-op ((_ only after _)) : Command Command -> Command .
-```
-
-### 多操作符的括号分组
-```maude
-ops ([_] and then [_]) ((_ only after _)) : Command Command -> Command .
-```
-
-## 操作符命名规范
-
-### 推荐风格
-1. **单标识符前缀操作符**：使用小写名称
-   ```maude
-   op not : Bool -> Bool .
-   op length : List -> Nat .
-   ```
-
-2. **复合名称**：使用驼峰命名法
-   ```maude
-   op metaParse : String -> Term .
-   op toString : Nat -> String .
-   ```
-
-3. **混合操作符**：根据语义选择合适的符号
-   ```maude
-   op _+_ : Nat Nat -> Nat .
-   op _==_ : Nat Nat -> Bool .
-   ```
-
 ## 完整示例
 
 ### NUMBERS 模块操作符声明
@@ -177,16 +129,3 @@ s s zero               // 嵌套：s_(s_(zero))
 sd(s zero, zero)       // 前缀调用
 (s zero) + (s s zero)  // 中缀调用
 ```
-
-## 注意事项
-
-### 语法要求
-- 操作符声明必须以句号结尾，且前后有空格
-- 下划线数量必须与参数数量匹配
-- 常量不能包含下划线
-
-### 最佳实践
-- 选择直观的操作符名称和形式
-- 保持命名风格的一致性
-- 合理使用混合形式提高可读性
-- 避免过于复杂的多标识符操作符

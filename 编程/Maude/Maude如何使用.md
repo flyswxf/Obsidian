@@ -5,6 +5,8 @@
 	- 复制全部`.maude`代码, 粘贴到终端
 		- maude会提示如果代码的错误和警告, **有些警告对结果是无影响的**
 	- ...
-- 使用`reduce`或`red`命令让maude使用当前[[模块 Modules|模块]]对字符串进行解析
+- 对于[[模块 Modules#函数模块 (Functional Modules)|函数模块]], 使用`reduce`或`red`命令让maude使用[[等式 Equation|等式]]对字符串化简
 	- `reduce s s 0 .`
 	- `red sorting(1,3,2) .`
+- 对于[[模块 Modules#系统模块 (System Modules)|系统模块]], 使用`rewrite`或`rew`命令让maude使用[[规则 Rule|规则]]对字符串重写
+	- `rew in TRAFFIC-LIGHT : light(red, normal) .`
