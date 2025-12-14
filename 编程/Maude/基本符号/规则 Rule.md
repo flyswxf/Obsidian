@@ -37,3 +37,10 @@ mod TIMER is
   crl [limit] : tick(N) => tick(N) if 10 <= N .  -- 达到阈值后保持不变
 endm
 ```
+
+
+由于重写规则通常是**非确定性**（Non-deterministic）和**并发**（Concurrent）的，同一个初始状态可能会演化出多种不同的结果。因此，Maude 提供了三种不同的命令来观察和验证这些行为。
+
+1. [[重写命令#rewrite (缩写 rew)|rewrite]]
+2. [[重写命令#frewrite (缩写 frew)|frewrite]]
+3. [[重写命令#search|search]]
