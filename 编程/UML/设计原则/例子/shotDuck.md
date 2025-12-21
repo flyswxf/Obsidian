@@ -2,16 +2,36 @@
 classDiagram
     %% --- GRASP: Controller ---
     class SimulationController {
-        -weather : Weather
-        +setWeather(Weather)
         +runScene()
     }
 
-    %% --- Weather Enumeration ---
+    %% --- Observer Pattern (Weather) ---
+    class WeatherObserver {
+        <<interface>>
+        +onWeatherChange(WeatherType)
+    }
+
+    %% --- Weather Subject ---
     class Weather {
+        -currentWeather : WeatherType
+        -observers : List~WeatherObserver~
+        +setWeather(WeatherType)
+        +registerObserver(WeatherObserver)
+        +removeObserver(WeatherObserver)
+        +notifyObservers()
+    }
+
+    %% --- Weather Enumeration ---
+    class WeatherType {
         <<enumeration>>
         HOT
         COLD
+    }
+
+    %% --- Observer Pattern (Aircraft) ---
+    class AircraftObserver {
+        <<interface>>
+        +onAircraftSpotted(Aircraft)
     }
 
     %% --- Unified Movement Strategy ---
@@ -32,17 +52,18 @@ classDiagram
 
     %% --- Duck Hierarchy ---
     class Duck {
-        -name : String
         -flyBehavior : FlyBehavior
-        -quackBehavior : QuackBehavior
         -isAlive : boolean
-        +performFly()
-        +performSwim()
-        +performQuack()
+        -name : String
+        -quackBehavior : QuackBehavior
+        +die()
+        +resurrect()
         +display()
+        +performFly()
+        +performQuack()
+        +performSwim()
         +setFlyBehavior(FlyBehavior)
         +setQuackBehavior(QuackBehavior)
-        +die()
     }
 
     class MallardDuck { +display() }
@@ -55,8 +76,8 @@ classDiagram
     Duck <|-- RubberDuck
     Duck <|-- DecoyDuck
 
-    Duck *-- FlyBehavior
-    Duck *-- QuackBehavior
+    Duck "1" *-- "*" FlyBehavior
+    Duck "1" *-- "*" QuackBehavior
 
     %% --- Quack Strategy ---
     class QuackBehavior { 
@@ -73,77 +94,108 @@ classDiagram
 
     %% --- Person Hierarchy ---
     class Person {
-        -name : String
         -clothing : Clothing
-        +performWalk()
+        -name : String
         +display()
+        +performWalk()
         +setClothing(Clothing)
+        +onWeatherChange(WeatherType)
+        +onAircraftSpotted(Aircraft)
+        +hideInHouse()
     }
     class Hunter {
-        +shoot(target : Duck)
+        +display()
+        +shoot(Duck)
     }
-    class Boy
-    class Girl
+    class Boy {
+        +display()
+    }
+    class Girl {
+        +display()
+    }
 
     Person <|-- Hunter
     Person <|-- Boy
     Person <|-- Girl
+    
+    %% Person implements WeatherObserver and AircraftObserver
+    WeatherObserver <|.. Person
+    AircraftObserver <|.. Person
 
     %% --- Clothing Hierarchy ---
     class Clothing { 
-        <<abstract>> 
+        <<interface>> 
         +wear() 
     }
     class BoyWinterClothing { +wear() }
     class GirlWinterClothing { +wear() }
     class AdultSummerClothing { +wear() }
 
-    Person *-- Clothing
-    Clothing <|-- BoyWinterClothing
-    Clothing <|-- GirlWinterClothing
-    Clothing <|-- AdultSummerClothing
+    Person "1" *-- "*" Clothing
+    Clothing <|.. BoyWinterClothing
+    Clothing <|.. GirlWinterClothing
+    Clothing <|.. AdultSummerClothing
 
     %% --- Aircraft Hierarchy ---
     class Aircraft {
-        -name : String
         -flyBehavior : FlyBehavior
-        +performFly()
-        +takeOff()
+        -name : String
+        -isDestroyed : boolean
+        -observers : List~AircraftObserver~
         +display()
+        +performFly()
         +setFlyBehavior(FlyBehavior)
+        +takeOff()
+        +destroy()
+        +registerObserver(AircraftObserver)
+        +removeObserver(AircraftObserver)
+        +notifyObservers()
     }
-    class Boeing
-    class Apache
+    class Boeing { +display() }
+    class Apache { +display() }
+    class Airbus { +display() }
 
     Aircraft <|-- Boeing
     Aircraft <|-- Apache
-    Aircraft *-- FlyBehavior
+    Aircraft <|-- Airbus
+    Aircraft "1" *-- "*" FlyBehavior
+
+    %% --- Factory Pattern ---
+    class DuckFactory {
+        +createDuck(String type) Duck
+    }
+
+    DuckFactory ..> MallardDuck : creates
+    DuckFactory ..> RedHeadDuck : creates
+    DuckFactory ..> RubberDuck : creates
+    DuckFactory ..> DecoyDuck : creates
+
+    class AircraftFactory {
+        +createAircraft(String type) Aircraft
+    }
+    AircraftFactory ..> Boeing : creates
+    AircraftFactory ..> Apache : creates
+    AircraftFactory ..> Airbus : creates
+
+    class PersonFactory {
+        +createPerson(String type) Person
+    }
+    PersonFactory ..> Hunter : creates
+    PersonFactory ..> Boy : creates
+    PersonFactory ..> Girl : creates
 
     %% --- Relationships ---
-    SimulationController --> Weather : Has
-    SimulationController ..> Duck : Creates & Manages
-    SimulationController ..> Person : Creates & Manages
-    SimulationController ..> Aircraft : Creates & Manages
-    Hunter ..> Duck : shoots
+    SimulationController --> DuckFactory
+    SimulationController --> AircraftFactory
+    SimulationController --> PersonFactory
+    SimulationController --> Weather
+    SimulationController --> Duck
+    SimulationController --> Person
+    SimulationController --> Aircraft
+    Hunter --> Duck
+    
+    %% Observer Relationship
+    Weather o--> WeatherObserver : notifies
+    Weather --> WeatherType : uses
+    Aircraft o--> AircraftObserver : notifies
 ```
-
-## GRASP 设计原则应用说明 & 修改点解释
-
-1.  **控制器 (Controller) 与 状态管理**
-    *   **修改点**: `SimulationController` 现在拥有 `weather` 属性，并提供 `setWeather(Weather)` 和 `runScene()` 方法。
-    *   **体现**: 控制器不再通过不同的方法（`runHotScene`/`runColdScene`）来区分场景，而是通过内部状态（`Weather`）来决定 `runScene()` 的具体逻辑。这降低了控制器的接口复杂度，使其更具内聚性。
-
-2.  **枚举类 (Enumeration)**
-    *   **修改点**: 新增 `Weather` 枚举类，包含 `HOT` 和 `COLD`。
-    *   **体现**: 使用枚举类型显式定义系统支持的环境状态，提高了代码的可读性和类型安全性。
-
-3.  **多态 (Polymorphism) & 策略扩展**
-    *   `MoveBehavior` 体系支持多种移动方式，包括 `FlyWithPropulsion` (喷气动力) 和 `FlyWithPropeller` (螺旋桨)。
-    *   **新增**: `StopOnGround` 类实现 `MoveBehavior` 接口，专门用于处理“停在地上”的行为逻辑，这与 `FlyNoWay` (可能表示完全无法飞行) 有语义上的区别，更精确地描述了飞机在地面静止的状态。
-
-4.  **低表示差距 (Low Representational Gap)**
-    *   方法命名（`performFly`, `performWalk`, `takeOff` 等）保持了与现实概念的一致性。
-
-5.  **封装 (Encapsulation)**
-    *   `Aircraft` 的 `takeOff()` 和 `display()` 方法封装了其特有的行为逻辑。
-    *   **新增**: `performStopOnGround()` 方法被添加到 `Aircraft` 类中，用于执行“停在地上”的行为，其内部实现通常是委托给 `StopOnGround` 策略。

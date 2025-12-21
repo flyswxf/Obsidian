@@ -1,15 +1,3 @@
----
-tags:
-  - 数据挖掘
-  - 聚类算法
-  - 机器学习
-  - 无监督学习
-  - 密度聚类
-created: 2025-12-11
----
-
-# OPTICS 聚类算法
-
 ## 1. 简介
 **OPTICS** (Ordering Points To Identify the Clustering Structure) 是一种基于**密度**的聚类算法，通常被视为 **DBSCAN 的改进版**。
 它主要解决了 DBSCAN 在**不同密度**的簇共存时难以选择全局参数 $\epsilon$ (Eps) 的问题。OPTICS 并不直接生成聚类结果，而是生成一个**可达距离图**（Reachability Plot），从中可以提取出不同密度的簇。

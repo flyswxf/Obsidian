@@ -88,7 +88,7 @@ classDiagram
     }
 
     DiscountStrategy <|.. CompositeDiscountStrategy
-    CompositeDiscountStrategy o--> DiscountStrategy
+    CompositeDiscountStrategy o-- DiscountStrategy
 ```
 
 ## 4. 工厂 (Factory)
@@ -193,17 +193,144 @@ classDiagram
 - 又避免了工厂方法的类爆炸。
 - **Data-Driven Design**: 真正的灵活之道。
 
+## 5. 外观 (Facade)
+> 如何为一组复杂的子系统接口提供一个一致的、简单的入口？
+>: 定义一个高层接口，让子系统更易于使用。
+
+### 核心思想
+- **简化接口**: 客户端只需要跟 Facade 说话，不需要认识子系统里的几十个类。
+- **解耦**: 客户端不依赖子系统的具体实现（Protected Variations）。
+- **单例 (Singleton)**: Facade 对象通常是单例。
+
+### 示例: POS 规则引擎
+POS 系统需要处理各种复杂的业务规则（如“使用礼券时只能买一件商品”、“慈善捐赠限制”）。
+如果让 `Sale` 类直接去调用底层的规则引擎（可能是几百个规则类），代码会乱成一团。
+
+**解决方案**: `POSRuleEngineFacade`。
+
+```mermaid
+classDiagram
+    namespace Domain {
+        class Sale
+        class Register
+    }
+    
+    namespace POSRuleEngine {
+        class POSRuleEngineFacade {
+            +instance : RuleEngineFacade$
+            +getInstance() : RuleEngineFacade$
+            +isInvalid(SalesLineItem, Sale)
+            +isInvalid(Payment, Sale)
+        }
+        class IRule {
+            -
+            <<interface>>
+        }
+        class Rule1 {
+            -
+        }
+        class Rule2 {
+            -
+        }
+    }
+    
+    Sale ..> POSRuleEngineFacade
+    POSRuleEngineFacade --> "*" IRule
+    Rule1 ..|> IRule
+    Rule2 ..|> IRule
+```
+
+#### 图解说明
+
+1.  **静态成员 (Static Members)**:
+    *   `instance` 和 `getInstance()` 带有下划线，表示它们是**类级别**的成员（Static），而不是实例级别的。这是 **Singleton (单例)** 模式的应用，确保整个系统只有一个 `POSRuleEngineFacade` 实例。
+
+2.  **箭头含义**:
+    *   `Sale ..> POSRuleEngineFacade` (虚线箭头): **依赖 (Dependency)**。
+        *   表示 `Sale` 在某个方法中**临时使用**了 `POSRuleEngineFacade`（通常通过调用 `getInstance()`），但并不长期持有它作为成员变量。
+    *   `POSRuleEngineFacade --> "*" IRule` (实线箭头): **关联 (Association)**。
+        *   表示 `POSRuleEngineFacade` **持有** `IRule` 的引用（通常是成员变量）。
+        *   `*` 表示**一对多**关系，即 Facade 内部维护了一个规则列表 (`List<IRule>`)。
+    *   `Rule1 ..|> IRule` (虚线空心三角): **实现 (Realization/Implementation)**。
+        *   表示 `Rule1` 类**实现**了 `IRule` 接口。
+
+### 与[[GoF#1. 适配器 (Adapter)|Adapter]]的关系
+Adapter 也是一种包装，但目的是**转换接口**（让不兼容的变兼容）
+Facade 的目的是**简化接口**（让复杂的变简单）
+
+## 6. 观察者 (Observer)
+> 不同的订阅者对象对发布者对象的状态改变感兴趣，并希望在发布者产生事件时以自己独特的方式做出反应。且发布者希望保持低耦合。
+>: 定义一个“订阅者”或“监听器”接口。订阅者实现此接口。发布者可以动态注册感兴趣的订阅者，并在事件发生时通知它们。
+
+### 核心思想
+- **Model-View Separation (模型-视图分离)**: 模型对象（如 `Sale`）不应知道视图对象（如 `Window`）。
+- **Low Coupling (低耦合)**: 模型只依赖于通用的接口（如 `PropertyListener`），而不依赖具体的 GUI 类。
+- **Protected Variations (受保护变化)**: 即使更换了 UI 框架（如从 Swing 换到 Web），模型代码也无需修改。
+
+### 示例: POS 销售总额更新
+当 `Sale` 的总金额变化时，GUI 窗口需要刷新显示。
+但 `Sale` 不能直接调用 `SaleFrame`，否则业务逻辑就和界面绑死了。
+
+**解决方案**: 使用 Observer 模式。
+
+```mermaid
+classDiagram
+    class Sale {
+        -propertyListeners : List<PropertyListener>
+        +addPropertyListener(lis)
+        +publishPropertyEvent(name, value)
+        +setTotal(newTotal)
+    }
+    class PropertyListener {
+        <<interface>>
+        +onPropertyEvent(source, name, value)
+    }
+    class `javax.swing.JFrame` {
+        +setTitle()
+        +setVisible()
+    }
+    class SaleFrame1 {
+        +onPropertyEvent(source, name, value)
+        +initialize(sale)
+    }
+    
+    Sale o--> PropertyListener : notifies
+    PropertyListener <|.. SaleFrame1 : implements
+    `javax.swing.JFrame` <|-- SaleFrame1 : extends
+    SaleFrame1 --> Sale : subscribes
+```
+
+### 实现细节 (Implementation)
+
+在 Java 和 C# .NET 的 Observer 实现中，“事件”通常通过常规消息（如 `onPropertyEvent`）进行传递。此外，在这两种情况下，事件通常被更正式地定义为一个类，并填充适当的事件数据。然后，该事件对象作为参数在事件消息中传递。
+
+例如：
+
+```java
+class PropertyEvent extends Event {
+    private Object sourceOfEvent;
+    private String propertyName;
+    private Object oldValue;
+    private Object newValue;
+    // ...
+}
+
+class Sale {
+    // 通知监听器的方法
+    private void publishPropertyEvent(String name, Object oldVal, Object newVal) {
+        // 创建包含事件数据的对象
+        PropertyEvent evt = new PropertyEvent(this, name, oldVal, newVal);
+        // 遍历所有监听器并分发事件
+        for (PropertyListener lis : propertyListeners) {
+            lis.onPropertyEvent(evt);
+        }
+    }
+}
+```
 
 
-### 为什么用 Factory？
-1. **隐藏复杂性**: 创建逻辑可能很复杂（读取配置、反射、缓存实例），工厂把这些脏活累活都藏起来了。
-2. **高内聚**: 业务对象只管业务，工厂对象只管创建，各司其职。
-3. **易于切换**: 配合配置文件，改一行字就能换掉整个系统的税务服务，连代码都不用重新编译。
-
-
-
-## 5. GoF 与 GRASP 的关系
->GRASP 是“原理”，GoF 是“应用”。
+## 7. GoF 与 GRASP 的关系
+> GRASP 是“原理”，GoF 是“应用”。
 
 很多 GoF 模式其实是多个 GRASP 原则的**具体组合应用**。
 

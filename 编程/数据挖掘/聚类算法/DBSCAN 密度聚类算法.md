@@ -1,15 +1,3 @@
----
-tags:
-  - 数据挖掘
-  - 聚类算法
-  - 机器学习
-  - 无监督学习
-  - 密度聚类
-created: 2025-12-11
----
-
-# DBSCAN 密度聚类算法
-
 ## 1. 简介
 **DBSCAN** (Density-Based Spatial Clustering of Applications with Noise) 是一种基于**密度**的聚类算法。
 与 K-means（划分式）和层次聚类不同，DBSCAN 将簇定义为**密度相连**（Density-Connected）的点的最大集合。它能够把具有**足够高密度**的区域划分为簇，并能在带有噪声的空间数据库中发现**任意形状**的聚类。

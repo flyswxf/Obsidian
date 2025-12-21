@@ -1,14 +1,3 @@
----
-tags:
-  - 数据挖掘
-  - 聚类算法
-  - 机器学习
-  - 无监督学习
-created: 2025-12-10
----
-
-# K-means 聚类算法
-
 ## 1. 简介
 **K-means**（K-均值）是一种经典的**无监督学习**算法，属于**划分式聚类**（Partitioning Clustering）方法。
 它的主要目标是将 $n$ 个数据对象划分为 $k$ 个聚类（Cluster），使得每个对象属于距离其最近的聚类中心（Centroid）所对应的聚类，从而使聚类内部的相似度最大化，而聚类之间的相似度最小化。
@@ -103,31 +92,3 @@ $$ k \approx \sqrt{n/2} $$
 ### Mini-Batch K-means
 针对海量数据，使用小批量数据（Mini-Batch）在每次迭代中更新聚类中心，而不是使用所有数据。
 
-## 7. Python 代码示例 (sklearn)
-
-```python
-import numpy as np
-import matplotlib.pyplot as plt
-from sklearn.cluster import KMeans
-from sklearn.datasets import make_blobs
-
-# 1. 生成模拟数据
-X, y = make_blobs(n_samples=300, centers=4, cluster_std=0.60, random_state=0)
-
-# 2. 构建 K-means 模型
-# init='k-means++' 自动处理初始化问题
-kmeans = KMeans(n_clusters=4, init='k-means++', max_iter=300, n_init=10, random_state=0)
-
-# 3. 拟合数据
-kmeans.fit(X)
-
-# 4. 获取结果
-y_kmeans = kmeans.predict(X)       # 每个样本所属的簇
-centers = kmeans.cluster_centers_  # 聚类中心
-
-# 5. 可视化
-plt.scatter(X[:, 0], X[:, 1], c=y_kmeans, s=50, cmap='viridis')
-plt.scatter(centers[:, 0], centers[:, 1], c='red', s=200, alpha=0.7, marker='X') # 绘制中心
-plt.title("K-means Clustering Results")
-plt.show()
-```
