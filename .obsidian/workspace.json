@@ -1,99 +1,54 @@
 {
   "main": {
-    "id": "24acb7947c97bc9f",
+    "id": "3f94b20fb2c83245",
     "type": "split",
     "children": [
       {
-<<<<<<< HEAD
-        "id": "9a1447a19771c944",
+        "id": "a8a376f6bb169be3",
         "type": "tabs",
         "children": [
           {
-            "id": "3a66f75aeeff05ab",
-=======
-        "id": "b79fa82d97527fac",
-        "type": "tabs",
-        "children": [
-          {
-            "id": "f336af03697981a5",
->>>>>>> f8b5300d489561b23925abe83c90360595d0a9b0
+            "id": "f897da94dd39492d",
             "type": "leaf",
             "state": {
               "type": "markdown",
               "state": {
-<<<<<<< HEAD
-                "file": "编程/程序测试/Exercise DataFlowAnalysis.md",
-=======
-                "file": "编程/算法设计与分析/最小生成树.md",
->>>>>>> f8b5300d489561b23925abe83c90360595d0a9b0
+                "file": "编程/形式化/概念/Hoare逻辑.md",
                 "mode": "source",
                 "source": false
               },
               "icon": "lucide-file",
-<<<<<<< HEAD
-              "title": "Exercise DataFlowAnalysis"
-            }
-          },
-          {
-            "id": "e01980af340e744d",
-            "type": "leaf",
-            "state": {
-              "type": "markdown",
-              "state": {
-                "file": "Journal/2025-12-17.md",
-                "mode": "source",
-                "source": false
-              },
-              "icon": "lucide-file",
-              "title": "2025-12-17"
-            }
-          },
-          {
-            "id": "f362ac0fda13e22c",
-            "type": "leaf",
-            "state": {
-              "type": "markdown",
-              "state": {
-                "file": "编程/算法/语言特性/Lambda表达式语法结构.md",
-                "mode": "source",
-                "source": false
-              },
-              "icon": "lucide-file",
-              "title": "Lambda表达式语法结构"
-=======
-              "title": "最小生成树"
->>>>>>> f8b5300d489561b23925abe83c90360595d0a9b0
+              "title": "Hoare逻辑"
             }
           }
-        ],
-        "currentTab": 2
+        ]
       }
     ],
     "direction": "vertical"
   },
   "left": {
-    "id": "89278e615ca27528",
+    "id": "4e68f2f42d8d9f20",
     "type": "split",
     "children": [
       {
-        "id": "893909223d3e24d6",
+        "id": "7d8272fb4f1cf651",
         "type": "tabs",
         "children": [
           {
-            "id": "9a8b880fd9a3e0dd",
+            "id": "965bc10034fb6eb3",
             "type": "leaf",
             "state": {
               "type": "file-explorer",
               "state": {
                 "sortOrder": "alphabetical",
-                "autoReveal": true
+                "autoReveal": false
               },
               "icon": "lucide-folder-closed",
               "title": "文件列表"
             }
           },
           {
-            "id": "d645c840ccef2bb7",
+            "id": "63ae0cc4443f5ec0",
             "type": "leaf",
             "state": {
               "type": "search",
@@ -110,7 +65,7 @@
             }
           },
           {
-            "id": "57ac9f273f9b06eb",
+            "id": "dd907b8e0defa3e3",
             "type": "leaf",
             "state": {
               "type": "bookmarks",
@@ -123,23 +78,24 @@
       }
     ],
     "direction": "horizontal",
-    "width": 401.5110321044922
+    "width": 200,
+    "collapsed": true
   },
   "right": {
-    "id": "863384f6e75d11da",
+    "id": "cfc71aaf31b5f377",
     "type": "split",
     "children": [
       {
-        "id": "eb64602a02bc7b64",
+        "id": "49c4eb82c2155687",
         "type": "tabs",
         "children": [
           {
-            "id": "ab8e171df5ff2b3e",
+            "id": "5385b8fad1cfa5fa",
             "type": "leaf",
             "state": {
               "type": "backlink",
               "state": {
-                "file": "GraphCare/cond_emb_ret.ipynb.md",
+                "file": "编程/形式化/概念/Hoare逻辑.md",
                 "collapseAll": false,
                 "extraContext": false,
                 "sortOrder": "alphabetical",
@@ -149,32 +105,25 @@
                 "unlinkedCollapsed": true
               },
               "icon": "links-coming-in",
-              "title": "cond_emb_ret.ipynb 的反向链接列表"
+              "title": "Hoare逻辑 的反向链接列表"
             }
           },
           {
-            "id": "b8852a48f04c959a",
+            "id": "b047f7aa5f1ea90f",
             "type": "leaf",
             "state": {
               "type": "outgoing-link",
               "state": {
-<<<<<<< HEAD
-                "file": "编程/程序测试/覆盖准则/控制流覆盖/基于控制流的覆盖准则.md",
-=======
->>>>>>> f8b5300d489561b23925abe83c90360595d0a9b0
+                "file": "编程/UML/设计原则/例子/Duck/Person.md",
                 "linksCollapsed": false,
                 "unlinkedCollapsed": true
               },
               "icon": "links-going-out",
-<<<<<<< HEAD
-              "title": "基于控制流的覆盖准则 的出链列表"
-=======
-              "title": "出链"
->>>>>>> f8b5300d489561b23925abe83c90360595d0a9b0
+              "title": "Person 的出链列表"
             }
           },
           {
-            "id": "f7e15862c3a46020",
+            "id": "99e173438d33aa18",
             "type": "leaf",
             "state": {
               "type": "tag",
@@ -189,137 +138,85 @@
             }
           },
           {
-            "id": "0e62f6191a41425f",
+            "id": "f1c6013d093c2b0c",
             "type": "leaf",
             "state": {
               "type": "outline",
               "state": {
-                "file": "编程/数据挖掘/决策树/决策树.md",
+                "file": "编程/UML/设计原则/例子/Duck/Person.md",
                 "followCursor": false,
                 "showSearch": false,
                 "searchQuery": ""
               },
               "icon": "lucide-list",
-              "title": "决策树 的大纲"
+              "title": "Person 的大纲"
             }
           }
-        ],
-        "currentTab": 3
+        ]
       }
     ],
     "direction": "horizontal",
-    "width": 331.5,
+    "width": 300,
     "collapsed": true
   },
   "left-ribbon": {
     "hiddenItems": {
-      "bases:创建新数据库": false,
       "switcher:打开快速切换": false,
       "graph:查看关系图谱": false,
       "canvas:新建白板": false,
       "daily-notes:打开/创建今天的日记": false,
       "templates:插入模板": false,
-      "command-palette:打开命令面板": false
+      "command-palette:打开命令面板": false,
+      "bases:创建新数据库": false
     }
   },
-<<<<<<< HEAD
-  "active": "f362ac0fda13e22c",
+  "active": "f897da94dd39492d",
   "lastOpenFiles": [
-    "编程/算法/语言特性/memset.md",
-    "编程/算法/语言特性/字符串转整形.md",
-    "编程/算法/语言特性/结构体.md",
-    "编程/算法/语言特性/自定义排序与运算符重载.md",
-    "编程/算法/语言特性/Lambda表达式语法结构.md",
-    "编程/程序测试/PBT/自动约减.md",
-    "编程/数据挖掘/决策树/决策树.md",
-    "编程/数据挖掘/聚类算法/OPTICS 聚类算法.md",
-    "编程/数据挖掘/聚类算法/K-means 聚类算法.md",
-    "编程/数据挖掘/聚类算法/DBSCAN 密度聚类算法.md",
-    "编程/数据挖掘/聚类算法/谱聚类.md",
-    "编程/数据挖掘/聚类算法/聚类算法评价指标.md",
-    "编程/数据挖掘/聚类算法/聚类算法分类.md",
-    "编程/数据挖掘/聚类算法/层次聚类.md",
-    "编程/数据挖掘/关联/Hash树支持度计算.md",
-    "编程/数据挖掘/关联/计算频繁项集.md",
-    "编程/数据挖掘/关联/关联规则挖掘.md",
-    "编程/数据挖掘/关联/关联规则生成.md",
-    "编程/数据挖掘/关联/关联规则计算实例.md",
+    "编程/形式化/概念/Hoare逻辑.md",
     "编程/形式化/概念/CTL语法与实例.md",
-    "Journal/2025-12-17.md",
-    "编程/程序测试/Exercise DataFlowAnalysis.md",
-    "3295eb62a2e725428ac6d458812e73ff.jpg",
-    "17993fe66951043f6c27d8f3d3455e30 1.jpg",
-    "27fe5e9fbe39443e56c9590bc01563d2 1.jpg",
-    "27fe5e9fbe39443e56c9590bc01563d2.jpg",
-    "17993fe66951043f6c27d8f3d3455e30.jpg",
-    "99274a971cf5b1d81792e7b274714649.jpg",
-    "编程/程序测试/solution2.md",
-    "编程/程序测试/临时.md",
-    "编程/程序测试/solution1.md",
-    "编程/数据挖掘/决策树",
-    "Pasted image 20251216153128.png",
-    "编程/数据挖掘/关联",
-    "编程/UML/关联关系的修饰.md",
-    "编程/UML/设计原则/例子/Observer/运行结果.png",
-    "编程/UML/设计原则/例子/Observer/Observer.exe",
-    "编程/UML/设计原则/例子/Observer/Observer.cpp",
-    "编程/UML/设计原则/例子/Observer",
-    "Pasted image 20251214142530.png",
-    "编程/算法设计与分析/典型算法/图",
-    "编程/算法设计与分析/图",
-    "Pasted image 20251214125827.png",
-    "编程/数据挖掘/聚类算法",
-    "编程/算法/语法特性",
-    "编程/算法/容器/容器操作"
-=======
-  "active": "f336af03697981a5",
-  "lastOpenFiles": [
-    "编程/算法设计与分析/典型算法/最大子数组(分治).md",
-    "作业的临时文件夹/Homework1216.md",
-    "编程/算法设计与分析/最小生成树.md",
-    "Pasted image 20251221141053.png",
-    "Pasted image 20251221141046.png",
-    "Pasted image 20251221141038.png",
-    "编程/程序测试/覆盖准则/控制流覆盖/控制流图.md",
-    "编程/形式化/作业/王宇飞-10235101413-作业6.md",
-    "编程/形式化/作业/王宇飞-10235101413-作业6-草稿.md",
-    "编程/形式化/作业/王宇飞-10235101413-作业5.md",
-    "编程/形式化/作业/王宇飞-10235101413-作业2.md",
-    "编程/形式化/自然演绎法/证明样例.md",
-    "编程/形式化/自然演绎法/自然演绎规则 Natural Deduction Rules.md",
-    "编程/形式化/自然演绎法/语义蕴含 Semantic entailment.md",
-    "编程/程序测试/覆盖准则/控制流覆盖/基于逻辑表达式的覆盖准则.md",
-    "编程/程序测试/覆盖准则/数据流覆盖/基于数据流的覆盖准则.md",
-    "编程/程序测试/覆盖准则/数据流覆盖/数据流图.md",
-    "编程/程序测试/覆盖准则/变异覆盖/变异算子.md",
-    "编程/程序测试/覆盖准则/数据流覆盖/定义和使用.md",
-    "编程/程序测试/错误.md",
-    "编程/程序测试/程序测试.md",
-    "编程/程序测试/SBT/组合测试策略-Combination Strategies.md",
-    "编程/程序测试/SBT/划分测试.md",
-    "编程/程序测试/SBT/等价类.md",
-    "编程/程序测试/SBT/边界测试.md",
-    "编程/程序测试/测试用例.md",
-    "编程/程序测试/覆盖准则/控制流覆盖/基于控制流的覆盖准则.md",
-    "编程/程序测试/覆盖准则/变异覆盖/题解-图3-变异得分.md",
-    "编程/程序测试/PBT/基于属性的测试.md",
-    "编程/程序测试/覆盖准则/微信图片_2025-11-03_152616_730.png",
-    "Pasted image 20251129214120.png",
-    "编程/算法设计与分析/典型算法/非比较排序",
-    "编程/算法设计与分析/典型算法/比较排序",
-    "编程/程序测试/覆盖准则/数据流覆盖",
-    "编程/程序测试/覆盖准则/控制流覆盖",
-    "编程/程序测试/覆盖准则/变异覆盖",
-    "编程/程序测试/覆盖准则",
-    "编程/程序测试/SBT",
-    "编程/程序测试/PBT",
-    "编程/数据挖掘/数据预处理",
-    "编程/数据挖掘/数据属性",
+    "编程/形式化/逻辑证明/可满足性证明范式.md",
+    "编程/Maude/LTL/LTL (Linear Temporal Logic).md",
+    "编程/形式化/rodin/证明规则.md",
+    "编程/形式化/rodin/全称量词的翻译.md",
+    "编程/形式化/rodin/证明基础/集合的表示法.md",
+    "编程/形式化/rodin/证明基础/非确定赋值.md",
+    "编程/形式化/rodin/证明基础/反证法的形式化表示.md",
+    "编程/形式化/rodin/证明基础/POST.md",
+    "编程/形式化/rodin/证明基础/if...then的翻译.md",
+    "编程/形式化/rodin/证明基础/证明Q是不变式.md",
+    "编程/形式化/rodin/证明基础/证明E是变式.md",
+    "编程/形式化/rodin/证明基础/程序正确性验证引理.md",
+    "编程/形式化/rodin/证明基础/不变式(invariant).md",
+    "编程/形式化/rodin/证明基础/变式(variant).md",
+    "编程/形式化/a.md",
     "编程/形式化/全称量词消去逻辑.png",
     "编程/形式化/全称量词消去规则.png",
     "编程/形式化/全称量词实例化规.png",
-    "Pasted image 20251113152746.png",
-    "Pasted image 20251113152140.png"
->>>>>>> f8b5300d489561b23925abe83c90360595d0a9b0
+    "编程/形式化/矛盾条件推理规则.png",
+    "编程/形式化/临时2.md",
+    "编程/形式化/临时.md",
+    "编程/形式化/rodin/证明基础/规则替换示例.png",
+    "编程/形式化/自然演绎法/自然演绎规则 Natural Deduction Rules.md",
+    "编程/形式化/自然演绎法/证明样例.md",
+    "编程/形式化/自然演绎法/语义蕴含 Semantic entailment.md",
+    "编程/形式化/rodin/event-B/合并规则Merging Rules.md",
+    "编程/形式化/rodin/event-B/含除法的证明.md",
+    "编程/形式化/rodin/event-B/二分搜索证明界面.png",
+    "编程/形式化/rodin/event-B/初始化序列化对比.png",
+    "编程/形式化/rodin",
+    "编程/形式化/rodin/算法证明案例/搜索算法i!=0的证明.md",
+    "编程/形式化/rodin/算法证明案例/搜索算法的形式化.md",
+    "编程/数据库/未选课学生查询.png",
+    "编程/数据库/E-R模型/导师学生关联图.png",
+    "编程/数据库/E-R模型/参与分析图.png",
+    "编程/UML/设计原则/例子/Duck/FireproofSuit.class",
+    "编程/UML/设计原则/例子/Duck/FlyWithRotors.class",
+    "编程/UML/设计原则/例子/Duck/DecoyDuck.class",
+    "编程/UML/设计原则/例子/Duck/RedHeadDuck.class",
+    "编程/UML/设计原则/例子/Duck/MechanicalDuck.class",
+    "编程/UML/设计原则/例子/Duck/GhostDuck.class",
+    "编程/UML/设计原则/例子/Duck/RubberDuck.class",
+    "编程/UML/设计原则/例子/Duck/DuckFactory.class",
+    "编程/UML/设计原则/例子/Duck/EnemyAircraftFactory.class"
   ]
 }
