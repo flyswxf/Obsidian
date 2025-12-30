@@ -4,21 +4,17 @@
     "type": "split",
     "children": [
       {
-        "id": "a8a376f6bb169be3",
+        "id": "a399c66606f1b0bc",
         "type": "tabs",
         "children": [
           {
-            "id": "f897da94dd39492d",
+            "id": "c02c01293a586d29",
             "type": "leaf",
             "state": {
-              "type": "markdown",
-              "state": {
-                "file": "编程/形式化/概念/Hoare逻辑.md",
-                "mode": "source",
-                "source": false
-              },
+              "type": "empty",
+              "state": {},
               "icon": "lucide-file",
-              "title": "Hoare逻辑"
+              "title": "新标签页"
             }
           }
         ]
@@ -78,8 +74,7 @@
       }
     ],
     "direction": "horizontal",
-    "width": 200,
-    "collapsed": true
+    "width": 200
   },
   "right": {
     "id": "cfc71aaf31b5f377",
@@ -95,7 +90,7 @@
             "state": {
               "type": "backlink",
               "state": {
-                "file": "编程/形式化/概念/Hoare逻辑.md",
+                "file": "编程/保研/1.md",
                 "collapseAll": false,
                 "extraContext": false,
                 "sortOrder": "alphabetical",
@@ -105,7 +100,7 @@
                 "unlinkedCollapsed": true
               },
               "icon": "links-coming-in",
-              "title": "Hoare逻辑 的反向链接列表"
+              "title": "1 的反向链接列表"
             }
           },
           {
@@ -170,45 +165,44 @@
       "bases:创建新数据库": false
     }
   },
-  "active": "f897da94dd39492d",
+  "active": "c02c01293a586d29",
   "lastOpenFiles": [
+    "编程/算法设计与分析/典型算法/图/最短路径算法.md",
+    "作业的临时文件夹/homework1223.md",
+    "编程/算法设计与分析/典型算法/图/最小生成树.md",
+    "编程/算法设计与分析/典型算法/图/图论经典算法拓展.md",
+    "Pasted image 20251229213031.png",
+    "Pasted image 20251229202356.png",
+    "Pasted image 20251229200247.png",
+    "作业的临时文件夹/Homework1216.md",
+    "Pasted image 20251229200214.png",
+    "Pasted image 20251229143157.png",
+    "编程/数据库/数据库操作/聚合函数.md",
+    "编程/数据库/数据库操作/集合操作.md",
+    "编程/数据库/恢复算法/内存管理协议.md",
+    "编程/数据库/恢复算法/基于日志的恢复.md",
+    "编程/数据库/恢复算法/分析.md",
+    "编程/算法设计与分析/典型算法/图/图的基本概念.md",
+    "编程/算法设计与分析/典型算法/最大子数组(分治).md",
+    "编程/算法设计与分析/典型算法/图/图的搜索与遍历.md",
+    "编程/算法设计与分析/典型算法/图/图的存储表示.md",
+    "编程/程序测试/PBT/分工.md",
+    "编程/程序测试/PBT/基于属性的测试.md",
+    "编程/程序测试/PBT/生成随机输入.md",
+    "编程/程序测试/PBT/initial_coarse_reduction.md",
+    "编程/程序测试/PBT/随机输入设计注意点.md",
+    "编程/程序测试/PBT/自动约减.md",
     "编程/形式化/概念/Hoare逻辑.md",
+    "编程/形式化/作业/王宇飞-10235101413-作业7.md",
     "编程/形式化/概念/CTL语法与实例.md",
     "编程/形式化/逻辑证明/可满足性证明范式.md",
     "编程/Maude/LTL/LTL (Linear Temporal Logic).md",
-    "编程/形式化/rodin/证明规则.md",
-    "编程/形式化/rodin/全称量词的翻译.md",
-    "编程/形式化/rodin/证明基础/集合的表示法.md",
-    "编程/形式化/rodin/证明基础/非确定赋值.md",
-    "编程/形式化/rodin/证明基础/反证法的形式化表示.md",
-    "编程/形式化/rodin/证明基础/POST.md",
-    "编程/形式化/rodin/证明基础/if...then的翻译.md",
-    "编程/形式化/rodin/证明基础/证明Q是不变式.md",
-    "编程/形式化/rodin/证明基础/证明E是变式.md",
-    "编程/形式化/rodin/证明基础/程序正确性验证引理.md",
-    "编程/形式化/rodin/证明基础/不变式(invariant).md",
-    "编程/形式化/rodin/证明基础/变式(variant).md",
-    "编程/形式化/a.md",
     "编程/形式化/全称量词消去逻辑.png",
     "编程/形式化/全称量词消去规则.png",
     "编程/形式化/全称量词实例化规.png",
     "编程/形式化/矛盾条件推理规则.png",
-    "编程/形式化/临时2.md",
-    "编程/形式化/临时.md",
     "编程/形式化/rodin/证明基础/规则替换示例.png",
-    "编程/形式化/自然演绎法/自然演绎规则 Natural Deduction Rules.md",
-    "编程/形式化/自然演绎法/证明样例.md",
-    "编程/形式化/自然演绎法/语义蕴含 Semantic entailment.md",
-    "编程/形式化/rodin/event-B/合并规则Merging Rules.md",
-    "编程/形式化/rodin/event-B/含除法的证明.md",
-    "编程/形式化/rodin/event-B/二分搜索证明界面.png",
-    "编程/形式化/rodin/event-B/初始化序列化对比.png",
     "编程/形式化/rodin",
-    "编程/形式化/rodin/算法证明案例/搜索算法i!=0的证明.md",
-    "编程/形式化/rodin/算法证明案例/搜索算法的形式化.md",
-    "编程/数据库/未选课学生查询.png",
-    "编程/数据库/E-R模型/导师学生关联图.png",
-    "编程/数据库/E-R模型/参与分析图.png",
     "编程/UML/设计原则/例子/Duck/FireproofSuit.class",
     "编程/UML/设计原则/例子/Duck/FlyWithRotors.class",
     "编程/UML/设计原则/例子/Duck/DecoyDuck.class",

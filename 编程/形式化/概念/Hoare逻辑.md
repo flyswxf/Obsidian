@@ -1,5 +1,3 @@
-# Hoare Logic (Hoare 逻辑)
-
 ## Hoare Triple (霍尔三元组)
 
 需要能够表达以下陈述：“如果程序片段 $P$ 的执行开始于满足 $\Phi$ 的状态，那么 $P$ 的执行将结束于满足 $\Psi$ 的状态。” 将其表示为：
@@ -79,14 +77,7 @@ $$
 
 ## Proof Calculus for Partial Correctness (部分正确性的证明演算)
 
-*   **Total-while (Total Correctness)**
-    $$
-    \frac{(\!| \eta \land B \land 0 \le E = E_0 |\!) C (\!| \eta \land 0 \le E < E_0 |\!)}{(\!| \eta \land 0 \le E |\!) \text{while } B \{C\} (\!| \eta \land \neg B |\!)}
-    $$
-    **意义**：完全正确性不仅要求循环不变量 $\eta$ 保持成立，还要求证明循环会终止。这通过引入一个**变体 (variant)** 表达式 $E$ 来实现。
-    - $E$ 必须是非负整数 ($0 \le E$)。
-    - 每次循环迭代后，$E$ 的值必须严格减小 ($E < E_0$)。
-    - 因为 $E$ 是非负整数且每次递减，循环必然在有限步内终止。
+
 
 *   **Composition (顺序组合)**
     $$
@@ -99,6 +90,12 @@ $$
     \overline{(\!| \psi[E/x] |\!) x = E (\!| \psi |\!)}
     $$
     **意义**：赋值公理。为了使赋值语句 $x = E$ 执行后满足 $\psi$，其前置条件必须是 $\psi$ 中所有 $x$ 出现的地方都被表达式 $E$ 替换后的形式。这是逆向推理的核心。
+
+*   **Implied (Consequence) (蕴含/推论)**
+    $$
+    \frac{\vdash \phi' \rightarrow \phi \quad (\!| \phi |\!) C (\!| \psi |\!) \quad \vdash \psi \rightarrow \psi'}{(\!| \phi' |\!) C (\!| \psi' |\!)}
+    $$
+    **意义**：允许加强前置条件（$\phi' \rightarrow \phi$）或减弱后置条件（$\psi \rightarrow \psi'$）。这在逻辑推导和实际程序验证之间架起了桥梁，使得我们可以使用数学逻辑来调整断言以匹配证明规则的要求。
 
 *   **If-statement (条件语句)**
     $$
@@ -116,11 +113,14 @@ $$
 	    - 循环最后,  $\psi$ 仍然成立 (通过循环中的代码证明得到)
 	    - 循环结束后，不变量 $\psi$ 仍然成立，且循环条件 $B$ 为假 (partial-while)
 
-*   **Implied (Consequence) (蕴含/推论)**
+*   **Total-while (Total Correctness)**
     $$
-    \frac{\vdash \phi' \rightarrow \phi \quad (\!| \phi |\!) C (\!| \psi |\!) \quad \vdash \psi \rightarrow \psi'}{(\!| \phi' |\!) C (\!| \psi' |\!)}
+    \frac{(\!| \eta \land B \land 0 \le E = E_0 |\!) C (\!| \eta \land 0 \le E < E_0 |\!)}{(\!| \eta \land 0 \le E |\!) \text{while } B \{C\} (\!| \eta \land \neg B |\!)}
     $$
-    **意义**：允许加强前置条件（$\phi' \rightarrow \phi$）或减弱后置条件（$\psi \rightarrow \psi'$）。这在逻辑推导和实际程序验证之间架起了桥梁，使得我们可以使用数学逻辑来调整断言以匹配证明规则的要求。
+    **意义**：完全正确性不仅要求循环不变量 $\eta$ 保持成立，还要求证明循环会终止。这通过引入一个**变体 (variant)** 表达式 $E$ 来实现。
+    - $E$ 必须是非负整数 ($0 \le E$)。
+    - 每次循环迭代后，$E$ 的值必须严格减小 ($E < E_0$)。
+    - 因为 $E$ 是非负整数且每次递减，循环必然在有限步内终止。
 
 ## Proof Tableaux (证明表格)
 
@@ -147,6 +147,8 @@ $$
 都诉诸于其中一个证明规则。
 
 ## Examples (示例)
+
+作业例子见[[王宇飞-10235101413-作业7]]
 
 ### Assignment (赋值语句)
 
