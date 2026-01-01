@@ -1,6 +1,21 @@
 Gang of Four Design Patterns
 > 23种经典的设计模式，分为创建型、结构型、行为型三类。
 
+## GoF 与 GRASP 的关系
+> GRASP 是“原理”，GoF 是“应用”。
+
+GoF 模式其实是多个 GRASP 原则的**具体组合应用**。
+
+### 以 Adapter 为例
+Adapter 模式本质上使用了以下 GRASP 原则：
+
+1.  **Indirection (间接性)**: 引入了一个中间对象（Adapter），打断了 Client 和 ExternalService 的直接联系。
+2.  **Polymorphism (多态)**: 为不同的 ExternalService 提供了统一的接口。
+3.  **Pure Fabrication (纯虚构)**: Adapter 不是领域模型中的概念，而是为了设计而创造出来的类。
+
+**最终目的**：
+实现 **Protected Variations (受保护变化)** 和 **Low Coupling (低耦合)**。
+
 ## 1. 适配器 (Adapter)
 > 如何解决接口不兼容的问题？或者如何为具有不同接口的类似组件提供稳定的接口？
 >: 通过一个中间的适配器对象，将原有的接口转换为另一个接口。
@@ -72,24 +87,87 @@ classDiagram
 >: 将对象组合成树形结构以表示“部分-整体”的层次结构。
 
 ### 核心思想
-- **一致性**: 客户端不需要区分是处理单个对象还是处理一堆对象。
-- **递归**: 组合对象内部遍历调用子对象。
+- **一致性**: 客户端不需要区分是处理单个对象（Leaf）还是处理一堆对象（Composite）。
+- **递归**: 组合对象内部遍历调用子对象的方法。
+- **树形结构**: 典型的树状数据结构实现。
 
-### 示例: 叠加多种折扣
+### 核心结构
+组合模式包含三个角色：
+
+1. Component (抽象构件) ：定义了叶子和容器共同的接口（例如 FileSystemNode ，定义 delete() ）。
+2. Leaf (叶子构件) ：树的叶子节点，没有子节点（例如 File ）。
+3. Composite (容器构件) ：树的枝干节点，包含子节点（例如 Folder ）。它实现了接口，并在内部遍历调用子节点的方法。
+
+### 示例: 文件系统
+文件（File）是叶子，文件夹（Folder）是容器。对用户来说，删除/复制/打印路径的操作应该是一致的。
+
 ```mermaid
 classDiagram
-    class CompositeDiscountStrategy {
-        -strategies : List<DiscountStrategy>
-        +add(DiscountStrategy)
-        +applyDiscount(...)
-    }
-    class DiscountStrategy {
+    %% 1. Component: 统一接口
+    class FileSystemNode {
         <<interface>>
+        +print(indent)
     }
 
-    DiscountStrategy <|.. CompositeDiscountStrategy
-    CompositeDiscountStrategy o-- DiscountStrategy
+    %% 2. Leaf: 叶子节点
+    class File {
+        -name
+        +print(indent)
+    }
+
+    %% 3. Composite: 容器节点
+    class Folder {
+        -name
+        -children: List<FileSystemNode>
+        +add(FileSystemNode)
+        +print(indent)
+    }
+
+    FileSystemNode <|.. File : 实现
+    FileSystemNode <|.. Folder : 实现
+    Folder o-- FileSystemNode : 聚合
 ```
+
+### 代码实现 (TypeScript)
+
+```typescript
+// 1. Component
+interface FileSystemNode {
+    print(indent: string): void;
+}
+
+// 2. Leaf
+class File implements FileSystemNode {
+    constructor(private name: string) {}
+    print(indent: string) {
+        console.log(`${indent}- File: ${this.name}`);
+    }
+}
+
+// 3. Composite
+class Folder implements FileSystemNode {
+    private children: FileSystemNode[] = [];
+    constructor(private name: string) {}
+    
+    add(node: FileSystemNode) {
+        this.children.push(node);
+    }
+
+    print(indent: string) {
+        console.log(`${indent}+ Folder: ${this.name}`);
+        // 关键：递归调用
+        for (const child of this.children) {
+            child.print(indent + "  ");
+        }
+    }
+}
+```
+
+### 和装饰器模式的区别
+- 结构相似 ：它们都涉及到一个类包含另一个类，且实现相同接口。
+- 目的不同 ：
+  - Decorator ：为了 增强功能 （加牛奶、加糖）。通常是一对一的包装。
+  - Composite ：为了 表示整体-部分关系 （文件夹包含文件）。是一对多的聚合，形成树状结构。
 
 ## 4. 工厂 (Factory)
 > 谁负责创建**复杂的对象**（如适配器或策略）？
@@ -267,6 +345,43 @@ Facade 的目的是**简化接口**（让复杂的变简单）
 - **Low Coupling (低耦合)**: 模型只依赖于通用的接口（如 `PropertyListener`），而不依赖具体的 GUI 类。
 - **Protected Variations (受保护变化)**: 即使更换了 UI 框架（如从 Swing 换到 Web），模型代码也无需修改。
 
+### 范式
+
+```mermaid
+classDiagram
+    class Subject {
+        <<interface>>
+        +attach(observer: Observer)
+        +detach(observer: Observer)
+        +notify()
+    }
+
+    class Observer {
+        <<interface>>
+        +update()
+    }
+
+    class ConcreteSubject {
+        -observers: Observer[]
+        +attach(observer: Observer)
+        +detach(observer: Observer)
+        +notify()
+    }
+
+    class ObserverA {
+        +update()
+    }
+
+    class ObserverB {
+        +update()
+    }
+
+    Subject ..> Observer : 可见
+    ConcreteSubject ..|> Subject : implements
+    ObserverA ..|> Observer : implements
+    ObserverB ..|> Observer : implements
+```
+
 ### 示例: POS 销售总额更新
 当 `Sale` 的总金额变化时，GUI 窗口需要刷新显示。
 但 `Sale` 不能直接调用 `SaleFrame`，否则业务逻辑就和界面绑死了。
@@ -329,17 +444,174 @@ class Sale {
 ```
 
 
-## 7. GoF 与 GRASP 的关系
-> GRASP 是“原理”，GoF 是“应用”。
+## 7. 装饰器 (Decorator)
+> 如何在不改变原有对象结构的情况下，动态地给该对象增加一些额外的职责？
+>: 像“套娃”一样，把对象包装在另一个对象中。
 
-很多 GoF 模式其实是多个 GRASP 原则的**具体组合应用**。
+### 模式结构
+装饰器模式主要包含四个角色：
+1. Component（抽象构件） ：定义对象的接口（例如 ICoffee ）。
+2. ConcreteComponent（具体构件） ：最原始的对象（例如 SimpleCoffee ）。
+3. Decorator（抽象装饰器） ：持有一个 Component 的引用，并实现 Component 接口。
+4. ConcreteDecorator（具体装饰器） ：负责给构件添加新的职责（例如 MilkDecorator ）。
 
-### 以 Adapter 为例
-Adapter 模式本质上使用了以下 GRASP 原则：
+```mermaid
+classDiagram
+    %% 1. Component (抽象构件)
+    class Component {
+        <<interface>>
+        +operation()
+    }
 
-1.  **Indirection (间接性)**: 引入了一个中间对象（Adapter），打断了 Client 和 ExternalService 的直接联系。
-2.  **Polymorphism (多态)**: 为不同的 ExternalService 提供了统一的接口。
-3.  **Pure Fabrication (纯虚构)**: Adapter 不是领域模型中的概念，而是为了设计而创造出来的类。
+    %% 2. ConcreteComponent (具体构件)
+    class ConcreteComponent {
+        +operation()
+    }
 
-**最终目的**：
-实现 **Protected Variations (受保护变化)** 和 **Low Coupling (低耦合)**。
+    %% 3. Decorator (抽象装饰器)
+    %% 关键点：它继承了 Component，同时又持有一个 Component
+    class Decorator {
+        <<abstract>>
+        -component: Component
+        +operation()
+    }
+
+    %% 4. ConcreteDecorator (具体装饰器)
+    class ConcreteDecoratorA {
+        +operation()
+        +addedBehavior()
+    }
+
+    class ConcreteDecoratorB {
+        +operation()
+        +addedState
+    }
+
+    %% 关系描述
+    Component <|.. ConcreteComponent : 实现 (Implements)
+    Component <|.. Decorator : 实现 (Implements)
+    Decorator o-- Component : 聚合 (Aggregation/Has-a)
+    Decorator <|-- ConcreteDecoratorA : 继承 (Inherits)
+    Decorator <|-- ConcreteDecoratorB : 继承 (Inherits)
+```
+
+### 示例: 咖啡订单系统
+基础咖啡可以添加牛奶、糖等多种调料。如果使用继承会导致类爆炸。
+
+```mermaid
+classDiagram
+    class Coffee {
+        <<interface>>
+        +getCost() : number
+        +getDescription() : string
+    }
+    class SimpleCoffee {
+        +getCost() : 10
+        +getDescription() : "普通咖啡"
+    }
+    class CoffeeDecorator {
+        <<abstract>>
+        -decoratedCoffee: Coffee
+        +getCost()
+        +getDescription()
+    }
+    class Milk {
+        +getCost() : +2
+        +getDescription() : "+牛奶"
+    }
+    class Sugar {
+        +getCost() : +1
+        +getDescription() : "+糖"
+    }
+
+    Coffee <|.. SimpleCoffee : 是
+    Coffee <|.. CoffeeDecorator : 是
+    CoffeeDecorator o-- Coffee : 包含
+    CoffeeDecorator <|-- Milk : 扩展
+    CoffeeDecorator <|-- Sugar : 扩展
+```
+
+### 关键实现
+装饰器类持有 Component 的引用，并在调用 Component 的方法前后添加自己的逻辑。
+
+```typescript
+// 1. Component: 定义统一接口
+interface Coffee {
+    getCost(): number;
+    getDescription(): string;
+}
+
+// 2. ConcreteComponent: 基础咖啡
+class SimpleCoffee implements Coffee {
+    getCost() {
+        return 10;
+    }
+    getDescription() {
+        return "普通咖啡";
+    }
+}
+
+// 3. Decorator: 抽象装饰器 (核心：既是Coffee，又包含Coffee)
+abstract class CoffeeDecorator implements Coffee {
+    protected decoratedCoffee: Coffee; // 持有被装饰对象的引用
+
+    constructor(coffee: Coffee) {
+        this.decoratedCoffee = coffee;
+    }
+
+    getCost() {
+        return this.decoratedCoffee.getCost();
+    }
+
+    getDescription() {
+        return this.decoratedCoffee.getDescription();
+    }
+}
+
+// 4. ConcreteDecorator: 具体装饰器 - 牛奶
+class Milk extends CoffeeDecorator {
+    getCost() {
+        return super.getCost() + 2; // 原价 + 2元
+    }
+
+    getDescription() {
+        return super.getDescription() + " + 牛奶";
+    }
+}
+
+// 4. ConcreteDecorator: 具体装饰器 - 糖
+class Sugar extends CoffeeDecorator {
+    getCost() {
+        return super.getCost() + 1; // 原价 + 1元
+    }
+
+    getDescription() {
+        return super.getDescription() + " + 糖";
+    }
+}
+
+// --- 使用示例 ---
+
+// 1. 点一杯普通咖啡
+let myCoffee: Coffee = new SimpleCoffee();
+console.log(`${myCoffee.getDescription()} = ￥${myCoffee.getCost()}`);
+// 输出: 普通咖啡 = ￥10
+
+// 2. 加牛奶 (把咖啡包进牛奶里)
+myCoffee = new Milk(myCoffee);
+console.log(`${myCoffee.getDescription()} = ￥${myCoffee.getCost()}`);
+// 输出: 普通咖啡 + 牛奶 = ￥12
+
+// 3. 再加糖 (把加了牛奶的咖啡包进糖里)
+myCoffee = new Sugar(myCoffee);
+console.log(`${myCoffee.getDescription()} = ￥${myCoffee.getCost()}`);
+// 输出: 普通咖啡 + 牛奶 + 糖 = ￥13
+```
+
+### 装饰器 vs 继承
+- **继承**: 静态的，编译时决定。
+- **装饰器**: 动态的，运行时组合。
+
+### 相关模式
+- **Adapter**: 改变接口。Decorator 保持接口不变，增强功能。
+- **Composite**: Decorator 可以看作是只有一个子节点的 Composite。
