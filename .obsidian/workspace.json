@@ -11,10 +11,38 @@
             "id": "c02c01293a586d29",
             "type": "leaf",
             "state": {
-              "type": "empty",
-              "state": {},
+              "type": "markdown",
+              "state": {
+                "file": "编程/程序测试/PBT/调试.md",
+                "mode": "source",
+                "source": false
+              },
               "icon": "lucide-file",
-              "title": "新标签页"
+              "title": "调试"
+            }
+          },
+          {
+            "id": "ee24c756f46cd4c5",
+            "type": "leaf",
+            "state": {
+              "type": "image",
+              "state": {
+                "file": "Pasted image 20251231164156.png"
+              },
+              "icon": "lucide-image",
+              "title": "Pasted image 20251231164156"
+            }
+          },
+          {
+            "id": "3012c8ef475b0bce",
+            "type": "leaf",
+            "state": {
+              "type": "image",
+              "state": {
+                "file": "Pasted image 20251231164147.png"
+              },
+              "icon": "lucide-image",
+              "title": "Pasted image 20251231164147"
             }
           }
         ]
@@ -167,41 +195,43 @@
   },
   "active": "c02c01293a586d29",
   "lastOpenFiles": [
-    "编程/算法设计与分析/典型算法/图/最短路径算法.md",
-    "作业的临时文件夹/homework1223.md",
-    "编程/算法设计与分析/典型算法/图/最小生成树.md",
-    "编程/算法设计与分析/典型算法/图/图论经典算法拓展.md",
+    "编程/程序测试/PBT/initial_coarse_reduction.md",
+    "编程/程序测试/PBT/调试.md",
+    "Pasted image 20251231164156.png",
+    "Pasted image 20251231164147.png",
+    "编程/程序测试/PBT/再分工.md",
+    "编程/程序测试/PBT/自动约减.md",
+    "Pasted image 20251231164127.png",
+    "编程/程序测试/PBT/pass_to_descendant.md",
+    "编程/程序测试/PBT/shrinkPass-wyf.zip",
+    "编程/程序测试/PBT/initial_coarse_reduction.zip",
+    "编程/程序测试/PBT/reorder_spans.md",
+    "编程/程序测试/PBT/try_trivial_spans.md",
+    "编程/程序测试/PBT/分工.md",
+    "编程/程序测试/PBT/随机输入设计注意点.md",
+    "编程/程序测试/PBT/基于属性的测试.md",
+    "编程/形式化/作业/王宇飞-10235101413-作业7.md",
+    "编程/形式化/作业/王宇飞-10235101413-作业6-草稿.md",
+    "编程/形式化/作业/王宇飞-10235101413-作业6.md",
+    "编程/形式化/作业/王宇飞-10235101413-作业5.md",
+    "编程/形式化/作业/王宇飞-10235101413-作业3.md",
+    "编程/形式化/作业/王宇飞-10235101413-作业2.md",
+    "编程/形式化/概念/命题.md",
+    "编程/形式化/概念/签名与结构.md",
+    "编程/形式化/概念/可满足性定义.md",
+    "编程/形式化/概念/全称量词.md",
+    "编程/形式化/概念/谓词.md",
+    "编程/形式化/概念/Hoare逻辑.md",
+    "编程/形式化/概念/CTL语法与实例.md",
+    "编程/形式化/自然演绎法/语义蕴含 Semantic entailment.md",
+    "编程/形式化/自然演绎法/自然演绎规则 Natural Deduction Rules.md",
     "Pasted image 20251229213031.png",
     "Pasted image 20251229202356.png",
     "Pasted image 20251229200247.png",
-    "作业的临时文件夹/Homework1216.md",
     "Pasted image 20251229200214.png",
     "Pasted image 20251229143157.png",
-    "编程/数据库/数据库操作/聚合函数.md",
-    "编程/数据库/数据库操作/集合操作.md",
-    "编程/数据库/恢复算法/内存管理协议.md",
-    "编程/数据库/恢复算法/基于日志的恢复.md",
-    "编程/数据库/恢复算法/分析.md",
-    "编程/算法设计与分析/典型算法/图/图的基本概念.md",
-    "编程/算法设计与分析/典型算法/最大子数组(分治).md",
-    "编程/算法设计与分析/典型算法/图/图的搜索与遍历.md",
-    "编程/算法设计与分析/典型算法/图/图的存储表示.md",
-    "编程/程序测试/PBT/分工.md",
-    "编程/程序测试/PBT/基于属性的测试.md",
-    "编程/程序测试/PBT/生成随机输入.md",
-    "编程/程序测试/PBT/initial_coarse_reduction.md",
-    "编程/程序测试/PBT/随机输入设计注意点.md",
-    "编程/程序测试/PBT/自动约减.md",
-    "编程/形式化/概念/Hoare逻辑.md",
-    "编程/形式化/作业/王宇飞-10235101413-作业7.md",
-    "编程/形式化/概念/CTL语法与实例.md",
-    "编程/形式化/逻辑证明/可满足性证明范式.md",
-    "编程/Maude/LTL/LTL (Linear Temporal Logic).md",
     "编程/形式化/全称量词消去逻辑.png",
     "编程/形式化/全称量词消去规则.png",
-    "编程/形式化/全称量词实例化规.png",
-    "编程/形式化/矛盾条件推理规则.png",
-    "编程/形式化/rodin/证明基础/规则替换示例.png",
     "编程/形式化/rodin",
     "编程/UML/设计原则/例子/Duck/FireproofSuit.class",
     "编程/UML/设计原则/例子/Duck/FlyWithRotors.class",
@@ -209,8 +239,6 @@
     "编程/UML/设计原则/例子/Duck/RedHeadDuck.class",
     "编程/UML/设计原则/例子/Duck/MechanicalDuck.class",
     "编程/UML/设计原则/例子/Duck/GhostDuck.class",
-    "编程/UML/设计原则/例子/Duck/RubberDuck.class",
-    "编程/UML/设计原则/例子/Duck/DuckFactory.class",
-    "编程/UML/设计原则/例子/Duck/EnemyAircraftFactory.class"
+    "编程/UML/设计原则/例子/Duck/RubberDuck.class"
   ]
 }

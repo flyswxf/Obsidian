@@ -1,6 +1,21 @@
 Gang of Four Design Patterns
 > 23种经典的设计模式，分为创建型、结构型、行为型三类。
 
+## GoF 与 GRASP 的关系
+> GRASP 是“原理”，GoF 是“应用”。
+
+GoF 模式其实是多个 GRASP 原则的**具体组合应用**。
+
+### 以 Adapter 为例
+Adapter 模式本质上使用了以下 GRASP 原则：
+
+1.  **Indirection (间接性)**: 引入了一个中间对象（Adapter），打断了 Client 和 ExternalService 的直接联系。
+2.  **Polymorphism (多态)**: 为不同的 ExternalService 提供了统一的接口。
+3.  **Pure Fabrication (纯虚构)**: Adapter 不是领域模型中的概念，而是为了设计而创造出来的类。
+
+**最终目的**：
+实现 **Protected Variations (受保护变化)** 和 **Low Coupling (低耦合)**。
+
 ## 1. 适配器 (Adapter)
 > 如何解决接口不兼容的问题？或者如何为具有不同接口的类似组件提供稳定的接口？
 >: 通过一个中间的适配器对象，将原有的接口转换为另一个接口。
@@ -330,6 +345,43 @@ Facade 的目的是**简化接口**（让复杂的变简单）
 - **Low Coupling (低耦合)**: 模型只依赖于通用的接口（如 `PropertyListener`），而不依赖具体的 GUI 类。
 - **Protected Variations (受保护变化)**: 即使更换了 UI 框架（如从 Swing 换到 Web），模型代码也无需修改。
 
+### 范式
+
+```mermaid
+classDiagram
+    class Subject {
+        <<interface>>
+        +attach(observer: Observer)
+        +detach(observer: Observer)
+        +notify()
+    }
+
+    class Observer {
+        <<interface>>
+        +update()
+    }
+
+    class ConcreteSubject {
+        -observers: Observer[]
+        +attach(observer: Observer)
+        +detach(observer: Observer)
+        +notify()
+    }
+
+    class ObserverA {
+        +update()
+    }
+
+    class ObserverB {
+        +update()
+    }
+
+    Subject ..> Observer : 可见
+    ConcreteSubject ..|> Subject : implements
+    ObserverA ..|> Observer : implements
+    ObserverB ..|> Observer : implements
+```
+
 ### 示例: POS 销售总额更新
 当 `Sale` 的总金额变化时，GUI 窗口需要刷新显示。
 但 `Sale` 不能直接调用 `SaleFrame`，否则业务逻辑就和界面绑死了。
@@ -392,22 +444,7 @@ class Sale {
 ```
 
 
-## 7. GoF 与 GRASP 的关系
-> GRASP 是“原理”，GoF 是“应用”。
-
-很多 GoF 模式其实是多个 GRASP 原则的**具体组合应用**。
-
-### 以 Adapter 为例
-Adapter 模式本质上使用了以下 GRASP 原则：
-
-1.  **Indirection (间接性)**: 引入了一个中间对象（Adapter），打断了 Client 和 ExternalService 的直接联系。
-2.  **Polymorphism (多态)**: 为不同的 ExternalService 提供了统一的接口。
-3.  **Pure Fabrication (纯虚构)**: Adapter 不是领域模型中的概念，而是为了设计而创造出来的类。
-
-**最终目的**：
-实现 **Protected Variations (受保护变化)** 和 **Low Coupling (低耦合)**。
-
-## 8. 装饰器 (Decorator)
+## 7. 装饰器 (Decorator)
 > 如何在不改变原有对象结构的情况下，动态地给该对象增加一些额外的职责？
 >: 像“套娃”一样，把对象包装在另一个对象中。
 
