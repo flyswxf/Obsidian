@@ -1,3 +1,7 @@
+---
+OOAD考试: "1"
+---
+
 Gang of Four Design Patterns
 > 23种经典的设计模式，分为创建型、结构型、行为型三类。
 
@@ -25,35 +29,9 @@ Adapter 模式本质上使用了以下 GRASP 原则：
 - **多态**: 客户端只依赖统一的接口。
 - **保护**: 保护系统不受外部接口变化的影响（Protected Variations）。
 
-### 示例: NextGen POS 税务计算
-系统需要对接多种第三方税务计算服务（TaxMaster, GoodAsGold 等），它们的API各不相同。
 
-```mermaid
-classDiagram
-    class ITaxCalculatorAdapter {
-        <<interface>>
-        +getTaxes(Sale) : List<TaxLineItem>
-    }
+![[Pasted image 20260109163342.png]]
 
-    class TaxMasterAdapter {
-        +getTaxes(Sale) : List<TaxLineItem>
-    }
-
-    class GoodAsGoldTaxProAdapter {
-        +getTaxes(Sale) : List<TaxLineItem>
-    }
-
-    ITaxCalculatorAdapter <|.. TaxMasterAdapter
-    ITaxCalculatorAdapter <|.. GoodAsGoldTaxProAdapter
-```
-
-> [!TIP] 命名惯例
-> 在类型名称中包含模式名称是一个好习惯。
-> 例如：`SAPAccountingAdapter`, `TaxMasterAdapter`。
-> 这样阅读代码的人一眼就能看出设计意图。
-
-### 相关模式
-- **Facade (外观模式)**: 也是为了隐藏子系统的复杂性。但 Facade 侧重于简化接口（把一堆复杂的调用变成一个简单的调用），而 Adapter 侧重于**转化**接口（把一个不兼容的变成兼容的）。
 
 ## 2. 策略 (Strategy)
 > 如何处理一组相关的算法（如不同的定价规则），使它们可以灵活互换？
@@ -62,6 +40,9 @@ classDiagram
 ### 核心思想
 - **封装变化**: 把变化的算法从使用它的类中分离出来。
 - **组合优于继承**: 通过组合（持有Strategy对象）而不是继承来实现行为变化。
+
+### 类图特点
+- 使用Strategy的Context与Strategy interface是[[关系#聚合|聚合关系]]
 
 ### 示例: 灵活的打折方案
 ```mermaid
@@ -178,23 +159,6 @@ class Folder implements FileSystemNode {
 - **纯虚构 (Pure Fabrication)**: 工厂类通常不是领域概念，而是为了保持高内聚而创造的辅助类。
 - **数据驱动设计 (Data-Driven Design)**: 可以从配置文件读取类名，动态加载类，无需修改代码即可切换实现。
 
-### 示例: ServicesFactory
-我们有了 `ITaxCalculatorAdapter` 和具体的适配器，但谁来 `new` 它们呢？
-如果让 `Register` (收银台) 去 `new TaxMasterAdapter()`，`Register` 就和 `TaxMaster` 耦合了，违反了低耦合原则。
-
-**解决方案**: 创建一个 `ServicesFactory`
-
-```mermaid
-classDiagram
-    class ServicesFactory {
-        +getTaxCalculatorAdapter() : ITaxCalculatorAdapter
-        +getAccountingAdapter() : IAccountingAdapter
-    }
-    note for ServicesFactory "读取配置文件:
-    taxcalculator.class.name=TaxMasterAdapter
-    然后使用反射创建对象"
-```
-
 ### 4.1 简单工厂 (Simple Factory)
 > 这是一个具体的类，不是 GoF 的 23 种模式之一，但使用极其广泛。
 
@@ -263,14 +227,6 @@ classDiagram
 - **缺点**: 
     - **类爆炸**: 每增加一个产品，就需要增加一个对应的 Factory 类，增加了开发量和系统复杂度。
 
----
-
-### 4.3 最佳实践：结合反射 (Reflection)
-如前文的 `ServicesFactory` 所示，在 .NET/Java 中，我们通常使用 **简单工厂 + 配置文件 + 反射**。
-- 既避免了简单工厂的 `switch-case` (OCP 问题)。
-- 又避免了工厂方法的类爆炸。
-- **Data-Driven Design**: 真正的灵活之道。
-
 ## 5. 外观 (Facade)
 > 如何为一组复杂的子系统接口提供一个一致的、简单的入口？
 >: 定义一个高层接口，让子系统更易于使用。
@@ -331,10 +287,6 @@ classDiagram
         *   `*` 表示**一对多**关系，即 Facade 内部维护了一个规则列表 (`List<IRule>`)。
     *   `Rule1 ..|> IRule` (虚线空心三角): **实现 (Realization/Implementation)**。
         *   表示 `Rule1` 类**实现**了 `IRule` 接口。
-
-### 与[[GoF#1. 适配器 (Adapter)|Adapter]]的关系
-Adapter 也是一种包装，但目的是**转换接口**（让不兼容的变兼容）
-Facade 的目的是**简化接口**（让复杂的变简单）
 
 ## 6. 观察者 (Observer)
 > 不同的订阅者对象对发布者对象的状态改变感兴趣，并希望在发布者产生事件时以自己独特的方式做出反应。且发布者希望保持低耦合。

@@ -1,3 +1,7 @@
+---
+OOAD考试: "1"
+---
+
 General Responsibility Assignment Software Patterns
 >一组指导如何在面向对象设计中合理分配责任的原则（或模式）
 
@@ -11,6 +15,8 @@ General Responsibility Assignment Software Patterns
 创建者原则的应用体现在**创建**上
 - 在[[顺序图]]中, 使用create[[消息]]
 - 在[[领域模型]]中, 使用[[关系#^01765a|组合关系]], 被创建者->创建者 #todo 可能有错,领域模型中似乎只有关联关系?
+![[Pasted image 20260111184652.png]]
+![[Pasted image 20260111160531.png]]
 
 ### 信息专家（Information Expert）
 >分配职责给对象的基本原则是什么?
@@ -54,6 +60,8 @@ General Responsibility Assignment Software Patterns
 ### 高内聚（High Cohesion）
 >如何让代码可理解,可维护,**低耦合**?
 >: 让一个类的职责紧密相关，且并不承担过多任务。
+
+![[Pasted image 20260111184612.png]]
 
 #### Cohesion (内聚) 
 衡量两个方面：
@@ -422,3 +430,27 @@ public void addTaxes(ITaxCalculatorAdapter calculator, Sale sale) {
 - 客户端只依赖 `Sale` 的稳定接口
 - 不关心其内部是否仍然使用 Payment → Account → Holder
 - 保护结构变化（对象连接关系变化）不影响客户端
+
+
+### 面向接口编程 (Program to Interface, rather than Implementation)
+> 客户（Client）应该依赖于抽象（接口或抽象类），而不是具体类。
+
+- **核心思想**: 变量的声明类型应该是超类型（Super Type），通常是接口或抽象类。
+- **目的**: 减少耦合，提高系统的灵活性和可维护性。
+- **好处**:
+    - 可以在不修改客户端代码的情况下替换实现（[[GRASP#多态（Polymorphism）|多态]]）。
+    - 易于测试（可以轻松 Mock 接口）。
+    - 隐藏了实现的细节。
+
+### 用组合而不用继承 (Favor composition over inheritance)
+> 通过组合（Has-a）而不是继承（Is-a）来复用代码。
+
+- **继承的问题（白盒复用）**:
+    - **破坏封装**: 子类往往必须了解父类的实现细节，父类对子类是透明的。
+    - **强耦合**: 父类实现的任何改变都可能强制子类改变（脆弱的基类问题）。
+    - **静态关系**: 编译时决定关系，运行时无法改变继承的实现。
+
+- **组合的优势（黑盒复用）**:
+    - **封装性好**: 对象被作为黑盒对待，只能通过接口交互，不破坏封装。
+    - **低耦合**: 依赖于对象提供的接口而非具体实现细节。
+    - **动态灵活**: 运行时可以动态改变行为（例如通过 Setter 注入不同的策略对象，如策略模式）。

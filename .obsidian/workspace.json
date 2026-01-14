@@ -1,41 +1,70 @@
 {
   "main": {
-    "id": "5524cbd75ddc0ae3",
+    "id": "3f94b20fb2c83245",
     "type": "split",
     "children": [
       {
-        "id": "ff813d0f6cef08a0",
+        "id": "df131334244b3757",
         "type": "tabs",
         "children": [
           {
-            "id": "a19820142e84b8f5",
+            "id": "7c604a0b86d17885",
             "type": "leaf",
             "state": {
               "type": "markdown",
               "state": {
-                "file": "编程/程序测试/PBT/大作业/调试验证与效果复现.md",
+                "file": "编程/算法设计与分析/典型算法/图/最短路径算法.md",
+                "mode": "preview",
+                "source": false
+              },
+              "icon": "lucide-file",
+              "title": "最短路径算法"
+            }
+          },
+          {
+            "id": "44ee5cb5be3e7bc8",
+            "type": "leaf",
+            "state": {
+              "type": "markdown",
+              "state": {
+                "file": "编程/算法设计与分析/时间复杂度/Asymptotic-notations-relations.md",
                 "mode": "source",
                 "source": false
               },
               "icon": "lucide-file",
-              "title": "调试验证与效果复现"
+              "title": "Asymptotic-notations-relations"
+            }
+          },
+          {
+            "id": "ec3538a90d858c79",
+            "type": "leaf",
+            "state": {
+              "type": "markdown",
+              "state": {
+                "file": "编程/算法设计与分析/时间复杂度/主定理.md",
+                "mode": "source",
+                "source": false
+              },
+              "icon": "lucide-file",
+              "title": "主定理"
             }
           }
-        ]
+        ],
+        "currentTab": 1
       }
     ],
     "direction": "vertical"
   },
   "left": {
-    "id": "21c60f283a860ba8",
+    "id": "4e68f2f42d8d9f20",
     "type": "split",
     "children": [
       {
-        "id": "38895f153032eace",
+        "id": "7d8272fb4f1cf651",
         "type": "tabs",
         "children": [
           {
-            "id": "20bd337b9322a02f",
+            "id": "965bc10034fb6eb3",
             "type": "leaf",
             "state": {
               "type": "file-explorer",
@@ -48,12 +77,12 @@
             }
           },
           {
-            "id": "296a3ff019409fd5",
+            "id": "63ae0cc4443f5ec0",
             "type": "leaf",
             "state": {
               "type": "search",
               "state": {
-                "query": "",
+                "query": "[\"ooad考试\":",
                 "matchingCase": false,
                 "explainSearch": false,
                 "collapseAll": false,
@@ -65,7 +94,7 @@
             }
           },
           {
-            "id": "4354de3131f3b5a3",
+            "id": "dd907b8e0defa3e3",
             "type": "leaf",
             "state": {
               "type": "bookmarks",
@@ -78,23 +107,23 @@
       }
     ],
     "direction": "horizontal",
-    "width": 300
+    "width": 225.5
   },
   "right": {
-    "id": "74b530774d507291",
+    "id": "cfc71aaf31b5f377",
     "type": "split",
     "children": [
       {
-        "id": "c41c77fdee4b2bb9",
+        "id": "49c4eb82c2155687",
         "type": "tabs",
         "children": [
           {
-            "id": "b74f0898485234da",
+            "id": "5385b8fad1cfa5fa",
             "type": "leaf",
             "state": {
               "type": "backlink",
               "state": {
-                "file": "编程/程序测试/PBT/工具与核心模块基础梳理.md",
+                "file": "homework_temp/SoftwareEngineering_Assignment.md",
                 "collapseAll": false,
                 "extraContext": false,
                 "sortOrder": "alphabetical",
@@ -104,25 +133,25 @@
                 "unlinkedCollapsed": true
               },
               "icon": "links-coming-in",
-              "title": "工具与核心模块基础梳理 的反向链接列表"
+              "title": "SoftwareEngineering_Assignment 的反向链接列表"
             }
           },
           {
-            "id": "33f806850365149f",
+            "id": "b047f7aa5f1ea90f",
             "type": "leaf",
             "state": {
               "type": "outgoing-link",
               "state": {
-                "file": "编程/程序测试/PBT/工具与核心模块基础梳理.md",
+                "file": "编程/UML/设计原则/例子/Duck/Person.md",
                 "linksCollapsed": false,
                 "unlinkedCollapsed": true
               },
               "icon": "links-going-out",
-              "title": "工具与核心模块基础梳理 的出链列表"
+              "title": "Person 的出链列表"
             }
           },
           {
-            "id": "0f0815b41fa4ba72",
+            "id": "99e173438d33aa18",
             "type": "leaf",
             "state": {
               "type": "tag",
@@ -137,18 +166,18 @@
             }
           },
           {
-            "id": "cddc6da27f52c66b",
+            "id": "f1c6013d093c2b0c",
             "type": "leaf",
             "state": {
               "type": "outline",
               "state": {
-                "file": "编程/程序测试/PBT/工具与核心模块基础梳理.md",
+                "file": "编程/UML/设计原则/例子/Duck/Person.md",
                 "followCursor": false,
                 "showSearch": false,
                 "searchQuery": ""
               },
               "icon": "lucide-list",
-              "title": "工具与核心模块基础梳理 的大纲"
+              "title": "Person 的大纲"
             }
           }
         ]
@@ -169,45 +198,53 @@
       "bases:创建新数据库": false
     }
   },
-  "active": "a19820142e84b8f5",
+  "active": "44ee5cb5be3e7bc8",
   "lastOpenFiles": [
-    "编程/程序测试/PBT/大作业/优缺点与技术落地反思.md",
-    "编程/程序测试/PBT/大作业/核心代码模块原理分析.md",
-    "编程/程序测试/PBT/大作业/工具与核心模块基础梳理.md",
-    "编程/程序测试/PBT/大作业/调试验证与效果复现.md",
-    "编程/程序测试/PBT/shrink-dhj/优缺点与技术反思.md",
-    "编程/程序测试/覆盖准则/控制流覆盖/控制流图.md",
-    "编程/程序测试/覆盖准则/控制流覆盖/基于控制流的覆盖准则.md",
-    "编程/程序测试/覆盖准则/控制流覆盖/基于逻辑表达式的覆盖准则.md",
-    "编程/程序测试/PBT/shrink-dhj/调试案例-lower-int-together.md",
-    "编程/程序测试/PBT/shrinkPass-lyj/minimize_individual_choices_analysis.md",
-    "环境配置.png",
-    "编程/程序测试/PBT/调试.md",
-    "编程/程序测试/PBT/自动约减.md",
-    "编程/程序测试/PBT/initial_coarse_reduction.md",
-    "编程/程序测试/PBT/pass_to_descendant.md",
-    "编程/程序测试/PBT/reorder_spans.md",
-    "编程/程序测试/PBT/try_trivial_spans.md",
-    "编程/程序测试/PBT/shrink-dhj/images/image2.png",
-    "编程/程序测试/PBT/shrink-dhj/images/image3.png",
-    "编程/程序测试/PBT/shrink-dhj/images/image.png",
-    "编程/程序测试/PBT/shrink-dhj/images",
-    "编程/程序测试/PBT/shrink-dhj",
-    "char_in_shrink_order()通过索引调整ascii顺序.png",
-    "选择有交集的字符串节点.png",
-    "编程/程序测试/PBT/shrinkPass-lyj/node_program_analysis.md",
-    "编程/程序测试/PBT/shrinkPass-lyj/minimize_duplicated_choices_analysis.md",
-    "包装复杂功能2.png",
-    "包装复杂功能.png",
-    "选择局部的nodes以避免O(n2)的复杂度.png",
-    "Pasted image 20260102173218.png",
-    "编程/程序测试/PBT/大作业",
-    "PikPak.lnk",
-    "编程/程序测试/PBT/分工.md",
-    "编程/程序测试/PBT/node_program_analysis.md",
-    "编程/程序测试/PBT/minimize_individual_choices_analysis.md",
-    "编程/程序测试/PBT/minimize_duplicated_choices_analysis.md",
-    "编程/程序测试/PBT/shrinkPass-lyj",
-    "编程/程序测试/PBT/再分工.md"
+    "编程/算法设计与分析/时间复杂度/Theta-notation.md",
+    "编程/算法设计与分析/写伪代码的范式.md",
+    "编程/算法设计与分析/alL1.pdf",
+    "编程/算法设计与分析/时间复杂度/主定理.md",
+    "编程/算法设计与分析/时间复杂度/决策树模型.md",
+    "编程/算法设计与分析/典型算法/图/最小生成树.md",
+    "编程/算法设计与分析/典型算法/最大子数组(分治).md",
+    "编程/算法设计与分析/典型算法/图/最短路径算法.md",
+    "编程/算法设计与分析/典型算法/图/图的基本概念.md",
+    "编程/算法设计与分析/典型算法/图/图的存储表示.md",
+    "编程/算法设计与分析/典型算法/非比较排序/桶排序.md",
+    "编程/算法设计与分析/典型算法/非比较排序/基数排序.md",
+    "编程/算法设计与分析/典型算法/非比较排序/计数排序.md",
+    "编程/算法设计与分析/典型算法/比较排序/堆排序.md",
+    "编程/算法设计与分析/典型算法/比较排序/归并排序.md",
+    "编程/算法设计与分析/典型算法/比较排序/快速排序.md",
+    "编程/算法设计与分析/典型算法/图/图的搜索与遍历.md",
+    "编程/算法设计与分析/典型算法/图/最大流与最小割.md",
+    "编程/算法设计与分析/典型算法/RandomSelect.md",
+    "作业的临时文件夹/homework5.md",
+    "作业的临时文件夹/homework4.md",
+    "作业的临时文件夹/Homework3.md",
+    "作业的临时文件夹/homework1223.md",
+    "作业的临时文件夹/Homework1216.md",
+    "作业的临时文件夹/homework1230.md",
+    "作业的临时文件夹/homework8.md",
+    "作业的临时文件夹/homework7.md",
+    "编程/程序测试/测试",
+    "编程/程序测试/概念理解",
+    "编程/程序测试/Structural",
+    "编程/程序测试/覆盖准则/微信图片_2025-11-03_152616_730.png",
+    "Pasted image 20260112210509.png",
+    "homework_temp",
+    "编程/UML/类图/抽象类示例.png",
+    "编程/UML/交互图/消息链接序列图.png",
+    "编程/UML/设计原则/例子/Observer/运行结果.png",
+    "Pasted image 20260111220006.png",
+    "编程/程序测试/可测性",
+    "Pasted image 20260111184652.png",
+    "Pasted image 20260111184650.png",
+    "Pasted image 20260111184612.png",
+    "Pasted image 20260111184524.png",
+    "编程/程序测试/测试替身",
+    "编程/程序测试/PBT/Hypothesis大作业/shrinkPass-wyf",
+    "编程/程序测试/PBT/Hypothesis大作业",
+    "编程/程序测试/PBT/Hypothesis大作业/大作业/Hypothesis-王宇飞-邓涵杰-陆雨杰-报告.zip"
   ]
 }

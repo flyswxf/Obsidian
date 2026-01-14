@@ -1,0 +1,16 @@
+王宇飞: 
+工具与核心模块基础梳理, 参考资料
+initial_coarse_reduction, pass_to_descendant, reorder_spans, try_trivial_spans的源码解读
+pass_to_descendant的调试案例
+所有内容的审查修改补充
+
+邓涵杰:
+优缺点与技术落地反思
+redistribute_numeric_pairs, lower_integers_together, lower_duplicated_characters的源码解读
+lower_integers_together的调试案例
+
+陆雨杰: 
+核心代码模块原理分析
+minimize_duplicated_choices, minimize_individual_choices, node_program的源码解读
+node_program的调试案例
+
