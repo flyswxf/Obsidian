@@ -48,10 +48,10 @@ LTL 用于描述沿着时间轴（无限执行路径）的属性。
 
 ## 4. 属性分类: Safety vs. Liveness
 
-| 类型                | 描述                                                      | 典型公式模式              | 例子                                                                               |
-| :------------------ | :-------------------------------------------------------- | :------------------------ | :--------------------------------------------------------------------------------- |
-| **Safety** (安全性) | **"Nothing bad ever happens"**<br>(坏事永不发生)          | $\square \neg \text{bad}$ | **互斥**: 两个进程永远不能同时在临界区。<br>$\square \neg (crit(A) \land crit(B))$ |
-| **Liveness** (活性) | **"Something good eventually happens"**<br>(好事终将发生) | $\Diamond \text{good}$    | **响应**: 请求最终会被处理。<br>$\square (req \rightarrow \Diamond ack)$           |
+| 类型                | 描述                                                  | 典型公式模式                    | 例子                                                                |
+| :---------------- | :-------------------------------------------------- | :------------------------ | :---------------------------------------------------------------- |
+| **Safety** (安全性)  | **"Nothing bad ever happens"**<br>(坏事永不发生)          | $\square \neg \text{bad}$ | **互斥**: 两个进程永远不能同时在临界区。<br>$\square \neg (crit(A) \land crit(B))$ |
+| **Liveness** (活性) | **"Something good eventually happens"**<br>(好事终将发生) | $\Diamond \text{good}$    | **响应**: 请求最终会被处理。<br>$\square (req \rightarrow \Diamond ack)$     |
 
 ---
 
