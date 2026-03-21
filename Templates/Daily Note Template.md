@@ -2,7 +2,6 @@
 created: {{date}} {{time}}
 tags:
   - daily
-  - journal
 mood: 
 ---
 
