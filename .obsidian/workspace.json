@@ -4,21 +4,17 @@
     "type": "split",
     "children": [
       {
-        "id": "5a1f49d75cdfc624",
+        "id": "7cdcf49843e90a94",
         "type": "tabs",
         "children": [
           {
-            "id": "3c7f4d008bc415a7",
+            "id": "b449d5004ac715e1",
             "type": "leaf",
             "state": {
-              "type": "markdown",
-              "state": {
-                "file": "编程/开发/ai/torch/loss/KL散度损失.md",
-                "mode": "source",
-                "source": false
-              },
+              "type": "empty",
+              "state": {},
               "icon": "lucide-file",
-              "title": "KL散度损失"
+              "title": "新标签页"
             }
           }
         ]
@@ -169,15 +165,23 @@
       "command-palette:打开命令面板": false
     }
   },
-  "active": "3c7f4d008bc415a7",
+  "active": "b449d5004ac715e1",
   "lastOpenFiles": [
+    "课程/编译原理/Thompson构造法.md",
+    "课程/编译原理/子集构造法.md",
+    "课程/编译原理/作业/第三章-2-NFA-DFA.md",
+    "课程/编译原理/编译器",
+    "课程/编译原理/正规文法.md",
+    "课程/编译原理/正规定义.md",
+    "课程/编译原理/正规式.md",
+    "课程/编译原理/作业/第三章-1-正则表达式课后练习.md",
+    "编程/开发/ai/torch/loss/KL散度损失.md",
     "编程/开发/ai/torch/loss/Huber损失.md",
     "编程/开发/ai/torch/loss/负对数似然损失.md",
     "编程/开发/ai/torch/loss/交叉熵损失.md",
     "编程/开发/ai/torch/loss/绝对误差损失.md",
     "编程/开发/ai/torch/loss/均方误差损失.md",
     "编程/开发/ai/torch/loss/平滑L1损失.md",
-    "编程/开发/ai/torch/loss/KL散度损失.md",
     "编程/开发/ai/torch/loss/二元交叉熵损失.md",
     "编程/开发/ai/torch/loss/带Logits的二元交叉熵损失.md",
     "课程/数据库/事务处理/无级联调度.md",
@@ -191,27 +195,18 @@
     "编程/开发/ai/torch/tensor/5_数学与逻辑运算.md",
     "编程/开发/ai/torch/tensor/6_原地操作.md",
     "编程/开发/ai/torch/tensor/2_形状与维度变换.md",
-    "编程/开发/ai/torch/tensor/1_基础属性.md",
-    "编程/开发/ai/torch/tensor/3_数据类型与设备转换.md",
-    "编程/开发/ai/torch/tensor/4_拼接与分割.md",
-    "编程/开发/ai/注意力机制/注意力打分机制.md",
     "create_tensor_notes.py",
     "编程/开发/ai/torch/tensor",
-    "编程/开发/ai/注意力机制/多头注意力机制.md",
     "attention-output.svg",
     "编程/开发/ai/注意力机制/attention-output.svg",
     "编程/开发/ai/注意力机制/未确认 932210.crdownload",
     "Pasted image 20260415105411.png",
-    "编程/开发/ai/注意力机制/4_交叉注意力机制_Cross_Attention.md",
-    "编程/开发/ai/注意力机制/2_自注意力机制_Self_Attention.md",
-    "编程/开发/ai/注意力机制/1_缩放点积注意力_Scaled_Dot_Product.md",
     "编程/开发/ai/注意力机制",
     "未命名 3.base",
     "编程/算法/字符串/回文串",
     "编程/算法/字符串",
     "编程/算法/数学/浮点数",
     "编程/算法/数学/质数",
-    "test.exe",
     "Pasted image 20260401081917.png",
     "a3ee426cec634510ce959760a1c093da.png",
     "编程/算法/数学/乘法逆元定义.png",
