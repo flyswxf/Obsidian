@@ -13,12 +13,20 @@
             "state": {
               "type": "markdown",
               "state": {
+<<<<<<< HEAD
+                "file": "保研/final.md",
+=======
                 "file": "课程/计算机安全/密码学工具/暴力破解攻击.md",
+>>>>>>> ec067bbe458b5df6de5059947b174355e96adea7
                 "mode": "source",
                 "source": false
               },
               "icon": "lucide-file",
+<<<<<<< HEAD
+              "title": "final"
+=======
               "title": "暴力破解攻击"
+>>>>>>> ec067bbe458b5df6de5059947b174355e96adea7
             }
           }
         ]
@@ -171,6 +179,54 @@
   },
   "active": "20bd337b9322a02f",
   "lastOpenFiles": [
+<<<<<<< HEAD
+    "保研/~WRL0001.tmp",
+    "保研/~WRD0000.tmp",
+    "保研/~$章_核心作用机制.docx",
+    "保研/第二章_核心作用机制.docx",
+    "保研/final_with_images.md",
+    "node_modules/@types/node/timers/promises.d.ts",
+    "node_modules/@types/node/timers",
+    "node_modules/@types/node/test/reporters.d.ts",
+    "node_modules/@types/node/test",
+    "node_modules/@types/node/stream/promises.d.ts",
+    "node_modules/@types/node/stream/web.d.ts",
+    "node_modules/@types/node/stream/consumers.d.ts",
+    "node_modules/readable-stream/doc/wg-meetings/2015-01-30.md",
+    "node_modules/jszip/graph.svg",
+    "node_modules/jszip/sponsors.md",
+    "node_modules/jszip/CHANGES.md",
+    "node_modules/readable-stream/GOVERNANCE.md",
+    "node_modules/xml/readme.md",
+    "node_modules/core-util-is/README.md",
+    "node_modules/sax/LICENSE.md",
+    "node_modules/xml-js/README.md",
+    "node_modules/minimalistic-assert/readme.md",
+    "node_modules/hash.js/README.md",
+    "node_modules/process-nextick-args/license.md",
+    "node_modules/undici-types/README.md",
+    "node_modules/isarray/README.md",
+    "保研/node_modules/docx/README.md",
+    "保研/node_modules/nanoid/README.md",
+    "保研/node_modules/@types/node/README.md",
+    "保研/node_modules/xml-js/README.md",
+    "保研/node_modules/sax/README.md",
+    "保研/node_modules/sax/LICENSE.md",
+    "保研/node_modules/undici-types/README.md",
+    "保研/node_modules/readable-stream/doc/wg-meetings/2015-01-30.md",
+    "编程/算法/语言特性/Lambda表达式语法结构.md",
+    "编程/开发/前端/NPM 与现代前端开发指南.md",
+    "编程/开发/ai/环境配置.md",
+    "编程/算法/数学/乘法逆元定义.png",
+    "编程/程序测试/覆盖准则/微信图片_2025-11-03_152616_730.png",
+    "Pasted image 20260112210509.png",
+    "编程/UML/类图/抽象类示例.png",
+    "编程/UML/交互图/消息链接序列图.png",
+    "编程/UML/设计原则/例子/Observer/运行结果.png",
+    "Pasted image 20260111220006.png",
+    "Pasted image 20260111184652.png",
+    "Pasted image 20260111184650.png"
+=======
     "课程/计算机安全/密码学工具/哈希函数.md",
     "课程/计算机安全/密码学工具/随机与伪随机数.md",
     "课程/计算机安全/密码学工具/加密/对称加密.md",
@@ -217,5 +273,6 @@
     "旅行/绍兴",
     "旅行",
     "编程/开发/git"
+>>>>>>> ec067bbe458b5df6de5059947b174355e96adea7
   ]
 }
