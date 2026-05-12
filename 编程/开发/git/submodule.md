@@ -1,3 +1,5 @@
+对于需要频繁更新子仓库的情况, 不要用submodule, 而是在git clone他人仓库后, 直接删了该仓库的.git文件夹. 
+
 
 ### Submodule 的好处
 
