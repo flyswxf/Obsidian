@@ -1,6 +1,5 @@
 ---
-alwaysApply: false
-globs: *.md
+alwaysApply: true
 ---
 笔记美观简洁, 概念清晰, 当概念较多时需要有一定的例子
 数学公式用$括起来, 重要的公式用$$括起来
