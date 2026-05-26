@@ -196,9 +196,9 @@ LL(1) 分析器由**分析栈**、**分析表**和**控制程序**组成。
 **步骤二：求 FOLLOW 集**
 * $FOLLOW(E) = \{ \$, ) \}$
 * $FOLLOW(E') = FOLLOW(E) = \{ \$, ) \}$
-* $FOLLOW(T) = (FIRST(E') \setminus \{\epsilon\}) \cup FOLLOW(E') = \{ +, \$, ) \}$
+* $FOLLOW(T) = (FIRST(E') \setminus \{\epsilon\}) \cup FOLLOW(E) \cup FOLLOW(E') = \{ +, \$, ) \}$
 * $FOLLOW(T') = FOLLOW(T) = \{ +, \$, ) \}$
-* $FOLLOW(F) = (FIRST(T') \setminus \{\epsilon\}) \cup FOLLOW(T') = \{ *, +, \$, ) \}$
+* $FOLLOW(F) = (FIRST(T') \setminus \{\epsilon\}) \cup FOLLOW(T) \cup FOLLOW(T') = \{ *, +, \$, ) \}$
 
 **步骤三：构造预测分析表**
 
