@@ -9,5 +9,6 @@
   },
   "showLineNumber": false,
   "readableLineLength": false,
-  "spellcheck": false
+  "spellcheck": false,
+  "promptDelete": false
 }
