@@ -18,7 +18,7 @@
 *   **常量 (Constants)**: 特指域中的某个具体对象（**可视作0元函数**, 直接写到$\mathcal{F}$集合中）。
     *   例：`0`, `1`, `Alice`, `Bob`, `π`。
 
-![[Pasted image 20260105224319.png]]
+![[assets/谓词词汇表示例.png]]
 
 ## 翻译示例
 
@@ -37,10 +37,10 @@ $$ \forall x \forall y (F(x, m) \wedge S(y, x) \rightarrow B(y, m)) $$
 
 **定义**：
 令 $\Phi$ 为谓词逻辑中的一个公式。变量 $x$ 在 $\Phi$ 中的某次出现被称为 **自由的 (free)**，如果它是 $\Phi$ 解析树中的一个叶子节点，且从该节点向上的路径中不存在 $\forall x$ 或 $\exists x$ 节点。否则，该出现被称为 **约束的 (bound)**。
-![[Pasted image 20260105154719.png]]
+![[assets/自由约束变量解析树.png]]
 
 对于 $\forall x \Phi$ (或 $\exists x \Phi$)，我们称 $\Phi$ 是量词 $\forall x$ (或 $\exists x$) 的 **作用域 (scope)**。
-![[Pasted image 20260105154710.png]]
+![[assets/量词作用域.png]]
 
 
 
@@ -56,7 +56,7 @@ $$ ((\forall x (P(x) \wedge Q(x))) \rightarrow (\neg P(x) \vee Q(y))) [f(x, y) /
 结果为：
 $$ (\forall x (P(x) \wedge Q(x))) \rightarrow (\neg P(f(x, y)) \vee Q(y)) $$
 *(注意：量词 $\forall x$ 作用域内的 $x$ 是约束的，不被替换)*
-![[Pasted image 20260105154747.png]]
+![[assets/替换操作公式树.png]]
 
 ### 自由(Free)
 

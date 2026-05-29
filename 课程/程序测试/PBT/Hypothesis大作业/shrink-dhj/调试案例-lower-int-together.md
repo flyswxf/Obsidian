@@ -62,9 +62,9 @@ def lower_integers_together(self, chooser):
 
 ## 运行
 
-![](约减前node1,node2状态.png)
-![](约减后node1,node2状态.png)
-![](调试统计报告.png)
+![](assets/约减前节点状态.png)
+![](assets/约减后节点状态.png)
+![](assets/同步约简统计.png)
 
 整体主要约简过程
 

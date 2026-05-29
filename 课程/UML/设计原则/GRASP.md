@@ -15,8 +15,8 @@ General Responsibility Assignment Software Patterns
 创建者原则的应用体现在**创建**上
 - 在[[顺序图]]中, 使用create[[消息]]
 - 在[[领域模型]]中, 使用[[关系#^01765a|组合关系]], 被创建者->创建者 #todo 可能有错,领域模型中似乎只有关联关系?
-![[Pasted image 20260111184652.png]]
-![[Pasted image 20260111160531.png]]
+![[assets/考试.png]]
+![[assets/销售创建支付顺序图.png]]
 
 ### 信息专家（Information Expert）
 >分配职责给对象的基本原则是什么?
@@ -61,7 +61,7 @@ General Responsibility Assignment Software Patterns
 >如何让代码可理解,可维护,**低耦合**?
 >: 让一个类的职责紧密相关，且并不承担过多任务。
 
-![[Pasted image 20260111184612.png]]
+![[assets/内聚对比图.png]]
 
 #### Cohesion (内聚) 
 衡量两个方面：

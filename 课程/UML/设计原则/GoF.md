@@ -30,7 +30,7 @@ Adapter 模式本质上使用了以下 GRASP 原则：
 - **保护**: 保护系统不受外部接口变化的影响（Protected Variations）。
 
 
-![[Pasted image 20260109163342.png]]
+![[assets/适配器模式类图.png]]
 
 
 ## 2. 策略 (Strategy)

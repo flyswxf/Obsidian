@@ -41,5 +41,5 @@ convergent: rodin会检查变式, 确保progress会终止
 
 ## 第三步
 - Removing non-determinacy: 将非确定赋值:$\in$替换为确定的赋值:=
-	- ![[进度精化算法示例.png]]
-	- ![[算法精化步骤图.png]]
+	- ![[assets/进度精化算法示例.png]]
+	- ![[assets/算法精化步骤.png]]

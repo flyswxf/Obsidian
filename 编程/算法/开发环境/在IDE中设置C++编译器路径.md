@@ -14,10 +14,10 @@
 	3. 下载完成后，MSYS2会自动将系统环境变量中的路径配置好，继续在MSYS2中输入`g++ --version`可以确定新编译器可以使用
 2. 在IDE中设置C++编译器路径 ^5985da
 	1. 在设置中选择**Editor设置**
-	   ![[编辑器通用设置界.png]]
+	   ![[assets/编辑器设置界面.png]]
 	2. 搜索cpp，找到**Compiler Path**
-	   ![[编译器路径设置界.png]]
+	   ![[assets/编译器路径设置.png]]
 	3. 设置编译器路径
 	   `"C_Cpp.default.compilerPath": "D:/coding/msys64/mingw64/bin/g++.exe"`
-	   ![[编译器路径配置.png]]
+	   ![[assets/编译器路径配置.png]]
 
