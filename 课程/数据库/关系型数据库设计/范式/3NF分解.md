@@ -5,4 +5,4 @@
 4. 如果p中有Ri$\subset$Rj, 删除Ri
 
 
-3NF分解得到的分解一定是[[无损分解（Lossless Decomposition）的判定]], 也一定能[[保持函数依赖(Dependency Preservation)]]
+3NF分解得到的分解一定是[[无损分解]], 也一定能[[保持函数依赖]]
