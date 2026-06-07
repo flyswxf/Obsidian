@@ -8,7 +8,8 @@ SQL 注入攻击是应用层最常见的安全漏洞之一。攻击者通过在�
 ## 2. 常见攻击类型与实例
 
 ### 2.1 认证绕过 (Authentication Bypass)
-最经典的 SQL 注入场景。假设验证用户登录的 SQL 语句如下：
+#### 案例1
+假设验证用户登录的 SQL 语句如下：
 ```sql
 SELECT * FROM users WHERE username = '输入用户名' AND password = '输入密码';
 ```
@@ -17,6 +18,17 @@ SELECT * FROM users WHERE username = '输入用户名' AND password = '输入密
 SELECT * FROM users WHERE username = 'admin' OR '1'='1' AND password = '...';
 ```
 由于 `'1'='1'` 永远为真，导致查询返回所有记录或特定记录，从而成功绕过身份验证。
+
+#### 案例2
+假设应用程序使用如下方式拼接 SQL：
+```sql
+SELECT * FROM users WHERE username = ' $user_input ' AND password = ' $password_input ';
+```
+如果攻击者在用户名中输入 `admin' --`，拼接后的语句变为：
+```sql
+SELECT * FROM users WHERE username = 'admin' -- ' AND password = '...';
+```
+`--` 是 SQL 的注释符，导致密码验证部分被忽略，攻击者直接以 admin 身份登录。
 
 ### 2.2 联合查询注入 (UNION-Based SQLi)
 攻击者利用 `UNION` 操作符将恶意查询的结果附加到合法查询的结果集后，从而窃取数据库中的敏感数据。
