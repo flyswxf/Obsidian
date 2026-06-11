@@ -23,3 +23,9 @@ pip install kagglehub
 	- owner: kaggle用户名(上方小字)
 	  ![[kaggle用户名.png]]
 	- dataset: 数据集名称
+
+### 保存Output为数据集
+默认会将`/kaggle/working` 作为output结果
+
+如果该文件夹中, 所有文件总和较大(100k+), **输出会被压缩为_output.zip**, 且运行时长也会出现异常. **但这不会影响保存为数据集后的解析**, 数据集形态下, 会自动解压缩
+ 
