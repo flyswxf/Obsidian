@@ -3,4 +3,4 @@
 **/workspace.json
 
 node_modules
-*.pdf
+.pdf
