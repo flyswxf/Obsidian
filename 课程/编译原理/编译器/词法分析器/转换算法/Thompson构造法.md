@@ -1,8 +1,3 @@
-# Thompson 构造法 (Thompson's Construction)
-
-> **📍 流程位置**：[[正规式]] → **Thompson构造法** → [[子集构造法]] → [[Hopcroft 算法]] → [[词法分析器]]
-> 当前处于：**转换算法层 · 第 1 步** —— 将 [[正规式]] 转换为 NFA。另有 [[直接构造法]] 可跳过 NFA 直接得到 DFA。
-
 ## 1. 简介
 **Thompson 构造法**（Thompson's Construction）是编译原理词法分析中的一个经典算法。它的主要作用是将 [[正规式|正则表达式 (Regular Expression, RE)]] 转换为等价的非确定性有限状态自动机 (NFA)。
 这个算法是由 Ken Thompson 在 1968 年发明的，广泛应用于各种词法分析器生成工具（如 Lex、Flex）中。
