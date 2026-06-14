@@ -1,0 +1,91 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<mxfile host="drawio" version="26.0.0">
+  <diagram name="Automaton">
+    <mxGraphModel math="1" dx="1000" dy="1000" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="827" pageHeight="1169">
+      <root>
+        <mxCell id="0" />
+        <mxCell id="1" parent="0" />
+        
+        <!-- States -->
+        <mxCell id="q_0" value="$$q_0$$&lt;br&gt;$$F(a U b)$$" style="ellipse;whiteSpace=wrap;html=1;aspect=fixed;fontSize=16;" vertex="1" parent="1">
+          <mxGeometry x="150" y="200" width="90" height="90" as="geometry" />
+        </mxCell>
+        
+        <mxCell id="q_1" value="$$q_1$$&lt;br&gt;$$a U b$$" style="ellipse;whiteSpace=wrap;html=1;aspect=fixed;fontSize=16;" vertex="1" parent="1">
+          <mxGeometry x="350" y="200" width="90" height="90" as="geometry" />
+        </mxCell>
+        
+        <!-- Accept State -->
+        <mxCell id="q_2" value="$$q_2$$&lt;br&gt;$$True$$" style="shape=doubleEllipse;whiteSpace=wrap;html=1;aspect=fixed;fontSize=16;margin=5;" vertex="1" parent="1">
+          <mxGeometry x="550" y="200" width="90" height="90" as="geometry" />
+        </mxCell>
+        
+        <!-- Start Arrow -->
+        <mxCell id="start_pt" value="" style="ellipse;whiteSpace=wrap;html=1;aspect=fixed;strokeColor=none;fillColor=none;" vertex="1" parent="1">
+          <mxGeometry x="70" y="244" width="2" height="2" as="geometry" />
+        </mxCell>
+        <mxCell id="e_start" value="" style="endArrow=classic;html=1;rounded=0;fontSize=16;strokeWidth=1.5;" edge="1" parent="1" source="start_pt" target="q_0">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        
+        <!-- q_0 self loop -->
+        <mxCell id="e_loop_q0" value="$$\neg a, \neg b$$" style="endArrow=classic;html=1;curved=1;fontSize=16;labelBackgroundColor=none;strokeWidth=1.5;" edge="1" parent="1" source="q_0" target="q_0">
+          <mxGeometry relative="1" as="geometry">
+            <Array as="points">
+              <mxPoint x="175" y="120" />
+              <mxPoint x="215" y="120" />
+            </Array>
+            <mxPoint as="offset" y="-10" />
+          </mxGeometry>
+        </mxCell>
+        
+        <!-- q_0 to q_1 -->
+        <mxCell id="e_q0_q1" value="$$a$$" style="endArrow=classic;html=1;rounded=0;fontSize=16;labelBackgroundColor=none;strokeWidth=1.5;" edge="1" parent="1" source="q_0" target="q_1">
+          <mxGeometry relative="1" as="geometry">
+            <mxPoint as="offset" y="-15" />
+          </mxGeometry>
+        </mxCell>
+        
+        <!-- q_0 to q_2 bottom curve -->
+        <mxCell id="e_q0_q2_bot" value="$$b$$" style="endArrow=classic;html=1;curved=1;fontSize=16;labelBackgroundColor=none;strokeWidth=1.5;exitX=0.85;exitY=0.85;entryX=0.15;entryY=0.85;" edge="1" parent="1" source="q_0" target="q_2">
+          <mxGeometry relative="1" as="geometry">
+            <Array as="points">
+              <mxPoint x="395" y="340" />
+            </Array>
+            <mxPoint as="offset" y="15" />
+          </mxGeometry>
+        </mxCell>
+        
+        <!-- q_1 self loop -->
+        <mxCell id="e_loop_q1" value="$$a$$" style="endArrow=classic;html=1;curved=1;fontSize=16;labelBackgroundColor=none;strokeWidth=1.5;" edge="1" parent="1" source="q_1" target="q_1">
+          <mxGeometry relative="1" as="geometry">
+            <Array as="points">
+              <mxPoint x="375" y="120" />
+              <mxPoint x="415" y="120" />
+            </Array>
+            <mxPoint as="offset" y="-10" />
+          </mxGeometry>
+        </mxCell>
+        
+        <!-- q_1 to q_2 -->
+        <mxCell id="e_q1_q2" value="$$b$$" style="endArrow=classic;html=1;rounded=0;fontSize=16;labelBackgroundColor=none;strokeWidth=1.5;" edge="1" parent="1" source="q_1" target="q_2">
+          <mxGeometry relative="1" as="geometry">
+            <mxPoint as="offset" y="-15" />
+          </mxGeometry>
+        </mxCell>
+        
+        <!-- q_2 self loop -->
+        <mxCell id="e_loop_q2" value="$$\Sigma$$" style="endArrow=classic;html=1;curved=1;fontSize=16;labelBackgroundColor=none;strokeWidth=1.5;" edge="1" parent="1" source="q_2" target="q_2">
+          <mxGeometry relative="1" as="geometry">
+            <Array as="points">
+              <mxPoint x="575" y="120" />
+              <mxPoint x="615" y="120" />
+            </Array>
+            <mxPoint as="offset" y="-10" />
+          </mxGeometry>
+        </mxCell>
+        
+      </root>
+    </mxGraphModel>
+  </diagram>
+</mxfile>

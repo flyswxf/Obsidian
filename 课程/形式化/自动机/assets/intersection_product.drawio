@@ -1,0 +1,110 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<mxfile host="drawio" version="26.0.0">
+  <diagram name="Product">
+    <mxGraphModel math="1" dx="1000" dy="1000" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="827" pageHeight="1169">
+      <root>
+        <mxCell id="0" />
+        <mxCell id="1" parent="0" />
+        
+        <!-- States -->
+        <mxCell id="s00" value="$$(q_0, p_0)$$" style="ellipse;whiteSpace=wrap;html=1;aspect=fixed;fontSize=16;" vertex="1" parent="1">
+          <mxGeometry x="200" y="150" width="80" height="80" as="geometry" />
+        </mxCell>
+        <mxCell id="s01" value="$$(q_0, p_1)$$" style="ellipse;whiteSpace=wrap;html=1;aspect=fixed;fontSize=16;" vertex="1" parent="1">
+          <mxGeometry x="200" y="350" width="80" height="80" as="geometry" />
+        </mxCell>
+        <mxCell id="s10" value="$$(q_1, p_0)$$" style="shape=doubleEllipse;whiteSpace=wrap;html=1;aspect=fixed;fontSize=16;margin=5;" vertex="1" parent="1">
+          <mxGeometry x="450" y="150" width="80" height="80" as="geometry" />
+        </mxCell>
+        <mxCell id="s11" value="$$(q_1, p_1)$$" style="ellipse;whiteSpace=wrap;html=1;aspect=fixed;fontSize=16;" vertex="1" parent="1">
+          <mxGeometry x="450" y="350" width="80" height="80" as="geometry" />
+        </mxCell>
+
+        <!-- Start Arrow -->
+        <mxCell id="start_pt" value="" style="ellipse;whiteSpace=wrap;html=1;aspect=fixed;strokeColor=none;fillColor=none;" vertex="1" parent="1">
+          <mxGeometry x="100" y="189" width="2" height="2" as="geometry" />
+        </mxCell>
+        <mxCell id="e_start" value="" style="endArrow=classic;html=1;rounded=0;fontSize=16;strokeWidth=1.5;" edge="1" parent="1" source="start_pt" target="s00">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+
+        <!-- s00 to s10 on a -->
+        <mxCell id="t1" value="a" style="endArrow=classic;html=1;rounded=0;fontSize=16;labelBackgroundColor=none;strokeWidth=1.5;" edge="1" parent="1" source="s00" target="s10">
+          <mxGeometry relative="1" as="geometry">
+            <mxPoint as="offset" y="-15" />
+          </mxGeometry>
+        </mxCell>
+
+        <!-- s01 to s11 on a -->
+        <mxCell id="t2" value="a" style="endArrow=classic;html=1;rounded=0;fontSize=16;labelBackgroundColor=none;strokeWidth=1.5;" edge="1" parent="1" source="s01" target="s11">
+          <mxGeometry relative="1" as="geometry">
+            <mxPoint as="offset" y="-15" />
+          </mxGeometry>
+        </mxCell>
+
+        <!-- s00 to s01 on b (left curve) -->
+        <mxCell id="t3" value="b" style="endArrow=classic;html=1;curved=1;fontSize=16;labelBackgroundColor=none;strokeWidth=1.5;exitX=0.15;exitY=0.85;entryX=0.15;entryY=0.15;" edge="1" parent="1" source="s00" target="s01">
+          <mxGeometry relative="1" as="geometry">
+            <Array as="points">
+              <mxPoint x="180" y="290" />
+            </Array>
+            <mxPoint as="offset" x="-15" />
+          </mxGeometry>
+        </mxCell>
+
+        <!-- s01 to s00 on b (right curve) -->
+        <mxCell id="t4" value="b" style="endArrow=classic;html=1;curved=1;fontSize=16;labelBackgroundColor=none;strokeWidth=1.5;exitX=0.85;exitY=0.15;entryX=0.85;entryY=0.85;" edge="1" parent="1" source="s01" target="s00">
+          <mxGeometry relative="1" as="geometry">
+            <Array as="points">
+              <mxPoint x="300" y="290" />
+            </Array>
+            <mxPoint as="offset" x="15" />
+          </mxGeometry>
+        </mxCell>
+
+        <!-- s10 to s11 on b (left curve) -->
+        <mxCell id="t5" value="b" style="endArrow=classic;html=1;curved=1;fontSize=16;labelBackgroundColor=none;strokeWidth=1.5;exitX=0.15;exitY=0.85;entryX=0.15;entryY=0.15;" edge="1" parent="1" source="s10" target="s11">
+          <mxGeometry relative="1" as="geometry">
+            <Array as="points">
+              <mxPoint x="430" y="290" />
+            </Array>
+            <mxPoint as="offset" x="-15" />
+          </mxGeometry>
+        </mxCell>
+
+        <!-- s11 to s10 on b (right curve) -->
+        <mxCell id="t6" value="b" style="endArrow=classic;html=1;curved=1;fontSize=16;labelBackgroundColor=none;strokeWidth=1.5;exitX=0.85;exitY=0.15;entryX=0.85;entryY=0.85;" edge="1" parent="1" source="s11" target="s10">
+          <mxGeometry relative="1" as="geometry">
+            <Array as="points">
+              <mxPoint x="550" y="290" />
+            </Array>
+            <mxPoint as="offset" x="15" />
+          </mxGeometry>
+        </mxCell>
+
+        <!-- s10 loop on a -->
+        <mxCell id="t7" value="a" style="endArrow=classic;html=1;curved=1;fontSize=16;labelBackgroundColor=none;strokeWidth=1.5;" edge="1" parent="1" source="s10" target="s10">
+          <mxGeometry relative="1" as="geometry">
+            <Array as="points">
+              <mxPoint x="470" y="90" />
+              <mxPoint x="510" y="90" />
+            </Array>
+            <mxPoint as="offset" y="-10" />
+          </mxGeometry>
+        </mxCell>
+
+        <!-- s11 loop on a -->
+        <mxCell id="t8" value="a" style="endArrow=classic;html=1;curved=1;fontSize=16;labelBackgroundColor=none;strokeWidth=1.5;" edge="1" parent="1" source="s11" target="s11">
+          <mxGeometry relative="1" as="geometry">
+            <Array as="points">
+              <mxPoint x="470" y="490" />
+              <mxPoint x="510" y="490" />
+            </Array>
+            <mxPoint as="offset" y="10" />
+          </mxGeometry>
+        </mxCell>
+
+      </root>
+    </mxGraphModel>
+  </diagram>
+</mxfile>
