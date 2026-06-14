@@ -1,0 +1,94 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<mxfile host="drawio" version="26.0.0">
+  <diagram name="Automaton">
+    <mxGraphModel math="1" dx="1000" dy="1000" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="827" pageHeight="1169">
+      <root>
+        <mxCell id="0" />
+        <mxCell id="1" parent="0" />
+        
+        <!-- States -->
+        <mxCell id="q_e" value="$$q_\epsilon$$" style="ellipse;whiteSpace=wrap;html=1;aspect=fixed;fontSize=16;" vertex="1" parent="1">
+          <mxGeometry x="150" y="200" width="60" height="60" as="geometry" />
+        </mxCell>
+        
+        <mxCell id="q_0" value="$$q_0$$" style="ellipse;whiteSpace=wrap;html=1;aspect=fixed;fontSize=16;" vertex="1" parent="1">
+          <mxGeometry x="300" y="200" width="60" height="60" as="geometry" />
+        </mxCell>
+        
+        <mxCell id="q_00" value="$$q_{00}$$" style="ellipse;whiteSpace=wrap;html=1;aspect=fixed;fontSize=16;" vertex="1" parent="1">
+          <mxGeometry x="450" y="200" width="60" height="60" as="geometry" />
+        </mxCell>
+        
+        <!-- Accept State -->
+        <mxCell id="q_p" value="$$q_p$$" style="shape=doubleEllipse;whiteSpace=wrap;html=1;aspect=fixed;fontSize=16;margin=5;" vertex="1" parent="1">
+          <mxGeometry x="600" y="200" width="60" height="60" as="geometry" />
+        </mxCell>
+        
+        <!-- Start Arrow -->
+        <mxCell id="start_pt" value="" style="ellipse;whiteSpace=wrap;html=1;aspect=fixed;strokeColor=none;fillColor=none;" vertex="1" parent="1">
+          <mxGeometry x="70" y="229" width="2" height="2" as="geometry" />
+        </mxCell>
+        <mxCell id="e_start" value="" style="endArrow=classic;html=1;rounded=0;fontSize=16;strokeWidth=1.5;" edge="1" parent="1" source="start_pt" target="q_e">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        
+        <!-- q_e self loop -->
+        <mxCell id="e_loop_qe" value="0, 1" style="endArrow=classic;html=1;curved=1;fontSize=16;labelBackgroundColor=none;strokeWidth=1.5;" edge="1" parent="1" source="q_e" target="q_e">
+          <mxGeometry relative="1" as="geometry">
+            <Array as="points">
+              <mxPoint x="160" y="140" />
+              <mxPoint x="200" y="140" />
+            </Array>
+            <mxPoint as="offset" y="-10" />
+          </mxGeometry>
+        </mxCell>
+        
+        <!-- q_e to q_0 -->
+        <mxCell id="e_qe_q0" value="0" style="endArrow=classic;html=1;rounded=0;fontSize=16;labelBackgroundColor=none;strokeWidth=1.5;" edge="1" parent="1" source="q_e" target="q_0">
+          <mxGeometry relative="1" as="geometry">
+            <mxPoint as="offset" y="-15" />
+          </mxGeometry>
+        </mxCell>
+        
+        <!-- q_0 to q_00 top curve -->
+        <mxCell id="e_q0_q00_top" value="0" style="endArrow=classic;html=1;curved=1;fontSize=16;labelBackgroundColor=none;strokeWidth=1.5;exitX=0.85;exitY=0.15;entryX=0.15;entryY=0.15;" edge="1" parent="1" source="q_0" target="q_00">
+          <mxGeometry relative="1" as="geometry">
+            <Array as="points">
+              <mxPoint x="405" y="190" />
+            </Array>
+            <mxPoint as="offset" y="-10" />
+          </mxGeometry>
+        </mxCell>
+        
+        <!-- q_0 to q_00 bottom curve -->
+        <mxCell id="e_q0_q00_bot" value="$$\epsilon$$" style="endArrow=classic;html=1;curved=1;fontSize=16;labelBackgroundColor=none;strokeWidth=1.5;exitX=0.85;exitY=0.85;entryX=0.15;entryY=0.85;" edge="1" parent="1" source="q_0" target="q_00">
+          <mxGeometry relative="1" as="geometry">
+            <Array as="points">
+              <mxPoint x="405" y="270" />
+            </Array>
+            <mxPoint as="offset" y="10" />
+          </mxGeometry>
+        </mxCell>
+        
+        <!-- q_00 to q_p -->
+        <mxCell id="e_q00_qp" value="1" style="endArrow=classic;html=1;rounded=0;fontSize=16;labelBackgroundColor=none;strokeWidth=1.5;" edge="1" parent="1" source="q_00" target="q_p">
+          <mxGeometry relative="1" as="geometry">
+            <mxPoint as="offset" y="-15" />
+          </mxGeometry>
+        </mxCell>
+        
+        <!-- q_p self loop -->
+        <mxCell id="e_loop_qp" value="0, 1" style="endArrow=classic;html=1;curved=1;fontSize=16;labelBackgroundColor=none;strokeWidth=1.5;" edge="1" parent="1" source="q_p" target="q_p">
+          <mxGeometry relative="1" as="geometry">
+            <Array as="points">
+              <mxPoint x="610" y="140" />
+              <mxPoint x="650" y="140" />
+            </Array>
+            <mxPoint as="offset" y="-10" />
+          </mxGeometry>
+        </mxCell>
+        
+      </root>
+    </mxGraphModel>
+  </diagram>
+</mxfile>

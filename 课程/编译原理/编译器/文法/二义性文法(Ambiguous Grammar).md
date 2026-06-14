@@ -1,6 +1,3 @@
-# 二义性文法 (Ambiguous Grammar)
-
-
 ## 1. 概念
 
 一个上下文无关文法（CFG）被称为**二义性文法**，如果存在至少一个句子，可以对应**两棵或更多棵不同的语法树**。
@@ -43,4 +40,19 @@ $$
 
 在编译器设计中，二义性文法是有问题的——编译器面对一个句子时，不知道该用哪棵语法树来解析，就会产生歧义。实际编译器中通常需要通过**改写文法**或引入**优先级/结合性规则**来消除二义性。
 
-经典的例子是算术表达式文法 $E \rightarrow E + E \mid E * E \mid id$，它对 $a + b * c$ 是二义的（先算加法还是乘法？）。通过改写文法或声明运算符优先级即可消除二义。
+经典的例子是算术表达式文法 $E \rightarrow E + E \mid E * E \mid (E) \mid id$，它对 $a + b * c$ 是二义的（先算加法还是乘法？）。通过[[二义性文法(Ambiguous Grammar)#改写文法消除二义性：|改写文法]]或[[二义性文法(Ambiguous Grammar)#声明运算符优先级|声明运算符优先级]]即可消除二义。
+
+### 改写文法消除二义性：
+通过引入新的非终结符（$T$ 代表项，$F$ 代表因子）来强制规定运算符的优先级（乘法高于加法）和结合性，可将其改写为等价的无二义性文法：
+
+$$
+\begin{aligned}
+E \rightarrow E + E \mid E * E \mid (E) \mid id \quad \Rightarrow \quad E &\rightarrow E + T \mid T \\
+T &\rightarrow T * F \mid F \\
+F &\rightarrow (E) \mid id
+\end{aligned}
+$$
+
+
+### 声明运算符优先级
+在 Yacc / Bison 等工具中，我们通过在文法之外**单独声明运算符的优先级（Precedence）和结合性（Associativity）**，来人为地“偏袒”某一种动作，从而打破僵局。最终，分析器在运行时依然是确定的、无二义性的。
