@@ -4,3 +4,6 @@
 
 node_modules
 .pdf
+
+.trae/documents
+.trae/specs

@@ -1,0 +1,70 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<mxfile host="drawio" version="26.0.0">
+  <diagram name="Fiber Tree">
+    <mxGraphModel math="1" dx="1000" dy="1000" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="827" pageHeight="1169">
+      <root>
+        <mxCell id="0" />
+        <mxCell id="1" parent="0" />
+        
+        <!-- Nodes -->
+        <mxCell id="n_app" value="Fiber(App)" style="rounded=1;whiteSpace=wrap;html=1;fontSize=16;strokeWidth=1.5;fillColor=#dae8fc;strokeColor=#6c8ebf;" vertex="1" parent="1">
+          <mxGeometry x="360" y="80" width="120" height="40" as="geometry" />
+        </mxCell>
+        
+        <mxCell id="n_header" value="Fiber(Header)" style="rounded=1;whiteSpace=wrap;html=1;fontSize=16;strokeWidth=1.5;fillColor=#d5e8d4;strokeColor=#82b366;" vertex="1" parent="1">
+          <mxGeometry x="200" y="200" width="120" height="40" as="geometry" />
+        </mxCell>
+        
+        <mxCell id="n_main" value="Fiber(Main)" style="rounded=1;whiteSpace=wrap;html=1;fontSize=16;strokeWidth=1.5;fillColor=#ffe6cc;strokeColor=#d79b00;" vertex="1" parent="1">
+          <mxGeometry x="520" y="200" width="120" height="40" as="geometry" />
+        </mxCell>
+        
+        <mxCell id="n_p" value="Fiber(p)" style="rounded=1;whiteSpace=wrap;html=1;fontSize=16;strokeWidth=1.5;fillColor=#f8cecc;strokeColor=#b85450;" vertex="1" parent="1">
+          <mxGeometry x="520" y="320" width="120" height="40" as="geometry" />
+        </mxCell>
+        
+        <!-- Edges -->
+        <!-- App -> Header (child) -->
+        <mxCell id="e_child1" value="child" style="endArrow=classic;html=1;curved=0;fontSize=14;fontColor=#FF3333;strokeColor=#FF3333;strokeWidth=1.5;entryX=0.5;entryY=0;exitX=0.25;exitY=1;labelBackgroundColor=none;" edge="1" parent="1" source="n_app" target="n_header">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        
+        <!-- Header -> App (return) -->
+        <mxCell id="e_return1" value="return" style="endArrow=classic;html=1;curved=0;fontSize=14;fontColor=#3333FF;strokeColor=#3333FF;strokeWidth=1.5;entryX=0;entryY=0.75;exitX=0.5;exitY=0;dashed=1;labelBackgroundColor=none;" edge="1" parent="1" source="n_header" target="n_app">
+          <mxGeometry relative="1" as="geometry">
+            <Array as="points">
+              <mxPoint x="260" y="140" />
+              <mxPoint x="360" y="140" />
+            </Array>
+          </mxGeometry>
+        </mxCell>
+
+        <!-- Header -> Main (sibling) -->
+        <mxCell id="e_sibling1" value="sibling" style="endArrow=classic;html=1;curved=0;fontSize=14;fontColor=#009900;strokeColor=#009900;strokeWidth=1.5;entryX=0;entryY=0.5;exitX=1;exitY=0.5;labelBackgroundColor=none;" edge="1" parent="1" source="n_header" target="n_main">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+
+        <!-- Main -> App (return) -->
+        <mxCell id="e_return2" value="return" style="endArrow=classic;html=1;curved=0;fontSize=14;fontColor=#3333FF;strokeColor=#3333FF;strokeWidth=1.5;entryX=0.75;entryY=1;exitX=0.5;exitY=0;dashed=1;labelBackgroundColor=none;" edge="1" parent="1" source="n_main" target="n_app">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        
+        <!-- Main -> p (child) -->
+        <mxCell id="e_child2" value="child" style="endArrow=classic;html=1;curved=0;fontSize=14;fontColor=#FF3333;strokeColor=#FF3333;strokeWidth=1.5;entryX=0.5;entryY=0;exitX=0.5;exitY=1;labelBackgroundColor=none;" edge="1" parent="1" source="n_main" target="n_p">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        
+        <!-- p -> Main (return) -->
+        <mxCell id="e_return3" value="return" style="endArrow=classic;html=1;curved=0;fontSize=14;fontColor=#3333FF;strokeColor=#3333FF;strokeWidth=1.5;entryX=1;entryY=0.75;exitX=1;exitY=0.5;dashed=1;labelBackgroundColor=none;" edge="1" parent="1" source="n_p" target="n_main">
+          <mxGeometry relative="1" as="geometry">
+            <Array as="points">
+              <mxPoint x="680" y="340" />
+              <mxPoint x="680" y="230" />
+            </Array>
+          </mxGeometry>
+        </mxCell>
+        
+      </root>
+    </mxGraphModel>
+  </diagram>
+</mxfile>

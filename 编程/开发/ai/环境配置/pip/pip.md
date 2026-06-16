@@ -1,3 +1,15 @@
 一部分包在conda上没有(因此在[[micromamba]]上也没有), 此时必须通过pip下载
 **但是pip也会下载到当前处在的conda环境中, 所以需要提前切换为正式的环境**
 
+## 常用命令
+```bash
+pip install numpy
+```
+
+```bash
+pip uninstall mpi4py -y
+```
+
+```bash
+pip list
+```

@@ -1,6 +1,7 @@
 ```bash
-pip install git+https://github.com/facebookresearch/segment-anything.git
+pip install git+https://github.com/UX-Decoder/Semantic-SAM.git@package
 ```
+- @package: 切换到 package 分支, 这是专门用来导出功能的分支, 结构会和主分支不同
 
 会用一个子进程去
 ```bash
