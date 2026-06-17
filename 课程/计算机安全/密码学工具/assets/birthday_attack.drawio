@@ -1,0 +1,112 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<mxfile host="drawio" version="26.0.0">
+  <diagram name="Birthday Attack">
+    <mxGraphModel math="1" dx="1000" dy="1000" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="827" pageHeight="1169">
+      <root>
+        <mxCell id="0" />
+        <mxCell id="1" parent="0" />
+        
+        <!-- Left Side: Preimage Attack -->
+        <mxCell id="box1" value="" style="rounded=1;whiteSpace=wrap;html=1;fillColor=none;strokeColor=#b0b0b0;strokeWidth=1.5;dashed=1;" vertex="1" parent="1">
+          <mxGeometry x="80" y="80" width="300" height="360" as="geometry" />
+        </mxCell>
+        <mxCell id="title1" value="$$ \textbf{暴力破解原像} \\ \text{计算目标是特定的 } h \\ O(2^n) \text{ 次尝试} $$" style="text;html=1;strokeColor=none;fillColor=none;align=center;verticalAlign=middle;whiteSpace=wrap;rounded=0;fontSize=16;" vertex="1" parent="1">
+          <mxGeometry x="110" y="90" width="240" height="60" as="geometry" />
+        </mxCell>
+
+        <!-- Target Hash Node -->
+        <mxCell id="target_h" value="$$h \text{ (固定)}$$" style="ellipse;whiteSpace=wrap;html=1;aspect=fixed;fontSize=16;strokeWidth=2;fillColor=#dae8fc;strokeColor=#6c8ebf;" vertex="1" parent="1">
+          <mxGeometry x="280" y="220" width="80" height="80" as="geometry" />
+        </mxCell>
+
+        <!-- Attempt Nodes -->
+        <mxCell id="m1" value="$$M_1$$" style="ellipse;whiteSpace=wrap;html=1;aspect=fixed;fontSize=16;strokeWidth=1.5;" vertex="1" parent="1">
+          <mxGeometry x="100" y="160" width="50" height="50" as="geometry" />
+        </mxCell>
+        <mxCell id="m2" value="$$M_2$$" style="ellipse;whiteSpace=wrap;html=1;aspect=fixed;fontSize=16;strokeWidth=1.5;" vertex="1" parent="1">
+          <mxGeometry x="100" y="240" width="50" height="50" as="geometry" />
+        </mxCell>
+        <mxCell id="m_dots" value="$$\dots$$" style="text;html=1;strokeColor=none;fillColor=none;align=center;verticalAlign=middle;whiteSpace=wrap;rounded=0;fontSize=16;" vertex="1" parent="1">
+          <mxGeometry x="100" y="300" width="50" height="30" as="geometry" />
+        </mxCell>
+        <mxCell id="mk" value="$$M_k$$" style="ellipse;whiteSpace=wrap;html=1;aspect=fixed;fontSize=16;strokeWidth=1.5;fillColor=#d5e8d4;strokeColor=#82b366;" vertex="1" parent="1">
+          <mxGeometry x="100" y="340" width="50" height="50" as="geometry" />
+        </mxCell>
+
+        <!-- Edges for Preimage -->
+        <mxCell id="e_m1" value="$$H(M_1) \neq h$$" style="endArrow=classic;html=1;curved=1;fontSize=14;labelBackgroundColor=none;strokeWidth=1.5;dashed=1;strokeColor=#FF6666;" edge="1" parent="1" source="m1" target="target_h">
+          <mxGeometry relative="1" as="geometry">
+            <Array as="points"><mxPoint x="200" y="180" /></Array>
+            <mxPoint as="offset" y="-15" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="e_m2" value="$$H(M_2) \neq h$$" style="endArrow=classic;html=1;curved=1;fontSize=14;labelBackgroundColor=none;strokeWidth=1.5;dashed=1;strokeColor=#FF6666;" edge="1" parent="1" source="m2" target="target_h">
+          <mxGeometry relative="1" as="geometry">
+            <mxPoint as="offset" y="-15" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="e_mk" value="$$H(M_k) = h$$" style="endArrow=classic;html=1;curved=1;fontSize=14;labelBackgroundColor=none;strokeWidth=2;strokeColor=#82b366;" edge="1" parent="1" source="mk" target="target_h">
+          <mxGeometry relative="1" as="geometry">
+            <Array as="points"><mxPoint x="200" y="330" /></Array>
+            <mxPoint as="offset" y="-15" />
+          </mxGeometry>
+        </mxCell>
+
+        <!-- Right Side: Birthday Attack -->
+        <mxCell id="box2" value="" style="rounded=1;whiteSpace=wrap;html=1;fillColor=none;strokeColor=#b0b0b0;strokeWidth=1.5;dashed=1;" vertex="1" parent="1">
+          <mxGeometry x="420" y="80" width="320" height="360" as="geometry" />
+        </mxCell>
+        <mxCell id="title2" value="$$ \textbf{生日攻击 (寻找碰撞)} \\ \text{任意两个 } M \text{ 映射到同一 } h \\ O(2^{n/2}) \text{ 次尝试} $$" style="text;html=1;strokeColor=none;fillColor=none;align=center;verticalAlign=middle;whiteSpace=wrap;rounded=0;fontSize=16;" vertex="1" parent="1">
+          <mxGeometry x="460" y="90" width="240" height="60" as="geometry" />
+        </mxCell>
+
+        <!-- Multiple Input Nodes -->
+        <mxCell id="bm1" value="$$M_1$$" style="ellipse;whiteSpace=wrap;html=1;aspect=fixed;fontSize=16;strokeWidth=1.5;" vertex="1" parent="1">
+          <mxGeometry x="450" y="160" width="50" height="50" as="geometry" />
+        </mxCell>
+        <mxCell id="bm2" value="$$M_2$$" style="ellipse;whiteSpace=wrap;html=1;aspect=fixed;fontSize=16;strokeWidth=1.5;fillColor=#ffe6cc;strokeColor=#d79b00;" vertex="1" parent="1">
+          <mxGeometry x="450" y="240" width="50" height="50" as="geometry" />
+        </mxCell>
+        <mxCell id="bm3" value="$$M_3$$" style="ellipse;whiteSpace=wrap;html=1;aspect=fixed;fontSize=16;strokeWidth=1.5;" vertex="1" parent="1">
+          <mxGeometry x="450" y="320" width="50" height="50" as="geometry" />
+        </mxCell>
+        <mxCell id="bm4" value="$$M_4$$" style="ellipse;whiteSpace=wrap;html=1;aspect=fixed;fontSize=16;strokeWidth=1.5;fillColor=#ffe6cc;strokeColor=#d79b00;" vertex="1" parent="1">
+          <mxGeometry x="450" y="400" width="50" height="50" as="geometry" />
+        </mxCell>
+
+        <!-- Hash Space Nodes -->
+        <mxCell id="h1" value="$$h_1$$" style="ellipse;whiteSpace=wrap;html=1;aspect=fixed;fontSize=16;strokeWidth=1.5;fillColor=#f5f5f5;strokeColor=#666666;" vertex="1" parent="1">
+          <mxGeometry x="640" y="180" width="60" height="60" as="geometry" />
+        </mxCell>
+        <mxCell id="h2" value="$$h_c$$" style="ellipse;whiteSpace=wrap;html=1;aspect=fixed;fontSize=16;strokeWidth=2;fillColor=#ffe6cc;strokeColor=#d79b00;" vertex="1" parent="1">
+          <mxGeometry x="640" y="280" width="60" height="60" as="geometry" />
+        </mxCell>
+
+        <!-- Edges for Birthday Attack -->
+        <mxCell id="e_bm1" value="" style="endArrow=classic;html=1;curved=1;fontSize=16;labelBackgroundColor=none;strokeWidth=1.5;strokeColor=#666666;" edge="1" parent="1" source="bm1" target="h1">
+          <mxGeometry relative="1" as="geometry">
+            <Array as="points"><mxPoint x="550" y="180" /></Array>
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="e_bm2" value="$$H(M_2)=h_c$$" style="endArrow=classic;html=1;curved=1;fontSize=14;labelBackgroundColor=none;strokeWidth=2;strokeColor=#d79b00;" edge="1" parent="1" source="bm2" target="h2">
+          <mxGeometry relative="1" as="geometry">
+            <Array as="points"><mxPoint x="550" y="270" /></Array>
+            <mxPoint as="offset" y="-15" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="e_bm3" value="" style="endArrow=classic;html=1;curved=1;fontSize=16;labelBackgroundColor=none;strokeWidth=1.5;strokeColor=#666666;" edge="1" parent="1" source="bm3" target="h1">
+          <mxGeometry relative="1" as="geometry">
+            <Array as="points"><mxPoint x="550" y="260" /></Array>
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="e_bm4" value="$$H(M_4)=h_c$$" style="endArrow=classic;html=1;curved=1;fontSize=14;labelBackgroundColor=none;strokeWidth=2;strokeColor=#d79b00;" edge="1" parent="1" source="bm4" target="h2">
+          <mxGeometry relative="1" as="geometry">
+            <Array as="points"><mxPoint x="550" y="380" /></Array>
+            <mxPoint as="offset" y="15" />
+          </mxGeometry>
+        </mxCell>
+        
+      </root>
+    </mxGraphModel>
+  </diagram>
+</mxfile>

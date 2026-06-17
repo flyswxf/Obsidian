@@ -1,0 +1,49 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<mxfile host="drawio" version="26.0.0">
+  <diagram name="Page-1">
+    <mxGraphModel math="1" dx="1000" dy="1000" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="827" pageHeight="1169">
+      <root>
+        <mxCell id="0" />
+        <mxCell id="1" parent="0" />
+        <mxCell id="new" value="New" style="ellipse;whiteSpace=wrap;html=1;aspect=fixed;fontSize=16;strokeWidth=1.5;" vertex="1" parent="1"><mxGeometry x="50" y="100" width="80" height="80" as="geometry" /></mxCell>
+        <mxCell id="ready" value="Ready" style="ellipse;whiteSpace=wrap;html=1;aspect=fixed;fontSize=16;strokeWidth=1.5;" vertex="1" parent="1"><mxGeometry x="300" y="100" width="80" height="80" as="geometry" /></mxCell>
+        <mxCell id="running" value="Running" style="ellipse;whiteSpace=wrap;html=1;aspect=fixed;fontSize=16;strokeWidth=1.5;" vertex="1" parent="1"><mxGeometry x="550" y="100" width="80" height="80" as="geometry" /></mxCell>
+        <mxCell id="waiting" value="Waiting" style="ellipse;whiteSpace=wrap;html=1;aspect=fixed;fontSize=16;strokeWidth=1.5;" vertex="1" parent="1"><mxGeometry x="425" y="300" width="80" height="80" as="geometry" /></mxCell>
+        <mxCell id="terminated" value="Terminated" style="ellipse;whiteSpace=wrap;html=1;aspect=fixed;fontSize=16;strokeWidth=1.5;" vertex="1" parent="1"><mxGeometry x="800" y="100" width="80" height="80" as="geometry" /></mxCell>
+        
+        <mxCell id="e1" value="admitted" style="endArrow=classic;html=1;curved=1;fontSize=16;labelBackgroundColor=none;strokeWidth=1.5;" edge="1" parent="1" source="new" target="ready">
+            <mxGeometry relative="1" as="geometry">
+                <mxPoint as="offset" y="-15" />
+            </mxGeometry>
+        </mxCell>
+        <mxCell id="e2" value="scheduler dispatch" style="endArrow=classic;html=1;curved=1;fontSize=16;labelBackgroundColor=none;strokeWidth=1.5;" edge="1" parent="1" source="ready" target="running">
+            <mxGeometry relative="1" as="geometry">
+                <Array as="points"><mxPoint x="465" y="40" /></Array>
+                <mxPoint as="offset" y="-15" />
+            </mxGeometry>
+        </mxCell>
+        <mxCell id="e3" value="interrupt" style="endArrow=classic;html=1;curved=1;fontSize=16;labelBackgroundColor=none;strokeWidth=1.5;" edge="1" parent="1" source="running" target="ready">
+            <mxGeometry relative="1" as="geometry">
+                <Array as="points"><mxPoint x="465" y="240" /></Array>
+                <mxPoint as="offset" y="15" />
+            </mxGeometry>
+        </mxCell>
+        <mxCell id="e4" value="I/O or event wait" style="endArrow=classic;html=1;curved=1;fontSize=16;labelBackgroundColor=none;strokeWidth=1.5;" edge="1" parent="1" source="running" target="waiting">
+            <mxGeometry relative="1" as="geometry">
+                <mxPoint as="offset" x="30" y="20" />
+            </mxGeometry>
+        </mxCell>
+        <mxCell id="e5" value="I/O or event completion" style="endArrow=classic;html=1;curved=1;fontSize=16;labelBackgroundColor=none;strokeWidth=1.5;" edge="1" parent="1" source="waiting" target="ready">
+            <mxGeometry relative="1" as="geometry">
+                <mxPoint as="offset" x="-50" y="20" />
+            </mxGeometry>
+        </mxCell>
+        <mxCell id="e6" value="exit" style="endArrow=classic;html=1;curved=1;fontSize=16;labelBackgroundColor=none;strokeWidth=1.5;" edge="1" parent="1" source="running" target="terminated">
+            <mxGeometry relative="1" as="geometry">
+                <mxPoint as="offset" y="-15" />
+            </mxGeometry>
+        </mxCell>
+      </root>
+    </mxGraphModel>
+  </diagram>
+</mxfile>

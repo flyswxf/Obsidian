@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<mxfile host="drawio" version="26.0.0">
+  <diagram name="IPv4 Header">
+    <mxGraphModel math="1" dx="1000" dy="1000" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="827" pageHeight="1169">
+      <root>
+        <mxCell id="0" />
+        <mxCell id="1" parent="0" />
+        
+        <!-- IPv4 Header Table -->
+        <!-- Row 1 -->
+        <mxCell id="row1_1" value="Version (4)" style="rounded=0;whiteSpace=wrap;html=1;fontSize=14;fillColor=#dae8fc;strokeColor=#6c8ebf;" vertex="1" parent="1"><mxGeometry x="80" y="80" width="80" height="40" as="geometry" /></mxCell>
+        <mxCell id="row1_2" value="IHL (4)" style="rounded=0;whiteSpace=wrap;html=1;fontSize=14;fillColor=#dae8fc;strokeColor=#6c8ebf;" vertex="1" parent="1"><mxGeometry x="160" y="80" width="80" height="40" as="geometry" /></mxCell>
+        <mxCell id="row1_3" value="TOS (8)" style="rounded=0;whiteSpace=wrap;html=1;fontSize=14;fillColor=#dae8fc;strokeColor=#6c8ebf;" vertex="1" parent="1"><mxGeometry x="240" y="80" width="160" height="40" as="geometry" /></mxCell>
+        <mxCell id="row1_4" value="Total Length (16)" style="rounded=0;whiteSpace=wrap;html=1;fontSize=14;fillColor=#dae8fc;strokeColor=#6c8ebf;" vertex="1" parent="1"><mxGeometry x="400" y="80" width="320" height="40" as="geometry" /></mxCell>
+
+        <!-- Row 2 -->
+        <mxCell id="row2_1" value="Identification (16)" style="rounded=0;whiteSpace=wrap;html=1;fontSize=14;fillColor=#fff2cc;strokeColor=#d6b656;" vertex="1" parent="1"><mxGeometry x="80" y="120" width="320" height="40" as="geometry" /></mxCell>
+        <mxCell id="row2_2" value="Flags (3)" style="rounded=0;whiteSpace=wrap;html=1;fontSize=14;fillColor=#fff2cc;strokeColor=#d6b656;" vertex="1" parent="1"><mxGeometry x="400" y="120" width="60" height="40" as="geometry" /></mxCell>
+        <mxCell id="row2_3" value="Fragment Offset (13)" style="rounded=0;whiteSpace=wrap;html=1;fontSize=14;fillColor=#fff2cc;strokeColor=#d6b656;" vertex="1" parent="1"><mxGeometry x="460" y="120" width="260" height="40" as="geometry" /></mxCell>
+
+        <!-- Row 3 -->
+        <mxCell id="row3_1" value="Time to Live (8)" style="rounded=0;whiteSpace=wrap;html=1;fontSize=14;fillColor=#d5e8d4;strokeColor=#82b366;" vertex="1" parent="1"><mxGeometry x="80" y="160" width="160" height="40" as="geometry" /></mxCell>
+        <mxCell id="row3_2" value="Protocol (8)" style="rounded=0;whiteSpace=wrap;html=1;fontSize=14;fillColor=#d5e8d4;strokeColor=#82b366;" vertex="1" parent="1"><mxGeometry x="240" y="160" width="160" height="40" as="geometry" /></mxCell>
+        <mxCell id="row3_3" value="Header Checksum (16)" style="rounded=0;whiteSpace=wrap;html=1;fontSize=14;fillColor=#d5e8d4;strokeColor=#82b366;" vertex="1" parent="1"><mxGeometry x="400" y="160" width="320" height="40" as="geometry" /></mxCell>
+
+        <!-- Row 4 -->
+        <mxCell id="row4" value="Source IP Address (32)" style="rounded=0;whiteSpace=wrap;html=1;fontSize=14;fillColor=#ffe6cc;strokeColor=#d79b00;" vertex="1" parent="1"><mxGeometry x="80" y="200" width="640" height="40" as="geometry" /></mxCell>
+
+        <!-- Row 5 -->
+        <mxCell id="row5" value="Destination IP Address (32)" style="rounded=0;whiteSpace=wrap;html=1;fontSize=14;fillColor=#ffe6cc;strokeColor=#d79b00;" vertex="1" parent="1"><mxGeometry x="80" y="240" width="640" height="40" as="geometry" /></mxCell>
+
+        <!-- Row 6 -->
+        <mxCell id="row6" value="Options (variable) + Padding" style="rounded=0;whiteSpace=wrap;html=1;fontSize=14;fillColor=#e1d5e7;strokeColor=#9673a6;" vertex="1" parent="1"><mxGeometry x="80" y="280" width="640" height="40" as="geometry" /></mxCell>
+
+      </root>
+    </mxGraphModel>
+  </diagram>
+</mxfile>
