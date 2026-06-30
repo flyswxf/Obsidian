@@ -130,7 +130,7 @@ $$ FOLLOW(A) = \{ a \mid S \Rightarrow^* \dots Aa \dots, a \in V_T \} $$
 >* **求 $SELECT(A \to \epsilon)$**：
 >	* 因为右部直接就是 $\epsilon$（属于情况 2）。
 >	* 所以 $SELECT(A \to \epsilon) = (FIRST(\epsilon) \setminus \{\epsilon\}) \cup FOLLOW(A) = \emptyset \cup \{b, c\} = \{b, c\}$。
->	* *含义**：如果当前是非终结符 $A$，且下一个输入字符是 $b$ 或 $c$（也就是 $A$ 后面的符号），说明 $A$ 在这里必须“让位”消失掉，所以应该用 $A \to \epsilon$ 规则。
+>	* **含义**：如果当前是非终结符 $A$，且下一个输入字符是 $b$ 或 $c$（也就是 $A$ 后面的符号），说明 $A$ 在这里必须“让位”消失掉，所以应该用 $A \to \epsilon$ 规则。
 
 ---
 

@@ -1,4 +1,3 @@
-## 1. 简介
 **Thompson 构造法**（Thompson's Construction）是编译原理词法分析中的一个经典算法。它的主要作用是将 [[正规式|正则表达式 (Regular Expression, RE)]] 转换为等价的非确定性有限状态自动机 (NFA)。
 这个算法是由 Ken Thompson 在 1968 年发明的，广泛应用于各种词法分析器生成工具（如 Lex、Flex）中。
 
@@ -13,17 +12,17 @@ Thompson 构造法采用**自底向上 (Bottom-up)** 的归纳方法：
 ### 3.1 基本情况 (Base Cases)
 - **空串 $\epsilon$**：
   构造一个具有两个状态的 NFA：一个开始状态，一个接受状态，中间由一条标有 $\epsilon$ 的边连接。
-  ```mermaid
+```mermaid
   graph LR
       Start((Start)) -- ε --> Accept(((Accept)))
-  ```
+```
 
 - **单个字符 $a$**：
   构造一个具有两个状态的 NFA：一个开始状态，一个接受状态，中间由一条标有字符 $a$ 的边连接。
-  ```mermaid
-  graph LR
-      Start((Start)) -- a --> Accept(((Accept)))
-  ```
+```mermaid
+graph LR
+	Start((Start)) -- a --> Accept(((Accept)))
+```
 
 ### 3.2 归纳情况 (Inductive Cases)
 假设已经有正则表达式 $A$ 和 $B$ 的 NFA，分别记作 $N(A)$ 和 $N(B)$。
@@ -31,49 +30,49 @@ Thompson 构造法采用**自底向上 (Bottom-up)** 的归纳方法：
 - **并置/连接 (Concatenation, $AB$)**：
   将 $N(A)$ 的接受状态与 $N(B)$ 的开始状态合并（或者用一条 $\epsilon$-转换连接）。
   新 NFA 的开始状态是 $N(A)$ 的开始状态，接受状态是 $N(B)$ 的接受状态。
-  ```mermaid
+```mermaid
   graph LR
       StartA((Start A)) -->|...| Mid((Accept A / Start B))
       Mid -->|...| AcceptB(((Accept B)))
-  ```
+```
 
 - **选择/并集 (Alternation/Union, $A|B$)**：
   新建一个总的开始状态和一个总的接受状态。
   - 新开始状态通过 $\epsilon$-转换分别指向 $N(A)$ 和 $N(B)$ 的开始状态。
   - $N(A)$ 和 $N(B)$ 的接受状态通过 $\epsilon$-转换都指向新接受状态。
-  ```mermaid
+```mermaid
   graph LR
       Start((Start)) -- ε --> NA[N A]
       Start -- ε --> NB[N B]
       NA -- ε --> Accept(((Accept)))
       NB -- ε --> Accept
-  ```
+```
 
 - **闭包/星号 (Kleene Star, $A^*$)**：
   新建一个总的开始状态和一个总的接受状态。
   - 新开始状态通过 $\epsilon$-转换指向 $N(A)$ 的开始状态，同时也通过 $\epsilon$-转换直接指向新接受状态（表示可以匹配 0 次）。
   - $N(A)$ 的接受状态通过 $\epsilon$-转换指向新接受状态，同时也通过 $\epsilon$-转换**回退**到 $N(A)$ 的开始状态（表示可以循环匹配多次）。
-  ```mermaid
+```mermaid
   graph LR
       Start((Start)) -- ε --> StartA((Start A))
       StartA -->|...| AcceptA((Accept A))
       AcceptA -- ε --> StartA
       AcceptA -- ε --> Accept(((Accept)))
       Start -- ε --> Accept
-  ```
+```
 
 - **正闭包/加号 (Positive Closure, $A^+$)**：
   新建一个总的开始状态和一个总的接受状态。
   - 新开始状态通过 $\epsilon$-转换指向 $N(A)$ 的开始状态。
   - $N(A)$ 的接受状态通过 $\epsilon$-转换指向新接受状态，同时也通过 $\epsilon$-转换**回退**到 $N(A)$ 的开始状态。
   - 与 $A^*$ 唯一的区别是：**没有**从总开始状态直接跳到总接受状态的 $\epsilon$-转换，确保必须至少匹配一次。
-  ```mermaid
+```mermaid
   graph LR
       Start((Start)) -- ε --> StartA((Start A))
       StartA -->|...| AcceptA((Accept A))
       AcceptA -- ε --> StartA
       AcceptA -- ε --> Accept(((Accept)))
-  ```
+```
 
 ## 4. 算法的关键特性
 通过 Thompson 构造法生成的 NFA 具有以下几个重要的标准特性：
@@ -82,10 +81,7 @@ Thompson 构造法采用**自底向上 (Bottom-up)** 的归纳方法：
 3. **出度限制**：每个状态最多只有两条出边（且如果是两条，必定都是 $\epsilon$-转换）；如果是一个符号转换，则出边最多只有一条。
 4. **状态数量有界**：如果正则表达式的长度（包括符号和操作符）为 $r$，那么构造出的 NFA 状态数最多为 $2r$。这保证了转换的空间和时间复杂度是线性的。
 
-## 5. 总结流程
-[[正规式|正规式 (RE)]] → **Thompson构造法** → NFA → [[子集构造法]] → DFA → [[Hopcroft 算法]] → 最小化 DFA → [[词法分析器|词法分析器代码]]
-
-## 6. 实例演示：将 `(a|b)*aba+` 转换为 NFA
+## 5. 实例演示：将 `(a|b)*aba+` 转换为 NFA
 
 根据图片中的正规式 `(a|b)*aba+`，可以按照 Thompson 构造法一步步进行拆解和组合：
 

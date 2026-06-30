@@ -1,4 +1,4 @@
-语法制导翻译方案（Syntax-Directed Translation Scheme, SDT）是[[语法制导定义(SDD)]]的具体实现机制。与仅仅描述逻辑依赖的 SDD 不同，SDT 是一种在产生式右部显式嵌入**语义动作**（Semantic Actions）的上下文无关文法。
+语法制导翻译方案（Syntax-Directed Translation Scheme, SDT）是[[语法制导定义(SDD)]]的具体实现机制。与仅仅描述逻辑依赖的 SDD 不同，SDT 是一种在产生式右部显式嵌入**语义动作**（Semantic Actions）的[[上下文无关文法]]。
 
 这些被花括号 `{ }` 包裹的程序代码片段，指明了属性计算的确切时机。当语法分析器匹配到产生式中动作所在的位置时，就会执行该动作。
 
