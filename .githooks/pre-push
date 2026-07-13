@@ -1,5 +1,6 @@
 #!/bin/sh
 
+
 set -eu
 
 zero_sha="0000000000000000000000000000000000000000"
@@ -74,3 +75,4 @@ if [ -n "$invalid_files" ]; then
 fi
 
 exit 0
+echo "DEBUG: pre-push is running" >&2
