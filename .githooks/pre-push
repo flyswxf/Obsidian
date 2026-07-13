@@ -1,0 +1,76 @@
+#!/bin/sh
+
+set -eu
+
+zero_sha="0000000000000000000000000000000000000000"
+empty_tree="4b825dc642cb6eb9a060e54bf8d69288fbee4904"
+invalid_files=""
+
+strip_cr() {
+  printf '%s' "$1" | tr -d '\r'
+}
+
+is_allowed_file() {
+  lower_path=$(printf '%s' "$1" | tr '[:upper:]' '[:lower:]')
+
+  case "$lower_path" in
+    .obsidian/*|*/.obsidian/*)
+      return 0
+      ;;
+    .githooks/*|*/.githooks/*)
+      return 0
+      ;;
+    *.md|*.pdf|*.drawio|*.mp4)
+      return 0
+      ;;
+    *.png|*.jpg|*.jpeg|*.gif|*.webp|*.svg|*.bmp|*.avif)
+      return 0
+      ;;
+    *)
+      return 1
+      ;;
+  esac
+}
+
+check_range() {
+  from_ref="$1"
+  to_ref="$2"
+
+  while IFS= read -r path; do
+    [ -n "$path" ] || continue
+
+    if ! is_allowed_file "$path"; then
+      invalid_files="${invalid_files}${path}
+"
+    fi
+  done <<EOF
+$(git -c core.quotepath=false diff --name-only --diff-filter=ACMR "$from_ref" "$to_ref")
+EOF
+}
+
+while IFS=' ' read -r local_ref local_sha remote_ref remote_sha; do
+  local_sha=$(strip_cr "${local_sha:-}")
+  remote_sha=$(strip_cr "${remote_sha:-$zero_sha}")
+
+  [ -n "${local_sha:-}" ] || continue
+
+  if [ "$local_sha" = "$zero_sha" ]; then
+    continue
+  fi
+
+  if [ "$remote_sha" = "$zero_sha" ]; then
+    check_range "$empty_tree" "$local_sha"
+  else
+    check_range "$remote_sha" "$local_sha"
+  fi
+done
+
+if [ -n "$invalid_files" ]; then
+  echo "Push blocked: found files outside the allowed whitelist." >&2
+  echo "Allowed: .obsidian/**, .githooks/**, *.md, *.pdf, *.drawio, *.mp4, and common image files." >&2
+  echo "Blocked files:" >&2
+  printf '%s' "$invalid_files" | sort -u >&2
+  exit 1
+fi
+
+exit 0

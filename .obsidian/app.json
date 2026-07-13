@@ -10,5 +10,6 @@
   "showLineNumber": false,
   "readableLineLength": false,
   "spellcheck": false,
-  "promptDelete": false
+  "promptDelete": false,
+  "attachmentFolderPath": "./assets"
 }
