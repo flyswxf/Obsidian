@@ -1,0 +1,55 @@
+#!/bin/sh
+
+set -eu
+
+invalid_files=""
+
+is_allowed_file() {
+  lower_path=$(printf '%s' "$1" | tr '[:upper:]' '[:lower:]')
+
+  case "$lower_path" in
+    .obsidian/*|*/.obsidian/*)
+      return 0
+      ;;
+    .githooks/*|*/.githooks/*)
+      return 0
+      ;;
+    *.md|*.pdf|*.drawio|*.mp4)
+      return 0
+      ;;
+    *.png|*.jpg|*.jpeg|*.gif|*.webp|*.svg|*.bmp|*.avif)
+      return 0
+      ;;
+    *)
+      return 1
+      ;;
+  esac
+}
+
+if git rev-parse --verify HEAD >/dev/null 2>&1; then
+  against=HEAD
+else
+  # Initial commit: diff against an empty tree object
+  against=4b825dc642cb6eb9a060e54bf8d69288fbee4904
+fi
+
+while IFS= read -r path; do
+  [ -n "$path" ] || continue
+
+  if ! is_allowed_file "$path"; then
+    invalid_files="${invalid_files}${path}
+"
+  fi
+done <<EOF
+$(git diff --cached --name-only --diff-filter=ACMR "$against")
+EOF
+
+if [ -n "$invalid_files" ]; then
+  echo "Commit blocked: found files outside the allowed whitelist." >&2
+  echo "Allowed: .obsidian/**, .githooks/**, *.md, *.pdf, *.drawio, *.mp4, and common image files." >&2
+  echo "Blocked files:" >&2
+  printf '%s' "$invalid_files" | sort -u >&2
+  exit 1
+fi
+
+exit 0
