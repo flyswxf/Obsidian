@@ -1,3 +1,28 @@
+<<<<<<< HEAD
+=======
+<<<<<<< HEAD
+# Obsidian 内部文件（不需同步）
+.obsidian/workspace.json
+.obsidian/workspace-mobile.json
+**/.obsidian/workspace.json
+**/.obsidian/workspace-mobile.json
+
+# IDE / 工具
+.trae/
+.relay/
+.githooks/
+.ai/
+
+# 大 PDF 文件 —— 已通过 Git LFS 管理（见 .gitattributes）
+# 不在此 ignore，让 LFS 处理
+
+# 二进制文档
+*.docx
+
+# 临时文件
+_待整理/
+=======
+>>>>>>> 3c428a2 (chore: 初始化仓库，清理目录结构，合并编译原理作业)
 参考2_UML基础、案例与应用  第3版  修订版.pdf
 教材_UML用户指南(第2版)_中文版.pdf
 **/workspace.json
@@ -6,4 +31,10 @@ node_modules
 .pdf
 
 .trae/documents
+<<<<<<< HEAD
 .trae/specs
+=======
+.trae/specs
+>>>>>>> f81516b86c4e8635008168039021ce6d584b6c55
+*.pdf
+>>>>>>> 3c428a2 (chore: 初始化仓库，清理目录结构，合并编译原理作业)

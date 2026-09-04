@@ -1,3 +1,23 @@
+<<<<<<< HEAD
+=======
+<<<<<<< HEAD
+# ICU 项目面试技术亮点
+
+> 基于 GraphCare (ICLR'24) 改进的 ICU 场景图神经网络医疗辅助决策系统。
+> 代码仓库：`D:\code\GraphCare-improvement`
+
+## 总的介绍
+
+- 我这个项目是在做一个 ICU 场景下的图神经网络医疗辅助决策系统。输入是患者的结构化电子病历数据，包括诊断、手术、药物、生命体征等信息；输出一方面是药物推荐，另一方面是心源性休克的高风险状态预测。
+- 之所以用图建模，是因为医疗数据天然存在很强的关系结构，比如疾病和并发症之间、疾病和治疗之间、药物和禁忌之间都有明确的语义关联。其次，医学相关项目的一个目标是要有可解释性，图结构可以简洁清晰的可视化，所以选择图神经网络。
+- 在实现上，我先根据患者相关的医学概念组织成个性化子图，再通过图神经网络进行消息传递。
+- 训练阶段的难点主要在于医疗数据极度不平衡。很多常见药正样本量很大，但真正关键罕见药物正样本量非常小。如果直接用标准交叉熵，模型很容易被多数类主导，所以我引入了 Focal Loss，让模型在反向传播时更关注难分样本。同时在评估时，我重点看 Macro-F1，因为它能更真实反映模型对少数类的识别能力，而不是被多数类的高频正确率掩盖。
+- 除此之外，我还做了一个反馈闭环。第一次推理完成后，医生可以输入自然语言反馈，比如补充风险因素、禁忌症或者强调某些临床信息。医生的自然语言反馈经过向量化，然后通过 HNSW 近似最近邻搜索，映射成对当前患者图中激活节点的动态增删，再触发二次推理。
+- 我负责并实现了数据清洗、训练、优化，构造了反馈的 pipeline。
+
+---
+=======
+>>>>>>> 3c428a2 (chore: 初始化仓库，清理目录结构，合并编译原理作业)
 # 总的介绍
 - 我这个项目是在做一个 ICU 场景下的图神经网络医疗辅助决策系统。输入是患者的结构化电子病历数据，包括诊断、手术、药物、生命体征等信息；输出一方面是药物推荐，另一方面是心源性休克的高风险状态预测。
 - 之所以用图建模，是因为医疗数据天然存在很强的关系结构，比如疾病和并发症之间、疾病和治疗之间、药物和禁忌之间都有明确的语义关联。其次，医学相关项目的一个目标是要有可解释性, 图结构可以简洁清晰的可视化, 所以选择图神经网络”
@@ -5,10 +25,305 @@
 - 训练阶段的难点主要在于医疗数据极度不平衡。很多常见药正样本量很大，但真正关键罕见药物正样本量非常小。如果直接用标准交叉熵，模型很容易被多数类主导，所以我引入了 Focal Loss，让模型在反向传播时更关注难分样本。同时在评估时，我重点看 Macro-F1，因为它能更真实反映模型对少数类的识别能力，而不是被多数类的高频正确率掩盖。
 - 除此之外，我还做了一个反馈闭环。第一次推理完成后，医生可以输入自然语言反馈，比如补充风险因素、禁忌症或者强调某些临床信息。医生的自然语言反馈经过向量化, 然后再HNSW近似最近邻搜索，映射成对当前患者图中激活节点的动态增删，再触发二次推理
 - 我负责并实现了数据清洗, 训练, 优化, 构造了反馈的pipline. 
+<<<<<<< HEAD
+=======
+>>>>>>> f81516b86c4e8635008168039021ce6d584b6c55
+>>>>>>> 3c428a2 (chore: 初始化仓库，清理目录结构，合并编译原理作业)
 
 ## 图神经网络部分
 
 ### Message Passing
+<<<<<<< HEAD
+=======
+<<<<<<< HEAD
+
+图神经网络的核心机制是**消息传递（Message Passing）**。经过多层网络后，每个节点不仅包含自身特征，还融合了局部图的拓扑结构信息。消息传递被拆解为三个标准步骤：
+
+1. **Message（消息计算）**：决定邻居节点 $j$ 要发给目标节点 $i$ 什么内容。通常是 $h_j$、$h_i$ 以及边特征 $e_{ij}$ 的函数。
+2. **Aggregate（聚合）**：目标节点 $i$ 收到多个邻居消息，用对称函数（Sum/Mean/Max）聚合，保证置换不变性。
+3. **Update（状态更新）**：将聚合后的邻居消息与自身特征结合，通过 MLP 和激活函数得到新特征。
+
+### GraphCare 项目中的三维度消息
+
+在 GraphCare 的 `BiAttentionGNNConv` 中，一条完整的 Message 包含 3 个维度：
+
+1. **邻居特征** (`x_j`)：源节点经过线性变换后的特征。
+2. **注意力权重** (`attn`)：基于时间衰减的双注意力（Alpha + Beta），作为权重乘在邻居特征上，表示不同邻居对当前患者的重要程度不同。
+   - **Alpha Attention**（节点级）：`softmax(alpha_attn(visit_node))`，形状 `[B, V, N]`，学习每个就诊中各节点的重要性
+   - **Beta Attention**（就诊级）：`tanh(beta_attn(visit_node)) * lambda_j`，形状 `[B, V, 1]`，引入指数衰减 $\lambda_j = \exp(\lambda \cdot (V - j))$ 强化近期就诊
+   - 两者相乘后在就诊维度求和，映射到边级别
+3. **医学关系特征** (`edge_attr`)：节点间有具体的医学关系（如"导致"、"治疗"），经 `W_R` 线性映射后加到消息里 (`w_rel * edge_attr`)。
+
+在 **Aggregate** 阶段使用加和池化（`aggr='add'`），**Update** 阶段将聚合消息与节点自身特征相加（`out + (1 + eps) * x_r`），再经 ReLU 激活。
+
+### 代码实现要点
+
+```python
+# graphcare_/model.py - BiAttentionGNNConv.message()
+def message(self, x_j, edge_attr, attn):
+    w_rel = self.W_R(edge_attr)  # 关系特征 → 标量权重
+    out = (x_j * attn + w_rel * edge_attr).relu()  # 三维度消息融合
+    return out
+```
+
+### 💡 GNN 统一范式公式
+
+$$h_i^{(l+1)} = \gamma \left( h_i^{(l)}, \square_{j \in \mathcal{N}(i)} \phi \left(h_i^{(l)}, h_j^{(l)}, e_{ij} \right) \right)$$
+
+- $\phi$ = Message 函数
+- $\square$ = Aggregate 函数（Sum）
+- $\gamma$ = Update 函数
+
+---
+
+## 边稀疏化部分
+
+我的实现采用了一种工程化、稳定的 **"软权重 + 硬掩码 + 辅助正则化 Loss"** 策略，而非 Gumbel-Softmax。
+
+### 1. Top-K 掩码是怎么实现的？
+
+**回答话术：**
+
+"在我的代码中，Top-K 掩码通过两步走实现：
+
+首先，我设计了一个多层感知机 `EdgeScorer`。它接收源节点、目标节点以及边的初始特征，拼接后经过映射和 Sigmoid 激活，输出一个 0 到 1 之间的 `edge_scores`，表示这条边的重要性。
+
+```python
+# SparseModel.py - EdgeScorer
+class EdgeScorer(nn.Module):
+    def forward(self, x, edge_index, edge_attr):
+        src = self.node_transform(x[edge_index[0]])  # [E, H/2]
+        tgt = self.node_transform(x[edge_index[1]])  # [E, H/2]
+        edge = self.edge_transform(edge_attr)         # [E, H/2]
+        combined = torch.cat([src, tgt, edge], dim=1)  # [E, 3H/2]
+        return self.scorer(combined)  # Sigmoid → [E, 1] ∈ [0,1]
+```
+
+然后，根据预设的稀疏化比例（如保留 Top 10%），利用 `torch.topk` 找到当前 Batch 中重要性得分的阈值。将所有得分大于等于该阈值的边标记为 1，其余为 0，生成非 0 即 1 的 `sparsification_mask`。
+
+```python
+# SparseModel.py - forward() 中的 Top-K
+k_keep = max(1, int(num_edges * self.sparsification_ratio))
+topk_vals, _ = torch.topk(edge_scores.squeeze(), k_keep)
+thresh = topk_vals.min()
+sparsification_mask = (edge_scores.squeeze() >= thresh).float().view(-1, 1)
+```
+
+### 2. Hard Mask 的梯度截断如何处理？
+
+"为解决 Hard Mask 带来的梯度截断问题，我采用了**掩码乘法结合辅助 Loss** 的策略：
+
+**对于前向传播的主任务（保留的边）**：
+将可微的软得分与硬掩码相乘：`edge_weights_input = edge_scores * sparsification_mask`。因为 mask 只是常数（1 或 0），所以对于被保留的边（Mask=1），主任务的梯度可以顺畅地通过 `edge_scores` 回传给 EdgeScorer。
+
+**对于被丢弃的边（Mask=0）**：
+它们无法从最终的分类 Loss 中获得梯度。为防止'一死百了'，我在应用 Mask **之前**，直接基于原始的 `edge_scores` 引入了**辅助稀疏化损失**，包含两部分：
+
+- **L1 稀疏性惩罚**：`l1_loss = mean(edge_scores)`，全局压低所有边的得分
+- **连通性保持惩罚**：计算每个节点的边权重之和，如果低于最低阈值则给予惩罚
+
+```python
+# SparseModel.py - compute_sparsification_loss()
+def compute_sparsification_loss(self, edge_scores, edge_index):
+    l1_loss = torch.mean(edge_scores)
+    edge_counts = torch.zeros(num_nodes).scatter_add_(0, edge_index[0], edge_scores.squeeze())
+    connectivity_loss = torch.mean(torch.relu(1.0 - edge_counts))
+    return self.l1_lambda * l1_loss + self.connectivity_lambda * connectivity_loss
+```
+
+通过这种设计，即使一条边当前被 Mask 掉了，它依然能收到来自连通性辅助 Loss 的梯度。如果在后续的 Epoch 中，主任务需要用到这个节点，辅助 Loss 会推高它的 `edge_scores`，一旦超过阈值，它就会在下一次前向传播中被 Top-K 重新'复活'。这样既实现了物理上的稀疏计算，又保证了全局梯度的流动与动态探索。"
+
+---
+
+## 训练部分
+
+### Focal Loss
+
+Focal Loss 是何恺明在 2017 年提出的专为解决**极端类别不平衡**问题的损失函数。
+
+#### $p_t$ 定义
+
+$p_t$ = 模型预测该样本为**真实类别**的概率：
+- 正样本（$y=1$）：$p_t = p$
+- 负样本（$y=0$）：$p_t = 1 - p$
+
+**$p_t$ 越大 → 样本越容易分；$p_t$ 越小 → 样本越难分。**
+
+#### 标准交叉熵的问题
+
+$$CE(p_t) = -\log(p_t)$$
+
+假设 100 个正样本（休克患者），100,000 个负样本（普通患者）。易分负样本 $p_t=0.99$，单样本 Loss $\approx 0.004$，但 $100,000 \times 0.004 = 400$。难分正样本 $p_t=0.1$，Loss $\approx 2.3$，$100 \times 2.3 = 230$。
+
+**结论**：海量"易分负样本"的微小 Loss 累加，彻底淹没"难分正样本"的 Loss。
+
+#### 引入 $\gamma$ 解决"难易"问题
+
+$$FL(p_t) = -(1 - p_t)^\gamma \log(p_t)$$
+
+$\gamma=2$ 时：
+- 易分样本（$p_t=0.9$）：$(1-0.9)^2=0.01$，Loss 缩小 100 倍
+- 难分样本（$p_t=0.1$）：$(1-0.1)^2=0.81$，Loss 几乎不变
+
+#### 引入 $\alpha$ 解决"数量"问题
+
+$$FL(p_t) = -\alpha_t (1 - p_t)^\gamma \log(p_t)$$
+
+$\alpha$ 从物理数量上平衡正负类，$\gamma$ 从学习难度上平衡易分/难分样本。
+
+### 代码实现
+
+```python
+# runSparseModel.py
+class FocalLoss(nn.Module):
+    def __init__(self, alpha=0.25, gamma=2.0, reduction='mean'):
+        super().__init__()
+    def forward(self, logits, targets):
+        bce = F.binary_cross_entropy_with_logits(logits, targets, reduction='none')
+        probs = torch.sigmoid(logits)
+        pt = probs * targets + (1 - probs) * (1 - targets)
+        return (self.alpha * (1 - pt) ** self.gamma * bce).mean()
+```
+
+### 💡 面试高分话术
+
+"在我的 GraphCare ICU 辅助决策项目中，多标签药物推荐和心源性休克风险预测都面临极其严重的长尾分布问题。如果直接使用 Cross Entropy，模型会被海量的、容易预测的常见病和常规用药主导，导致在罕见药和休克高危患者上的 Recall 非常低。
+
+我引入了 Focal Loss，核心公式 $-\alpha_t (1 - p_t)^\gamma \log(p_t)$。$\gamma$ 通常设为 2，对 Loss 施加动态缩放因子 $(1-p_t)^\gamma$：常规药已预测很准（$p_t=0.9$）时 Loss 缩小 100 倍，而罕见特效药 Loss 几乎不衰减。$\alpha$ 设为 0.25，为少数类分配更高权重。
+
+通过 $\alpha$ 和 $\gamma$ 双管齐下，模型不再迎合大众数据，大幅提升了少数类的识别率，直接反映在 Macro-F1 指标的显著提升上。"
+
+---
+
+## 验证部分
+
+### Micro-F1 vs Macro-F1
+
+- **Micro-F1**：全局统算，受多数类主导。适用于整体类别分布均衡的场景。
+- **Macro-F1**：各类独立计算 F1 后取算术平均，对少数类高度敏感。适用于严重数据不平衡且要求模型在少数类上也有良好表现。
+
+### 代码实现
+
+```python
+# runSparseModel.py - 验证阶段
+val_f1 = f1_score(calc_y_true, y_pred_val, average="samples", zero_division=1)
+# 同时计算 per-class 最优阈值
+per_class_thr_opt = find_best_per_class_thresholds(calc_y_true, calc_y_prob)
+```
+
+### 多标签决策策略
+
+支持三种策略：`threshold`（全局阈值）、`topk`（Top-K 选择）、`hybrid`（阈值优先，无选中时回退到 Top-K=1）。
+
+### 💡 面试高分话术
+
+"在多标签评估中，Micro-F1 和 Macro-F1 的核心区别在于对待数据不平衡的态度。Micro-F1 受多数类主导；Macro-F1 对少数类高度敏感。
+
+在我的 GraphCare ICU 项目中，面临极度严重的长尾分布。β-内酰胺抗菌药、青霉素类样本量极大，而特效药样本量极小。如果只看 Micro-F1，模型无脑推荐通用药分数就会很高，但这在临床决策中毫无意义。因此我们重点关注 Macro-F1，它能真实反映模型对罕见药物和高危休克风险的联合预测能力。"
+
+---
+
+## 反馈模块
+
+### 整体流程
+
+第一次推理完成后，医生输入自然语言反馈（如"患者有严重心衰，需要强化相关风险因素"），系统将其转换成图模型可执行的结构化操作：
+
+1. **LLM 拆解**：将反馈拆成 add/remove 两类关键词
+2. **向量化**：将关键词编码成 embedding
+3. **HNSW 搜索**：在预先构建的 cluster embedding 索引中做近似最近邻搜索，快速召回最相关的 cluster 候选
+4. **重排**：如有多个关键词，将候选集合并，再做精确相似度重排
+5. **图更新**：把最终得到的 cluster index 用于修改患者样本里的 `ehr_node_set`，增加或移除某些 cluster 节点
+6. **二次推理**：触发二次图推理
+
+### HNSW 的作用
+
+- **被搜索向量**：cluster embedding
+- **查询向量**：关键词 embedding
+- 功能：给一个关键词 embedding，快速找到最相近的若干个 cluster embedding，反映聚类节点与关键词的相关性
+
+### 参数
+
+| 参数 | 值 | 说明 |
+|------|-----|------|
+| `max_elements` | 动态 | 根据 cluster 数量决定 |
+| `M` | 32 | 每节点最多 32 条近邻边，保证连通性 |
+| `ef_construction` | 200 | 建图时候选范围，换取高质量索引 |
+| `ef_search` | 100 | 查询时候选范围，换取更好召回率 |
+
+### 代码实现
+
+```python
+# graphcare.py - label_ehr_nodes() 支持反馈
+def label_ehr_nodes(task, sample_dataset, max_nodes, ...,
+                    feedback_add_clusters=None, feedback_remove_clusters=None):
+    rem_set = set(feedback_remove_clusters or [])
+    add_set = set(feedback_add_clusters or [])
+    # 移除指定节点 + 添加指定节点 → 更新 ehr_node_set
+```
+
+反馈系统通过 `--feedback` 参数启用，从 `clusterIndex.txt` 读取 add/remove 列表：
+
+```bash
+python runSparseModel.py --infer --feedback --patient_id 21 \
+    --weights_path ./data/weights/saved_weights.pkl
+```
+
+### 💡 面试话术
+
+"我在推理时动态改变当前患者子图中被激活的医学概念节点。HNSW 的作用主要是把原本线性扫描所有 cluster 的高耗时过程，变成低延迟的近似最近邻检索，让这个反馈闭环可以做到交互式响应。"
+
+---
+
+## 患者表征聚合
+
+`patient_mode="joint"` 模式下，拼接两种表征：
+
+```python
+# graphcare_/model.py
+x_graph = global_mean_pool(x, batch)                    # 全局图池化 [B, H]
+x_node = ehr_nodes @ node_emb.weight / sum(ehr_nodes)  # EHR 加权聚合 [B, H]
+logits = MLP(torch.cat((x_graph, x_node), dim=1))       # 拼接 → MLP [B, C]
+```
+
+- **Graph-level**：通过全局均值池化获取患者子图的整体拓扑信息
+- **Node-level**：通过 EHR 节点的加权求和获取患者直接的医疗事件特征
+- 两者拼接后经 MLP 输出，兼顾图结构信息与直接临床信息
+
+---
+
+## 心源性休克风险预测
+
+在 `drugrec` 任务中，当启用 `Heart` 参数时，输出维度为 $D_m + 1$：
+
+- 前 $D_m$ 维：药物推荐的多标签概率
+- 最后 1 维：心源性休克风险概率
+
+```python
+# runSparseModel.py - 推理输出
+if Heart and task == 'drugrec' and mode == "multilabel":
+    cardiogenic_prob = float(y_prob_all[0][c_idx])  # 最后一位
+    y_prob_all = y_prob_all[:, :c_idx]  # 截断用于药物推荐评估
+    result["cardiogenic_shock"] = float(cardiogenic_prob)
+```
+
+> **标签泄露防护**：输入侧剔除心源性休克诊断 $d_{\mathrm{CS}}$，仅在标签端作为独立风险维度。数据层使用 $\bar{S}_i^{\text{diag}}(t) = S_i^{\text{diag}}(t) \setminus \{d_{\mathrm{CS}}\}$。
+
+---
+
+## 关键性下沉分配机制
+
+为增强可解释性，将超节点级关键性沿聚类成员关系与患者时序激活轨迹，分配至原始诊断/手术节点：
+
+- **时序存在性权重** $p_i(u)$：近期出现的节点获得更高权重
+- **结构桥接权重** $q_i(u)$：跨簇连接强的节点获得更高权重
+- **语义贴合权重** $s(u)$：与簇中心语义接近的节点获得更高权重
+
+$$\gamma_i(u)=\gamma(C_a)\cdot \rho(u\mid C_a),\qquad \sum_{u\in U(C_a)}\gamma_i(u)=\gamma(C_a)$$
+
+保证关键性总量守恒，支持原始节点级的可视化与路径溯源。
+=======
+>>>>>>> 3c428a2 (chore: 初始化仓库，清理目录结构，合并编译原理作业)
 图神经网络的核心机制是**消息传递（Message Passing）**
 经过多层网络（多轮交流）后，每个节点不仅包含了自身的特征，还融合了整个局部图的拓扑结构信息。
 消息传递被拆解为三个标准步骤：**Message（计算消息）、Aggregate（聚合消息）和 Update（更新状态）**。
@@ -184,3 +499,7 @@ F1-Score 是精确率（Precision）和召回率（Recall）的调和平均数�
 	4. 第四步，把最终得到的 cluster index 用于修改患者样本里的 ehr_node_set ，也就是增加或移除某些 cluster 节点，再触发二次图推理。”
 - 我在推理时动态改变当前患者子图中被激活的医学概念节点 。HNSW 的作用主要是把原本线性扫描所有 cluster 的高耗时过程，变成低延迟的近似最近邻检索，让这个反馈闭环可以做到交互式响应。”
 
+<<<<<<< HEAD
+=======
+>>>>>>> f81516b86c4e8635008168039021ce6d584b6c55
+>>>>>>> 3c428a2 (chore: 初始化仓库，清理目录结构，合并编译原理作业)
