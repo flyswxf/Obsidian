@@ -11,5 +11,6 @@
   "readableLineLength": false,
   "spellcheck": false,
   "promptDelete": false,
-  "attachmentFolderPath": "./assets"
+  "attachmentFolderPath": "./assets",
+  "showUnsupportedFiles": true
 }

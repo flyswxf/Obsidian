@@ -1,0 +1,209 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>P2 - 学业表现与荣誉</title>
+<script src="https://cdn.digitalhumanai.top/slidagent/pptx-craft/assets/vendors/tailwind.js"></script>
+<link href="https://cdn.digitalhumanai.top/slidagent/pptx-craft/assets/css/fonts.css" rel="stylesheet" />
+<link href="https://cdn.digitalhumanai.top/slidagent/pptx-craft/assets/vendors/fontawesome/css/all.min.css" rel="stylesheet" />
+    <script src="https://cdn.digitalhumanai.top/slidagent/pptx-craft/assets/vendors/echarts.min.js"></script>
+<script>
+tailwind.config = {
+  theme: {
+    extend: {
+      colors: {
+        parchment: "#f5f4ed", ivory: "#faf9f5", terracotta: "#c96442", coral: "#d97757",
+        nearBlack: "#141413", darkSurface: "#30302e", oliveGray: "#5e5d59",
+        stoneGray: "#87867f", charcoalWarm: "#4d4c48", warmSand: "#e8e6dc",
+        borderCream: "#f0eee6", borderWarm: "#e8e6dc", warmSilver: "#b0aea5",
+      },
+      fontFamily: { serif: ["Georgia","serif"], sans: ["Arial","sans-serif"] },
+    },
+  },
+};
+</script>
+<style type="text/tailwindcss">
+@layer utilities {
+  .ppt-slide { @apply relative w-[1280px] h-[720px] mx-auto box-border overflow-hidden; }
+  .ppt-slide *, .ppt-slide *::before, .ppt-slide *::after { @apply box-border; max-width: 100%; }
+  .ppt-slide img, .ppt-slide video, .ppt-slide canvas, .ppt-slide svg { @apply max-w-full max-h-full object-contain; }
+  .content-safe { @apply w-[1220px] h-[660px] my-[30px] mx-auto flex flex-col overflow-hidden; }
+  .ppt-slide [class*="blur"] { filter: none !important; backdrop-filter: none !important; }
+  .ppt-slide [class*="gradient"] { background-image: none !important; }
+  .ppt-slide [class*="backdrop-blur"] { backdrop-filter: none !important; }
+}
+</style>
+</head>
+<body class="bg-parchment">
+<div class="ppt-slide flex flex-col h-[720px] overflow-hidden" type="content" style="background-color:#f5f4ed;">
+  <div class="content-safe">
+    <!-- 页头 -->
+    <header class="h-[60px] flex-shrink-0 flex items-center justify-between">
+      <div>
+        <h1 class="font-serif text-[28px] font-medium leading-[1.2]" style="color:#141413;">扎实学业基础与持续荣誉积累</h1>
+        <p class="font-sans text-[13px]" style="color:#87867f;">Academic Excellence & Sustained Honors</p>
+      </div>
+      <div class="flex items-center gap-2">
+        <div class="w-[6px] h-[6px] rounded-full" style="background-color:#c96442;"></div>
+        <span class="font-sans text-[12px] tracking-[0.15em] uppercase" style="color:#87867f;">P2 / 12</span>
+      </div>
+    </header>
+
+    <!-- 内容区 -->
+    <main class="flex-1 min-h-0 flex flex-col gap-5 overflow-hidden mt-[10px]">
+      <!-- 上半：核心数据卡片 + 雷达图 -->
+      <div class="grid grid-cols-[1fr_1fr] gap-5 flex-1 min-h-0">
+        <!-- 左侧：数据卡片 -->
+        <div class="h-full min-h-0 overflow-hidden flex flex-col gap-3">
+          <div class="grid grid-cols-2 gap-3 flex-1 min-h-0">
+            <div class="rounded-[8px] p-[16px] flex flex-col justify-between" style="background-color:#faf9f5;box-shadow:0 0 0 1px #f0eee6;">
+              <div class="flex items-center gap-2">
+                <i class="fa-solid fa-chart-line text-[16px]" style="color:#c96442;"></i>
+                <span class="font-sans text-[11px] tracking-[0.1em] uppercase" style="color:#87867f;">GPA</span>
+              </div>
+              <div>
+                <span class="font-serif text-[36px] font-medium" style="color:#141413;">3.73</span>
+                <span class="font-sans text-[14px]" style="color:#87867f;">/ 4.0</span>
+              </div>
+            </div>
+            <div class="rounded-[8px] p-[16px] flex flex-col justify-between" style="background-color:#faf9f5;box-shadow:0 0 0 1px #f0eee6;">
+              <div class="flex items-center gap-2">
+                <i class="fa-solid fa-ranking-star text-[16px]" style="color:#c96442;"></i>
+                <span class="font-sans text-[11px] tracking-[0.1em] uppercase" style="color:#87867f;">排名</span>
+              </div>
+              <div>
+                <span class="font-serif text-[36px] font-medium" style="color:#141413;">17</span>
+                <span class="font-sans text-[14px]" style="color:#87867f;">/ 189（前10%）</span>
+              </div>
+            </div>
+            <div class="rounded-[8px] p-[16px] flex flex-col justify-between" style="background-color:#faf9f5;box-shadow:0 0 0 1px #f0eee6;">
+              <div class="flex items-center gap-2">
+                <i class="fa-solid fa-language text-[16px]" style="color:#c96442;"></i>
+                <span class="font-sans text-[11px] tracking-[0.1em] uppercase" style="color:#87867f;">CET-6</span>
+              </div>
+              <div>
+                <span class="font-serif text-[36px] font-medium" style="color:#141413;">636</span>
+                <span class="font-sans text-[14px]" style="color:#87867f;">分</span>
+              </div>
+            </div>
+            <div class="rounded-[8px] p-[16px] flex flex-col justify-between" style="background-color:#141413;">
+              <div class="flex items-center gap-2">
+                <i class="fa-solid fa-award text-[16px]" style="color:#d97757;"></i>
+                <span class="font-sans text-[11px] tracking-[0.1em] uppercase" style="color:#b0aea5;">奖学金</span>
+              </div>
+              <div>
+                <span class="font-serif text-[28px] font-medium" style="color:#faf9f5;">连续两年</span>
+                <span class="font-sans text-[13px] block" style="color:#b0aea5;">专业一等奖学金</span>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- 右侧：能力雷达图 -->
+        <div class="h-full min-h-0 overflow-hidden rounded-[8px] p-[12px]" style="background-color:#faf9f5;box-shadow:0 0 0 1px #f0eee6;">
+          <div class="flex items-center gap-2 mb-[4px]">
+            <i class="fa-solid fa-chart-pie text-[14px]" style="color:#c96442;"></i>
+            <span class="font-serif text-[16px] font-medium" style="color:#141413;">综合能力雷达</span>
+          </div>
+          <div id="radar-chart" class="w-full" style="height:calc(100% - 24px);"></div>
+        </div>
+      </div>
+
+      <!-- 下半：荣誉与竞赛奖项 -->
+      <div class="flex-1 min-h-0 overflow-hidden rounded-[8px] p-[16px] flex flex-col" style="background-color:#faf9f5;box-shadow:0 0 0 1px #f0eee6;">
+        <div class="flex items-center gap-2 mb-[10px] flex-shrink-0">
+          <i class="fa-solid fa-trophy text-[14px]" style="color:#c96442;"></i>
+          <span class="font-serif text-[16px] font-medium" style="color:#141413;">荣誉与竞赛奖项</span>
+        </div>
+        <div class="grid grid-cols-3 gap-[10px] flex-1 min-h-0">
+          <!-- 第一行第一个：高权重（陶土色背景） -->
+          <div class="rounded-[8px] p-[12px] flex items-start gap-3" style="background-color:#c96442;">
+            <i class="fa-solid fa-trophy text-[16px] mt-[2px] flex-shrink-0" style="color:#faf9f5;"></i>
+            <div>
+              <span class="font-sans text-[15px] font-bold" style="color:#faf9f5;">国家级大创 优秀结项</span>
+              <p class="font-sans text-[12px] mt-[2px]" style="color:#faf9f5;opacity:0.85;">ICU智能决策辅助系统</p>
+            </div>
+          </div>
+          <!-- 中低权重 -->
+          <div class="rounded-[8px] p-[12px] flex items-start gap-3" style="background-color:#f5f4ed;">
+            <i class="fa-solid fa-circle-check text-[14px] mt-[2px] flex-shrink-0" style="color:#87867f;"></i>
+            <div>
+              <span class="font-sans text-[13px] font-medium" style="color:#4d4c48;">传智杯 国家级三等奖</span>
+              <p class="font-sans text-[11px] mt-[2px]" style="color:#87867f;">编程竞赛</p>
+            </div>
+          </div>
+          <div class="rounded-[8px] p-[12px] flex items-start gap-3" style="background-color:#f5f4ed;">
+            <i class="fa-solid fa-circle-check text-[14px] mt-[2px] flex-shrink-0" style="color:#87867f;"></i>
+            <div>
+              <span class="font-sans text-[13px] font-medium" style="color:#4d4c48;">华为CANN训练营</span>
+              <p class="font-sans text-[11px] mt-[2px]" style="color:#87867f;">优秀营员</p>
+            </div>
+          </div>
+          <!-- 第二行 -->
+          <div class="rounded-[8px] p-[12px] flex items-start gap-3" style="background-color:#f5f4ed;">
+            <i class="fa-solid fa-circle-check text-[14px] mt-[2px] flex-shrink-0" style="color:#87867f;"></i>
+            <div>
+              <span class="font-sans text-[13px] font-medium" style="color:#4d4c48;">蓝桥杯 省级二等奖</span>
+              <p class="font-sans text-[11px] mt-[2px]" style="color:#87867f;">编程竞赛</p>
+            </div>
+          </div>
+          <div class="rounded-[8px] p-[12px] flex items-start gap-3" style="background-color:#f5f4ed;">
+            <i class="fa-solid fa-circle-check text-[14px] mt-[2px] flex-shrink-0" style="color:#87867f;"></i>
+            <div>
+              <span class="font-sans text-[13px] font-medium" style="color:#4d4c48;">市级大创 结项</span>
+              <p class="font-sans text-[11px] mt-[2px]" style="color:#87867f;">诗舟小程序</p>
+            </div>
+          </div>
+          <div class="rounded-[8px] p-[12px] flex items-start gap-3" style="background-color:#f5f4ed;">
+            <i class="fa-solid fa-circle-check text-[14px] mt-[2px] flex-shrink-0" style="color:#87867f;"></i>
+            <div>
+              <span class="font-sans text-[13px] font-medium" style="color:#4d4c48;">校级大创 结项</span>
+              <p class="font-sans text-[11px] mt-[2px]" style="color:#87867f;">EQ_Master鸿蒙应用</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </main>
+
+    <!-- 页脚 -->
+    <footer class="h-[30px] flex-shrink-0 flex items-center justify-between border-t" style="border-color:#e8e6dc;">
+      <span class="font-sans text-[10px]" style="color:#b0aea5;">华东师范大学 · 软件工程</span>
+      <span class="font-sans text-[10px]" style="color:#b0aea5;">P2 / 12</span>
+    </footer>
+  </div>
+</div>
+
+<script>
+var chart = echarts.init(document.getElementById('radar-chart'), null, { renderer: 'svg' });
+chart.setOption({
+  radar: {
+    indicator: [
+      { name: '学业GPA', max: 100 },
+      { name: '专业排名', max: 100 },
+      { name: '英语能力', max: 100 },
+      { name: '科研产出', max: 100 },
+      { name: '竞赛荣誉', max: 100 },
+      { name: '工程实践', max: 100 }
+    ],
+    radius: '62%',
+    center: ['50%', '55%'],
+    axisName: { color: '#5e5d59', fontSize: 11 },
+    splitArea: { areaStyle: { color: ['#faf9f5','#f5f4ed'] } },
+    splitLine: { lineStyle: { color: '#e8e6dc' } },
+    axisLine: { lineStyle: { color: '#e8e6dc' } }
+  },
+  series: [{
+    type: 'radar',
+    data: [{
+      value: [93, 91, 90, 85, 82, 88],
+      name: '综合能力',
+      areaStyle: { color: 'rgba(201,100,66,0.15)' },
+      lineStyle: { color: '#c96442', width: 2 },
+      itemStyle: { color: '#c96442' }
+    }]
+  }]
+});
+</script>
+</body>
+</html>

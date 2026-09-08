@@ -1,0 +1,141 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>P7 - 量化实验结果</title>
+<script src="https://cdn.digitalhumanai.top/slidagent/pptx-craft/assets/vendors/tailwind.js"></script>
+<link href="https://cdn.digitalhumanai.top/slidagent/pptx-craft/assets/css/fonts.css" rel="stylesheet" />
+<link href="https://cdn.digitalhumanai.top/slidagent/pptx-craft/assets/vendors/fontawesome/css/all.min.css" rel="stylesheet" />
+    <script src="https://cdn.digitalhumanai.top/slidagent/pptx-craft/assets/vendors/echarts.min.js"></script>
+<script>
+tailwind.config = {
+  theme: {
+    extend: {
+      colors: {
+        parchment: "#f5f4ed", ivory: "#faf9f5", terracotta: "#c96442", coral: "#d97757",
+        nearBlack: "#141413", darkSurface: "#30302e", oliveGray: "#5e5d59",
+        stoneGray: "#87867f", charcoalWarm: "#4d4c48", warmSand: "#e8e6dc",
+        borderCream: "#f0eee6", borderWarm: "#e8e6dc", warmSilver: "#b0aea5",
+      },
+      fontFamily: { serif: ["Georgia","serif"], sans: ["Arial","sans-serif"] },
+    },
+  },
+};
+</script>
+<style type="text/tailwindcss">
+@layer utilities {
+  .ppt-slide { @apply relative w-[1280px] h-[720px] mx-auto box-border overflow-hidden; }
+  .ppt-slide *, .ppt-slide *::before, .ppt-slide *::after { @apply box-border; max-width: 100%; }
+  .ppt-slide img, .ppt-slide video, .ppt-slide canvas, .ppt-slide svg { @apply max-w-full max-h-full object-contain; }
+  .content-safe { @apply w-[1220px] h-[660px] my-[30px] mx-auto flex flex-col overflow-hidden; }
+  .ppt-slide [class*="blur"] { filter: none !important; backdrop-filter: none !important; }
+  .ppt-slide [class*="gradient"] { background-image: none !important; }
+  .ppt-slide [class*="backdrop-blur"] { backdrop-filter: none !important; }
+}
+</style>
+</head>
+<body class="bg-parchment">
+<div class="ppt-slide flex flex-col h-[720px] overflow-hidden" type="content" style="background-color:#f5f4ed;">
+  <div class="content-safe">
+    <!-- 页头 -->
+    <header class="h-[60px] flex-shrink-0 flex items-center justify-between">
+      <div>
+        <h1 class="font-serif text-[24px] font-medium leading-[1.2]" style="color:#141413;">双任务全面超越基线：药物推荐与心源性休克预测均优于RNN/GIN/GAT</h1>
+        <p class="font-sans text-[13px]" style="color:#87867f;">Quantitative Results: Ours Outperforms All Baselines</p>
+      </div>
+      <div class="flex items-center gap-2">
+        <div class="w-[6px] h-[6px] rounded-full" style="background-color:#c96442;"></div>
+        <span class="font-sans text-[12px] tracking-[0.15em] uppercase" style="color:#87867f;">P7 / 12</span>
+      </div>
+    </header>
+
+    <!-- 内容区 -->
+    <main class="flex-1 min-h-0 flex flex-col gap-4 overflow-hidden mt-[8px]">
+      <!-- 上半：两个图表并排 -->
+      <div class="grid grid-cols-2 gap-4 flex-1 min-h-0">
+        <!-- 左侧：药物推荐图表 -->
+        <div class="h-full min-h-0 overflow-hidden rounded-[8px] p-[12px]" style="background-color:#faf9f5;box-shadow:0 0 0 1px #f0eee6;">
+          <div class="flex items-center gap-2 mb-[4px]">
+            <i class="fa-solid fa-pills text-[14px]" style="color:#c96442;"></i>
+            <span class="font-serif text-[15px] font-medium" style="color:#141413;">药物推荐（DrugRec）</span>
+          </div>
+          <div id="drug-chart" class="w-full" style="height:calc(100% - 24px);"></div>
+        </div>
+        <!-- 右侧：心源性休克图表 -->
+        <div class="h-full min-h-0 overflow-hidden rounded-[8px] p-[12px]" style="background-color:#faf9f5;box-shadow:0 0 0 1px #f0eee6;">
+          <div class="flex items-center gap-2 mb-[4px]">
+            <i class="fa-solid fa-heart-pulse text-[14px]" style="color:#c96442;"></i>
+            <span class="font-serif text-[15px] font-medium" style="color:#141413;">心源性休克风险预测（CardiacRisk）</span>
+          </div>
+          <div id="cardiac-chart" class="w-full" style="height:calc(100% - 24px);"></div>
+        </div>
+      </div>
+
+      <!-- 下半：结论卡片 -->
+      <div class="grid grid-cols-3 gap-4 flex-shrink-0">
+        <div class="rounded-[8px] p-[12px]" style="background-color:#faf9f5;box-shadow:0 0 0 1px #f0eee6;">
+          <div class="flex items-center gap-2 mb-[4px]">
+            <i class="fa-solid fa-arrow-trend-up text-[14px]" style="color:#c96442;"></i>
+            <span class="font-sans text-[12px] font-medium" style="color:#141413;">药物推荐提升</span>
+          </div>
+          <p class="font-sans text-[11px] leading-[1.4]" style="color:#5e5d59;">AUROC 提升 0.6%~1.5%，F1 提升 2.2%~7.4%，Macro-F1 显著改善</p>
+        </div>
+        <div class="rounded-[8px] p-[12px]" style="background-color:#faf9f5;box-shadow:0 0 0 1px #f0eee6;">
+          <div class="flex items-center gap-2 mb-[4px]">
+            <i class="fa-solid fa-arrow-trend-up text-[14px]" style="color:#c96442;"></i>
+            <span class="font-sans text-[12px] font-medium" style="color:#141413;">心源性休克提升</span>
+          </div>
+          <p class="font-sans text-[11px] leading-[1.4]" style="color:#5e5d59;">AUROC 提升 4.5%~7.7%，ACC 达到 0.768，验证联合预测架构有效性</p>
+        </div>
+        <div class="rounded-[8px] p-[12px]" style="background-color:#c96442;">
+          <div class="flex items-center gap-2 mb-[4px]">
+            <i class="fa-solid fa-lightbulb text-[14px]" style="color:#faf9f5;"></i>
+            <span class="font-sans text-[12px] font-medium" style="color:#faf9f5;">稀疏化 ≠ 性能损失</span>
+          </div>
+          <p class="font-sans text-[11px] leading-[1.4]" style="color:#faf9f5;">边稀疏化模块在降低计算复杂度的同时，通过保留关键图结构信息，实现性能全面超越</p>
+        </div>
+      </div>
+    </main>
+
+    <!-- 页脚 -->
+    <footer class="h-[30px] flex-shrink-0 flex items-center justify-between border-t" style="border-color:#e8e6dc;">
+      <span class="font-sans text-[10px]" style="color:#b0aea5;">ICU项目 · 量化实验结果</span>
+      <span class="font-sans text-[10px]" style="color:#b0aea5;">P7 / 12</span>
+    </footer>
+  </div>
+</div>
+
+<script>
+var drugChart = echarts.init(document.getElementById('drug-chart'), null, { renderer: 'svg' });
+drugChart.setOption({
+  tooltip: { trigger: 'axis', axisPointer: { type: 'shadow' } },
+  legend: { data: ['RNN','GIN','GAT','Ours'], textStyle: { color: '#5e5d59', fontSize: 9 }, top: 0 },
+  grid: { left: '10%', right: '5%', bottom: '12%', top: '18%' },
+  xAxis: { type: 'category', data: ['AUROC','AUPRC','F1'], axisLabel: { color: '#87867f', fontSize: 10 } },
+  yAxis: { type: 'value', min: 0.4, max: 0.95, axisLabel: { color: '#87867f', fontSize: 9 }, splitLine: { lineStyle: { color: '#e8e6dc' } } },
+  series: [
+    { name: 'RNN', type: 'bar', data: [0.900,0.675,0.499], itemStyle: { color: '#b0aea5' } },
+    { name: 'GIN', type: 'bar', data: [0.909,0.693,0.551], itemStyle: { color: '#87867f' } },
+    { name: 'GAT', type: 'bar', data: [0.908,0.691,0.540], itemStyle: { color: '#5e5d59' } },
+    { name: 'Ours', type: 'bar', data: [0.915,0.699,0.573], itemStyle: { color: '#c96442' }, label: { show: true, position: 'top', color: '#c96442', fontSize: 8, formatter: function(p) { return p.value; } } }
+  ]
+});
+
+var cardiacChart = echarts.init(document.getElementById('cardiac-chart'), null, { renderer: 'svg' });
+cardiacChart.setOption({
+  tooltip: { trigger: 'axis', axisPointer: { type: 'shadow' } },
+  legend: { data: ['RNN','GIN','GAT','Ours'], textStyle: { color: '#5e5d59', fontSize: 9 }, top: 0 },
+  grid: { left: '10%', right: '5%', bottom: '12%', top: '18%' },
+  xAxis: { type: 'category', data: ['AUROC','AUPRC','F1','ACC'], axisLabel: { color: '#87867f', fontSize: 10 } },
+  yAxis: { type: 'value', min: 0.2, max: 0.8, axisLabel: { color: '#87867f', fontSize: 9 }, splitLine: { lineStyle: { color: '#e8e6dc' } } },
+  series: [
+    { name: 'RNN', type: 'bar', data: [0.643,0.231,0.409,0.759], itemStyle: { color: '#b0aea5' } },
+    { name: 'GIN', type: 'bar', data: [0.675,0.367,0.431,0.748], itemStyle: { color: '#87867f' } },
+    { name: 'GAT', type: 'bar', data: [0.653,0.340,0.427,0.745], itemStyle: { color: '#5e5d59' } },
+    { name: 'Ours', type: 'bar', data: [0.720,0.346,0.448,0.768], itemStyle: { color: '#c96442' }, label: { show: true, position: 'top', color: '#c96442', fontSize: 8, formatter: function(p) { return p.value; } } }
+  ]
+});
+</script>
+</body>
+</html>

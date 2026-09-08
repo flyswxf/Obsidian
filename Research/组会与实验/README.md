@@ -14,6 +14,18 @@
 | `exp1_analysis.py` | [[2026-08-13-视觉注入攻击研究现状与后续实验]] |
 | `src/image_utils.py` | [[2026-06-03-SceneTAP接入与实验设计]] |
 | `src/utils/attention_metrics.py` | [[2026-06-06-注意力Patch实验计划]] |
+| `src/models/llava_model.py` | [[2026-06-06-注意力Patch实验计划]] |
+
+## 代码仓库总览
+
+| 仓库 | 路径 | 角色 |
+|------|------|------|
+| Physical-Prompt-Injection-Attack | `D:\code\Physical-Prompt-Injection-Attack` | PPIA复现（已搁置） |
+| PPIA | `D:\code\PPIA` | PPIA复现管理仓库（归档） |
+| scenetap | `D:\code\scenetap` | SceneTAP复现（前置数据生产） |
+| Physical-Attention-Attack | `D:\code\Physical-Attention-Attack` | 当前主实验仓库 |
+
+> 完整实验状态同步见 [[2026-09-07-实验状态全面同步]]
 
 ## 当前分区
 

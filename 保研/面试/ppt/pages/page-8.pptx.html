@@ -1,0 +1,151 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>P8 - VLM安全研究理论框架</title>
+<script src="https://cdn.digitalhumanai.top/slidagent/pptx-craft/assets/vendors/tailwind.js"></script>
+<link href="https://cdn.digitalhumanai.top/slidagent/pptx-craft/assets/css/fonts.css" rel="stylesheet" />
+<link href="https://cdn.digitalhumanai.top/slidagent/pptx-craft/assets/vendors/fontawesome/css/all.min.css" rel="stylesheet" />
+<script src="https://cdn.digitalhumanai.top/slidagent/pptx-craft/assets/vendors/echarts.min.js"></script>
+<script>
+tailwind.config = {
+  theme: {
+    extend: {
+      colors: {
+        parchment: "#f5f4ed", ivory: "#faf9f5", terracotta: "#c96442", coral: "#d97757",
+        nearBlack: "#141413", darkSurface: "#30302e", oliveGray: "#5e5d59",
+        stoneGray: "#87867f", charcoalWarm: "#4d4c48", warmSand: "#e8e6dc",
+        borderCream: "#f0eee6", borderWarm: "#e8e6dc", warmSilver: "#b0aea5",
+      },
+      fontFamily: { serif: ["Georgia","serif"], sans: ["Arial","sans-serif"] },
+    },
+  },
+};
+</script>
+<style type="text/tailwindcss">
+@layer utilities {
+  .ppt-slide { @apply relative w-[1280px] h-[720px] mx-auto box-border overflow-hidden; }
+  .ppt-slide *, .ppt-slide *::before, .ppt-slide *::after { @apply box-border; max-width: 100%; }
+  .ppt-slide img, .ppt-slide video, .ppt-slide canvas, .ppt-slide svg { @apply max-w-full max-h-full object-contain; }
+  .content-safe { @apply w-[1220px] h-[660px] my-[30px] mx-auto flex flex-col overflow-hidden; }
+  .ppt-slide [class*="blur"] { filter: none !important; backdrop-filter: none !important; }
+  .ppt-slide [class*="gradient"] { background-image: none !important; }
+  .ppt-slide [class*="backdrop-blur"] { backdrop-filter: none !important; }
+}
+</style>
+</head>
+<body class="bg-parchment">
+<div class="ppt-slide flex flex-col h-[720px] overflow-hidden" type="content" style="background-color:#f5f4ed;">
+  <div class="content-safe">
+    <!-- 页头 -->
+    <header class="h-[60px] flex-shrink-0 flex items-center justify-between">
+      <div>
+        <h1 class="font-serif text-[24px] font-medium leading-[1.2]" style="color:#141413;">VLM安全研究：从理论框架到文献体系</h1>
+        <p class="font-sans text-[13px]" style="color:#87867f;">VLM Security: Theoretical Framework & Literature System</p>
+      </div>
+      <div class="flex items-center gap-2">
+        <div class="w-[6px] h-[6px] rounded-full" style="background-color:#c96442;"></div>
+        <span class="font-sans text-[12px] tracking-[0.15em] uppercase" style="color:#87867f;">P8 / 12</span>
+      </div>
+    </header>
+
+    <!-- 内容区 -->
+    <main class="flex-1 min-h-0 flex flex-col gap-4 overflow-hidden mt-[8px]">
+      <!-- 上半：研究方向 + 动机 + 文献体系 -->
+      <div class="grid grid-cols-[1fr_1.2fr] gap-4 flex-1 min-h-0">
+        <!-- 左侧：研究方向 + 动机 -->
+        <div class="h-full min-h-0 overflow-hidden flex flex-col gap-3">
+          <div class="rounded-[8px] p-[14px] flex-1 min-h-0" style="background-color:#faf9f5;box-shadow:0 0 0 1px #f0eee6;">
+            <div class="flex items-center gap-2 mb-[6px]">
+              <i class="fa-solid fa-compass text-[14px]" style="color:#c96442;"></i>
+              <span class="font-serif text-[15px] font-medium" style="color:#141413;">研究方向</span>
+            </div>
+            <p class="font-sans text-[13px] leading-[1.6]" style="color:#5e5d59;">视觉提示注入攻击对大型视觉语言模型（VLM）的安全研究，从物理场景注入逐步演进到场景一致的排版攻击，核心关注点是<span class="font-medium" style="color:#c96442;">注意力机制与攻击成功率的关系</span>。</p>
+          </div>
+          <div class="rounded-[8px] p-[14px] flex-1 min-h-0" style="background-color:#141413;">
+            <div class="flex items-center gap-2 mb-[6px]">
+              <i class="fa-solid fa-triangle-exclamation text-[14px]" style="color:#d97757;"></i>
+              <span class="font-serif text-[15px] font-medium" style="color:#faf9f5;">研究动机</span>
+            </div>
+            <p class="font-sans text-[13px] leading-[1.6]" style="color:#b0aea5;">VLM 已广泛应用于实际场景，但视觉通道的注入攻击（如场景中的文字、贴纸、标签）可能诱导模型偏离原任务或执行恶意指令，构成安全隐患。</p>
+          </div>
+        </div>
+
+        <!-- 右侧：文献调研体系 -->
+        <div class="h-full min-h-0 overflow-hidden rounded-[8px] p-[14px]" style="background-color:#faf9f5;box-shadow:0 0 0 1px #f0eee6;">
+          <div class="flex items-center gap-2 mb-[6px]">
+            <i class="fa-solid fa-book-open text-[14px]" style="color:#c96442;"></i>
+            <span class="font-serif text-[15px] font-medium" style="color:#141413;">文献调研体系</span>
+          </div>
+          <div id="lit-chart" class="w-full" style="height:calc(100% - 28px);"></div>
+        </div>
+      </div>
+
+      <!-- 下半：ASR理论框架 -->
+      <div class="flex-shrink-0 rounded-[8px] p-[16px]" style="background-color:#c96442;">
+        <div class="flex items-center gap-2 mb-[8px]">
+          <i class="fa-solid fa-flask text-[14px]" style="color:#faf9f5;"></i>
+          <span class="font-serif text-[16px] font-medium" style="color:#faf9f5;">理论框架：攻击成功率分解公式</span>
+        </div>
+        <div class="flex items-center justify-center gap-[20px]">
+          <div class="text-center">
+            <div class="rounded-[8px] px-[16px] py-[8px]" style="background-color:rgba(250,249,245,0.15);">
+              <span class="font-serif text-[22px] font-medium" style="color:#faf9f5;">ASR</span>
+            </div>
+          </div>
+          <span class="font-serif text-[24px]" style="color:#faf9f5;">≈</span>
+          <div class="text-center">
+            <div class="rounded-[8px] px-[14px] py-[6px]" style="background-color:rgba(250,249,245,0.15);">
+              <span class="font-sans text-[13px] font-medium" style="color:#faf9f5;">P(被看见)</span>
+            </div>
+            <p class="font-sans text-[10px] mt-[4px]" style="color:rgba(250,249,245,0.7);">文字区域注意力</p>
+          </div>
+          <span class="font-serif text-[20px]" style="color:#faf9f5;">×</span>
+          <div class="text-center">
+            <div class="rounded-[8px] px-[14px] py-[6px]" style="background-color:rgba(250,249,245,0.15);">
+              <span class="font-sans text-[13px] font-medium" style="color:#faf9f5;">P(被理解)</span>
+            </div>
+            <p class="font-sans text-[10px] mt-[4px]" style="color:rgba(250,249,245,0.7);">语义解析能力</p>
+          </div>
+          <span class="font-serif text-[20px]" style="color:#faf9f5;">×</span>
+          <div class="text-center">
+            <div class="rounded-[8px] px-[14px] py-[6px]" style="background-color:rgba(250,249,245,0.15);">
+              <span class="font-sans text-[13px] font-medium" style="color:#faf9f5;">P(被服从)</span>
+            </div>
+            <p class="font-sans text-[10px] mt-[4px]" style="color:rgba(250,249,245,0.7);">指令执行概率</p>
+          </div>
+        </div>
+        <p class="font-sans text-[11px] text-center mt-[8px]" style="color:rgba(250,249,245,0.8);">将攻击成功率分解为三个阶段，定位当前 ASR 瓶颈，为后续实验设计提供理论指引</p>
+      </div>
+    </main>
+
+    <!-- 页脚 -->
+    <footer class="h-[30px] flex-shrink-0 flex items-center justify-between border-t" style="border-color:#e8e6dc;">
+      <span class="font-sans text-[10px]" style="color:#b0aea5;">VLM安全研究 · 理论框架与文献体系</span>
+      <span class="font-sans text-[10px]" style="color:#b0aea5;">P8 / 12</span>
+    </footer>
+  </div>
+</div>
+
+<script>
+var litChart = echarts.init(document.getElementById('lit-chart'), null, { renderer: 'svg' });
+litChart.setOption({
+  tooltip: { trigger: 'item' },
+  legend: { orient: 'vertical', right: '0%', top: 'center', textStyle: { color: '#5e5d59', fontSize: 10 } },
+  series: [{
+    type: 'pie',
+    radius: ['40%','70%'],
+    center: ['35%','50%'],
+    label: { color: '#5e5d59', fontSize: 10 },
+    data: [
+      { value: 11, name: '排版攻击\n(FigStep, SceneTAP等)', itemStyle: { color: '#c96442' } },
+      { value: 4, name: '视觉提示注入\n(PPIA等)', itemStyle: { color: '#d97757' } },
+      { value: 1, name: 'Agent安全', itemStyle: { color: '#87867f' } },
+      { value: 2, name: 'VLA与注意力劫持', itemStyle: { color: '#b0aea5' } }
+    ]
+  }]
+});
+</script>
+</body>
+</html>

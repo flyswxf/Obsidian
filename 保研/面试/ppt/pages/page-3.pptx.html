@@ -1,0 +1,158 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>P3 - ICU项目概览</title>
+<script src="https://cdn.digitalhumanai.top/slidagent/pptx-craft/assets/vendors/tailwind.js"></script>
+<link href="https://cdn.digitalhumanai.top/slidagent/pptx-craft/assets/css/fonts.css" rel="stylesheet" />
+<link href="https://cdn.digitalhumanai.top/slidagent/pptx-craft/assets/vendors/fontawesome/css/all.min.css" rel="stylesheet" />
+<script>
+tailwind.config = {
+  theme: {
+    extend: {
+      colors: {
+        parchment: "#f5f4ed", ivory: "#faf9f5", terracotta: "#c96442", coral: "#d97757",
+        nearBlack: "#141413", darkSurface: "#30302e", oliveGray: "#5e5d59",
+        stoneGray: "#87867f", charcoalWarm: "#4d4c48", warmSand: "#e8e6dc",
+        borderCream: "#f0eee6", borderWarm: "#e8e6dc", warmSilver: "#b0aea5",
+      },
+      fontFamily: { serif: ["Georgia","serif"], sans: ["Arial","sans-serif"] },
+    },
+  },
+};
+</script>
+<style type="text/tailwindcss">
+@layer utilities {
+  .ppt-slide { @apply relative w-[1280px] h-[720px] mx-auto box-border overflow-hidden; }
+  .ppt-slide *, .ppt-slide *::before, .ppt-slide *::after { @apply box-border; max-width: 100%; }
+  .ppt-slide img, .ppt-slide video, .ppt-slide canvas, .ppt-slide svg { @apply max-w-full max-h-full object-contain; }
+  .content-safe { @apply w-[1220px] h-[660px] my-[30px] mx-auto flex flex-col overflow-hidden; }
+  .ppt-slide [class*="blur"] { filter: none !important; backdrop-filter: none !important; }
+  .ppt-slide [class*="gradient"] { background-image: none !important; }
+  .ppt-slide [class*="backdrop-blur"] { backdrop-filter: none !important; }
+}
+</style>
+</head>
+<body class="bg-parchment">
+<div class="ppt-slide flex flex-col h-[720px] overflow-hidden" type="content" style="background-color:#f5f4ed;">
+  <div class="content-safe">
+    <!-- 页头 -->
+    <header class="h-[60px] flex-shrink-0 flex items-center justify-between">
+      <div>
+        <h1 class="font-serif text-[24px] font-medium leading-[1.2]" style="color:#141413;">ICU智能决策辅助系统 — 国家级大创优秀结项</h1>
+        <p class="font-sans text-[13px]" style="color:#87867f;">AI Algorithm Core Developer · Based on ICLR'24 GraphCare</p>
+      </div>
+      <div class="flex items-center gap-2">
+        <div class="w-[6px] h-[6px] rounded-full" style="background-color:#c96442;"></div>
+        <span class="font-sans text-[12px] tracking-[0.15em] uppercase" style="color:#87867f;">P3 / 12</span>
+      </div>
+    </header>
+
+    <!-- 内容区 -->
+    <main class="flex-1 min-h-0 flex flex-col gap-4 overflow-hidden mt-[8px]">
+      <!-- 上半：项目描述 + 挑战（加大） -->
+      <div class="flex gap-4" style="flex-shrink:0;flex:1 1 auto;min-height:0;">
+        <!-- 项目描述 -->
+        <div class="flex-1 rounded-[8px] p-[20px] flex flex-col justify-center" style="background-color:#faf9f5;box-shadow:0 0 0 1px #f0eee6;">
+          <div class="flex items-center gap-2 mb-[8px]">
+            <i class="fa-solid fa-file-medical text-[18px]" style="color:#c96442;"></i>
+            <span class="font-serif text-[18px] font-medium" style="color:#141413;">项目描述</span>
+          </div>
+          <p class="font-sans text-[15px] leading-[1.7]" style="color:#4d4c48;">面向ICU医疗辅助决策场景，基于MIMIC-III电子病历构建高可解释性图神经网络系统。实现多标签药物推荐与心源性休克风险联合预测，并支持医生通过自然语言反馈动态干预图推理过程。</p>
+        </div>
+        <!-- 项目挑战 -->
+        <div class="flex-1 rounded-[8px] p-[20px] flex flex-col justify-center" style="background-color:#141413;">
+          <div class="flex items-center gap-2 mb-[8px]">
+            <i class="fa-solid fa-triangle-exclamation text-[18px]" style="color:#d97757;"></i>
+            <span class="font-serif text-[18px] font-medium" style="color:#faf9f5;">项目挑战</span>
+          </div>
+          <p class="font-sans text-[15px] leading-[1.7]" style="color:#b0aea5;">患者体征数据极其复杂且存在严重类别不平衡，传统预测模型缺乏可解释性，医生难以进行人工干预和建立信任。需要开发既能精准联合预测，又能打破"模型黑盒"的高可解释性系统。</p>
+        </div>
+      </div>
+
+      <!-- 下半：三大核心亮点卡片 -->
+      <div class="flex gap-4 flex-1 min-h-0">
+        <!-- 亮点1：边稀疏化 -->
+        <div class="flex-1 rounded-[8px] p-[16px] flex flex-col" style="background-color:#faf9f5;box-shadow:0 0 0 1px #f0eee6;">
+          <div class="flex items-center gap-2 mb-[8px]">
+            <div class="w-[32px] h-[32px] rounded-[6px] flex items-center justify-center flex-shrink-0" style="background-color:#c96442;">
+              <i class="fa-solid fa-scissors text-[14px]" style="color:#faf9f5;"></i>
+            </div>
+            <span class="font-serif text-[15px] font-medium" style="color:#141413;">算法重构与优化</span>
+          </div>
+          <p class="font-sans text-[13px] leading-[1.6] mb-[6px]" style="color:#5e5d59;">自主设计<strong style="color:#c96442;">边稀疏化模块</strong>，结合Top-K掩码动态修剪非关键图连接，大幅降低图神经网络的计算复杂度。</p>
+          <div class="flex items-center gap-2 mb-[4px]">
+            <i class="fa-solid fa-arrow-right text-[10px]" style="color:#c96442;"></i>
+            <span class="font-sans text-[12px]" style="color:#4d4c48;">EdgeScorer打分 → Top-K硬掩码</span>
+          </div>
+          <div class="flex items-center gap-2 mb-[4px]">
+            <i class="fa-solid fa-arrow-right text-[10px]" style="color:#c96442;"></i>
+            <span class="font-sans text-[12px]" style="color:#4d4c48;">辅助Loss保证梯度流动</span>
+          </div>
+          <div class="mt-auto rounded-[6px] p-[8px]" style="background-color:#f5f4ed;">
+            <span class="font-sans text-[11px] leading-[1.4]" style="color:#5e5d59;">被丢弃的边可通过辅助Loss"复活"，兼顾稀疏性与动态探索</span>
+          </div>
+        </div>
+
+        <!-- 亮点2：Focal Loss + Macro-F1 -->
+        <div class="flex-1 rounded-[8px] p-[16px] flex flex-col" style="background-color:#faf9f5;box-shadow:0 0 0 1px #f0eee6;">
+          <div class="flex items-center gap-2 mb-[8px]">
+            <div class="w-[32px] h-[32px] rounded-[6px] flex items-center justify-center flex-shrink-0" style="background-color:#c96442;">
+              <i class="fa-solid fa-scale-balanced text-[14px]" style="color:#faf9f5;"></i>
+            </div>
+            <span class="font-serif text-[15px] font-medium" style="color:#141413;">类别不平衡应对</span>
+          </div>
+          <p class="font-sans text-[13px] leading-[1.6] mb-[6px]" style="color:#5e5d59;">融合<strong style="color:#c96442;">Focal Loss</strong>缓解类别极度不平衡，以<strong style="color:#c96442;">Macro-F1</strong>为核心评估指标，确保模型对罕见药物和高危休克风险的识别能力。</p>
+          <div class="flex items-center gap-2 mb-[4px]">
+            <i class="fa-solid fa-arrow-right text-[10px]" style="color:#c96442;"></i>
+            <span class="font-sans text-[12px]" style="color:#4d4c48;">γ=2动态聚焦难分样本</span>
+          </div>
+          <div class="flex items-center gap-2 mb-[4px]">
+            <i class="fa-solid fa-arrow-right text-[10px]" style="color:#c96442;"></i>
+            <span class="font-sans text-[12px]" style="color:#4d4c48;">α=0.25平衡正负类数量</span>
+          </div>
+          <div class="mt-auto rounded-[6px] p-[8px]" style="background-color:#f5f4ed;">
+            <span class="font-sans text-[11px] leading-[1.4]" style="color:#5e5d59;">Macro-F1对少数类高度敏感，避免被多数类高频正确率掩盖</span>
+          </div>
+        </div>
+
+        <!-- 亮点3：LLM反馈闭环 -->
+        <div class="flex-1 rounded-[8px] p-[16px] flex flex-col" style="background-color:#faf9f5;box-shadow:0 0 0 1px #f0eee6;">
+          <div class="flex items-center gap-2 mb-[8px]">
+            <div class="w-[32px] h-[32px] rounded-[6px] flex items-center justify-center flex-shrink-0" style="background-color:#c96442;">
+              <i class="fa-solid fa-rotate text-[14px]" style="color:#faf9f5;"></i>
+            </div>
+            <span class="font-serif text-[15px] font-medium" style="color:#141413;">大模型反馈闭环</span>
+          </div>
+          <p class="font-sans text-[13px] leading-[1.6] mb-[6px]" style="color:#5e5d59;">创新性引入<strong style="color:#c96442;">大语言模型</strong>构建反馈闭环，调用大模型解析医生自然语言干预指令，动态重构子图并进行二次推理。</p>
+          <div class="flex items-center gap-2 mb-[4px]">
+            <i class="fa-solid fa-arrow-right text-[10px]" style="color:#c96442;"></i>
+            <span class="font-sans text-[12px]" style="color:#4d4c48;">LLM拆解 → HNSW映射节点</span>
+          </div>
+          <div class="flex items-center gap-2 mb-[4px]">
+            <i class="fa-solid fa-arrow-right text-[10px]" style="color:#c96442;"></i>
+            <span class="font-sans text-[12px]" style="color:#4d4c48;">动态增删子图 → 二次推理</span>
+          </div>
+          <div class="mt-auto rounded-[6px] p-[8px]" style="background-color:#f5f4ed;">
+            <span class="font-sans text-[11px] leading-[1.4]" style="color:#5e5d59;">无需重新训练模型，实现交互式响应，增强临床可控性</span>
+          </div>
+        </div>
+      </div>
+
+      <!-- 项目成果条 -->
+      <div class="flex-shrink-0 rounded-[8px] px-[16px] py-[10px] flex items-center gap-3" style="background-color:#c96442;">
+        <i class="fa-solid fa-trophy text-[14px]" style="color:#faf9f5;"></i>
+        <span class="font-sans text-[13px]" style="color:#faf9f5;">成功构建"药物推荐+休克风险"联合推理架构，极大增强模型可控性与临床实用价值。凭借医疗AI落地创新性，成功获批国家级大创项目，结项优秀。</span>
+      </div>
+    </main>
+
+    <!-- 页脚 -->
+    <footer class="h-[30px] flex-shrink-0 flex items-center justify-between border-t" style="border-color:#e8e6dc;">
+      <span class="font-sans text-[10px]" style="color:#b0aea5;">ICU智能决策辅助系统 · 国家级大创优秀结项</span>
+      <span class="font-sans text-[10px]" style="color:#b0aea5;">P3 / 12</span>
+    </footer>
+  </div>
+</div>
+</body>
+</html>

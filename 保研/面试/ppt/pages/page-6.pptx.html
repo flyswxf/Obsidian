@@ -1,0 +1,196 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>P6 - LLM反馈闭环</title>
+<script src="https://cdn.digitalhumanai.top/slidagent/pptx-craft/assets/vendors/tailwind.js"></script>
+<link href="https://cdn.digitalhumanai.top/slidagent/pptx-craft/assets/css/fonts.css" rel="stylesheet" />
+<link href="https://cdn.digitalhumanai.top/slidagent/pptx-craft/assets/vendors/fontawesome/css/all.min.css" rel="stylesheet" />
+<script>
+tailwind.config = {
+  theme: {
+    extend: {
+      colors: {
+        parchment: "#f5f4ed", ivory: "#faf9f5", terracotta: "#c96442", coral: "#d97757",
+        nearBlack: "#141413", darkSurface: "#30302e", oliveGray: "#5e5d59",
+        stoneGray: "#87867f", charcoalWarm: "#4d4c48", warmSand: "#e8e6dc",
+        borderCream: "#f0eee6", borderWarm: "#e8e6dc", warmSilver: "#b0aea5",
+      },
+      fontFamily: { serif: ["Georgia","serif"], sans: ["Arial","sans-serif"] },
+    },
+  },
+};
+</script>
+<style type="text/tailwindcss">
+@layer utilities {
+  .ppt-slide { @apply relative w-[1280px] h-[720px] mx-auto box-border overflow-hidden; }
+  .ppt-slide *, .ppt-slide *::before, .ppt-slide *::after { @apply box-border; max-width: 100%; }
+  .ppt-slide img, .ppt-slide video, .ppt-slide canvas, .ppt-slide svg { @apply max-w-full max-h-full object-contain; }
+  .content-safe { @apply w-[1220px] h-[660px] my-[30px] mx-auto flex flex-col overflow-hidden; }
+  .ppt-slide [class*="blur"] { filter: none !important; backdrop-filter: none !important; }
+  .ppt-slide [class*="gradient"] { background-image: none !important; }
+  .ppt-slide [class*="backdrop-blur"] { backdrop-filter: none !important; }
+}
+</style>
+</head>
+<body class="bg-parchment">
+<div class="ppt-slide flex flex-col h-[720px] overflow-hidden" type="content" style="background-color:#f5f4ed;">
+  <div class="content-safe">
+    <!-- 页头 -->
+    <header class="h-[60px] flex-shrink-0 flex items-center justify-between">
+      <div>
+        <h1 class="font-serif text-[24px] font-medium leading-[1.2]" style="color:#141413;">无需重训练的交互式LLM反馈闭环</h1>
+        <p class="font-sans text-[13px]" style="color:#87867f;">LLM Feedback Loop: Natural Language to Graph Modification via HNSW</p>
+      </div>
+      <div class="flex items-center gap-2">
+        <div class="w-[6px] h-[6px] rounded-full" style="background-color:#c96442;"></div>
+        <span class="font-sans text-[12px] tracking-[0.15em] uppercase" style="color:#87867f;">P6 / 12</span>
+      </div>
+    </header>
+
+    <!-- 内容区 -->
+    <main class="flex-1 min-h-0 flex flex-col gap-3 overflow-hidden mt-[8px]">
+      <!-- 上方：四步流程简述 -->
+      <div class="flex gap-3 flex-shrink-0">
+        <div class="flex-1 rounded-[8px] p-[10px] flex items-center gap-3" style="background-color:#faf9f5;box-shadow:0 0 0 1px #f0eee6;">
+          <div class="w-[36px] h-[36px] rounded-full flex items-center justify-center flex-shrink-0" style="background-color:#c96442;">
+            <i class="fa-solid fa-comment-medical text-[14px]" style="color:#faf9f5;"></i>
+          </div>
+          <div>
+            <span class="font-sans text-[13px] font-medium" style="color:#141413;">① 反馈输入</span>
+            <p class="font-sans text-[11px] leading-[1.3]" style="color:#5e5d59;">医生自然语言反馈</p>
+          </div>
+        </div>
+        <div class="flex-1 rounded-[8px] p-[10px] flex items-center gap-3" style="background-color:#faf9f5;box-shadow:0 0 0 1px #f0eee6;">
+          <div class="w-[36px] h-[36px] rounded-full flex items-center justify-center flex-shrink-0" style="background-color:#c96442;">
+            <i class="fa-solid fa-microchip text-[14px]" style="color:#faf9f5;"></i>
+          </div>
+          <div>
+            <span class="font-sans text-[13px] font-medium" style="color:#141413;">② LLM拆解</span>
+            <p class="font-sans text-[11px] leading-[1.3]" style="color:#5e5d59;">LLM提取add/remove关键词</p>
+          </div>
+        </div>
+        <div class="flex-1 rounded-[8px] p-[10px] flex items-center gap-3" style="background-color:#faf9f5;box-shadow:0 0 0 1px #f0eee6;">
+          <div class="w-[36px] h-[36px] rounded-full flex items-center justify-center flex-shrink-0" style="background-color:#c96442;">
+            <i class="fa-solid fa-magnifying-glass text-[14px]" style="color:#faf9f5;"></i>
+          </div>
+          <div>
+            <span class="font-sans text-[13px] font-medium" style="color:#141413;">③ Embedding+HNSW映射</span>
+            <p class="font-sans text-[11px] leading-[1.3]" style="color:#5e5d59;">余弦相似度匹配cluster节点</p>
+          </div>
+        </div>
+        <div class="flex-1 rounded-[8px] p-[10px] flex items-center gap-3" style="background-color:#faf9f5;box-shadow:0 0 0 1px #f0eee6;">
+          <div class="w-[36px] h-[36px] rounded-full flex items-center justify-center flex-shrink-0" style="background-color:#c96442;">
+            <i class="fa-solid fa-diagram-project text-[14px]" style="color:#faf9f5;"></i>
+          </div>
+          <div>
+            <span class="font-sans text-[13px] font-medium" style="color:#141413;">④ 动态增删+二次推理</span>
+            <p class="font-sans text-[11px] leading-[1.3]" style="color:#5e5d59;">修改子图触发重新推理</p>
+          </div>
+        </div>
+      </div>
+
+      <!-- 下方：SVG流程图 -->
+      <div class="flex-1 min-h-0 overflow-hidden rounded-[8px] p-[12px] flex items-center justify-center" style="background-color:#faf9f5;box-shadow:0 0 0 1px #f0eee6;">
+        <svg viewBox="0 0 1160 400" width="100%" height="100%" xmlns="http://www.w3.org/2000/svg" style="font-family: Arial, sans-serif;">
+          <defs>
+            <marker id="arrow-tc" markerWidth="10" markerHeight="10" refX="9" refY="3" orient="auto" markerUnits="strokeWidth">
+              <path d="M0,0 L0,6 L9,3 z" fill="#c96442"/>
+            </marker>
+            <marker id="arrow-gray" markerWidth="10" markerHeight="10" refX="9" refY="3" orient="auto" markerUnits="strokeWidth">
+              <path d="M0,0 L0,6 L9,3 z" fill="#87867f"/>
+            </marker>
+            <marker id="arrow-dark" markerWidth="10" markerHeight="10" refX="9" refY="3" orient="auto" markerUnits="strokeWidth">
+              <path d="M0,0 L0,6 L9,3 z" fill="#d97757"/>
+            </marker>
+          </defs>
+
+          <!-- ===== 示例气泡（医生反馈上方） ===== -->
+          <rect x="10" y="95" width="160" height="50" rx="8" fill="#f5f4ed" stroke="#e8e6dc" stroke-width="1"/>
+          <text x="90" y="115" text-anchor="middle" fill="#5e5d59" font-size="10">"患者有心衰，补充利尿剂，</text>
+          <text x="90" y="130" text-anchor="middle" fill="#5e5d59" font-size="10">停用阿片类镇痛药"</text>
+
+          <!-- ===== 医生反馈主块 ===== -->
+          <rect x="20" y="160" width="140" height="60" rx="10" fill="#c96442"/>
+          <text x="90" y="187" text-anchor="middle" fill="#faf9f5" font-size="14" font-weight="bold">医生反馈</text>
+          <text x="90" y="205" text-anchor="middle" fill="#faf9f5" font-size="11">自然语言输入</text>
+
+          <!-- 箭头：反馈 → LLM -->
+          <line x1="160" y1="190" x2="210" y2="190" stroke="#c96442" stroke-width="2" marker-end="url(#arrow-tc)"/>
+
+          <!-- ===== Step1: LLM 拆解 ===== -->
+          <rect x="215" y="135" width="150" height="80" rx="10" fill="#141413"/>
+          <text x="290" y="165" text-anchor="middle" fill="#d97757" font-size="14" font-weight="bold">LLM</text>
+          <text x="290" y="185" text-anchor="middle" fill="#faf9f5" font-size="11">System Prompt:</text>
+          <text x="290" y="200" text-anchor="middle" fill="#b0aea5" font-size="10">拆分为add/remove关键词</text>
+
+          <!-- LLM输出示例 -->
+          <rect x="220" y="230" width="140" height="55" rx="6" fill="#30302e"/>
+          <text x="290" y="248" text-anchor="middle" fill="#d97757" font-size="10" font-weight="bold">add: ["心衰","利尿剂"]</text>
+          <text x="290" y="265" text-anchor="middle" fill="#87867f" font-size="10" font-weight="bold">remove: ["阿片类"]</text>
+          <text x="290" y="278" text-anchor="middle" fill="#5e5d59" font-size="9">JSON输出</text>
+
+          <!-- 箭头：LLM → Embedding -->
+          <line x1="365" y1="175" x2="415" y2="175" stroke="#87867f" stroke-width="2" marker-end="url(#arrow-gray)"/>
+
+          <!-- ===== Step2: Embedding + 相似度排序 ===== -->
+          <rect x="420" y="115" width="170" height="120" rx="10" fill="#faf9f5" stroke="#e8e6dc" stroke-width="1.5"/>
+          <text x="505" y="140" text-anchor="middle" fill="#c96442" font-size="13" font-weight="bold">Embedding + 排序</text>
+          <line x1="440" y1="150" x2="570" y2="150" stroke="#e8e6dc" stroke-width="1"/>
+          <text x="505" y="168" text-anchor="middle" fill="#5e5d59" font-size="11">1. 关键词 → embedding</text>
+          <text x="505" y="185" text-anchor="middle" fill="#5e5d59" font-size="11">2. 反馈文本 → embedding</text>
+          <text x="505" y="202" text-anchor="middle" fill="#5e5d59" font-size="11">3. 余弦相似度排序</text>
+          <text x="505" y="219" text-anchor="middle" fill="#c96442" font-size="10" font-weight="bold">Top-K 截断去重</text>
+
+          <!-- 箭头：Embedding → HNSW -->
+          <line x1="590" y1="175" x2="640" y2="175" stroke="#87867f" stroke-width="2" marker-end="url(#arrow-gray)"/>
+
+          <!-- ===== Step3: HNSW + Cluster映射 ===== -->
+          <rect x="645" y="115" width="170" height="120" rx="10" fill="#141413"/>
+          <text x="730" y="140" text-anchor="middle" fill="#d97757" font-size="13" font-weight="bold">HNSW 映射</text>
+          <line x1="665" y1="150" x2="795" y2="150" stroke="#30302e" stroke-width="1"/>
+          <text x="730" y="168" text-anchor="middle" fill="#faf9f5" font-size="11">cluster embeddings 索引</text>
+          <text x="730" y="185" text-anchor="middle" fill="#faf9f5" font-size="11">近似最近邻搜索</text>
+          <text x="730" y="202" text-anchor="middle" fill="#b0aea5" font-size="11">关键词 vs cluster</text>
+          <text x="730" y="219" text-anchor="middle" fill="#d97757" font-size="10" font-weight="bold">输出 cluster index</text>
+
+          <!-- HNSW输出示例 -->
+          <rect x="660" y="250" width="140" height="40" rx="6" fill="#30302e"/>
+          <text x="730" y="268" text-anchor="middle" fill="#d97757" font-size="10" font-weight="bold">add: [3, 7, 12, 18]</text>
+          <text x="730" y="283" text-anchor="middle" fill="#87867f" font-size="10" font-weight="bold">remove: [5, 9]</text>
+
+          <!-- 箭头：HNSW → 子图修改 -->
+          <line x1="815" y1="175" x2="865" y2="175" stroke="#c96442" stroke-width="2" marker-end="url(#arrow-tc)"/>
+
+          <!-- ===== Step4: 子图修改 + 二次推理 ===== -->
+          <rect x="870" y="105" width="160" height="140" rx="10" fill="#faf9f5" stroke="#c96442" stroke-width="2"/>
+          <text x="950" y="130" text-anchor="middle" fill="#c96442" font-size="13" font-weight="bold">子图修改</text>
+          <line x1="885" y1="140" x2="1015" y2="140" stroke="#e8e6dc" stroke-width="1"/>
+          <text x="950" y="160" text-anchor="middle" fill="#5e5d59" font-size="11">ehr_nodes one-hot</text>
+          <text x="950" y="177" text-anchor="middle" fill="#5e5d59" font-size="11">动态增删节点</text>
+          <text x="950" y="197" text-anchor="middle" fill="#c96442" font-size="11" font-weight="bold">触发二次推理</text>
+          <text x="950" y="215" text-anchor="middle" fill="#5e5d59" font-size="10">无需重新训练</text>
+          <text x="950" y="230" text-anchor="middle" fill="#87867f" font-size="10">→ 更新预测结果</text>
+
+          <!-- 回流箭头：二次推理结果 → 医生 -->
+          <path d="M 950 245 Q 950 345 580 345 Q 90 345 90 220" fill="none" stroke="#d97757" stroke-width="2" stroke-dasharray="6,4" marker-end="url(#arrow-dark)"/>
+          <rect x="430" y="333" width="200" height="24" rx="6" fill="#f5f4ed" stroke="#e8e6dc" stroke-width="1"/>
+          <text x="530" y="349" text-anchor="middle" fill="#d97757" font-size="11" font-weight="bold">↻ 交互式闭环：更新结果返回医生</text>
+
+          <!-- ===== 底部：关键特性标签 ===== -->
+          <rect x="20" y="375" width="1010" height="24" rx="6" fill="#c96442"/>
+          <text x="525" y="391" text-anchor="middle" fill="#faf9f5" font-size="11" font-weight="bold">核心优势：LLM解析自然语言 → Embedding语义匹配 → HNSW低延迟检索 → 动态图结构修改 → 无需重训练的交互式响应</text>
+        </svg>
+      </div>
+    </main>
+
+    <!-- 页脚 -->
+    <footer class="h-[30px] flex-shrink-0 flex items-center justify-between border-t" style="border-color:#e8e6dc;">
+      <span class="font-sans text-[10px]" style="color:#b0aea5;">ICU项目 · LLM反馈闭环</span>
+      <span class="font-sans text-[10px]" style="color:#b0aea5;">P6 / 12</span>
+    </footer>
+  </div>
+</div>
+</body>
+</html>

@@ -1,0 +1,206 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>P4 - 边稀疏化模块</title>
+<script src="https://cdn.digitalhumanai.top/slidagent/pptx-craft/assets/vendors/tailwind.js"></script>
+<link href="https://cdn.digitalhumanai.top/slidagent/pptx-craft/assets/css/fonts.css" rel="stylesheet" />
+<link href="https://cdn.digitalhumanai.top/slidagent/pptx-craft/assets/vendors/fontawesome/css/all.min.css" rel="stylesheet" />
+<script>
+tailwind.config = {
+  theme: {
+    extend: {
+      colors: {
+        parchment: "#f5f4ed", ivory: "#faf9f5", terracotta: "#c96442", coral: "#d97757",
+        nearBlack: "#141413", darkSurface: "#30302e", oliveGray: "#5e5d59",
+        stoneGray: "#87867f", charcoalWarm: "#4d4c48", warmSand: "#e8e6dc",
+        borderCream: "#f0eee6", borderWarm: "#e8e6dc", warmSilver: "#b0aea5",
+      },
+      fontFamily: { serif: ["Georgia","serif"], sans: ["Arial","sans-serif"] },
+    },
+  },
+};
+</script>
+<style type="text/tailwindcss">
+@layer utilities {
+  .ppt-slide { @apply relative w-[1280px] h-[720px] mx-auto box-border overflow-hidden; }
+  .ppt-slide *, .ppt-slide *::before, .ppt-slide *::after { @apply box-border; max-width: 100%; }
+  .ppt-slide img, .ppt-slide video, .ppt-slide canvas, .ppt-slide svg { @apply max-w-full max-h-full object-contain; }
+  .content-safe { @apply w-[1220px] h-[660px] my-[30px] mx-auto flex flex-col overflow-hidden; }
+  .ppt-slide [class*="blur"] { filter: none !important; backdrop-filter: none !important; }
+  .ppt-slide [class*="gradient"] { background-image: none !important; }
+  .ppt-slide [class*="backdrop-blur"] { backdrop-filter: none !important; }
+}
+</style>
+</head>
+<body class="bg-parchment">
+<div class="ppt-slide flex flex-col h-[720px] overflow-hidden" type="content" style="background-color:#f5f4ed;">
+  <div class="content-safe">
+    <!-- 页头 -->
+    <header class="h-[60px] flex-shrink-0 flex items-center justify-between">
+      <div>
+        <h1 class="font-serif text-[24px] font-medium leading-[1.2]" style="color:#141413;">自主设计边稀疏化模块：辅助Loss实现被丢弃边的梯度流动与动态"复活"</h1>
+        <p class="font-sans text-[13px]" style="color:#87867f;">Edge Sparsification: Soft Weight + Hard Mask + Auxiliary Loss</p>
+      </div>
+      <div class="flex items-center gap-2">
+        <div class="w-[6px] h-[6px] rounded-full" style="background-color:#c96442;"></div>
+        <span class="font-sans text-[12px] tracking-[0.15em] uppercase" style="color:#87867f;">P4 / 12</span>
+      </div>
+    </header>
+
+    <!-- 内容区 -->
+    <main class="flex-1 min-h-0 flex flex-col gap-4 overflow-hidden mt-[8px]">
+      <!-- 上半：EdgeScorer + Top-K 流程图 -->
+      <div class="grid grid-cols-[1fr_1fr] gap-4 flex-1 min-h-0">
+        <!-- 左侧：EdgeScorer + Top-K -->
+        <div class="h-full min-h-0 overflow-hidden rounded-[8px] p-[16px] flex flex-col" style="background-color:#faf9f5;box-shadow:0 0 0 1px #f0eee6;">
+          <div class="flex items-center gap-2 mb-[8px]">
+            <i class="fa-solid fa-scissors text-[14px]" style="color:#c96442;"></i>
+            <span class="font-serif text-[16px] font-medium" style="color:#141413;">EdgeScorer + Top-K 硬掩码</span>
+          </div>
+          <!-- 流程步骤 -->
+          <div class="flex-1 min-h-0 flex flex-col gap-[6px] justify-center">
+            <div class="flex items-center gap-3">
+              <div class="w-[24px] h-[24px] rounded-full flex items-center justify-center flex-shrink-0" style="background-color:#c96442;">
+                <span class="font-sans text-[11px] font-medium" style="color:#faf9f5;">1</span>
+              </div>
+              <div class="flex-1">
+                <span class="font-sans text-[13px] font-medium" style="color:#141413;">EdgeScorer 网络</span>
+                <p class="font-sans text-[11px] leading-[1.4]" style="color:#5e5d59;">多层感知机，接收源节点、目标节点和边特征，拼接后经 Sigmoid 激活，输出 0~1 重要性分数</p>
+              </div>
+            </div>
+            <div class="flex items-center gap-3">
+              <div class="w-[24px] h-[24px] rounded-full flex items-center justify-center flex-shrink-0" style="background-color:#c96442;">
+                <span class="font-sans text-[11px] font-medium" style="color:#faf9f5;">2</span>
+              </div>
+              <div class="flex-1">
+                <span class="font-sans text-[13px] font-medium" style="color:#141413;">Top-K 筛选</span>
+                <p class="font-sans text-[11px] leading-[1.4]" style="color:#5e5d59;">根据稀疏化比例（如保留 Top 10%），用 torch.topk 生成非0即1的硬掩码，降低图计算复杂度</p>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- 右侧：核心挑战 - 梯度截断 -->
+        <div class="h-full min-h-0 overflow-hidden rounded-[8px] p-[16px] flex flex-col" style="background-color:#141413;">
+          <div class="flex items-center gap-2 mb-[8px]">
+            <i class="fa-solid fa-triangle-exclamation text-[14px]" style="color:#d97757;"></i>
+            <span class="font-serif text-[16px] font-medium" style="color:#faf9f5;">核心挑战：Hard Mask 梯度截断</span>
+          </div>
+          <p class="font-sans text-[12px] leading-[1.5] mb-[8px]" style="color:#b0aea5;">>= thresh 和 .float() 是不可微操作，梯度会断掉。解决方案分两路：</p>
+          <div class="flex-1 min-h-0 flex flex-col gap-[8px]">
+            <div class="rounded-[6px] p-[10px]" style="background-color:#30302e;">
+              <div class="flex items-center gap-2 mb-[4px]">
+                <i class="fa-solid fa-check text-[11px]" style="color:#d97757;"></i>
+                <span class="font-sans text-[12px] font-medium" style="color:#faf9f5;">被保留的边（Mask=1）</span>
+              </div>
+              <p class="font-sans text-[11px] leading-[1.4]" style="color:#b0aea5;">软得分与硬掩码相乘 edge_weights = edge_scores × mask，梯度通过 edge_scores 顺畅回传</p>
+            </div>
+            <div class="rounded-[6px] p-[10px]" style="background-color:#30302e;">
+              <div class="flex items-center gap-2 mb-[4px]">
+                <i class="fa-solid fa-arrow-right text-[11px]" style="color:#d97757;"></i>
+                <span class="font-sans text-[12px] font-medium" style="color:#faf9f5;">被丢弃的边（Mask=0）</span>
+              </div>
+              <p class="font-sans text-[11px] leading-[1.4]" style="color:#b0aea5;">引入辅助稀疏化损失维持梯度流动（见下方）</p>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- 下半：辅助Loss + 动态复活 -->
+      <div class="grid grid-cols-[1fr_1fr_1fr] gap-4 flex-1 min-h-0">
+        <div class="h-full min-h-0 overflow-hidden rounded-[8px] p-[14px] flex flex-col" style="background-color:#faf9f5;box-shadow:0 0 0 1px #f0eee6;">
+          <div class="flex items-center gap-2 mb-[6px]">
+            <i class="fa-solid fa-minus text-[16px]" style="color:#c96442;"></i>
+            <span class="font-serif text-[16px] font-medium" style="color:#141413;">L1 稀疏性惩罚</span>
+          </div>
+          <p class="font-sans text-[14px] leading-[1.6] mb-[8px]" style="color:#5e5d59;">mean(edge_scores)，全局压低所有边得分，为被丢弃边提供梯度信号。</p>
+          <!-- 稀疏性示意图：全连接 → 稀疏 -->
+          <div class="flex items-center justify-center gap-3 rounded-[6px] p-[10px]" style="background-color:#f5f4ed;">
+            <svg width="80" height="70" viewBox="0 0 80 70">
+              <line x1="12" y1="12" x2="68" y2="12" stroke="#c96442" stroke-width="0.8" opacity="0.3"/>
+              <line x1="12" y1="12" x2="68" y2="35" stroke="#c96442" stroke-width="0.8" opacity="0.3"/>
+              <line x1="12" y1="12" x2="68" y2="58" stroke="#c96442" stroke-width="0.8" opacity="0.3"/>
+              <line x1="12" y1="35" x2="68" y2="12" stroke="#c96442" stroke-width="0.8" opacity="0.3"/>
+              <line x1="12" y1="35" x2="68" y2="35" stroke="#c96442" stroke-width="0.8" opacity="0.3"/>
+              <line x1="12" y1="35" x2="68" y2="58" stroke="#c96442" stroke-width="0.8" opacity="0.3"/>
+              <line x1="12" y1="58" x2="68" y2="12" stroke="#c96442" stroke-width="0.8" opacity="0.3"/>
+              <line x1="12" y1="58" x2="68" y2="35" stroke="#c96442" stroke-width="0.8" opacity="0.3"/>
+              <line x1="12" y1="58" x2="68" y2="58" stroke="#c96442" stroke-width="0.8" opacity="0.3"/>
+              <circle cx="12" cy="12" r="4" fill="#c96442"/>
+              <circle cx="12" cy="35" r="4" fill="#c96442"/>
+              <circle cx="12" cy="58" r="4" fill="#c96442"/>
+              <circle cx="68" cy="12" r="4" fill="#c96442"/>
+              <circle cx="68" cy="35" r="4" fill="#c96442"/>
+              <circle cx="68" cy="58" r="4" fill="#c96442"/>
+            </svg>
+            <i class="fa-solid fa-arrow-right text-[16px]" style="color:#87867f;"></i>
+            <svg width="80" height="70" viewBox="0 0 80 70">
+              <line x1="12" y1="12" x2="68" y2="35" stroke="#c96442" stroke-width="1.8"/>
+              <line x1="12" y1="35" x2="68" y2="12" stroke="#c96442" stroke-width="1.8"/>
+              <line x1="12" y1="58" x2="68" y2="58" stroke="#c96442" stroke-width="1.8"/>
+              <circle cx="12" cy="12" r="4" fill="#c96442"/>
+              <circle cx="12" cy="35" r="4" fill="#c96442"/>
+              <circle cx="12" cy="58" r="4" fill="#c96442"/>
+              <circle cx="68" cy="12" r="4" fill="#c96442"/>
+              <circle cx="68" cy="35" r="4" fill="#c96442"/>
+              <circle cx="68" cy="58" r="4" fill="#c96442"/>
+            </svg>
+          </div>
+        </div>
+        <div class="h-full min-h-0 overflow-hidden rounded-[8px] p-[14px] flex flex-col" style="background-color:#faf9f5;box-shadow:0 0 0 1px #f0eee6;">
+          <div class="flex items-center gap-2 mb-[6px]">
+            <i class="fa-solid fa-link text-[16px]" style="color:#c96442;"></i>
+            <span class="font-serif text-[16px] font-medium" style="color:#141413;">连通性保持惩罚</span>
+          </div>
+          <p class="font-sans text-[14px] leading-[1.6] mb-[8px]" style="color:#5e5d59;">每个节点边权重之和低于阈值则惩罚，保证图连通性不被破坏。</p>
+          <!-- 连通性示意图：6节点图，每节点至少保留1条边 -->
+          <div class="flex items-center justify-center rounded-[6px] p-[10px]" style="background-color:#f5f4ed;">
+            <svg width="140" height="75" viewBox="0 0 140 75">
+              <line x1="30" y1="20" x2="70" y2="12" stroke="#c96442" stroke-width="1.8"/>
+              <line x1="70" y1="12" x2="110" y2="20" stroke="#c96442" stroke-width="1.8"/>
+              <line x1="110" y1="20" x2="110" y2="55" stroke="#c96442" stroke-width="1.8"/>
+              <line x1="110" y1="55" x2="70" y2="63" stroke="#c96442" stroke-width="1.8"/>
+              <line x1="70" y1="63" x2="30" y2="55" stroke="#c96442" stroke-width="1.8"/>
+              <line x1="30" y1="55" x2="30" y2="20" stroke="#c96442" stroke-width="1.8"/>
+              <line x1="30" y1="20" x2="110" y2="20" stroke="#c96442" stroke-width="0.6" opacity="0.2" stroke-dasharray="3,2"/>
+              <line x1="30" y1="20" x2="110" y2="55" stroke="#c96442" stroke-width="0.6" opacity="0.2" stroke-dasharray="3,2"/>
+              <line x1="30" y1="20" x2="70" y2="63" stroke="#c96442" stroke-width="0.6" opacity="0.2" stroke-dasharray="3,2"/>
+              <line x1="70" y1="12" x2="70" y2="63" stroke="#c96442" stroke-width="0.6" opacity="0.2" stroke-dasharray="3,2"/>
+              <line x1="70" y1="12" x2="110" y2="55" stroke="#c96442" stroke-width="0.6" opacity="0.2" stroke-dasharray="3,2"/>
+              <line x1="70" y1="12" x2="30" y2="55" stroke="#c96442" stroke-width="0.6" opacity="0.2" stroke-dasharray="3,2"/>
+              <line x1="110" y1="20" x2="70" y2="63" stroke="#c96442" stroke-width="0.6" opacity="0.2" stroke-dasharray="3,2"/>
+              <line x1="110" y1="20" x2="30" y2="55" stroke="#c96442" stroke-width="0.6" opacity="0.2" stroke-dasharray="3,2"/>
+              <line x1="30" y1="55" x2="110" y2="55" stroke="#c96442" stroke-width="0.6" opacity="0.2" stroke-dasharray="3,2"/>
+              <circle cx="30" cy="20" r="5" fill="#c96442"/>
+              <circle cx="70" cy="12" r="5" fill="#c96442"/>
+              <circle cx="110" cy="20" r="5" fill="#c96442"/>
+              <circle cx="110" cy="55" r="5" fill="#c96442"/>
+              <circle cx="70" cy="63" r="5" fill="#c96442"/>
+              <circle cx="30" cy="55" r="5" fill="#c96442"/>
+            </svg>
+          </div>
+        </div>
+        <div class="h-full min-h-0 overflow-hidden rounded-[8px] p-[14px] flex flex-col" style="background-color:#c96442;">
+          <div class="flex items-center gap-2 mb-[6px]">
+            <i class="fa-solid fa-heart-pulse text-[16px]" style="color:#faf9f5;"></i>
+            <span class="font-serif text-[16px] font-medium" style="color:#faf9f5;">关键创新：边的动态"复活"</span>
+          </div>
+          <p class="font-sans text-[13px] leading-[1.6]" style="color:#faf9f5;">即使边当前被Mask掉，仍能收到辅助Loss梯度。若后续Epoch主任务需要该节点，辅助Loss推高其edge_scores，一旦超过阈值即被Top-K重新"复活"。</p>
+          <div class="mt-auto rounded-[6px] p-[8px]" style="background-color:rgba(250,249,245,0.15);">
+            <span class="font-sans text-[12px] leading-[1.4]" style="color:#faf9f5;">既实现物理稀疏计算，又保证全局梯度流动与动态探索能力</span>
+          </div>
+        </div>
+      </div>
+    </main>
+
+    <!-- 页脚 -->
+    <footer class="h-[30px] flex-shrink-0 flex items-center justify-between border-t" style="border-color:#e8e6dc;">
+      <span class="font-sans text-[10px]" style="color:#b0aea5;">ICU项目 · 边稀疏化模块</span>
+      <span class="font-sans text-[10px]" style="color:#b0aea5;">P4 / 12</span>
+    </footer>
+  </div>
+</div>
+</body>
+</html>

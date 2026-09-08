@@ -1,0 +1,191 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>P12 - 未来研究规划</title>
+<script src="https://cdn.digitalhumanai.top/slidagent/pptx-craft/assets/vendors/tailwind.js"></script>
+<link href="https://cdn.digitalhumanai.top/slidagent/pptx-craft/assets/css/fonts.css" rel="stylesheet" />
+<link href="https://cdn.digitalhumanai.top/slidagent/pptx-craft/assets/vendors/fontawesome/css/all.min.css" rel="stylesheet" />
+<script>
+tailwind.config = {
+  theme: {
+    extend: {
+      colors: {
+        parchment: "#f5f4ed", ivory: "#faf9f5", terracotta: "#c96442", coral: "#d97757",
+        nearBlack: "#141413", darkSurface: "#30302e", oliveGray: "#5e5d59",
+        stoneGray: "#87867f", charcoalWarm: "#4d4c48", warmSand: "#e8e6dc",
+        borderCream: "#f0eee6", borderWarm: "#e8e6dc", warmSilver: "#b0aea5",
+      },
+      fontFamily: { serif: ["Georgia","serif"], sans: ["Arial","sans-serif"] },
+    },
+  },
+};
+</script>
+<style type="text/tailwindcss">
+@layer utilities {
+  .ppt-slide { @apply relative w-[1280px] h-[720px] mx-auto box-border overflow-hidden; }
+  .ppt-slide *, .ppt-slide *::before, .ppt-slide *::after { @apply box-border; max-width: 100%; }
+  .ppt-slide img, .ppt-slide video, .ppt-slide canvas, .ppt-slide svg { @apply max-w-full max-h-full object-contain; }
+  .content-safe { @apply w-[1220px] h-[660px] my-[30px] mx-auto flex flex-col overflow-hidden; }
+  .ppt-slide [class*="blur"] { filter: none !important; backdrop-filter: none !important; }
+  .ppt-slide [class*="gradient"] { background-image: none !important; }
+  .ppt-slide [class*="backdrop-blur"] { backdrop-filter: none !important; }
+}
+</style>
+</head>
+<body class="bg-parchment">
+<div class="ppt-slide flex flex-col h-[720px] overflow-hidden" type="final" style="background-color:#f5f4ed;">
+  <!-- 背景装饰 -->
+  <div class="absolute top-0 left-0 w-full h-full" style="z-index:0;">
+    <div class="absolute top-[60px] right-[80px] w-[200px] h-[200px] rounded-full" style="background-color:#e8e6dc;opacity:0.4;"></div>
+    <div class="absolute bottom-[40px] left-[60px] w-[160px] h-[160px] rounded-full" style="background-color:#f0eee6;opacity:0.5;"></div>
+  </div>
+
+  <div class="content-safe relative" style="z-index:1;">
+    <!-- 页头 -->
+    <header class="h-[60px] flex-shrink-0 flex items-center justify-between">
+      <div>
+        <h1 class="font-serif text-[26px] font-medium leading-[1.2]" style="color:#141413;">研究生规划：深耕VLM安全，产出高质量学术成果</h1>
+        <p class="font-sans text-[13px]" style="color:#87867f;">Future Research Plan · Graduate Study Roadmap</p>
+      </div>
+      <div class="flex items-center gap-2">
+        <div class="w-[6px] h-[6px] rounded-full" style="background-color:#c96442;"></div>
+        <span class="font-sans text-[12px] tracking-[0.15em] uppercase" style="color:#87867f;">P12 / 12</span>
+      </div>
+    </header>
+
+    <!-- 内容区 -->
+    <main class="flex-1 min-h-0 flex flex-col gap-4 overflow-hidden mt-[8px]">
+      <!-- 上半：研究生三阶段时间线 -->
+      <div class="flex-1 min-h-0 overflow-hidden rounded-[8px] p-[16px] flex flex-col" style="background-color:#faf9f5;box-shadow:0 0 0 1px #f0eee6;">
+        <div class="flex items-center gap-2 mb-[12px] flex-shrink-0">
+          <i class="fa-solid fa-timeline text-[16px]" style="color:#c96442;"></i>
+          <span class="font-serif text-[16px] font-medium" style="color:#141413;">研究生三阶段规划</span>
+        </div>
+        <div class="grid grid-cols-3 gap-4 flex-1 min-h-0">
+          <!-- 研一 -->
+          <div class="rounded-[8px] p-[14px] flex flex-col" style="background-color:#f5f4ed;">
+            <div class="flex items-center gap-2 mb-[8px]">
+              <div class="w-[28px] h-[28px] rounded-full flex items-center justify-center flex-shrink-0" style="background-color:#c96442;">
+                <span class="font-sans text-[12px] font-bold" style="color:#faf9f5;">1</span>
+              </div>
+              <span class="font-serif text-[15px] font-medium" style="color:#141413;">研一（上课+科研）</span>
+            </div>
+            <div class="flex flex-col gap-[4px] flex-1">
+              <div class="flex items-start gap-2">
+                <i class="fa-solid fa-check text-[10px] mt-[3px]" style="color:#c96442;"></i>
+                <span class="font-sans text-[12px] leading-[1.5]" style="color:#5e5d59;">深化VLM安全研究，完善白盒注意力分析框架</span>
+              </div>
+              <div class="flex items-start gap-2">
+                <i class="fa-solid fa-check text-[10px] mt-[3px]" style="color:#c96442;"></i>
+                <span class="font-sans text-[12px] leading-[1.5]" style="color:#5e5d59;">建立"注意力分布→攻击成功率"因果关联</span>
+              </div>
+              <div class="flex items-start gap-2">
+                <i class="fa-solid fa-check text-[10px] mt-[3px]" style="color:#c96442;"></i>
+                <span class="font-sans text-[12px] leading-[1.5]" style="color:#5e5d59;">完成第一篇学术论文工作</span>
+              </div>
+            </div>
+          </div>
+          <!-- 研二 -->
+          <div class="rounded-[8px] p-[14px] flex flex-col" style="background-color:#f5f4ed;">
+            <div class="flex items-center gap-2 mb-[8px]">
+              <div class="w-[28px] h-[28px] rounded-full flex items-center justify-center flex-shrink-0" style="background-color:#c96442;">
+                <span class="font-sans text-[12px] font-bold" style="color:#faf9f5;">2</span>
+              </div>
+              <span class="font-serif text-[15px] font-medium" style="color:#141413;">研二（全职科研）</span>
+            </div>
+            <div class="flex flex-col gap-[4px] flex-1">
+              <div class="flex items-start gap-2">
+                <i class="fa-solid fa-check text-[10px] mt-[3px]" style="color:#c96442;"></i>
+                <span class="font-sans text-[12px] leading-[1.5]" style="color:#5e5d59;">扩展研究范围：从攻击到防御，设计检测与缓解方案</span>
+              </div>
+              <div class="flex items-start gap-2">
+                <i class="fa-solid fa-check text-[10px] mt-[3px]" style="color:#c96442;"></i>
+                <span class="font-sans text-[12px] leading-[1.5]" style="color:#5e5d59;">完成第二篇学术论文工作</span>
+              </div>
+              <div class="flex items-start gap-2">
+                <i class="fa-solid fa-check text-[10px] mt-[3px]" style="color:#c96442;"></i>
+                <span class="font-sans text-[12px] leading-[1.5]" style="color:#5e5d59;">保持物理可落地性约束，推动真实场景验证</span>
+              </div>
+            </div>
+          </div>
+          <!-- 研三 -->
+          <div class="rounded-[8px] p-[14px] flex flex-col" style="background-color:#c96442;">
+            <div class="flex items-center gap-2 mb-[8px]">
+              <div class="w-[28px] h-[28px] rounded-full flex items-center justify-center flex-shrink-0" style="background-color:#faf9f5;">
+                <span class="font-sans text-[12px] font-bold" style="color:#c96442;">3</span>
+              </div>
+              <span class="font-serif text-[15px] font-medium" style="color:#faf9f5;">研三（实习+毕业）</span>
+            </div>
+            <div class="flex flex-col gap-[4px] flex-1">
+              <div class="flex items-start gap-2">
+                <i class="fa-solid fa-check text-[10px] mt-[3px]" style="color:#faf9f5;"></i>
+                <span class="font-sans text-[12px] leading-[1.5]" style="color:rgba(250,249,245,0.9);">工业界实习，将VLM安全研究落地</span>
+              </div>
+              <div class="flex items-start gap-2">
+                <i class="fa-solid fa-check text-[10px] mt-[3px]" style="color:#faf9f5;"></i>
+                <span class="font-sans text-[12px] leading-[1.5]" style="color:rgba(250,249,245,0.9);">整合两篇学术论工作，完成毕业论文</span>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- 下半：核心优势 + 学术目标 -->
+      <div class="grid grid-cols-[1.2fr_1fr] gap-4 flex-1 min-h-0">
+        <!-- 核心优势 -->
+        <div class="h-full min-h-0 overflow-hidden rounded-[8px] p-[16px] flex flex-col" style="background-color:#141413;">
+          <div class="flex items-center gap-2 mb-[8px]">
+            <i class="fa-solid fa-rocket text-[14px]" style="color:#d97757;"></i>
+            <span class="font-serif text-[16px] font-medium" style="color:#faf9f5;">已有基础与核心优势</span>
+          </div>
+          <div class="flex-1 min-h-0 flex flex-col gap-[6px] justify-center">
+            <div class="flex items-start gap-2">
+              <i class="fa-solid fa-arrow-right text-[10px] mt-[3px]" style="color:#d97757;"></i>
+              <p class="font-sans text-[12px] leading-[1.5]" style="color:#b0aea5;">提出ASR分解公式理论框架，将攻击成功率拆解为"被看见×被理解×被服从"三阶段</p>
+            </div>
+            <div class="flex items-start gap-2">
+              <i class="fa-solid fa-arrow-right text-[10px] mt-[3px]" style="color:#d97757;"></i>
+              <p class="font-sans text-[12px] leading-[1.5]" style="color:#b0aea5;">自建白盒注意力提取与三层区域量化框架，SceneTAP三阶段流水线已跑通</p>
+            </div>
+            <div class="flex items-start gap-2">
+              <i class="fa-solid fa-arrow-right text-[10px] mt-[3px]" style="color:#d97757;"></i>
+              <p class="font-sans text-[12px] leading-[1.5]" style="color:#b0aea5;">具备图神经网络与注意力机制的扎实理论功底，可快速迁移到新研究方向</p>
+            </div>
+            <div class="flex items-start gap-2">
+              <i class="fa-solid fa-arrow-right text-[10px] mt-[3px]" style="color:#d97757;"></i>
+              <p class="font-sans text-[12px] leading-[1.5]" style="color:#b0aea5;">长期维护个人知识库（783篇笔记），具备系统性学习习惯与跨领域知识迁移能力</p>
+            </div>
+          </div>
+        </div>
+
+        <!-- 学术目标 -->
+        <div class="h-full min-h-0 overflow-hidden rounded-[8px] p-[16px] flex flex-col" style="background-color:#faf9f5;box-shadow:0 0 0 1px #f0eee6;">
+          <div class="flex items-center gap-2 mb-[8px]">
+            <i class="fa-solid fa-file-pen text-[14px]" style="color:#c96442;"></i>
+            <span class="font-serif text-[16px] font-medium" style="color:#141413;">学术产出目标</span>
+          </div>
+          <div class="flex-1 min-h-0 flex flex-col gap-[8px] justify-center">
+            <div class="rounded-[8px] p-[12px] text-center" style="background-color:#c96442;">
+              <span class="font-serif text-[24px] font-medium" style="color:#faf9f5;">2篇学术论文</span>
+              <p class="font-sans text-[11px] mt-[4px]" style="color:rgba(250,249,245,0.85);">整合为毕业论文</p>
+            </div>
+            <div class="flex items-start gap-2">
+              <i class="fa-solid fa-check text-[11px] mt-[3px]" style="color:#c96442;"></i>
+              <p class="font-sans text-[11px] leading-[1.4]" style="color:#5e5d59;">代码开源至GitHub，保持可复现性</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </main>
+
+    <!-- 底部致谢 -->
+    <footer class="h-[30px] flex-shrink-0 flex items-center justify-between border-t" style="border-color:#e8e6dc;">
+      <span class="font-sans text-[10px]" style="color:#b0aea5;">王宇飞 · 华东师范大学软件工程 · 2026 保研面试</span>
+      <span class="font-sans text-[10px]" style="color:#b0aea5;">Thank You · P12 / 12</span>
+    </footer>
+  </div>
+</div>
+</body>
+</html>

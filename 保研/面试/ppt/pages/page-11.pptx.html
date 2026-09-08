@@ -1,0 +1,156 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>P11 - 技术能力与知识管理</title>
+<script src="https://cdn.digitalhumanai.top/slidagent/pptx-craft/assets/vendors/tailwind.js"></script>
+<link href="https://cdn.digitalhumanai.top/slidagent/pptx-craft/assets/css/fonts.css" rel="stylesheet" />
+<link href="https://cdn.digitalhumanai.top/slidagent/pptx-craft/assets/vendors/fontawesome/css/all.min.css" rel="stylesheet" />
+<script>
+tailwind.config = {
+  theme: {
+    extend: {
+      colors: {
+        parchment: "#f5f4ed", ivory: "#faf9f5", terracotta: "#c96442", coral: "#d97757",
+        nearBlack: "#141413", darkSurface: "#30302e", oliveGray: "#5e5d59",
+        stoneGray: "#87867f", charcoalWarm: "#4d4c48", warmSand: "#e8e6dc",
+        borderCream: "#f0eee6", borderWarm: "#e8e6dc", warmSilver: "#b0aea5",
+      },
+      fontFamily: { serif: ["Georgia","serif"], sans: ["Arial","sans-serif"] },
+    },
+  },
+};
+</script>
+<style type="text/tailwindcss">
+@layer utilities {
+  .ppt-slide { @apply relative w-[1280px] h-[720px] mx-auto box-border overflow-hidden; }
+  .ppt-slide *, .ppt-slide *::before, .ppt-slide *::after { @apply box-border; max-width: 100%; }
+  .ppt-slide img, .ppt-slide video, .ppt-slide canvas, .ppt-slide svg { @apply max-w-full max-h-full object-contain; }
+  .content-safe { @apply w-[1220px] h-[660px] my-[30px] mx-auto flex flex-col overflow-hidden; }
+  .ppt-slide [class*="blur"] { filter: none !important; backdrop-filter: none !important; }
+  .ppt-slide [class*="gradient"] { background-image: none !important; }
+  .ppt-slide [class*="backdrop-blur"] { backdrop-filter: none !important; }
+}
+</style>
+</head>
+<body class="bg-parchment">
+<div class="ppt-slide flex flex-col h-[720px] overflow-hidden" type="content" style="background-color:#f5f4ed;">
+  <div class="content-safe">
+    <!-- 页头 -->
+    <header class="h-[60px] flex-shrink-0 flex items-center justify-between">
+      <div>
+        <h1 class="font-serif text-[24px] font-medium leading-[1.2]" style="color:#141413;">技术能力矩阵与系统性知识管理</h1>
+        <p class="font-sans text-[13px]" style="color:#87867f;">Engineering Skills & Systematic Knowledge Management</p>
+      </div>
+      <div class="flex items-center gap-2">
+        <div class="w-[6px] h-[6px] rounded-full" style="background-color:#c96442;"></div>
+        <span class="font-sans text-[12px] tracking-[0.15em] uppercase" style="color:#87867f;">P11 / 12</span>
+      </div>
+    </header>
+
+    <!-- 内容区 -->
+    <main class="flex-1 min-h-0 flex gap-4 overflow-hidden mt-[8px]">
+      <!-- 左侧：技术能力矩阵（4项） -->
+      <div class="w-[48%] min-h-0 flex flex-col gap-[10px]">
+        <div class="flex items-center gap-2 flex-shrink-0">
+          <i class="fa-solid fa-gears text-[16px]" style="color:#c96442;"></i>
+          <span class="font-serif text-[16px] font-medium" style="color:#141413;">技术能力矩阵</span>
+        </div>
+        <div class="flex-1 min-h-0 flex flex-col gap-[8px]">
+          <div class="flex-1 min-h-0 rounded-[8px] p-[14px] flex flex-col justify-center" style="background-color:#faf9f5;box-shadow:0 0 0 1px #f0eee6;">
+            <div class="flex items-center gap-3 mb-[4px]">
+              <div class="w-[32px] h-[32px] rounded-[6px] flex items-center justify-center flex-shrink-0" style="background-color:#c96442;">
+                <i class="fa-solid fa-code text-[14px]" style="color:#faf9f5;"></i>
+              </div>
+              <span class="font-sans text-[15px] font-medium" style="color:#141413;">编程语言</span>
+            </div>
+            <p class="font-sans text-[13px] leading-[1.6]" style="color:#5e5d59;">Python（熟练）、C++、TypeScript/JavaScript，扎实的数据结构与算法基础</p>
+          </div>
+          <div class="flex-1 min-h-0 rounded-[8px] p-[14px] flex flex-col justify-center" style="background-color:#faf9f5;box-shadow:0 0 0 1px #f0eee6;">
+            <div class="flex items-center gap-3 mb-[4px]">
+              <div class="w-[32px] h-[32px] rounded-[6px] flex items-center justify-center flex-shrink-0" style="background-color:#c96442;">
+                <i class="fa-solid fa-brain text-[14px]" style="color:#faf9f5;"></i>
+              </div>
+              <span class="font-sans text-[15px] font-medium" style="color:#141413;">AI与算法</span>
+            </div>
+            <p class="font-sans text-[13px] leading-[1.6]" style="color:#5e5d59;">PyTorch深度学习框架、图神经网络与注意力机制、多模态大模型API调用与提示词工程</p>
+          </div>
+          <div class="flex-1 min-h-0 rounded-[8px] p-[14px] flex flex-col justify-center" style="background-color:#faf9f5;box-shadow:0 0 0 1px #f0eee6;">
+            <div class="flex items-center gap-3 mb-[4px]">
+              <div class="w-[32px] h-[32px] rounded-[6px] flex items-center justify-center flex-shrink-0" style="background-color:#c96442;">
+                <i class="fa-solid fa-robot text-[14px]" style="color:#faf9f5;"></i>
+              </div>
+              <span class="font-sans text-[15px] font-medium" style="color:#141413;">AI Agent使用经验</span>
+            </div>
+            <p class="font-sans text-[13px] leading-[1.6]" style="color:#5e5d59;">熟练使用Codex、Trae等AI编程工具，对Rule、Skill、MCP等机制使用熟练，善于利用AI工具实现开发与运维自动化</p>
+          </div>
+          <div class="flex-1 min-h-0 rounded-[8px] p-[14px] flex flex-col justify-center" style="background-color:#faf9f5;box-shadow:0 0 0 1px #f0eee6;">
+            <div class="flex items-center gap-3 mb-[4px]">
+              <div class="w-[32px] h-[32px] rounded-[6px] flex items-center justify-center flex-shrink-0" style="background-color:#c96442;">
+                <i class="fa-solid fa-wrench text-[14px]" style="color:#faf9f5;"></i>
+              </div>
+              <span class="font-sans text-[15px] font-medium" style="color:#141413;">工程化与开发环境</span>
+            </div>
+            <p class="font-sans text-[13px] leading-[1.6]" style="color:#5e5d59;">Git高级操作（submodule/代理/换源）、conda多环境管理、Docker容器化、集群sbatch批量任务、Kaggle GPU推理</p>
+          </div>
+        </div>
+      </div>
+
+      <!-- 右侧：个人知识库（重点突出） -->
+      <div class="flex-1 min-h-0 overflow-hidden rounded-[8px] flex flex-col" style="background-color:#141413;">
+        <div class="flex items-center gap-2 px-[16px] pt-[14px] pb-[8px] flex-shrink-0">
+          <i class="fa-solid fa-book-open text-[18px]" style="color:#d97757;"></i>
+          <span class="font-serif text-[18px] font-medium" style="color:#faf9f5;">个人知识库</span>
+          <span class="font-sans text-[12px] ml-auto" style="color:#87867f;">Obsidian · 长期系统性维护</span>
+        </div>
+
+        <!-- 总量数据条 -->
+        <div class="mx-[16px] flex gap-[12px] mb-[10px] flex-shrink-0">
+          <div class="flex-1 rounded-[6px] p-[8px] text-center" style="background-color:#30302e;">
+            <p class="font-serif text-[28px] font-medium" style="color:#d97757;">783</p>
+            <p class="font-sans text-[10px]" style="color:#87867f;">篇笔记</p>
+          </div>
+          <div class="flex-1 rounded-[6px] p-[8px] text-center" style="background-color:#30302e;">
+            <p class="font-serif text-[28px] font-medium" style="color:#d97757;">396</p>
+            <p class="font-sans text-[10px]" style="color:#87867f;">个图表资源</p>
+          </div>
+          <div class="flex-1 rounded-[6px] p-[8px] text-center" style="background-color:#30302e;">
+            <p class="font-serif text-[28px] font-medium" style="color:#d97757;">14</p>
+            <p class="font-sans text-[10px]" style="color:#87867f;">门课程覆盖</p>
+          </div>
+        </div>
+
+        <!-- 课程笔记 -->
+        <div class="flex-1 min-h-0 flex flex-col gap-[8px] px-[16px] pb-[14px]">
+          <div class="rounded-[8px] p-[12px] flex items-start gap-3 flex-1 min-h-0" style="background-color:#30302e;">
+            <div class="w-[28px] h-[28px] rounded-[6px] flex items-center justify-center flex-shrink-0" style="background-color:#c96442;">
+              <i class="fa-solid fa-graduation-cap text-[12px]" style="color:#faf9f5;"></i>
+            </div>
+            <div class="flex-1">
+              <span class="font-sans text-[14px] font-medium" style="color:#faf9f5;">课程笔记 539篇 / 14门课</span>
+              <p class="font-sans text-[12px] leading-[1.6] mt-[4px]" style="color:#b0aea5;">计算机安全(142篇)、形式化(70篇)、数据库(64篇)、UML(54篇)、程序测试(52篇)、编译原理(47篇)、操作系统、数据挖掘、算法设计与分析、计算机网络、并行程序设计、概率论、线性代数、人机交互</p>
+            </div>
+          </div>
+          <div class="rounded-[8px] p-[12px] flex items-start gap-3 flex-1 min-h-0" style="background-color:#30302e;">
+            <div class="w-[28px] h-[28px] rounded-[6px] flex items-center justify-center flex-shrink-0" style="background-color:#c96442;">
+              <i class="fa-solid fa-laptop-code text-[12px]" style="color:#faf9f5;"></i>
+            </div>
+            <div class="flex-1">
+              <span class="font-sans text-[14px] font-medium" style="color:#faf9f5;">编程笔记 203篇</span>
+              <p class="font-sans text-[12px] leading-[1.6] mt-[4px]" style="color:#b0aea5;">AI/PyTorch系列(73篇)：Tensor/Model/Loss/Optimizer、注意力机制、微调方法(SFT/LoRA/DPO/RLHF)<br>前端工程化(39篇)：React18 Fiber架构、TypeScript、V8引擎底层<br>算法竞赛(40篇)、Git操作(8篇)、服务器运维(10篇)</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </main>
+
+    <!-- 页脚 -->
+    <footer class="h-[30px] flex-shrink-0 flex items-center justify-between border-t" style="border-color:#e8e6dc;">
+      <span class="font-sans text-[10px]" style="color:#b0aea5;">技术能力矩阵与系统性知识管理</span>
+      <span class="font-sans text-[10px]" style="color:#b0aea5;">P11 / 12</span>
+    </footer>
+  </div>
+</div>
+</body>
+</html>

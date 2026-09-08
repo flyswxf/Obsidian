@@ -1,0 +1,184 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>P5 - Focal Loss与Macro-F1应对类别不平衡</title>
+<script src="https://cdn.digitalhumanai.top/slidagent/pptx-craft/assets/vendors/tailwind.js"></script>
+<link href="https://cdn.digitalhumanai.top/slidagent/pptx-craft/assets/css/fonts.css" rel="stylesheet" />
+<link href="https://cdn.digitalhumanai.top/slidagent/pptx-craft/assets/vendors/fontawesome/css/all.min.css" rel="stylesheet" />
+<script src="https://cdn.digitalhumanai.top/slidagent/pptx-craft/assets/vendors/echarts.min.js"></script>
+<script>
+tailwind.config = {
+  theme: {
+    extend: {
+      colors: {
+        parchment: "#f5f4ed", ivory: "#faf9f5", terracotta: "#c96442", coral: "#d97757",
+        nearBlack: "#141413", darkSurface: "#30302e", oliveGray: "#5e5d59",
+        stoneGray: "#87867f", charcoalWarm: "#4d4c48", warmSand: "#e8e6dc",
+        borderCream: "#f0eee6", borderWarm: "#e8e6dc", warmSilver: "#b0aea5",
+      },
+      fontFamily: { serif: ["Georgia","serif"], sans: ["Arial","sans-serif"] },
+    },
+  },
+};
+</script>
+<style type="text/tailwindcss">
+@layer utilities {
+  .ppt-slide { @apply relative w-[1280px] h-[720px] mx-auto box-border overflow-hidden; }
+  .ppt-slide *, .ppt-slide *::before, .ppt-slide *::after { @apply box-border; max-width: 100%; }
+  .ppt-slide img, .ppt-slide video, .ppt-slide canvas, .ppt-slide svg { @apply max-w-full max-h-full object-contain; }
+  .content-safe { @apply w-[1220px] h-[660px] my-[30px] mx-auto flex flex-col overflow-hidden; }
+  .ppt-slide [class*="blur"] { filter: none !important; backdrop-filter: none !important; }
+  .ppt-slide [class*="gradient"] { background-image: none !important; }
+  .ppt-slide [class*="backdrop-blur"] { backdrop-filter: none !important; }
+  .formula { font-family: "Cambria Math", "Times New Roman", Georgia, serif; font-style: italic; }
+  .formula sub { font-style: italic; font-size: 0.7em; }
+  .formula sup { font-size: 0.7em; }
+}
+</style>
+</head>
+<body class="bg-parchment">
+<div class="ppt-slide flex flex-col h-[720px] overflow-hidden" type="content" style="background-color:#f5f4ed;">
+  <div class="content-safe">
+    <!-- 页头 -->
+    <header class="h-[60px] flex-shrink-0 flex items-center justify-between">
+      <div>
+        <h1 class="font-serif text-[24px] font-medium leading-[1.2]" style="color:#141413;">Focal Loss × Macro-F1：双管齐下应对医疗数据类别不平衡</h1>
+        <p class="font-sans text-[13px]" style="color:#87867f;">Focal Loss & Macro-F1 for Extreme Class Imbalance in Medical Data</p>
+      </div>
+      <div class="flex items-center gap-2">
+        <div class="w-[6px] h-[6px] rounded-full" style="background-color:#c96442;"></div>
+        <span class="font-sans text-[12px] tracking-[0.15em] uppercase" style="color:#87867f;">P5 / 12</span>
+      </div>
+    </header>
+
+    <!-- 内容区 -->
+    <main class="flex-1 min-h-0 flex gap-4 overflow-hidden mt-[8px]">
+      <!-- 左侧：Focal Loss 详解 -->
+      <div class="flex-1 min-h-0 overflow-hidden rounded-[8px] flex flex-col" style="background-color:#141413;">
+        <!-- 标题栏 -->
+        <div class="flex items-center gap-2 px-[20px] pt-[14px] pb-[8px] flex-shrink-0">
+          <i class="fa-solid fa-scale-balanced text-[18px]" style="color:#d97757;"></i>
+          <span class="font-serif text-[18px] font-medium" style="color:#faf9f5;">Focal Loss</span>
+          <span class="font-sans text-[12px] ml-auto" style="color:#87867f;">解决极端类别不平衡</span>
+        </div>
+
+        <!-- 问题区 -->
+        <div class="mx-[16px] rounded-[8px] p-[10px] mb-[8px] flex-shrink-0" style="background-color:#30302e;">
+          <div class="flex items-center gap-2 mb-[3px]">
+            <i class="fa-solid fa-circle-exclamation text-[12px]" style="color:#d97757;"></i>
+            <span class="font-sans text-[13px] font-medium" style="color:#faf9f5;">标准交叉熵的困境</span>
+          </div>
+          <p class="font-sans text-[12px] leading-[1.5]" style="color:#b0aea5;">100个难分正样本Loss≈230，被100,000个易分负样本Loss≈400淹没</p>
+        </div>
+
+        <!-- Focal Loss 公式 -->
+        <div class="mx-[16px] rounded-[8px] p-[12px] mb-[8px] flex-shrink-0 text-center" style="background-color:#30302e;">
+          <p class="font-sans text-[10px] mb-[4px]" style="color:#87867f;">Focal Loss 公式</p>
+          <p class="formula text-[22px] font-medium" style="color:#d97757;">
+            FL(p<sub>t</sub>) = &minus;&alpha;<sub>t</sub>(1&minus;p<sub>t</sub>)<sup>&gamma;</sup> &middot; log(p<sub>t</sub>)
+          </p>
+          <div class="flex justify-center gap-[24px] mt-[6px]">
+            <span class="font-sans text-[12px]" style="color:#b0aea5;"><span class="formula">γ</span>=2 聚焦参数</span>
+            <span class="font-sans text-[12px]" style="color:#b0aea5;"><span class="formula">α</span>=0.25 平衡参数</span>
+          </div>
+        </div>
+
+        <!-- 对比公式区 -->
+        <div class="mx-[16px] rounded-[8px] p-[10px] mb-[8px] flex-shrink-0" style="background-color:#30302e;">
+          <div class="flex items-center justify-around">
+            <div class="text-center">
+              <p class="font-sans text-[10px] mb-[3px]" style="color:#87867f;">标准交叉熵</p>
+              <p class="formula text-[16px]" style="color:#87867f;">CE(p<sub>t</sub>) = &minus;log(p<sub>t</sub>)</p>
+            </div>
+            <i class="fa-solid fa-arrow-right text-[14px]" style="color:#d97757;"></i>
+            <div class="text-center">
+              <p class="font-sans text-[10px] mb-[3px]" style="color:#87867f;">Focal Loss 增加调制因子</p>
+              <p class="formula text-[16px]" style="color:#d97757;">(1&minus;p<sub>t</sub>)<sup>&gamma;</sup> &middot; &alpha;<sub>t</sub></p>
+            </div>
+          </div>
+        </div>
+
+        <!-- 两个参数详解 -->
+        <div class="flex-1 min-h-0 flex flex-col gap-[6px] px-[16px] pb-[14px]">
+          <div class="rounded-[8px] p-[10px] flex items-start gap-3" style="background-color:#30302e;">
+            <div class="w-[28px] h-[28px] rounded-[6px] flex items-center justify-center flex-shrink-0" style="background-color:#c96442;">
+              <span class="formula text-[15px] font-bold" style="color:#faf9f5;">γ</span>
+            </div>
+            <div class="flex-1">
+              <span class="font-sans text-[13px] font-medium" style="color:#faf9f5;">聚焦参数：按难度动态分配权重</span>
+              <p class="font-sans text-[12px] leading-[1.6] mt-[4px]" style="color:#b0aea5;">易分样本 <span class="formula">p<sub>t</sub></span>=0.9 → Loss <span style="color:#d97757;font-weight:bold;">缩小100倍</span></p>
+              <p class="font-sans text-[12px] leading-[1.6] mt-[2px]" style="color:#b0aea5;">难分样本 <span class="formula">p<sub>t</sub></span>=0.1 → Loss <span style="color:#d97757;font-weight:bold;">几乎不衰减</span></p>
+            </div>
+          </div>
+          <div class="rounded-[8px] p-[10px] flex items-start gap-3" style="background-color:#30302e;">
+            <div class="w-[28px] h-[28px] rounded-[6px] flex items-center justify-center flex-shrink-0" style="background-color:#c96442;">
+              <span class="formula text-[15px] font-bold" style="color:#faf9f5;">α</span>
+            </div>
+            <div class="flex-1">
+              <span class="font-sans text-[13px] font-medium" style="color:#faf9f5;">平衡参数：从数量上平衡正负类</span>
+              <p class="font-sans text-[12px] leading-[1.5] mt-[2px]" style="color:#b0aea5;">为少数类分配更高权重　γ解决"难易"问题，α解决"数量"问题</p>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- 右侧：Macro-F1 + 对比图 -->
+      <div class="w-[42%] min-h-0 flex flex-col gap-4 overflow-hidden">
+        <!-- Macro-F1 卡片 -->
+        <div class="flex-1 min-h-0 overflow-hidden rounded-[8px] p-[16px] flex flex-col" style="background-color:#faf9f5;box-shadow:0 0 0 1px #f0eee6;">
+          <div class="flex items-center gap-2 mb-[8px] flex-shrink-0">
+            <i class="fa-solid fa-chart-column text-[16px]" style="color:#c96442;"></i>
+            <span class="font-serif text-[16px] font-medium" style="color:#141413;">评估策略：Macro-F1</span>
+          </div>
+          <div class="flex-1 min-h-0 flex flex-col gap-[8px] justify-center">
+            <div class="rounded-[6px] p-[10px]" style="background-color:#f5f4ed;">
+              <span class="font-sans text-[13px] font-medium" style="color:#141413;">Micro-F1</span>
+              <p class="font-sans text-[12px] leading-[1.5] mt-[2px]" style="color:#5e5d59;">全局统算TP/FP/FN，受多数类主导，样本量大的类别影响越大</p>
+            </div>
+            <div class="rounded-[6px] p-[10px]" style="background-color:#c96442;">
+              <span class="font-sans text-[13px] font-medium" style="color:#faf9f5;">Macro-F1 ✓</span>
+              <p class="font-sans text-[12px] leading-[1.5] mt-[2px]" style="color:#faf9f5;">先独立计算每个类别F1再取平均，众生平等，对少数类高度敏感</p>
+            </div>
+          </div>
+        </div>
+
+        <!-- Focal Loss vs CE 对比图 -->
+        <div class="flex-1 min-h-0 overflow-hidden rounded-[8px] p-[12px]" style="background-color:#faf9f5;box-shadow:0 0 0 1px #f0eee6;">
+          <div class="flex items-center gap-2 mb-[4px] flex-shrink-0">
+            <i class="fa-solid fa-chart-line text-[14px]" style="color:#c96442;"></i>
+            <span class="font-serif text-[14px] font-medium" style="color:#141413;">Focal Loss vs Cross Entropy</span>
+          </div>
+          <div id="focal-chart" class="w-full" style="height:calc(100% - 24px);"></div>
+        </div>
+      </div>
+    </main>
+
+    <!-- 页脚 -->
+    <footer class="h-[30px] flex-shrink-0 flex items-center justify-between border-t" style="border-color:#e8e6dc;">
+      <span class="font-sans text-[10px]" style="color:#b0aea5;">ICU项目 · Focal Loss与Macro-F1应对类别不平衡</span>
+      <span class="font-sans text-[10px]" style="color:#b0aea5;">P5 / 12</span>
+    </footer>
+  </div>
+</div>
+
+<script>
+var chart = echarts.init(document.getElementById('focal-chart'), null, { renderer: 'svg' });
+var pt = [0.1, 0.2, 0.3, 0.4, 0.5, 0.6, 0.7, 0.8, 0.9];
+var ce = pt.map(function(p) { return -Math.log(p); });
+var fl = pt.map(function(p) { return Math.pow(1-p, 2) * (-Math.log(p)); });
+chart.setOption({
+  tooltip: { trigger: 'axis' },
+  legend: { data: ['Cross Entropy', 'Focal Loss (γ=2)'], textStyle: { color: '#5e5d59', fontSize: 10 }, top: 0 },
+  grid: { left: '12%', right: '5%', bottom: '15%', top: '20%' },
+  xAxis: { type: 'category', data: pt, name: 'p_t', nameTextStyle: { color: '#87867f', fontSize: 10 }, axisLabel: { color: '#87867f', fontSize: 9 } },
+  yAxis: { type: 'value', name: 'Loss', nameTextStyle: { color: '#87867f', fontSize: 10 }, axisLabel: { color: '#87867f', fontSize: 9 }, splitLine: { lineStyle: { color: '#e8e6dc' } } },
+  series: [
+    { name: 'Cross Entropy', type: 'line', data: ce, smooth: true, lineStyle: { color: '#87867f', width: 2 }, itemStyle: { color: '#87867f' } },
+    { name: 'Focal Loss (γ=2)', type: 'line', data: fl, smooth: true, lineStyle: { color: '#c96442', width: 2 }, itemStyle: { color: '#c96442' }, areaStyle: { color: 'rgba(201,100,66,0.1)' } }
+  ]
+});
+</script>
+</body>
+</html>

@@ -1,0 +1,152 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>P9 - VLM安全研究实验进展</title>
+<script src="https://cdn.digitalhumanai.top/slidagent/pptx-craft/assets/vendors/tailwind.js"></script>
+<link href="https://cdn.digitalhumanai.top/slidagent/pptx-craft/assets/css/fonts.css" rel="stylesheet" />
+<link href="https://cdn.digitalhumanai.top/slidagent/pptx-craft/assets/vendors/fontawesome/css/all.min.css" rel="stylesheet" />
+<script>
+tailwind.config = {
+  theme: {
+    extend: {
+      colors: {
+        parchment: "#f5f4ed", ivory: "#faf9f5", terracotta: "#c96442", coral: "#d97757",
+        nearBlack: "#141413", darkSurface: "#30302e", oliveGray: "#5e5d59",
+        stoneGray: "#87867f", charcoalWarm: "#4d4c48", warmSand: "#e8e6dc",
+        borderCream: "#f0eee6", borderWarm: "#e8e6dc", warmSilver: "#b0aea5",
+      },
+      fontFamily: { serif: ["Georgia","serif"], sans: ["Arial","sans-serif"] },
+    },
+  },
+};
+</script>
+<style type="text/tailwindcss">
+@layer utilities {
+  .ppt-slide { @apply relative w-[1280px] h-[720px] mx-auto box-border overflow-hidden; }
+  .ppt-slide *, .ppt-slide *::before, .ppt-slide *::after { @apply box-border; max-width: 100%; }
+  .ppt-slide img, .ppt-slide video, .ppt-slide canvas, .ppt-slide svg { @apply max-w-full max-h-full object-contain; }
+  .content-safe { @apply w-[1220px] h-[660px] my-[30px] mx-auto flex flex-col overflow-hidden; }
+  .ppt-slide [class*="blur"] { filter: none !important; backdrop-filter: none !important; }
+  .ppt-slide [class*="gradient"] { background-image: none !important; }
+  .ppt-slide [class*="backdrop-blur"] { backdrop-filter: none !important; }
+}
+</style>
+</head>
+<body class="bg-parchment">
+<div class="ppt-slide flex flex-col h-[720px] overflow-hidden" type="content" style="background-color:#f5f4ed;">
+  <div class="content-safe">
+    <!-- 页头 -->
+    <header class="h-[60px] flex-shrink-0 flex items-center justify-between">
+      <div>
+        <h1 class="font-serif text-[24px] font-medium leading-[1.2]" style="color:#141413;">VLM安全研究：实验进展与后续计划</h1>
+        <p class="font-sans text-[13px]" style="color:#87867f;">Experimental Progress & Future Research Plan</p>
+      </div>
+      <div class="flex items-center gap-2">
+        <div class="w-[6px] h-[6px] rounded-full" style="background-color:#c96442;"></div>
+        <span class="font-sans text-[12px] tracking-[0.15em] uppercase" style="color:#87867f;">P9 / 12</span>
+      </div>
+    </header>
+
+    <!-- 内容区 -->
+    <main class="flex-1 min-h-0 flex flex-col gap-4 overflow-hidden mt-[8px]">
+      <!-- 上半：两个代码仓库 -->
+      <div class="grid grid-cols-2 gap-4 flex-1 min-h-0">
+        <!-- 左侧：SceneTAP复现 -->
+        <div class="h-full min-h-0 overflow-hidden rounded-[8px] p-[16px] flex flex-col" style="background-color:#faf9f5;box-shadow:0 0 0 1px #f0eee6;">
+          <div class="flex items-center gap-2 mb-[8px]">
+            <div class="w-[32px] h-[32px] rounded-[6px] flex items-center justify-center flex-shrink-0" style="background-color:#c96442;">
+              <i class="fa-solid fa-diagram-project text-[14px]" style="color:#faf9f5;"></i>
+            </div>
+            <span class="font-serif text-[16px] font-medium" style="color:#141413;">SceneTAP复现与工程化改造</span>
+          </div>
+          <p class="font-sans text-[12px] leading-[1.6] mb-[8px]" style="color:#5e5d59;">复现CVPR 2025论文SceneTAP，将单体脚本重构为<strong style="color:#c96442;">三阶段独立流水线</strong>，适配集群环境。</p>
+          <div class="flex flex-col gap-[6px] flex-1">
+            <div class="flex items-start gap-2 rounded-[6px] p-[8px]" style="background-color:#f5f4ed;">
+              <i class="fa-solid fa-arrow-right text-[10px] mt-[3px]" style="color:#c96442;"></i>
+              <div>
+                <span class="font-sans text-[12px] font-medium" style="color:#141413;">攻击规划 → 渲染 → 评估三阶段拆分</span>
+                <p class="font-sans text-[11px] leading-[1.4] mt-[2px]" style="color:#5e5d59;">每阶段独立运行、支持断点续跑、标准JSON输出</p>
+              </div>
+            </div>
+            <div class="flex items-start gap-2 rounded-[6px] p-[8px]" style="background-color:#f5f4ed;">
+              <i class="fa-solid fa-arrow-right text-[10px] mt-[3px]" style="color:#c96442;"></i>
+              <div>
+                <span class="font-sans text-[12px] font-medium" style="color:#141413;">SoM分割 + TextDiffuser渲染 + VLM评估</span>
+                <p class="font-sans text-[11px] leading-[1.4] mt-[2px]" style="color:#5e5d59;">完整跑通场景一致的排版攻击流程，已产出对抗图像</p>
+              </div>
+            </div>
+            <div class="flex items-start gap-2 rounded-[6px] p-[8px]" style="background-color:#f5f4ed;">
+              <i class="fa-solid fa-arrow-right text-[10px] mt-[3px]" style="color:#c96442;"></i>
+              <div>
+                <span class="font-sans text-[12px] font-medium" style="color:#141413;">环境兼容性与数据集适配</span>
+                <p class="font-sans text-[11px] leading-[1.4] mt-[2px]" style="color:#5e5d59;">双conda环境隔离、pydantic降级、7种任务类型数据集转换</p>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- 右侧：PAA测试框架 -->
+        <div class="h-full min-h-0 overflow-hidden rounded-[8px] p-[16px] flex flex-col" style="background-color:#141413;">
+          <div class="flex items-center gap-2 mb-[8px]">
+            <div class="w-[32px] h-[32px] rounded-[6px] flex items-center justify-center flex-shrink-0" style="background-color:#d97757;">
+              <i class="fa-solid fa-eye text-[14px]" style="color:#faf9f5;"></i>
+            </div>
+            <span class="font-serif text-[16px] font-medium" style="color:#faf9f5;">白盒注意力分析测试框架</span>
+          </div>
+          <p class="font-sans text-[12px] leading-[1.6] mb-[8px]" style="color:#b0aea5;">自建实验仓库，对LLaVA-1.5-7B进行<strong style="color:#d97757;">白盒注意力提取</strong>，建立完整的实验-分析-可视化流水线。</p>
+          <div class="flex flex-col gap-[6px] flex-1">
+            <div class="rounded-[6px] p-[8px]" style="background-color:#30302e;">
+              <div class="flex items-center gap-2 mb-[2px]">
+                <i class="fa-solid fa-arrow-right text-[10px]" style="color:#d97757;"></i>
+                <span class="font-sans text-[12px] font-medium" style="color:#faf9f5;">双通道注意力提取</span>
+              </div>
+              <p class="font-sans text-[11px] leading-[1.4]" style="color:#b0aea5;">交叉注意力（LLM生成层）+ 视觉自注意力（CLIP ViT），576个patch级精度</p>
+            </div>
+            <div class="rounded-[6px] p-[8px]" style="background-color:#30302e;">
+              <div class="flex items-center gap-2 mb-[2px]">
+                <i class="fa-solid fa-arrow-right text-[10px]" style="color:#d97757;"></i>
+                <span class="font-sans text-[12px] font-medium" style="color:#faf9f5;">三层区域注意力量化</span>
+              </div>
+              <p class="font-sans text-[11px] leading-[1.4]" style="color:#b0aea5;">Text BBox / Patch BBox / Expanded BBox，面积重叠掩码精确计算</p>
+            </div>
+            <div class="rounded-[6px] p-[8px]" style="background-color:#30302e;">
+              <div class="flex items-center gap-2 mb-[2px]">
+                <i class="fa-solid fa-arrow-right text-[10px]" style="color:#d97757;"></i>
+                <span class="font-sans text-[12px] font-medium" style="color:#faf9f5;">实验-分析-可视化全流程</span>
+              </div>
+              <p class="font-sans text-[11px] leading-[1.4]" style="color:#b0aea5;">自动生成CSV/JSON/npz注意力数组 + 箱线图 + 热力图，无缝衔接SceneTAP输出</p>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- 下半：研究进展与后续计划 -->
+      <div class="flex-shrink-0 rounded-[8px] p-[16px]" style="background-color:#c96442;">
+        <div class="flex items-center gap-2 mb-[8px]">
+          <i class="fa-solid fa-lightbulb text-[14px]" style="color:#faf9f5;"></i>
+          <span class="font-serif text-[16px] font-medium" style="color:#faf9f5;">研究进展与后续计划</span>
+        </div>
+        <div class="grid grid-cols-2 gap-[16px]">
+          <div>
+            <span class="font-sans text-[13px] font-medium" style="color:#faf9f5;">当前进展</span>
+            <p class="font-sans text-[12px] leading-[1.6] mt-[4px]" style="color:rgba(250,249,245,0.85);">已完成SceneTAP三阶段流程跑通，产出场景对抗图像；建立白盒注意力提取与三层区域量化框架；完成首批注意力与ASR统计分析实验。</p>
+          </div>
+          <div>
+            <span class="font-sans text-[13px] font-medium" style="color:#faf9f5;">后续计划</span>
+            <p class="font-sans text-[12px] leading-[1.6] mt-[4px]" style="color:rgba(250,249,245,0.85);">设计辅助视觉组件引导模型注意力聚焦于攻击文字区域，建立"注意力分布→攻击成功率"的因果关联，探索可解释的攻防机制，目标产出CCF-B及以上论文。</p>
+          </div>
+        </div>
+      </div>
+    </main>
+
+    <!-- 页脚 -->
+    <footer class="h-[30px] flex-shrink-0 flex items-center justify-between border-t" style="border-color:#e8e6dc;">
+      <span class="font-sans text-[10px]" style="color:#b0aea5;">VLM安全研究 · 实验进展与后续计划</span>
+      <span class="font-sans text-[10px]" style="color:#b0aea5;">P9 / 12</span>
+    </footer>
+  </div>
+</div>
+</body>
+</html>
