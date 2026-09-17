@@ -117,28 +117,42 @@ attn = attn[xj_batch, xj_node_ids].reshape(-1, 1)
 
 ### 技术原理
 
-我的实现采用了一种工程化、稳定的 **"软权重 + 硬掩码 + 辅助正则化 Loss"** 策略，而非 Gumbel-Softmax。核心思路是：用可学习的 `EdgeScorer` 给每条边打分，通过 Top-K 保留最重要的边（Hard Mask），同时用辅助 Loss 保证被丢弃的边仍有梯度可以回传。
+我的实现采用的是 **基于 Gumbel-Softmax 的可微边选择机制**。核心思路是：先用可学习的 `EdgeScorer` 给每条边打分，再把"保留这条边 / 删除这条边"建模成一个二分类采样问题。直接做 0/1 采样是不可微的，所以训练时使用 Gumbel-Softmax 对离散采样做连续松弛，让边选择模块也能参与端到端反向传播。
 
-#### 1. Top-K 掩码实现
+#### 1. 边选择建模
 
-- **EdgeScorer**：一个多层感知机，接收源节点、目标节点和边的初始特征，拼接后经 Sigmoid 激活，输出 0~1 之间的 `edge_scores`，表示这条边的重要性。
-- **Top-K 筛选**：根据预设的稀疏化比例（如保留 Top 10%），用 `torch.topk` 找到当前 Batch 中的得分阈值，生成非 0 即 1 的 `sparsification_mask`。
+- **EdgeScorer**：一个多层感知机，接收源节点、目标节点和边的初始特征，输出每条边的保留倾向分数 `edge_logits`。
+- **二分类门控**：对每条边构造两个 logit，分别对应 `drop` 和 `keep`。这样边稀疏化就被转成一个离散门控问题。
 
-#### 2. Hard Mask 的梯度截断处理
+#### 2. Gumbel-Softmax 的作用
 
-`>= thresh` 和 `.float()` 这种离散化操作在 PyTorch 中是不可微的，梯度会断掉。我的处理策略：
+如果直接做 Bernoulli 采样或阈值化，梯度会在采样处中断。Gumbel-Softmax 的做法是：在 logit 上加入 Gumbel 噪声后，再经过 Softmax 得到一个**接近 one-hot、但仍然可微**的门控向量。对于每条边，可以写成：
 
-- **保留的边（Mask=1）**：将可微的软得分与硬掩码相乘 `edge_weights = edge_scores * mask`。因为 mask 是常数（1 或 0），梯度可以顺畅地通过 `edge_scores` 回传给 EdgeScorer。
-- **被丢弃的边（Mask=0）**：无法从主任务 Loss 获得梯度。为防止"一死百了"，在应用 Mask **之前**，基于原始 `edge_scores` 引入**辅助稀疏化损失**：
-  - **L1 稀疏性惩罚**：`mean(edge_scores)`，全局压低所有边的得分
-  - **连通性保持惩罚**：计算每个节点的边权重之和，低于阈值则惩罚，保证图的连通性
+$$
+y_i = \frac{\exp((\log \pi_i + g_i)/\tau)}{\sum_j \exp((\log \pi_j + g_j)/\tau)}
+$$
 
-通过这种设计，即使一条边当前被 Mask 掉了，它依然能收到来自连通性辅助 Loss 的梯度。如果后续 Epoch 中主任务需要用到这个节点，辅助 Loss 会推高它的 `edge_scores`，一旦超过阈值，它就会在下一次前向传播中被 Top-K 重新"复活"。
+其中：
+
+- $\pi_i$ 是保留/删除的原始打分
+- $g_i$ 是 Gumbel 噪声
+- $\tau$ 是温度参数
+
+训练早期用较高温度，采样更平滑，便于探索；训练后期逐步降低温度，门控结果会越来越接近真正的 0/1 决策。这样既能模拟离散边选择，又能保留梯度。
+
+#### 3. 稀疏性与连通性约束
+
+为了避免模型把所有边都保留下来，训练时还加入两个辅助约束：
+
+- **L1 稀疏性惩罚**：压低整体的保留概率，鼓励模型只保留关键边
+- **连通性保持惩罚**：约束每个节点至少保留一定强度的连边，避免图被切得过碎
+
+通过这种设计，每条边都不是被静态裁掉，而是在训练中动态竞争。重要边会在主任务损失驱动下保留下来，不重要的边会被稀疏性约束压低，从而实现结构自适应的边剪枝。
 
 ### 代码实现
 
 ```python
-# SparseModel.py - EdgeScorer: 为每条边学习重要性分数
+# SparseModel.py - EdgeScorer: 为每条边学习 keep / drop 的打分
 class EdgeScorer(nn.Module):
     def __init__(self, node_dim, edge_dim, hidden_dim=64):
         super().__init__()
@@ -150,8 +164,7 @@ class EdgeScorer(nn.Module):
             nn.Dropout(0.2),
             nn.Linear(hidden_dim, hidden_dim // 2),
             nn.ReLU(),
-            nn.Linear(hidden_dim // 2, 1),
-            nn.Sigmoid()                              # 输出 ∈ [0, 1]
+            nn.Linear(hidden_dim // 2, 1)            # 输出 keep logit
         )
 
     def forward(self, x, edge_index, edge_attr):
@@ -159,33 +172,34 @@ class EdgeScorer(nn.Module):
         tgt = self.node_transform(x[edge_index[1]])   # [E, H/2]
         edge = self.edge_transform(edge_attr)          # [E, H/2]
         combined = torch.cat([src, tgt, edge], dim=1)  # [E, 3H/2]
-        return self.scorer(combined)                   # [E, 1] ∈ [0,1]
+        keep_logits = self.scorer(combined)            # [E, 1]
+        drop_logits = torch.zeros_like(keep_logits)    # [E, 1]
+        return torch.cat([drop_logits, keep_logits], dim=1)  # [E, 2]
 ```
 
 ```python
-# SparseModel.py - forward() 中的 Top-K 稀疏化
-edge_scores = self.edge_scorer(x, edge_index, edge_attr)       # [E, 1] ∈ [0,1]
-num_edges = edge_index.size(1)
-k_keep = max(1, int(num_edges * float(self.sparsification_ratio)))
-topk_vals, _ = torch.topk(edge_scores.squeeze(), k_keep)
-thresh = topk_vals.min()
-sparsification_mask = (edge_scores.squeeze() >= thresh).float().view(-1, 1)
+# SparseModel.py - forward() 中的 Gumbel-Softmax 边选择
+edge_logits = self.edge_scorer(x, edge_index, edge_attr)       # [E, 2]
+edge_gates = F.gumbel_softmax(edge_logits, tau=self.tau, hard=False, dim=1)
+edge_weights_input = edge_gates[:, 1].view(-1, 1)              # keep 概率
 
-# 将软得分与硬掩码相乘，送入图卷积
-edge_weights_input = edge_scores * sparsification_mask
+# 如果希望前向更接近离散采样，也可以用 straight-through
+# edge_gates = F.gumbel_softmax(edge_logits, tau=self.tau, hard=True, dim=1)
+# edge_weights_input = edge_gates[:, 1].view(-1, 1)
+
 x, w_rel = self.conv[str(layer)](x, edge_index, edge_attr,
                                   attn=attn_edges, edge_weights=edge_weights_input)
 ```
 
 ```python
 # SparseModel.py - 辅助稀疏化损失
-def compute_sparsification_loss(self, edge_scores, edge_index):
-    # L1 稀疏性惩罚：全局压低所有边的得分
-    l1_loss = torch.mean(edge_scores)
+def compute_sparsification_loss(self, edge_weights, edge_index):
+    # L1 稀疏性惩罚：全局压低保留概率
+    l1_loss = torch.mean(edge_weights)
     # 连通性保持惩罚：每个节点的边权重之和不应低于阈值
     num_nodes = torch.max(edge_index) + 1
-    edge_counts = torch.zeros(num_nodes, device=edge_scores.device)
-    edge_counts.scatter_add_(0, edge_index[0], edge_scores.squeeze())
+    edge_counts = torch.zeros(num_nodes, device=edge_weights.device)
+    edge_counts.scatter_add_(0, edge_index[0], edge_weights.squeeze())
     connectivity_loss = torch.mean(torch.relu(1.0 - edge_counts))
     return self.l1_lambda * l1_loss + self.connectivity_lambda * connectivity_loss
 ```
@@ -209,13 +223,13 @@ def message(self, x_j, edge_attr=None, attn=None, edge_weights=None):
 
 ### 💡 答辩话术
 
-"我的稀疏化实现没有用 Gumbel-Softmax，而是采用了更工程化、更稳定的'软权重 + 硬掩码 + 辅助 Loss'策略。
+"我的边稀疏化实现采用的是 Gumbel-Softmax。核心原因是边保留本质上是一个离散 0/1 决策，如果直接做阈值裁剪，梯度会在采样处中断，边选择模块就很难和主任务一起端到端训练。
 
-具体来说分两步：第一步，我设计了一个 EdgeScorer 网络，接收源节点、目标节点和边特征，输出 0 到 1 的重要性分数。第二步，根据稀疏化比例用 Top-K 生成硬掩码，只保留得分最高的边。
+具体做法是，我先用一个 EdgeScorer 网络读取源节点、目标节点和边特征，输出每条边的 keep / drop logits；然后对这个二分类分布做 Gumbel-Softmax 采样，得到一个接近 0-1、但仍然可微的边门控权重，再把这个权重乘到消息传递上。
 
-关键难点在于 Hard Mask 的梯度截断问题——`>=` 阈值这个操作是不可微的。我的解决方案是：对于被保留的边，梯度可以顺畅地通过软得分回传；对于被丢弃的边，我引入了辅助稀疏化损失，包含 L1 惩罚和连通性保持惩罚。这样即使一条边当前被 Mask 掉了，它依然能收到来自辅助 Loss 的梯度，在后续 Epoch 中如果主任务需要它，辅助 Loss 会推高它的分数，一旦超过阈值就会被 Top-K 重新'复活'。
+训练时我还做了温度退火。前期温度高，采样更平滑，方便模型探索哪些边重要；后期温度逐步降低，边门控会越来越接近真正的 0/1 选择。同时我又加了 L1 稀疏约束和连通性约束，既鼓励模型剪掉冗余边，又避免把图结构破坏得太严重。
 
-这样既实现了物理上的稀疏计算，减少了消息传递的计算量，又保证了全局梯度的流动与动态探索能力。"
+这样做的好处是，边稀疏化不再是一个训练外的启发式剪枝，而是可以直接纳入端到端优化过程里，既减少了消息传递的计算量，也提升了模型对关键医学关系的筛选能力。"
 
 ---
 
@@ -310,10 +324,10 @@ class FocalLoss(nn.Module):
 - Precision = TP / (TP + FP)
 - Recall = TP / (TP + FN)
 
-| 指标 | 计算方式 | 核心特点 | 适用场景 |
-|------|---------|---------|---------|
-| **Micro-F1** | 全局统算：打破类别界限，累加所有 TP/FP/FN 后算一个总的 F1 | **受多数类主导**，样本量越大的类别影响越大 | 类别分布均衡，或只关心总体正确数 |
-| **Macro-F1** | 算术平均：先独立计算每个类别的 F1，再取平均 | **众生平等，对少数类高度敏感**，每个类别权重都是 1/N | 严重数据不平衡，且要求模型在少数类上也有良好表现 |
+| 指标           | 计算方式                                | 核心特点                           | 适用场景                     |
+| ------------ | ----------------------------------- | ------------------------------ | ------------------------ |
+| **Micro-F1** | 全局统算：打破类别界限，累加所有 TP/FP/FN 后算一个总的 F1 | **受多数类主导**，样本量越大的类别影响越大        | 类别分布均衡，或只关心总体正确数         |
+| **Macro-F1** | 算术平均：先独立计算每个类别的 F1，再取平均             | **众生平等，对少数类高度敏感**，每个类别权重都是 1/N | 严重数据不平衡，且要求模型在少数类上也有良好表现 |
 
 ### 代码实现
 

@@ -7,7 +7,6 @@
 <script src="https://cdn.digitalhumanai.top/slidagent/pptx-craft/assets/vendors/tailwind.js"></script>
 <link href="https://cdn.digitalhumanai.top/slidagent/pptx-craft/assets/css/fonts.css" rel="stylesheet" />
 <link href="https://cdn.digitalhumanai.top/slidagent/pptx-craft/assets/vendors/fontawesome/css/all.min.css" rel="stylesheet" />
-    <script src="https://cdn.digitalhumanai.top/slidagent/pptx-craft/assets/vendors/echarts.min.js"></script>
 <script>
 tailwind.config = {
   theme: {
@@ -100,13 +99,44 @@ tailwind.config = {
           </div>
         </div>
 
-        <!-- 右侧：能力雷达图 -->
+        <!-- 右侧：高分专业课 -->
         <div class="h-full min-h-0 overflow-hidden rounded-[8px] p-[12px]" style="background-color:#faf9f5;box-shadow:0 0 0 1px #f0eee6;">
-          <div class="flex items-center gap-2 mb-[4px]">
-            <i class="fa-solid fa-chart-pie text-[14px]" style="color:#c96442;"></i>
-            <span class="font-serif text-[16px] font-medium" style="color:#141413;">综合能力雷达</span>
+          <div class="mb-[8px]">
+            <span class="font-serif text-[16px] font-medium" style="color:#141413;">高分专业课</span>
+            <p class="font-sans text-[11px] mt-[2px]" style="color:#87867f;">四门核心专业课成绩均在96分及以上</p>
           </div>
-          <div id="radar-chart" class="w-full" style="height:calc(100% - 24px);"></div>
+          <div class="rounded-[8px] flex-1 min-h-0 p-[10px]" style="background-color:#f5f4ed;">
+            <div class="h-full flex flex-col gap-[6px]">
+              <div class="rounded-[8px] h-[34px] px-[12px] flex items-center justify-between" style="background-color:#faf9f5;box-shadow:0 0 0 1px #e8e6dc;">
+                <div class="pr-[10px] flex items-center gap-[8px] min-w-0">
+                  <span class="font-sans text-[9px] tracking-[0.08em] uppercase flex-shrink-0" style="color:#87867f;">2025 秋</span>
+                  <p class="font-sans text-[12px] leading-[1.2] truncate" style="color:#141413;">软件分析与验证前沿</p>
+                </div>
+                <span class="font-serif text-[24px] font-medium flex-shrink-0" style="color:#c96442;">99</span>
+              </div>
+              <div class="rounded-[8px] h-[34px] px-[12px] flex items-center justify-between" style="background-color:#faf9f5;box-shadow:0 0 0 1px #e8e6dc;">
+                <div class="pr-[10px] flex items-center gap-[8px] min-w-0">
+                  <span class="font-sans text-[9px] tracking-[0.08em] uppercase flex-shrink-0" style="color:#87867f;">2024 春</span>
+                  <p class="font-sans text-[12px] leading-[1.2] truncate" style="color:#141413;">计算机系统</p>
+                </div>
+                <span class="font-serif text-[24px] font-medium flex-shrink-0" style="color:#c96442;">97</span>
+              </div>
+              <div class="rounded-[8px] h-[34px] px-[12px] flex items-center justify-between" style="background-color:#141413;">
+                <div class="pr-[10px] flex items-center gap-[8px] min-w-0">
+                  <span class="font-sans text-[9px] tracking-[0.08em] uppercase flex-shrink-0" style="color:#b0aea5;">2025 春</span>
+                  <p class="font-sans text-[12px] leading-[1.2] truncate" style="color:#faf9f5;">人工智能典型算法</p>
+                </div>
+                <span class="font-serif text-[24px] font-medium flex-shrink-0" style="color:#faf9f5;">100</span>
+              </div>
+              <div class="rounded-[8px] h-[34px] px-[12px] flex items-center justify-between" style="background-color:#faf9f5;box-shadow:0 0 0 1px #e8e6dc;">
+                <div class="pr-[10px] flex items-center gap-[8px] min-w-0">
+                  <span class="font-sans text-[9px] tracking-[0.08em] uppercase flex-shrink-0" style="color:#87867f;">2025 春</span>
+                  <p class="font-sans text-[12px] leading-[1.2] truncate" style="color:#141413;">数据库系统及其应用</p>
+                </div>
+                <span class="font-serif text-[24px] font-medium flex-shrink-0" style="color:#c96442;">96</span>
+              </div>
+            </div>
+          </div>
         </div>
       </div>
 
@@ -174,36 +204,5 @@ tailwind.config = {
   </div>
 </div>
 
-<script>
-var chart = echarts.init(document.getElementById('radar-chart'), null, { renderer: 'svg' });
-chart.setOption({
-  radar: {
-    indicator: [
-      { name: '学业GPA', max: 100 },
-      { name: '专业排名', max: 100 },
-      { name: '英语能力', max: 100 },
-      { name: '科研产出', max: 100 },
-      { name: '竞赛荣誉', max: 100 },
-      { name: '工程实践', max: 100 }
-    ],
-    radius: '62%',
-    center: ['50%', '55%'],
-    axisName: { color: '#5e5d59', fontSize: 11 },
-    splitArea: { areaStyle: { color: ['#faf9f5','#f5f4ed'] } },
-    splitLine: { lineStyle: { color: '#e8e6dc' } },
-    axisLine: { lineStyle: { color: '#e8e6dc' } }
-  },
-  series: [{
-    type: 'radar',
-    data: [{
-      value: [93, 91, 90, 85, 82, 88],
-      name: '综合能力',
-      areaStyle: { color: 'rgba(201,100,66,0.15)' },
-      lineStyle: { color: '#c96442', width: 2 },
-      itemStyle: { color: '#c96442' }
-    }]
-  }]
-});
-</script>
 </body>
 </html>

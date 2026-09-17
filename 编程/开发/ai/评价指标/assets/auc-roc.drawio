@@ -1,0 +1,91 @@
+<mxfile host="app.diagrams.net" modified="2026-09-13T14:40:00.000Z" agent="Trae" version="24.7.17" type="device">
+  <diagram id="auc-roc" name="Page-1">
+    <mxGraphModel dx="1422" dy="794" grid="1" gridSize="10" guides="1" tooltips="1" connect="0" arrows="1" fold="1" page="1" pageScale="1" pageWidth="1100" pageHeight="850" math="0" shadow="0">
+      <root>
+        <mxCell id="0" />
+        <mxCell id="1" parent="0" />
+        <mxCell id="2" value="ROC 曲线与 AUC-ROC" style="text;html=1;strokeColor=none;fillColor=none;align=center;verticalAlign=middle;fontSize=22;fontStyle=1;" vertex="1" parent="1">
+          <mxGeometry x="245" y="20" width="280" height="30" as="geometry" />
+        </mxCell>
+        <mxCell id="3" value="" style="endArrow=none;html=1;strokeWidth=2;strokeColor=#111827;" edge="1" parent="1">
+          <mxGeometry relative="1" as="geometry">
+            <mxPoint x="100" y="380" as="sourcePoint" />
+            <mxPoint x="670" y="380" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="4" value="" style="endArrow=none;html=1;strokeWidth=2;strokeColor=#111827;" edge="1" parent="1">
+          <mxGeometry relative="1" as="geometry">
+            <mxPoint x="100" y="390" as="sourcePoint" />
+            <mxPoint x="100" y="50" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="5" value="" style="endArrow=none;html=1;strokeWidth=2;dashed=1;dashPattern=8 6;strokeColor=#9ca3af;" edge="1" parent="1">
+          <mxGeometry relative="1" as="geometry">
+            <mxPoint x="100" y="380" as="sourcePoint" />
+            <mxPoint x="660" y="60" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="6" value="" style="endArrow=none;html=1;strokeWidth=4;strokeColor=#16a34a;rounded=0;" edge="1" parent="1">
+          <mxGeometry relative="1" as="geometry">
+            <mxPoint x="100" y="380" as="sourcePoint" />
+            <mxPoint x="122" y="268" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="7" value="" style="endArrow=none;html=1;strokeWidth=4;strokeColor=#16a34a;rounded=0;" edge="1" parent="1">
+          <mxGeometry relative="1" as="geometry">
+            <mxPoint x="122" y="268" as="sourcePoint" />
+            <mxPoint x="156" y="194" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="8" value="" style="endArrow=none;html=1;strokeWidth=4;strokeColor=#16a34a;rounded=0;" edge="1" parent="1">
+          <mxGeometry relative="1" as="geometry">
+            <mxPoint x="156" y="194" as="sourcePoint" />
+            <mxPoint x="201" y="143" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="9" value="" style="endArrow=none;html=1;strokeWidth=4;strokeColor=#16a34a;rounded=0;" edge="1" parent="1">
+          <mxGeometry relative="1" as="geometry">
+            <mxPoint x="201" y="143" as="sourcePoint" />
+            <mxPoint x="268" y="111" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="10" value="" style="endArrow=none;html=1;strokeWidth=4;strokeColor=#16a34a;rounded=0;" edge="1" parent="1">
+          <mxGeometry relative="1" as="geometry">
+            <mxPoint x="268" y="111" as="sourcePoint" />
+            <mxPoint x="352" y="89" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="11" value="" style="endArrow=none;html=1;strokeWidth=4;strokeColor=#16a34a;rounded=0;" edge="1" parent="1">
+          <mxGeometry relative="1" as="geometry">
+            <mxPoint x="352" y="89" as="sourcePoint" />
+            <mxPoint x="447" y="73" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="12" value="" style="endArrow=none;html=1;strokeWidth=4;strokeColor=#16a34a;rounded=0;" edge="1" parent="1">
+          <mxGeometry relative="1" as="geometry">
+            <mxPoint x="447" y="73" as="sourcePoint" />
+            <mxPoint x="548" y="65" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="13" value="" style="endArrow=none;html=1;strokeWidth=4;strokeColor=#16a34a;rounded=0;" edge="1" parent="1">
+          <mxGeometry relative="1" as="geometry">
+            <mxPoint x="548" y="65" as="sourcePoint" />
+            <mxPoint x="660" y="60" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="14" value="False Positive Rate" style="text;html=1;strokeColor=none;fillColor=none;align=center;verticalAlign=middle;fontSize=16;fontStyle=1;" vertex="1" parent="1">
+          <mxGeometry x="280" y="400" width="200" height="24" as="geometry" />
+        </mxCell>
+        <mxCell id="15" value="True Positive Rate" style="text;html=1;strokeColor=none;fillColor=none;align=center;verticalAlign=middle;fontSize=16;fontStyle=1;rotation=270;" vertex="1" parent="1">
+          <mxGeometry x="5" y="165" width="160" height="24" as="geometry" />
+        </mxCell>
+        <mxCell id="16" value="AUC-ROC = 0.90&lt;br&gt;越靠近左上角越好" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#f0fdf4;strokeColor=#bbf7d0;fontSize=16;" vertex="1" parent="1">
+          <mxGeometry x="455" y="84" width="178" height="70" as="geometry" />
+        </mxCell>
+        <mxCell id="17" value="随机分类器基线" style="text;html=1;strokeColor=none;fillColor=none;align=left;verticalAlign=middle;fontSize=14;fontColor=#6b7280;" vertex="1" parent="1">
+          <mxGeometry x="454" y="198" width="140" height="24" as="geometry" />
+        </mxCell>
+      </root>
+    </mxGraphModel>
+  </diagram>
+</mxfile>
