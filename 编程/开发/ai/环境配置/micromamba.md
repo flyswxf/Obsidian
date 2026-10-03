@@ -1,48 +1,85 @@
-相当于conda, 而且兼容conda, 可以使用conda注册的env
+`micromamba` 类似于 `conda`，并且兼容 Conda 环境。已经通过 Conda 创建的环境，也可以使用
+`micromamba` 管理。
 
-一键安装(下载并配置)
-```ps
+## 安装 micromamba
+
+```powershell
 Invoke-Expression ((Invoke-WebRequest -Uri https://micro.mamba.pm/install.ps1 -UseBasicParsing).Content)
 ```
-会有一个默认的环境于C盘, 但这个环境是空的, 所以不会占用空间
 
-## 下载源配置
-下载源配置在`~\.condarc`, 即用户目录下的condarc文件
+安装程序会在 C 盘创建一个默认环境目录。该环境为空，通常不会占用明显空间。
 
-通过此命令查看**config文件位置**和**具体config内容**
-```
-micromamba config list --sources   
-```
+## Conda 换源
 
-```
+Conda 的配置文件是用户目录下的 `~\.condarc`。可以直接修改该文件为清华大学镜像：
+
+```yaml
 channels:
   - defaults
+  - conda-forge
 show_channel_urls: true
+channel_priority: flexible
+
 default_channels:
   - https://mirrors.tuna.tsinghua.edu.cn/anaconda/pkgs/main
   - https://mirrors.tuna.tsinghua.edu.cn/anaconda/pkgs/r
   - https://mirrors.tuna.tsinghua.edu.cn/anaconda/pkgs/msys2
+
 custom_channels:
   conda-forge: https://mirrors.tuna.tsinghua.edu.cn/anaconda/cloud
   msys2: https://mirrors.tuna.tsinghua.edu.cn/anaconda/cloud
 ```
 
-- `pkgs/main/`: Anaconda 主源
-- `pkgs/free/`: 已废弃的源（Anaconda 多年前已将 pkgs/free 合并到 pkgs/main），虽目录存在但包极少且过时
-- `conda-forge`: 社区最大的第三方源，默认会走官方源
-- `defaults`: Anaconda 官方默认源（包含 pkgs/main、pkgs/r 等），但未配置镜像时在国内访问较慢
-- `msys2`: Windows 编译工具链源，仅在需要编译 C/C++ 包时使用
+也可以使用命令配置：
 
-当install package时, micromamba会从最上方的源开始寻找, 如果都没有找到, 则会报错
+```powershell
+conda config --add channels defaults
+conda config --add channels conda-forge
+conda config --set show_channel_urls yes
+conda config --set channel_priority flexible
+conda config --add default_channels https://mirrors.tuna.tsinghua.edu.cn/anaconda/pkgs/main
+conda config --add default_channels https://mirrors.tuna.tsinghua.edu.cn/anaconda/pkgs/r
+conda config --add default_channels https://mirrors.tuna.tsinghua.edu.cn/anaconda/pkgs/msys2
+conda config --set custom_channels.conda-forge https://mirrors.tuna.tsinghua.edu.cn/anaconda/cloud
+conda config --set custom_channels.msys2 https://mirrors.tuna.tsinghua.edu.cn/anaconda/cloud
+```
 
-注意: 
-并不需要设置`micromamba config set channel_priority strict`如果设置了, 可能还会出现错误. 通过`micromamba config set channel_priority flexible`改回来
+## micromamba 使用同一配置
 
-对应设置命令, **也可以直接修改condarc文件**
-```ps
-micromamba config append channels https://mirrors.tuna.tsinghua.edu.cn/anaconda/pkgs/main/
-micromamba config append channels https://mirrors.tuna.tsinghua.edu.cn/anaconda/cloud/conda-forge
-micromamba config append channels https://mirrors.tuna.tsinghua.edu.cn/anaconda/cloud/msys2/
+`micromamba` 默认也会读取 `~\.condarc`。查看配置文件位置和最终配置：
+
+```powershell
+micromamba config list --sources
+```
+
+如果使用命令配置 `micromamba`，也可以执行：
+
+```powershell
 micromamba config append channels defaults
 micromamba config append channels conda-forge
+micromamba config set show_channel_urls true
+micromamba config set channel_priority flexible
+```
+
+## 源说明
+
+- `pkgs/main`：Anaconda 主源。
+- `pkgs/r`：R 语言相关软件包。
+- `conda-forge`：社区维护的第三方软件包源。
+- `msys2`：Windows 编译工具链源，需要编译 C/C++ 包时使用。
+- `defaults`：Conda 默认频道名称，实际地址由 `default_channels` 指向清华镜像。
+
+安装软件包时，Conda 会按 `channels` 中的顺序搜索。一般不需要设置
+`channel_priority strict`，否则可能导致依赖解析失败；出现该问题时改回：
+
+```powershell
+conda config --set channel_priority flexible
+```
+
+验证换源是否生效：
+
+```powershell
+conda config --show-sources
+conda config --show channels
+conda search numpy
 ```

@@ -38,5 +38,6 @@
   "anuppuccin-theme-settings@@list-spacing": 0.1,
   "anuppuccin-theme-settings@@anp-kanban-card-spacing": 8,
   "anuppuccin-theme-settings@@anp-kanban-lane-spacing": 10,
-  "anuppuccin-theme-settings@@anp-layout-select": "none"
+  "anuppuccin-theme-settings@@anp-layout-select": "none",
+  "anuppuccin-theme-settings@@anuppuccin-theme-light": "ctp-rosepine-light"
 }
