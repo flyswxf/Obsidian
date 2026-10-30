@@ -1,0 +1,21 @@
+"课程/人工智能/CS336 AI Policy Spring 2025-2026.md"
+  h_9935c66328fabb 1-17
+.gitignore
+  h_9935c66328fabb 20-22
+  h_9935c66328fabb 23-26
+实习/项目/测试用例自动生成Agent流程重构与职责分层.md
+  h_9935c66328fabb 1-225
+实习/项目/AI测试用例生成Agent的量化评估体系Eval-Harness.md
+  h_9935c66328fabb 1-233
+---
+{
+  "schema_version": "authorship/3.0.0",
+  "git_ai_version": "1.7.5+huawei.3",
+  "base_commit_sha": "8588735e4b089a60f71792b1120b49ffa634bf4e",
+  "prompts": {},
+  "humans": {
+    "h_9935c66328fabb": {
+      "author": "flyswxf <flyswxf@gmail.com>"
+    }
+  }
+}
