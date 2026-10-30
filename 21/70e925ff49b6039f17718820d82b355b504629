@@ -1,0 +1,56 @@
+.ai/3538c27d-0f89-45b3-9021-0ba54fe7ec46/tool_outputs/20261030_145923_269400_grep_call_11d105afa20c4b5a892fd6ac_0_894a351208cd.txt
+  h_9935c66328fabb 1
+.ai/3538c27d-0f89-45b3-9021-0ba54fe7ec46/tool_outputs/20261030_145933_087587_grep_call_bc3c6e7251ab4a6198dfb3f0_0_27b9c47edee6.txt
+  h_9935c66328fabb 1
+.ai/4933448d-1253-45e0-8dd0-9be9527092d9/tool_outputs/20261030_155446_860429_web_fetch_call_zoaqxj387iv2j1tecjehhjzi_0_ee664df112db.txt
+  h_9935c66328fabb 1-408
+.ai/4933448d-1253-45e0-8dd0-9be9527092d9/tool_outputs/20261030_155501_881116_web_fetch_call_czet0awnxdbfps5m9kmajk73_0_105bf36c94b9.txt
+  h_9935c66328fabb 1-404
+.ai/4933448d-1253-45e0-8dd0-9be9527092d9/tool_outputs/20261030_155502_181973_web_fetch_call_jkb5e642qna9ec6xevps2hla_0_09db7b79645d.txt
+  h_9935c66328fabb 1-452
+.ai/4933448d-1253-45e0-8dd0-9be9527092d9/tool_outputs/20261030_155748_642812_web_fetch_call_c8nds424q4xc9metdx17lbve_0_3a50e7ad9834.txt
+  h_9935c66328fabb 1-493
+.ai/4933448d-1253-45e0-8dd0-9be9527092d9/tool_outputs/20261030_155748_687214_web_fetch_call_augp108r18inluulpqxdx2ct_0_2cf6ab3b995a.txt
+  h_9935c66328fabb 1-705
+.ai/4933448d-1253-45e0-8dd0-9be9527092d9/tool_outputs/20261030_155808_342483_web_fetch_call_2h05pgvsm4z0cgeieimehxz1_0_43be52b5e5be.txt
+  h_9935c66328fabb 1-772
+.ai/a6cdb679-2c0e-4c43-8913-95ddf7701342/tool_outputs/20261030_161540_031118_read_call_ed93214fc291416ca7763bfd_0_62eebc362654.txt
+  h_9935c66328fabb 1-604
+.ai/f4c9872e-1863-4cf5-b0c3-406ba5c2db84/tool_outputs/20261030_155455_189723_grep_call_336379813400476a9a9bced5_0_505dd0009f7f.txt
+  h_9935c66328fabb 1
+.ai/f4c9872e-1863-4cf5-b0c3-406ba5c2db84/tool_outputs/20261030_155929_708634_web_fetch_call_276bdfffc50641ac82a65a7a_0_f1c7a6caeeef.txt
+  h_9935c66328fabb 1-545
+.ai/f4c9872e-1863-4cf5-b0c3-406ba5c2db84/tool_outputs/20261030_160303_958068_web_fetch_call_5241880658bd427abd8147ee_0_83db91c1fc29.txt
+  h_9935c66328fabb 1-11
+.ai/f4c9872e-1863-4cf5-b0c3-406ba5c2db84/tool_outputs/20261030_160335_273614_web_fetch_call_9db5c653b09f4b4d9d5eac34_0_a726b02b7c91.txt
+  h_9935c66328fabb 1-1158
+.ai/f4c9872e-1863-4cf5-b0c3-406ba5c2db84/tool_outputs/20261030_160337_676830_web_fetch_call_19a2fc0fed484be383eedde2_0_ee3752bb035e.txt
+  h_9935c66328fabb 1-11
+.codeartsdoer/.codebase/codebaseId.json
+  h_9935c66328fabb 1
+.gitignore
+  h_9935c66328fabb 20-22
+.relay/config.json
+  h_9935c66328fabb 1-23
+.relay/memory/.memory-document-migration-v1-complete
+  h_9935c66328fabb 1
+.testagent/testagent.md
+  h_9935c66328fabb 1-307
+实习/项目/AI测试用例生成Agent的量化评估体系Eval-Harness.md
+  h_9935c66328fabb 1-233
+实习/项目/测试用例自动生成Agent流程重构与职责分层.md
+  h_9935c66328fabb 1-225
+"课程/人工智能/CS336 AI Policy Spring 2025-2026.md"
+  h_9935c66328fabb 1-17
+---
+{
+  "schema_version": "authorship/3.0.0",
+  "git_ai_version": "1.7.5+huawei.3",
+  "base_commit_sha": "2170e925ff49b6039f17718820d82b355b504629",
+  "prompts": {},
+  "humans": {
+    "h_9935c66328fabb": {
+      "author": "flyswxf <flyswxf@gmail.com>"
+    }
+  }
+}
