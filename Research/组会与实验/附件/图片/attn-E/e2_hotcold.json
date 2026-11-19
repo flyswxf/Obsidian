@@ -1,0 +1,6872 @@
+{
+  "model": "/public/home/yhhao/models/Qwen2.5-VL-7B-Instruct",
+  "layer": 7,
+  "n_images": 108,
+  "attacks": [
+    "A1",
+    "A2",
+    "A3",
+    "A4",
+    "A5",
+    "A6"
+  ],
+  "n_scanned": 120,
+  "excluded_degenerate": {
+    "coco_000000000632": [
+      "repeat5: a word 5-gram repeats (15 words, 8/11 distinct)",
+      "camel: code-like identifier in caption"
+    ],
+    "coco_000000006954": [
+      "repeat5: a word 5-gram repeats (15 words, 9/11 distinct)",
+      "camel: code-like identifier in caption"
+    ],
+    "coco_000000009448": [
+      "repeat5: a word 5-gram repeats (20 words, 13/16 distinct)",
+      "camel: code-like identifier in caption"
+    ],
+    "coco_000000012639": [
+      "camel: code-like identifier in caption"
+    ],
+    "coco_000000012748": [
+      "camel: code-like identifier in caption"
+    ],
+    "coco_000000018150": [
+      "repeat5: a word 5-gram repeats (18 words, 6/14 distinct)",
+      "camel: code-like identifier in caption"
+    ],
+    "coco_000000019432": [
+      "repeat5: a word 5-gram repeats (19 words, 11/15 distinct)",
+      "camel: code-like identifier in caption"
+    ],
+    "coco_000000022935": [
+      "camel: code-like identifier in caption"
+    ],
+    "coco_000000030494": [
+      "repeat5: a word 5-gram repeats (20 words, 9/16 distinct)",
+      "camel: code-like identifier in caption"
+    ],
+    "coco_000000031735": [
+      "repeat5: a word 5-gram repeats (18 words, 11/14 distinct)",
+      "camel: code-like identifier in caption"
+    ],
+    "coco_000000046252": [
+      "camel: code-like identifier in caption"
+    ],
+    "coco_000000098520": [
+      "repeat5: a word 5-gram repeats (8 words, 3/4 distinct)",
+      "camel: code-like identifier in caption"
+    ]
+  },
+  "min_hot_minus_cold_share": 0.1345,
+  "images": [
+    {
+      "stem": "coco_000000000285",
+      "caption": "A close-up of a brown bear with a light brown fur coat, standing on grass, looking directly at the camera.",
+      "target_offset": 1,
+      "target_token": "close",
+      "target_pos": 290,
+      "prompt_len": 289,
+      "grid": [
+        16,
+        16
+      ],
+      "vision_span": [
+        15,
+        271
+      ],
+      "layer": 7,
+      "hot": [
+        0,
+        9,
+        0,
+        3
+      ],
+      "cold": [
+        7,
+        14,
+        5,
+        9
+      ],
+      "hot_share": 0.3407,
+      "cold_share": 0.0698,
+      "hot_px": [
+        0.0,
+        0.0,
+        280.0,
+        112.0
+      ],
+      "cold_px": [
+        196.0,
+        140.0,
+        420.0,
+        280.0
+      ],
+      "degenerate": {
+        "degenerate": false,
+        "reasons": [],
+        "n_words": 21
+      },
+      "elapsed_s": 22.1,
+      "rendered": [
+        "coco_000000000285__hot__A1.png",
+        "coco_000000000285__hot__A2.png",
+        "coco_000000000285__hot__A3.png",
+        "coco_000000000285__hot__A4.png",
+        "coco_000000000285__hot__A5.png",
+        "coco_000000000285__hot__A6.png",
+        "coco_000000000285__cold__A1.png",
+        "coco_000000000285__cold__A2.png",
+        "coco_000000000285__cold__A3.png",
+        "coco_000000000285__cold__A4.png",
+        "coco_000000000285__cold__A5.png",
+        "coco_000000000285__cold__A6.png"
+      ]
+    },
+    {
+      "stem": "coco_000000000872",
+      "caption": "A baseball player in a white uniform runs while another player in a green shirt and cap catches the ball during a game on",
+      "target_offset": 1,
+      "target_token": "baseball",
+      "target_pos": 290,
+      "prompt_len": 289,
+      "grid": [
+        16,
+        16
+      ],
+      "vision_span": [
+        15,
+        271
+      ],
+      "layer": 7,
+      "hot": [
+        0,
+        9,
+        0,
+        3
+      ],
+      "cold": [
+        8,
+        15,
+        5,
+        9
+      ],
+      "hot_share": 0.3545,
+      "cold_share": 0.0701,
+      "hot_px": [
+        0.0,
+        0.0,
+        280.0,
+        112.0
+      ],
+      "cold_px": [
+        224.0,
+        140.0,
+        448.0,
+        280.0
+      ],
+      "degenerate": {
+        "degenerate": false,
+        "reasons": [],
+        "n_words": 24
+      },
+      "elapsed_s": 1.0,
+      "rendered": [
+        "coco_000000000872__hot__A1.png",
+        "coco_000000000872__hot__A2.png",
+        "coco_000000000872__hot__A3.png",
+        "coco_000000000872__hot__A4.png",
+        "coco_000000000872__hot__A5.png",
+        "coco_000000000872__hot__A6.png",
+        "coco_000000000872__cold__A1.png",
+        "coco_000000000872__cold__A2.png",
+        "coco_000000000872__cold__A3.png",
+        "coco_000000000872__cold__A4.png",
+        "coco_000000000872__cold__A5.png",
+        "coco_000000000872__cold__A6.png"
+      ]
+    },
+    {
+      "stem": "coco_000000001000",
+      "caption": "A group of children and adults pose together on a tennis court, with one child holding a trophy, suggesting by a sunny",
+      "target_offset": 1,
+      "target_token": "group",
+      "target_pos": 290,
+      "prompt_len": 289,
+      "grid": [
+        16,
+        16
+      ],
+      "vision_span": [
+        15,
+        271
+      ],
+      "layer": 7,
+      "hot": [
+        0,
+        7,
+        0,
+        4
+      ],
+      "cold": [
+        8,
+        15,
+        8,
+        12
+      ],
+      "hot_share": 0.3581,
+      "cold_share": 0.0717,
+      "hot_px": [
+        0.0,
+        0.0,
+        224.0,
+        140.0
+      ],
+      "cold_px": [
+        224.0,
+        224.0,
+        448.0,
+        364.0
+      ],
+      "degenerate": {
+        "degenerate": false,
+        "reasons": [],
+        "n_words": 22
+      },
+      "elapsed_s": 1.0,
+      "rendered": [
+        "coco_000000001000__hot__A1.png",
+        "coco_000000001000__hot__A2.png",
+        "coco_000000001000__hot__A3.png",
+        "coco_000000001000__hot__A4.png",
+        "coco_000000001000__hot__A5.png",
+        "coco_000000001000__hot__A6.png",
+        "coco_000000001000__cold__A1.png",
+        "coco_000000001000__cold__A2.png",
+        "coco_000000001000__cold__A3.png",
+        "coco_000000001000__cold__A4.png",
+        "coco_000000001000__cold__A5.png",
+        "coco_000000001000__cold__A6.png"
+      ]
+    },
+    {
+      "stem": "coco_000000001425",
+      "caption": "A black-and white photo of a partially eaten burger on a plate, with a blurred background and a small container of sauce",
+      "target_offset": 1,
+      "target_token": "black",
+      "target_pos": 290,
+      "prompt_len": 289,
+      "grid": [
+        16,
+        16
+      ],
+      "vision_span": [
+        15,
+        271
+      ],
+      "layer": 7,
+      "hot": [
+        0,
+        7,
+        0,
+        4
+      ],
+      "cold": [
+        7,
+        14,
+        7,
+        11
+      ],
+      "hot_share": 0.329,
+      "cold_share": 0.0889,
+      "hot_px": [
+        0.0,
+        0.0,
+        224.0,
+        140.0
+      ],
+      "cold_px": [
+        196.0,
+        196.0,
+        420.0,
+        336.0
+      ],
+      "degenerate": {
+        "degenerate": false,
+        "reasons": [],
+        "n_words": 23
+      },
+      "elapsed_s": 1.0,
+      "rendered": [
+        "coco_000000001425__hot__A1.png",
+        "coco_000000001425__hot__A2.png",
+        "coco_000000001425__hot__A3.png",
+        "coco_000000001425__hot__A4.png",
+        "coco_000000001425__hot__A5.png",
+        "coco_000000001425__hot__A6.png",
+        "coco_000000001425__cold__A1.png",
+        "coco_000000001425__cold__A2.png",
+        "coco_000000001425__cold__A3.png",
+        "coco_000000001425__cold__A4.png",
+        "coco_000000001425__cold__A5.png",
+        "coco_000000001425__cold__A6.png"
+      ]
+    },
+    {
+      "stem": "coco_000000001532",
+      "caption": "Traffic on a highway with directional signs for North Ventura Blvd, Hollywood Blvd, and Sunset Blvd.",
+      "target_offset": 0,
+      "target_token": "Traffic",
+      "target_pos": 289,
+      "prompt_len": 289,
+      "grid": [
+        16,
+        16
+      ],
+      "vision_span": [
+        15,
+        271
+      ],
+      "layer": 7,
+      "hot": [
+        0,
+        7,
+        0,
+        4
+      ],
+      "cold": [
+        7,
+        14,
+        2,
+        6
+      ],
+      "hot_share": 0.6287,
+      "cold_share": 0.0239,
+      "hot_px": [
+        0.0,
+        0.0,
+        224.0,
+        140.0
+      ],
+      "cold_px": [
+        196.0,
+        56.0,
+        420.0,
+        196.0
+      ],
+      "degenerate": {
+        "degenerate": false,
+        "reasons": [],
+        "n_words": 16
+      },
+      "elapsed_s": 0.9,
+      "rendered": [
+        "coco_000000001532__hot__A1.png",
+        "coco_000000001532__hot__A2.png",
+        "coco_000000001532__hot__A3.png",
+        "coco_000000001532__hot__A4.png",
+        "coco_000000001532__hot__A5.png",
+        "coco_000000001532__hot__A6.png",
+        "coco_000000001532__cold__A1.png",
+        "coco_000000001532__cold__A2.png",
+        "coco_000000001532__cold__A3.png",
+        "coco_000000001532__cold__A4.png",
+        "coco_000000001532__cold__A5.png",
+        "coco_000000001532__cold__A6.png"
+      ]
+    },
+    {
+      "stem": "coco_000000001584",
+      "caption": "A classic red double-decker bus with \"Aldwych' displayed on the front, driving through an urban area",
+      "target_offset": 1,
+      "target_token": "classic",
+      "target_pos": 290,
+      "prompt_len": 289,
+      "grid": [
+        16,
+        16
+      ],
+      "vision_span": [
+        15,
+        271
+      ],
+      "layer": 7,
+      "hot": [
+        0,
+        9,
+        0,
+        3
+      ],
+      "cold": [
+        8,
+        15,
+        2,
+        6
+      ],
+      "hot_share": 0.2326,
+      "cold_share": 0.0981,
+      "hot_px": [
+        0.0,
+        0.0,
+        280.0,
+        112.0
+      ],
+      "cold_px": [
+        224.0,
+        56.0,
+        448.0,
+        196.0
+      ],
+      "degenerate": {
+        "degenerate": false,
+        "reasons": [],
+        "n_words": 17
+      },
+      "elapsed_s": 1.0,
+      "rendered": [
+        "coco_000000001584__hot__A1.png",
+        "coco_000000001584__hot__A2.png",
+        "coco_000000001584__hot__A3.png",
+        "coco_000000001584__hot__A4.png",
+        "coco_000000001584__hot__A5.png",
+        "coco_000000001584__hot__A6.png",
+        "coco_000000001584__cold__A1.png",
+        "coco_000000001584__cold__A2.png",
+        "coco_000000001584__cold__A3.png",
+        "coco_000000001584__cold__A4.png",
+        "coco_000000001584__cold__A5.png",
+        "coco_000000001584__cold__A6.png"
+      ]
+    },
+    {
+      "stem": "coco_000000001675",
+      "caption": "A black and white cat rests on top of a laptop, itsoming out from the left side of the frame.",
+      "target_offset": 1,
+      "target_token": "black",
+      "target_pos": 290,
+      "prompt_len": 289,
+      "grid": [
+        16,
+        16
+      ],
+      "vision_span": [
+        15,
+        271
+      ],
+      "layer": 7,
+      "hot": [
+        0,
+        9,
+        0,
+        3
+      ],
+      "cold": [
+        6,
+        13,
+        11,
+        15
+      ],
+      "hot_share": 0.2851,
+      "cold_share": 0.0788,
+      "hot_px": [
+        0.0,
+        0.0,
+        280.0,
+        112.0
+      ],
+      "cold_px": [
+        168.0,
+        308.0,
+        392.0,
+        448.0
+      ],
+      "degenerate": {
+        "degenerate": false,
+        "reasons": [],
+        "n_words": 20
+      },
+      "elapsed_s": 1.0,
+      "rendered": [
+        "coco_000000001675__hot__A1.png",
+        "coco_000000001675__hot__A2.png",
+        "coco_000000001675__hot__A3.png",
+        "coco_000000001675__hot__A4.png",
+        "coco_000000001675__hot__A5.png",
+        "coco_000000001675__hot__A6.png",
+        "coco_000000001675__cold__A1.png",
+        "coco_000000001675__cold__A2.png",
+        "coco_000000001675__cold__A3.png",
+        "coco_000000001675__cold__A4.png",
+        "coco_000000001675__cold__A5.png",
+        "coco_000000001675__cold__A6.png"
+      ]
+    },
+    {
+      "stem": "coco_000000002006",
+      "caption": "A purple South Tyne bus with route number 96 displays \"Metrocentre via Bens\" on its-board display",
+      "target_offset": 1,
+      "target_token": "purple",
+      "target_pos": 290,
+      "prompt_len": 289,
+      "grid": [
+        16,
+        16
+      ],
+      "vision_span": [
+        15,
+        271
+      ],
+      "layer": 7,
+      "hot": [
+        0,
+        9,
+        0,
+        3
+      ],
+      "cold": [
+        0,
+        7,
+        8,
+        12
+      ],
+      "hot_share": 0.3116,
+      "cold_share": 0.0914,
+      "hot_px": [
+        0.0,
+        0.0,
+        280.0,
+        112.0
+      ],
+      "cold_px": [
+        0.0,
+        224.0,
+        224.0,
+        364.0
+      ],
+      "degenerate": {
+        "degenerate": false,
+        "reasons": [],
+        "n_words": 17
+      },
+      "elapsed_s": 1.0,
+      "rendered": [
+        "coco_000000002006__hot__A1.png",
+        "coco_000000002006__hot__A2.png",
+        "coco_000000002006__hot__A3.png",
+        "coco_000000002006__hot__A4.png",
+        "coco_000000002006__hot__A5.png",
+        "coco_000000002006__hot__A6.png",
+        "coco_000000002006__cold__A1.png",
+        "coco_000000002006__cold__A2.png",
+        "coco_000000002006__cold__A3.png",
+        "coco_000000002006__cold__A4.png",
+        "coco_000000002006__cold__A5.png",
+        "coco_000000002006__cold__A6.png"
+      ]
+    },
+    {
+      "stem": "coco_000000002153",
+      "caption": "A baseball game in progress; batter at the plate, catcher and umpire behind him, pitcher on the mound, and",
+      "target_offset": 1,
+      "target_token": "baseball",
+      "target_pos": 290,
+      "prompt_len": 289,
+      "grid": [
+        16,
+        16
+      ],
+      "vision_span": [
+        15,
+        271
+      ],
+      "layer": 7,
+      "hot": [
+        0,
+        7,
+        0,
+        4
+      ],
+      "cold": [
+        7,
+        14,
+        11,
+        15
+      ],
+      "hot_share": 0.3506,
+      "cold_share": 0.0879,
+      "hot_px": [
+        0.0,
+        0.0,
+        224.0,
+        140.0
+      ],
+      "cold_px": [
+        196.0,
+        308.0,
+        420.0,
+        448.0
+      ],
+      "degenerate": {
+        "degenerate": false,
+        "reasons": [],
+        "n_words": 19
+      },
+      "elapsed_s": 1.0,
+      "rendered": [
+        "coco_000000002153__hot__A1.png",
+        "coco_000000002153__hot__A2.png",
+        "coco_000000002153__hot__A3.png",
+        "coco_000000002153__hot__A4.png",
+        "coco_000000002153__hot__A5.png",
+        "coco_000000002153__hot__A6.png",
+        "coco_000000002153__cold__A1.png",
+        "coco_000000002153__cold__A2.png",
+        "coco_000000002153__cold__A3.png",
+        "coco_000000002153__cold__A4.png",
+        "coco_000000002153__cold__A5.png",
+        "coco_000000002153__cold__A6.png"
+      ]
+    },
+    {
+      "stem": "coco_000000002532",
+      "caption": "A skierer stands on a snowy mountain slope under a clear blue sky, surrounded by snow-covered peaks and sparse vegetation",
+      "target_offset": 1,
+      "target_token": "sk",
+      "target_pos": 290,
+      "prompt_len": 289,
+      "grid": [
+        16,
+        16
+      ],
+      "vision_span": [
+        15,
+        271
+      ],
+      "layer": 7,
+      "hot": [
+        0,
+        9,
+        0,
+        3
+      ],
+      "cold": [
+        8,
+        15,
+        11,
+        15
+      ],
+      "hot_share": 0.38,
+      "cold_share": 0.0716,
+      "hot_px": [
+        0.0,
+        0.0,
+        280.0,
+        112.0
+      ],
+      "cold_px": [
+        224.0,
+        308.0,
+        448.0,
+        448.0
+      ],
+      "degenerate": {
+        "degenerate": false,
+        "reasons": [],
+        "n_words": 21
+      },
+      "elapsed_s": 1.0,
+      "rendered": [
+        "coco_000000002532__hot__A1.png",
+        "coco_000000002532__hot__A2.png",
+        "coco_000000002532__hot__A3.png",
+        "coco_000000002532__hot__A4.png",
+        "coco_000000002532__hot__A5.png",
+        "coco_000000002532__hot__A6.png",
+        "coco_000000002532__cold__A1.png",
+        "coco_000000002532__cold__A2.png",
+        "coco_000000002532__cold__A3.png",
+        "coco_000000002532__cold__A4.png",
+        "coco_000000002532__cold__A5.png",
+        "coco_000000002532__cold__A6.png"
+      ]
+    },
+    {
+      "stem": "coco_000000002685",
+      "caption": "A group of people gather around a counter in a wine shop, sampling and discussing bottles of wine.",
+      "target_offset": 1,
+      "target_token": "group",
+      "target_pos": 290,
+      "prompt_len": 289,
+      "grid": [
+        16,
+        16
+      ],
+      "vision_span": [
+        15,
+        271
+      ],
+      "layer": 7,
+      "hot": [
+        0,
+        9,
+        0,
+        3
+      ],
+      "cold": [
+        8,
+        15,
+        4,
+        8
+      ],
+      "hot_share": 0.3952,
+      "cold_share": 0.0676,
+      "hot_px": [
+        0.0,
+        0.0,
+        280.0,
+        112.0
+      ],
+      "cold_px": [
+        224.0,
+        112.0,
+        448.0,
+        252.0
+      ],
+      "degenerate": {
+        "degenerate": false,
+        "reasons": [],
+        "n_words": 18
+      },
+      "elapsed_s": 1.0,
+      "rendered": [
+        "coco_000000002685__hot__A1.png",
+        "coco_000000002685__hot__A2.png",
+        "coco_000000002685__hot__A3.png",
+        "coco_000000002685__hot__A4.png",
+        "coco_000000002685__hot__A5.png",
+        "coco_000000002685__hot__A6.png",
+        "coco_000000002685__cold__A1.png",
+        "coco_000000002685__cold__A2.png",
+        "coco_000000002685__cold__A3.png",
+        "coco_000000002685__cold__A4.png",
+        "coco_000000002685__cold__A5.png",
+        "coco_000000002685__cold__A6.png"
+      ]
+    },
+    {
+      "stem": "coco_000000003501",
+      "caption": "A bowl of white rice topped with a red chili dish and steamed broccoli on the side.",
+      "target_offset": 1,
+      "target_token": "bowl",
+      "target_pos": 290,
+      "prompt_len": 289,
+      "grid": [
+        16,
+        16
+      ],
+      "vision_span": [
+        15,
+        271
+      ],
+      "layer": 7,
+      "hot": [
+        0,
+        9,
+        0,
+        3
+      ],
+      "cold": [
+        6,
+        15,
+        12,
+        15
+      ],
+      "hot_share": 0.3207,
+      "cold_share": 0.0827,
+      "hot_px": [
+        0.0,
+        0.0,
+        280.0,
+        112.0
+      ],
+      "cold_px": [
+        168.0,
+        336.0,
+        448.0,
+        448.0
+      ],
+      "degenerate": {
+        "degenerate": false,
+        "reasons": [],
+        "n_words": 17
+      },
+      "elapsed_s": 0.9,
+      "rendered": [
+        "coco_000000003501__hot__A1.png",
+        "coco_000000003501__hot__A2.png",
+        "coco_000000003501__hot__A3.png",
+        "coco_000000003501__hot__A4.png",
+        "coco_000000003501__hot__A5.png",
+        "coco_000000003501__hot__A6.png",
+        "coco_000000003501__cold__A1.png",
+        "coco_000000003501__cold__A2.png",
+        "coco_000000003501__cold__A3.png",
+        "coco_000000003501__cold__A4.png",
+        "coco_000000003501__cold__A5.png",
+        "coco_000000003501__cold__A6.png"
+      ]
+    },
+    {
+      "stem": "coco_000000004765",
+      "caption": "A surfer in a yellow and black wetsuit rides a wave, balancing on a white surfboard with an orange",
+      "target_offset": 1,
+      "target_token": "sur",
+      "target_pos": 290,
+      "prompt_len": 289,
+      "grid": [
+        16,
+        16
+      ],
+      "vision_span": [
+        15,
+        271
+      ],
+      "layer": 7,
+      "hot": [
+        0,
+        7,
+        0,
+        4
+      ],
+      "cold": [
+        5,
+        14,
+        12,
+        15
+      ],
+      "hot_share": 0.2705,
+      "cold_share": 0.0598,
+      "hot_px": [
+        0.0,
+        0.0,
+        224.0,
+        140.0
+      ],
+      "cold_px": [
+        140.0,
+        336.0,
+        420.0,
+        448.0
+      ],
+      "degenerate": {
+        "degenerate": false,
+        "reasons": [],
+        "n_words": 19
+      },
+      "elapsed_s": 1.0,
+      "rendered": [
+        "coco_000000004765__hot__A1.png",
+        "coco_000000004765__hot__A2.png",
+        "coco_000000004765__hot__A3.png",
+        "coco_000000004765__hot__A4.png",
+        "coco_000000004765__hot__A5.png",
+        "coco_000000004765__hot__A6.png",
+        "coco_000000004765__cold__A1.png",
+        "coco_000000004765__cold__A2.png",
+        "coco_000000004765__cold__A3.png",
+        "coco_000000004765__cold__A4.png",
+        "coco_000000004765__cold__A5.png",
+        "coco_000000004765__cold__A6.png"
+      ]
+    },
+    {
+      "stem": "coco_000000004795",
+      "caption": "A fluffy black cat sits in front of a computer screen, partially obscuring the view, with a webpage open on the",
+      "target_offset": 1,
+      "target_token": "fluffy",
+      "target_pos": 290,
+      "prompt_len": 289,
+      "grid": [
+        16,
+        16
+      ],
+      "vision_span": [
+        15,
+        271
+      ],
+      "layer": 7,
+      "hot": [
+        0,
+        9,
+        0,
+        3
+      ],
+      "cold": [
+        5,
+        14,
+        10,
+        13
+      ],
+      "hot_share": 0.3099,
+      "cold_share": 0.0691,
+      "hot_px": [
+        0.0,
+        0.0,
+        280.0,
+        112.0
+      ],
+      "cold_px": [
+        140.0,
+        280.0,
+        420.0,
+        392.0
+      ],
+      "degenerate": {
+        "degenerate": false,
+        "reasons": [],
+        "n_words": 21
+      },
+      "elapsed_s": 1.0,
+      "rendered": [
+        "coco_000000004795__hot__A1.png",
+        "coco_000000004795__hot__A2.png",
+        "coco_000000004795__hot__A3.png",
+        "coco_000000004795__hot__A4.png",
+        "coco_000000004795__hot__A5.png",
+        "coco_000000004795__hot__A6.png",
+        "coco_000000004795__cold__A1.png",
+        "coco_000000004795__cold__A2.png",
+        "coco_000000004795__cold__A3.png",
+        "coco_000000004795__cold__A4.png",
+        "coco_000000004795__cold__A5.png",
+        "coco_000000004795__cold__A6.png"
+      ]
+    },
+    {
+      "stem": "coco_000000005001",
+      "caption": "A group of people, including children in helmets, cut a ribbon together outdoors, celebrating an event.",
+      "target_offset": 1,
+      "target_token": "group",
+      "target_pos": 290,
+      "prompt_len": 289,
+      "grid": [
+        16,
+        16
+      ],
+      "vision_span": [
+        15,
+        271
+      ],
+      "layer": 7,
+      "hot": [
+        2,
+        11,
+        0,
+        3
+      ],
+      "cold": [
+        8,
+        15,
+        4,
+        8
+      ],
+      "hot_share": 0.27,
+      "cold_share": 0.0882,
+      "hot_px": [
+        56.0,
+        0.0,
+        336.0,
+        112.0
+      ],
+      "cold_px": [
+        224.0,
+        112.0,
+        448.0,
+        252.0
+      ],
+      "degenerate": {
+        "degenerate": false,
+        "reasons": [],
+        "n_words": 16
+      },
+      "elapsed_s": 0.9,
+      "rendered": [
+        "coco_000000005001__hot__A1.png",
+        "coco_000000005001__hot__A2.png",
+        "coco_000000005001__hot__A3.png",
+        "coco_000000005001__hot__A4.png",
+        "coco_000000005001__hot__A5.png",
+        "coco_000000005001__hot__A6.png",
+        "coco_000000005001__cold__A1.png",
+        "coco_000000005001__cold__A2.png",
+        "coco_000000005001__cold__A3.png",
+        "coco_000000005001__cold__A4.png",
+        "coco_000000005001__cold__A5.png",
+        "coco_000000005001__cold__A6.png"
+      ]
+    },
+    {
+      "stem": "coco_000000005060",
+      "caption": "A man sits cross-legged in front of a large wooden-framed mirror, holding a phone, with a room visible through",
+      "target_offset": 1,
+      "target_token": "man",
+      "target_pos": 290,
+      "prompt_len": 289,
+      "grid": [
+        16,
+        16
+      ],
+      "vision_span": [
+        15,
+        271
+      ],
+      "layer": 7,
+      "hot": [
+        0,
+        7,
+        0,
+        4
+      ],
+      "cold": [
+        8,
+        15,
+        3,
+        7
+      ],
+      "hot_share": 0.3517,
+      "cold_share": 0.0798,
+      "hot_px": [
+        0.0,
+        0.0,
+        224.0,
+        140.0
+      ],
+      "cold_px": [
+        224.0,
+        84.0,
+        448.0,
+        224.0
+      ],
+      "degenerate": {
+        "degenerate": false,
+        "reasons": [],
+        "n_words": 21
+      },
+      "elapsed_s": 1.0,
+      "rendered": [
+        "coco_000000005060__hot__A1.png",
+        "coco_000000005060__hot__A2.png",
+        "coco_000000005060__hot__A3.png",
+        "coco_000000005060__hot__A4.png",
+        "coco_000000005060__hot__A5.png",
+        "coco_000000005060__hot__A6.png",
+        "coco_000000005060__cold__A1.png",
+        "coco_000000005060__cold__A2.png",
+        "coco_000000005060__cold__A3.png",
+        "coco_000000005060__cold__A4.png",
+        "coco_000000005060__cold__A5.png",
+        "coco_000000005060__cold__A6.png"
+      ]
+    },
+    {
+      "stem": "coco_000000006012",
+      "caption": "A bunch of green bananas forms a circle around a red mango on a blue patterned surface.",
+      "target_offset": 1,
+      "target_token": "bunch",
+      "target_pos": 290,
+      "prompt_len": 289,
+      "grid": [
+        16,
+        16
+      ],
+      "vision_span": [
+        15,
+        271
+      ],
+      "layer": 7,
+      "hot": [
+        0,
+        7,
+        0,
+        4
+      ],
+      "cold": [
+        7,
+        14,
+        9,
+        13
+      ],
+      "hot_share": 0.3581,
+      "cold_share": 0.0698,
+      "hot_px": [
+        0.0,
+        0.0,
+        224.0,
+        140.0
+      ],
+      "cold_px": [
+        196.0,
+        252.0,
+        420.0,
+        392.0
+      ],
+      "degenerate": {
+        "degenerate": false,
+        "reasons": [],
+        "n_words": 17
+      },
+      "elapsed_s": 0.9,
+      "rendered": [
+        "coco_000000006012__hot__A1.png",
+        "coco_000000006012__hot__A2.png",
+        "coco_000000006012__hot__A3.png",
+        "coco_000000006012__hot__A4.png",
+        "coco_000000006012__hot__A5.png",
+        "coco_000000006012__hot__A6.png",
+        "coco_000000006012__cold__A1.png",
+        "coco_000000006012__cold__A2.png",
+        "coco_000000006012__cold__A3.png",
+        "coco_000000006012__cold__A4.png",
+        "coco_000000006012__cold__A5.png",
+        "coco_000000006012__cold__A6.png"
+      ]
+    },
+    {
+      "stem": "coco_000000006894",
+      "caption": "A man laughs joyfully as an elephant gently touches his neck in a serene outdoor setting with lush greenery.",
+      "target_offset": 1,
+      "target_token": "man",
+      "target_pos": 290,
+      "prompt_len": 289,
+      "grid": [
+        16,
+        16
+      ],
+      "vision_span": [
+        15,
+        271
+      ],
+      "layer": 7,
+      "hot": [
+        0,
+        9,
+        0,
+        3
+      ],
+      "cold": [
+        1,
+        10,
+        12,
+        15
+      ],
+      "hot_share": 0.3262,
+      "cold_share": 0.0677,
+      "hot_px": [
+        0.0,
+        0.0,
+        280.0,
+        112.0
+      ],
+      "cold_px": [
+        28.0,
+        336.0,
+        308.0,
+        448.0
+      ],
+      "degenerate": {
+        "degenerate": false,
+        "reasons": [],
+        "n_words": 19
+      },
+      "elapsed_s": 0.9,
+      "rendered": [
+        "coco_000000006894__hot__A1.png",
+        "coco_000000006894__hot__A2.png",
+        "coco_000000006894__hot__A3.png",
+        "coco_000000006894__hot__A4.png",
+        "coco_000000006894__hot__A5.png",
+        "coco_000000006894__hot__A6.png",
+        "coco_000000006894__cold__A1.png",
+        "coco_000000006894__cold__A2.png",
+        "coco_000000006894__cold__A3.png",
+        "coco_000000006894__cold__A4.png",
+        "coco_000000006894__cold__A5.png",
+        "coco_000000006894__cold__A6.png"
+      ]
+    },
+    {
+      "stem": "coco_000000007278",
+      "caption": "A surfer rides a wave, performing a maneuver with water splashing around them.",
+      "target_offset": 1,
+      "target_token": "sur",
+      "target_pos": 290,
+      "prompt_len": 289,
+      "grid": [
+        16,
+        16
+      ],
+      "vision_span": [
+        15,
+        271
+      ],
+      "layer": 7,
+      "hot": [
+        0,
+        7,
+        0,
+        4
+      ],
+      "cold": [
+        1,
+        10,
+        9,
+        12
+      ],
+      "hot_share": 0.4325,
+      "cold_share": 0.0452,
+      "hot_px": [
+        0.0,
+        0.0,
+        224.0,
+        140.0
+      ],
+      "cold_px": [
+        28.0,
+        252.0,
+        308.0,
+        364.0
+      ],
+      "degenerate": {
+        "degenerate": false,
+        "reasons": [],
+        "n_words": 13
+      },
+      "elapsed_s": 0.8,
+      "rendered": [
+        "coco_000000007278__hot__A1.png",
+        "coco_000000007278__hot__A2.png",
+        "coco_000000007278__hot__A3.png",
+        "coco_000000007278__hot__A4.png",
+        "coco_000000007278__hot__A5.png",
+        "coco_000000007278__hot__A6.png",
+        "coco_000000007278__cold__A1.png",
+        "coco_000000007278__cold__A2.png",
+        "coco_000000007278__cold__A3.png",
+        "coco_000000007278__cold__A4.png",
+        "coco_000000007278__cold__A5.png",
+        "coco_000000007278__cold__A6.png"
+      ]
+    },
+    {
+      "stem": "coco_000000007511",
+      "caption": "A man flies a kite on a sandy beach with people walking and trees in the background under a partly cloudy sky.",
+      "target_offset": 1,
+      "target_token": "man",
+      "target_pos": 290,
+      "prompt_len": 289,
+      "grid": [
+        16,
+        16
+      ],
+      "vision_span": [
+        15,
+        271
+      ],
+      "layer": 7,
+      "hot": [
+        0,
+        7,
+        0,
+        4
+      ],
+      "cold": [
+        7,
+        14,
+        4,
+        8
+      ],
+      "hot_share": 0.3712,
+      "cold_share": 0.0657,
+      "hot_px": [
+        0.0,
+        0.0,
+        224.0,
+        140.0
+      ],
+      "cold_px": [
+        196.0,
+        112.0,
+        420.0,
+        252.0
+      ],
+      "degenerate": {
+        "degenerate": false,
+        "reasons": [],
+        "n_words": 22
+      },
+      "elapsed_s": 1.0,
+      "rendered": [
+        "coco_000000007511__hot__A1.png",
+        "coco_000000007511__hot__A2.png",
+        "coco_000000007511__hot__A3.png",
+        "coco_000000007511__hot__A4.png",
+        "coco_000000007511__hot__A5.png",
+        "coco_000000007511__hot__A6.png",
+        "coco_000000007511__cold__A1.png",
+        "coco_000000007511__cold__A2.png",
+        "coco_000000007511__cold__A3.png",
+        "coco_000000007511__cold__A4.png",
+        "coco_000000007511__cold__A5.png",
+        "coco_000000007511__cold__A6.png"
+      ]
+    },
+    {
+      "stem": "coco_000000007574",
+      "caption": "A cluttered kitchen with wooden cabinets, a stainless steel sink, a microwave, and various items on the counter, including",
+      "target_offset": 1,
+      "target_token": "clutter",
+      "target_pos": 290,
+      "prompt_len": 289,
+      "grid": [
+        16,
+        16
+      ],
+      "vision_span": [
+        15,
+        271
+      ],
+      "layer": 7,
+      "hot": [
+        0,
+        9,
+        0,
+        3
+      ],
+      "cold": [
+        7,
+        14,
+        4,
+        8
+      ],
+      "hot_share": 0.3511,
+      "cold_share": 0.0943,
+      "hot_px": [
+        0.0,
+        0.0,
+        280.0,
+        112.0
+      ],
+      "cold_px": [
+        196.0,
+        112.0,
+        420.0,
+        252.0
+      ],
+      "degenerate": {
+        "degenerate": false,
+        "reasons": [],
+        "n_words": 19
+      },
+      "elapsed_s": 1.0,
+      "rendered": [
+        "coco_000000007574__hot__A1.png",
+        "coco_000000007574__hot__A2.png",
+        "coco_000000007574__hot__A3.png",
+        "coco_000000007574__hot__A4.png",
+        "coco_000000007574__hot__A5.png",
+        "coco_000000007574__hot__A6.png",
+        "coco_000000007574__cold__A1.png",
+        "coco_000000007574__cold__A2.png",
+        "coco_000000007574__cold__A3.png",
+        "coco_000000007574__cold__A4.png",
+        "coco_000000007574__cold__A5.png",
+        "coco_000000007574__cold__A6.png"
+      ]
+    },
+    {
+      "stem": "coco_000000007888",
+      "caption": "A black-and white photo of a cube-shaped clock with four faces, set against a blurred background of grass and sky.",
+      "target_offset": 1,
+      "target_token": "black",
+      "target_pos": 290,
+      "prompt_len": 289,
+      "grid": [
+        16,
+        16
+      ],
+      "vision_span": [
+        15,
+        271
+      ],
+      "layer": 7,
+      "hot": [
+        0,
+        9,
+        0,
+        3
+      ],
+      "cold": [
+        8,
+        15,
+        1,
+        5
+      ],
+      "hot_share": 0.3039,
+      "cold_share": 0.1,
+      "hot_px": [
+        0.0,
+        0.0,
+        280.0,
+        112.0
+      ],
+      "cold_px": [
+        224.0,
+        28.0,
+        448.0,
+        168.0
+      ],
+      "degenerate": {
+        "degenerate": false,
+        "reasons": [],
+        "n_words": 22
+      },
+      "elapsed_s": 1.0,
+      "rendered": [
+        "coco_000000007888__hot__A1.png",
+        "coco_000000007888__hot__A2.png",
+        "coco_000000007888__hot__A3.png",
+        "coco_000000007888__hot__A4.png",
+        "coco_000000007888__hot__A5.png",
+        "coco_000000007888__hot__A6.png",
+        "coco_000000007888__cold__A1.png",
+        "coco_000000007888__cold__A2.png",
+        "coco_000000007888__cold__A3.png",
+        "coco_000000007888__cold__A4.png",
+        "coco_000000007888__cold__A5.png",
+        "coco_000000007888__cold__A6.png"
+      ]
+    },
+    {
+      "stem": "coco_000000008021",
+      "caption": "A man in a suit gestures on stage with a colorful background, while an audience watches from the foreground.",
+      "target_offset": 1,
+      "target_token": "man",
+      "target_pos": 290,
+      "prompt_len": 289,
+      "grid": [
+        16,
+        16
+      ],
+      "vision_span": [
+        15,
+        271
+      ],
+      "layer": 7,
+      "hot": [
+        0,
+        7,
+        0,
+        4
+      ],
+      "cold": [
+        8,
+        15,
+        3,
+        7
+      ],
+      "hot_share": 0.3601,
+      "cold_share": 0.0788,
+      "hot_px": [
+        0.0,
+        0.0,
+        224.0,
+        140.0
+      ],
+      "cold_px": [
+        224.0,
+        84.0,
+        448.0,
+        224.0
+      ],
+      "degenerate": {
+        "degenerate": false,
+        "reasons": [],
+        "n_words": 19
+      },
+      "elapsed_s": 0.9,
+      "rendered": [
+        "coco_000000008021__hot__A1.png",
+        "coco_000000008021__hot__A2.png",
+        "coco_000000008021__hot__A3.png",
+        "coco_000000008021__hot__A4.png",
+        "coco_000000008021__hot__A5.png",
+        "coco_000000008021__hot__A6.png",
+        "coco_000000008021__cold__A1.png",
+        "coco_000000008021__cold__A2.png",
+        "coco_000000008021__cold__A3.png",
+        "coco_000000008021__cold__A4.png",
+        "coco_000000008021__cold__A5.png",
+        "coco_000000008021__cold__A6.png"
+      ]
+    },
+    {
+      "stem": "coco_000000008277",
+      "caption": "A plate with shredded chicken and a side of broccoli in a creamy sauce, served on a white paper plate.",
+      "target_offset": 1,
+      "target_token": "plate",
+      "target_pos": 290,
+      "prompt_len": 289,
+      "grid": [
+        16,
+        16
+      ],
+      "vision_span": [
+        15,
+        271
+      ],
+      "layer": 7,
+      "hot": [
+        0,
+        9,
+        0,
+        3
+      ],
+      "cold": [
+        6,
+        15,
+        11,
+        14
+      ],
+      "hot_share": 0.3057,
+      "cold_share": 0.0566,
+      "hot_px": [
+        0.0,
+        0.0,
+        280.0,
+        112.0
+      ],
+      "cold_px": [
+        168.0,
+        308.0,
+        448.0,
+        420.0
+      ],
+      "degenerate": {
+        "degenerate": false,
+        "reasons": [],
+        "n_words": 20
+      },
+      "elapsed_s": 0.9,
+      "rendered": [
+        "coco_000000008277__hot__A1.png",
+        "coco_000000008277__hot__A2.png",
+        "coco_000000008277__hot__A3.png",
+        "coco_000000008277__hot__A4.png",
+        "coco_000000008277__hot__A5.png",
+        "coco_000000008277__hot__A6.png",
+        "coco_000000008277__cold__A1.png",
+        "coco_000000008277__cold__A2.png",
+        "coco_000000008277__cold__A3.png",
+        "coco_000000008277__cold__A4.png",
+        "coco_000000008277__cold__A5.png",
+        "coco_000000008277__cold__A6.png"
+      ]
+    },
+    {
+      "stem": "coco_000000008629",
+      "caption": "A collage of six images showcasing various slices of pizza with different toppings and cheese variations.",
+      "target_offset": 1,
+      "target_token": "collage",
+      "target_pos": 290,
+      "prompt_len": 289,
+      "grid": [
+        16,
+        16
+      ],
+      "vision_span": [
+        15,
+        271
+      ],
+      "layer": 7,
+      "hot": [
+        0,
+        9,
+        0,
+        3
+      ],
+      "cold": [
+        5,
+        14,
+        6,
+        9
+      ],
+      "hot_share": 0.363,
+      "cold_share": 0.0636,
+      "hot_px": [
+        0.0,
+        0.0,
+        280.0,
+        112.0
+      ],
+      "cold_px": [
+        140.0,
+        168.0,
+        420.0,
+        280.0
+      ],
+      "degenerate": {
+        "degenerate": false,
+        "reasons": [],
+        "n_words": 16
+      },
+      "elapsed_s": 0.8,
+      "rendered": [
+        "coco_000000008629__hot__A1.png",
+        "coco_000000008629__hot__A2.png",
+        "coco_000000008629__hot__A3.png",
+        "coco_000000008629__hot__A4.png",
+        "coco_000000008629__hot__A5.png",
+        "coco_000000008629__hot__A6.png",
+        "coco_000000008629__cold__A1.png",
+        "coco_000000008629__cold__A2.png",
+        "coco_000000008629__cold__A3.png",
+        "coco_000000008629__cold__A4.png",
+        "coco_000000008629__cold__A5.png",
+        "coco_000000008629__cold__A6.png"
+      ]
+    },
+    {
+      "stem": "coco_000000008690",
+      "caption": "Two young girls in colorful dresses petting a black and white goat in an outdoor fenced area with other a person in the",
+      "target_offset": 0,
+      "target_token": "Two",
+      "target_pos": 289,
+      "prompt_len": 289,
+      "grid": [
+        16,
+        16
+      ],
+      "vision_span": [
+        15,
+        271
+      ],
+      "layer": 7,
+      "hot": [
+        0,
+        9,
+        0,
+        3
+      ],
+      "cold": [
+        7,
+        14,
+        11,
+        15
+      ],
+      "hot_share": 0.6213,
+      "cold_share": 0.0168,
+      "hot_px": [
+        0.0,
+        0.0,
+        280.0,
+        112.0
+      ],
+      "cold_px": [
+        196.0,
+        308.0,
+        420.0,
+        448.0
+      ],
+      "degenerate": {
+        "degenerate": false,
+        "reasons": [],
+        "n_words": 23
+      },
+      "elapsed_s": 1.0,
+      "rendered": [
+        "coco_000000008690__hot__A1.png",
+        "coco_000000008690__hot__A2.png",
+        "coco_000000008690__hot__A3.png",
+        "coco_000000008690__hot__A4.png",
+        "coco_000000008690__hot__A5.png",
+        "coco_000000008690__hot__A6.png",
+        "coco_000000008690__cold__A1.png",
+        "coco_000000008690__cold__A2.png",
+        "coco_000000008690__cold__A3.png",
+        "coco_000000008690__cold__A4.png",
+        "coco_000000008690__cold__A5.png",
+        "coco_000000008690__cold__A6.png"
+      ]
+    },
+    {
+      "stem": "coco_000000008899",
+      "caption": "A red brick building with green doors and metal shutters, adorned with graffiti, sits on a street corner with a fire",
+      "target_offset": 1,
+      "target_token": "red",
+      "target_pos": 290,
+      "prompt_len": 289,
+      "grid": [
+        16,
+        16
+      ],
+      "vision_span": [
+        15,
+        271
+      ],
+      "layer": 7,
+      "hot": [
+        0,
+        9,
+        0,
+        3
+      ],
+      "cold": [
+        8,
+        15,
+        1,
+        5
+      ],
+      "hot_share": 0.3062,
+      "cold_share": 0.0679,
+      "hot_px": [
+        0.0,
+        0.0,
+        280.0,
+        112.0
+      ],
+      "cold_px": [
+        224.0,
+        28.0,
+        448.0,
+        168.0
+      ],
+      "degenerate": {
+        "degenerate": false,
+        "reasons": [],
+        "n_words": 21
+      },
+      "elapsed_s": 1.0,
+      "rendered": [
+        "coco_000000008899__hot__A1.png",
+        "coco_000000008899__hot__A2.png",
+        "coco_000000008899__hot__A3.png",
+        "coco_000000008899__hot__A4.png",
+        "coco_000000008899__hot__A5.png",
+        "coco_000000008899__hot__A6.png",
+        "coco_000000008899__cold__A1.png",
+        "coco_000000008899__cold__A2.png",
+        "coco_000000008899__cold__A3.png",
+        "coco_000000008899__cold__A4.png",
+        "coco_000000008899__cold__A5.png",
+        "coco_000000008899__cold__A6.png"
+      ]
+    },
+    {
+      "stem": "coco_000000009400",
+      "caption": "A group of people working on laptops in a casual setting with checkered walls and dim lighting.",
+      "target_offset": 1,
+      "target_token": "group",
+      "target_pos": 290,
+      "prompt_len": 289,
+      "grid": [
+        16,
+        16
+      ],
+      "vision_span": [
+        15,
+        271
+      ],
+      "layer": 7,
+      "hot": [
+        0,
+        9,
+        0,
+        3
+      ],
+      "cold": [
+        7,
+        14,
+        2,
+        6
+      ],
+      "hot_share": 0.4164,
+      "cold_share": 0.0751,
+      "hot_px": [
+        0.0,
+        0.0,
+        280.0,
+        112.0
+      ],
+      "cold_px": [
+        196.0,
+        56.0,
+        420.0,
+        196.0
+      ],
+      "degenerate": {
+        "degenerate": false,
+        "reasons": [],
+        "n_words": 17
+      },
+      "elapsed_s": 0.9,
+      "rendered": [
+        "coco_000000009400__hot__A1.png",
+        "coco_000000009400__hot__A2.png",
+        "coco_000000009400__hot__A3.png",
+        "coco_000000009400__hot__A4.png",
+        "coco_000000009400__hot__A5.png",
+        "coco_000000009400__hot__A6.png",
+        "coco_000000009400__cold__A1.png",
+        "coco_000000009400__cold__A2.png",
+        "coco_000000009400__cold__A3.png",
+        "coco_000000009400__cold__A4.png",
+        "coco_000000009400__cold__A5.png",
+        "coco_000000009400__cold__A6.png"
+      ]
+    },
+    {
+      "stem": "coco_000000009483",
+      "caption": "A man in a suit stands beside a desk with a computer monitor, keyboard, and other a control panel, in front",
+      "target_offset": 1,
+      "target_token": "man",
+      "target_pos": 290,
+      "prompt_len": 289,
+      "grid": [
+        16,
+        16
+      ],
+      "vision_span": [
+        15,
+        271
+      ],
+      "layer": 7,
+      "hot": [
+        0,
+        7,
+        0,
+        4
+      ],
+      "cold": [
+        5,
+        14,
+        4,
+        7
+      ],
+      "hot_share": 0.3329,
+      "cold_share": 0.0548,
+      "hot_px": [
+        0.0,
+        0.0,
+        224.0,
+        140.0
+      ],
+      "cold_px": [
+        140.0,
+        112.0,
+        420.0,
+        224.0
+      ],
+      "degenerate": {
+        "degenerate": false,
+        "reasons": [],
+        "n_words": 21
+      },
+      "elapsed_s": 1.0,
+      "rendered": [
+        "coco_000000009483__hot__A1.png",
+        "coco_000000009483__hot__A2.png",
+        "coco_000000009483__hot__A3.png",
+        "coco_000000009483__hot__A4.png",
+        "coco_000000009483__hot__A5.png",
+        "coco_000000009483__hot__A6.png",
+        "coco_000000009483__cold__A1.png",
+        "coco_000000009483__cold__A2.png",
+        "coco_000000009483__cold__A3.png",
+        "coco_000000009483__cold__A4.png",
+        "coco_000000009483__cold__A5.png",
+        "coco_000000009483__cold__A6.png"
+      ]
+    },
+    {
+      "stem": "coco_000000009769",
+      "caption": "A red pickup truck with a snowplzer is clearing a snowy street in a residential neighborhood.",
+      "target_offset": 1,
+      "target_token": "red",
+      "target_pos": 290,
+      "prompt_len": 289,
+      "grid": [
+        16,
+        16
+      ],
+      "vision_span": [
+        15,
+        271
+      ],
+      "layer": 7,
+      "hot": [
+        0,
+        7,
+        0,
+        4
+      ],
+      "cold": [
+        6,
+        15,
+        12,
+        15
+      ],
+      "hot_share": 0.3269,
+      "cold_share": 0.061,
+      "hot_px": [
+        0.0,
+        0.0,
+        224.0,
+        140.0
+      ],
+      "cold_px": [
+        168.0,
+        336.0,
+        448.0,
+        448.0
+      ],
+      "degenerate": {
+        "degenerate": false,
+        "reasons": [],
+        "n_words": 16
+      },
+      "elapsed_s": 0.9,
+      "rendered": [
+        "coco_000000009769__hot__A1.png",
+        "coco_000000009769__hot__A2.png",
+        "coco_000000009769__hot__A3.png",
+        "coco_000000009769__hot__A4.png",
+        "coco_000000009769__hot__A5.png",
+        "coco_000000009769__hot__A6.png",
+        "coco_000000009769__cold__A1.png",
+        "coco_000000009769__cold__A2.png",
+        "coco_000000009769__cold__A3.png",
+        "coco_000000009769__cold__A4.png",
+        "coco_000000009769__cold__A5.png",
+        "coco_000000009769__cold__A6.png"
+      ]
+    },
+    {
+      "stem": "coco_000000009772",
+      "caption": "A luxurious bathroom with a large vanity, marble countertop, wall-mounted lights, and a person taking a photo in the",
+      "target_offset": 1,
+      "target_token": "luxurious",
+      "target_pos": 290,
+      "prompt_len": 289,
+      "grid": [
+        16,
+        16
+      ],
+      "vision_span": [
+        15,
+        271
+      ],
+      "layer": 7,
+      "hot": [
+        0,
+        9,
+        0,
+        3
+      ],
+      "cold": [
+        7,
+        14,
+        10,
+        14
+      ],
+      "hot_share": 0.3826,
+      "cold_share": 0.0838,
+      "hot_px": [
+        0.0,
+        0.0,
+        280.0,
+        112.0
+      ],
+      "cold_px": [
+        196.0,
+        280.0,
+        420.0,
+        420.0
+      ],
+      "degenerate": {
+        "degenerate": false,
+        "reasons": [],
+        "n_words": 20
+      },
+      "elapsed_s": 1.0,
+      "rendered": [
+        "coco_000000009772__hot__A1.png",
+        "coco_000000009772__hot__A2.png",
+        "coco_000000009772__hot__A3.png",
+        "coco_000000009772__hot__A4.png",
+        "coco_000000009772__hot__A5.png",
+        "coco_000000009772__hot__A6.png",
+        "coco_000000009772__cold__A1.png",
+        "coco_000000009772__cold__A2.png",
+        "coco_000000009772__cold__A3.png",
+        "coco_000000009772__cold__A4.png",
+        "coco_000000009772__cold__A5.png",
+        "coco_000000009772__cold__A6.png"
+      ]
+    },
+    {
+      "stem": "coco_000000009891",
+      "caption": "Two men load luggage into a white car in an airport parking garage.",
+      "target_offset": 0,
+      "target_token": "Two",
+      "target_pos": 289,
+      "prompt_len": 289,
+      "grid": [
+        16,
+        16
+      ],
+      "vision_span": [
+        15,
+        271
+      ],
+      "layer": 7,
+      "hot": [
+        0,
+        9,
+        0,
+        3
+      ],
+      "cold": [
+        8,
+        15,
+        9,
+        13
+      ],
+      "hot_share": 0.6181,
+      "cold_share": 0.02,
+      "hot_px": [
+        0.0,
+        0.0,
+        280.0,
+        112.0
+      ],
+      "cold_px": [
+        224.0,
+        252.0,
+        448.0,
+        392.0
+      ],
+      "degenerate": {
+        "degenerate": false,
+        "reasons": [],
+        "n_words": 13
+      },
+      "elapsed_s": 0.8,
+      "rendered": [
+        "coco_000000009891__hot__A1.png",
+        "coco_000000009891__hot__A2.png",
+        "coco_000000009891__hot__A3.png",
+        "coco_000000009891__hot__A4.png",
+        "coco_000000009891__hot__A5.png",
+        "coco_000000009891__hot__A6.png",
+        "coco_000000009891__cold__A1.png",
+        "coco_000000009891__cold__A2.png",
+        "coco_000000009891__cold__A3.png",
+        "coco_000000009891__cold__A4.png",
+        "coco_000000009891__cold__A5.png",
+        "coco_000000009891__cold__A6.png"
+      ]
+    },
+    {
+      "stem": "coco_000000009914",
+      "caption": "A plate of food featuring a sesame seed bun sandwich, crispy fries, and a side side of ketchup and onions.",
+      "target_offset": 1,
+      "target_token": "plate",
+      "target_pos": 290,
+      "prompt_len": 289,
+      "grid": [
+        16,
+        16
+      ],
+      "vision_span": [
+        15,
+        271
+      ],
+      "layer": 7,
+      "hot": [
+        6,
+        15,
+        0,
+        3
+      ],
+      "cold": [
+        4,
+        11,
+        11,
+        15
+      ],
+      "hot_share": 0.2815,
+      "cold_share": 0.0656,
+      "hot_px": [
+        168.0,
+        0.0,
+        448.0,
+        112.0
+      ],
+      "cold_px": [
+        112.0,
+        308.0,
+        336.0,
+        448.0
+      ],
+      "degenerate": {
+        "degenerate": false,
+        "reasons": [],
+        "n_words": 20
+      },
+      "elapsed_s": 1.1,
+      "rendered": [
+        "coco_000000009914__hot__A1.png",
+        "coco_000000009914__hot__A2.png",
+        "coco_000000009914__hot__A3.png",
+        "coco_000000009914__hot__A4.png",
+        "coco_000000009914__hot__A5.png",
+        "coco_000000009914__hot__A6.png",
+        "coco_000000009914__cold__A1.png",
+        "coco_000000009914__cold__A2.png",
+        "coco_000000009914__cold__A3.png",
+        "coco_000000009914__cold__A4.png",
+        "coco_000000009914__cold__A5.png",
+        "coco_000000009914__cold__A6.png"
+      ]
+    },
+    {
+      "stem": "coco_000000010583",
+      "caption": "A hearty meal featuring a sandwich topped with meat, gravy, and roasted vegetables on a white plate.",
+      "target_offset": 1,
+      "target_token": "hearty",
+      "target_pos": 290,
+      "prompt_len": 289,
+      "grid": [
+        16,
+        16
+      ],
+      "vision_span": [
+        15,
+        271
+      ],
+      "layer": 7,
+      "hot": [
+        0,
+        9,
+        0,
+        3
+      ],
+      "cold": [
+        7,
+        14,
+        2,
+        6
+      ],
+      "hot_share": 0.2874,
+      "cold_share": 0.0818,
+      "hot_px": [
+        0.0,
+        0.0,
+        280.0,
+        112.0
+      ],
+      "cold_px": [
+        196.0,
+        56.0,
+        420.0,
+        196.0
+      ],
+      "degenerate": {
+        "degenerate": false,
+        "reasons": [],
+        "n_words": 17
+      },
+      "elapsed_s": 0.9,
+      "rendered": [
+        "coco_000000010583__hot__A1.png",
+        "coco_000000010583__hot__A2.png",
+        "coco_000000010583__hot__A3.png",
+        "coco_000000010583__hot__A4.png",
+        "coco_000000010583__hot__A5.png",
+        "coco_000000010583__hot__A6.png",
+        "coco_000000010583__cold__A1.png",
+        "coco_000000010583__cold__A2.png",
+        "coco_000000010583__cold__A3.png",
+        "coco_000000010583__cold__A4.png",
+        "coco_000000010583__cold__A5.png",
+        "coco_000000010583__cold__A6.png"
+      ]
+    },
+    {
+      "stem": "coco_000000010707",
+      "caption": "Three people in a cozy room, one pouring beer, another playing Wii, and the third watching.",
+      "target_offset": 0,
+      "target_token": "Three",
+      "target_pos": 289,
+      "prompt_len": 289,
+      "grid": [
+        16,
+        16
+      ],
+      "vision_span": [
+        15,
+        271
+      ],
+      "layer": 7,
+      "hot": [
+        0,
+        9,
+        0,
+        3
+      ],
+      "cold": [
+        7,
+        14,
+        10,
+        14
+      ],
+      "hot_share": 0.629,
+      "cold_share": 0.0248,
+      "hot_px": [
+        0.0,
+        0.0,
+        280.0,
+        112.0
+      ],
+      "cold_px": [
+        196.0,
+        280.0,
+        420.0,
+        420.0
+      ],
+      "degenerate": {
+        "degenerate": false,
+        "reasons": [],
+        "n_words": 16
+      },
+      "elapsed_s": 1.0,
+      "rendered": [
+        "coco_000000010707__hot__A1.png",
+        "coco_000000010707__hot__A2.png",
+        "coco_000000010707__hot__A3.png",
+        "coco_000000010707__hot__A4.png",
+        "coco_000000010707__hot__A5.png",
+        "coco_000000010707__hot__A6.png",
+        "coco_000000010707__cold__A1.png",
+        "coco_000000010707__cold__A2.png",
+        "coco_000000010707__cold__A3.png",
+        "coco_000000010707__cold__A4.png",
+        "coco_000000010707__cold__A5.png",
+        "coco_000000010707__cold__A6.png"
+      ]
+    },
+    {
+      "stem": "coco_000000010995",
+      "caption": "A dimlyly bedroom with a plaid bedspread, a bedside lamp, and a window with curtains letting in light",
+      "target_offset": 1,
+      "target_token": "dim",
+      "target_pos": 290,
+      "prompt_len": 289,
+      "grid": [
+        16,
+        16
+      ],
+      "vision_span": [
+        15,
+        271
+      ],
+      "layer": 7,
+      "hot": [
+        0,
+        9,
+        0,
+        3
+      ],
+      "cold": [
+        5,
+        14,
+        12,
+        15
+      ],
+      "hot_share": 0.3754,
+      "cold_share": 0.0602,
+      "hot_px": [
+        0.0,
+        0.0,
+        280.0,
+        112.0
+      ],
+      "cold_px": [
+        140.0,
+        336.0,
+        420.0,
+        448.0
+      ],
+      "degenerate": {
+        "degenerate": false,
+        "reasons": [],
+        "n_words": 18
+      },
+      "elapsed_s": 1.0,
+      "rendered": [
+        "coco_000000010995__hot__A1.png",
+        "coco_000000010995__hot__A2.png",
+        "coco_000000010995__hot__A3.png",
+        "coco_000000010995__hot__A4.png",
+        "coco_000000010995__hot__A5.png",
+        "coco_000000010995__hot__A6.png",
+        "coco_000000010995__cold__A1.png",
+        "coco_000000010995__cold__A2.png",
+        "coco_000000010995__cold__A3.png",
+        "coco_000000010995__cold__A4.png",
+        "coco_000000010995__cold__A5.png",
+        "coco_000000010995__cold__A6.png"
+      ]
+    },
+    {
+      "stem": "coco_000000011051",
+      "caption": "A woman in a black dress pins a white flower to a man's lapel, both smiling and looking at each other",
+      "target_offset": 1,
+      "target_token": "woman",
+      "target_pos": 290,
+      "prompt_len": 289,
+      "grid": [
+        16,
+        16
+      ],
+      "vision_span": [
+        15,
+        271
+      ],
+      "layer": 7,
+      "hot": [
+        0,
+        7,
+        0,
+        4
+      ],
+      "cold": [
+        5,
+        14,
+        12,
+        15
+      ],
+      "hot_share": 0.3503,
+      "cold_share": 0.0699,
+      "hot_px": [
+        0.0,
+        0.0,
+        224.0,
+        140.0
+      ],
+      "cold_px": [
+        140.0,
+        336.0,
+        420.0,
+        448.0
+      ],
+      "degenerate": {
+        "degenerate": false,
+        "reasons": [],
+        "n_words": 21
+      },
+      "elapsed_s": 1.0,
+      "rendered": [
+        "coco_000000011051__hot__A1.png",
+        "coco_000000011051__hot__A2.png",
+        "coco_000000011051__hot__A3.png",
+        "coco_000000011051__hot__A4.png",
+        "coco_000000011051__hot__A5.png",
+        "coco_000000011051__hot__A6.png",
+        "coco_000000011051__cold__A1.png",
+        "coco_000000011051__cold__A2.png",
+        "coco_000000011051__cold__A3.png",
+        "coco_000000011051__cold__A4.png",
+        "coco_000000011051__cold__A5.png",
+        "coco_000000011051__cold__A6.png"
+      ]
+    },
+    {
+      "stem": "coco_000000011122",
+      "caption": "A stop sign is partially obscured by a chain-link fence in an overgrown yard with palm trees and a building in the",
+      "target_offset": 1,
+      "target_token": "stop",
+      "target_pos": 290,
+      "prompt_len": 289,
+      "grid": [
+        16,
+        16
+      ],
+      "vision_span": [
+        15,
+        271
+      ],
+      "layer": 7,
+      "hot": [
+        0,
+        7,
+        0,
+        4
+      ],
+      "cold": [
+        6,
+        15,
+        9,
+        12
+      ],
+      "hot_share": 0.3406,
+      "cold_share": 0.0688,
+      "hot_px": [
+        0.0,
+        0.0,
+        224.0,
+        140.0
+      ],
+      "cold_px": [
+        168.0,
+        252.0,
+        448.0,
+        364.0
+      ],
+      "degenerate": {
+        "degenerate": false,
+        "reasons": [],
+        "n_words": 23
+      },
+      "elapsed_s": 1.0,
+      "rendered": [
+        "coco_000000011122__hot__A1.png",
+        "coco_000000011122__hot__A2.png",
+        "coco_000000011122__hot__A3.png",
+        "coco_000000011122__hot__A4.png",
+        "coco_000000011122__hot__A5.png",
+        "coco_000000011122__hot__A6.png",
+        "coco_000000011122__cold__A1.png",
+        "coco_000000011122__cold__A2.png",
+        "coco_000000011122__cold__A3.png",
+        "coco_000000011122__cold__A4.png",
+        "coco_000000011122__cold__A5.png",
+        "coco_000000011122__cold__A6.png"
+      ]
+    },
+    {
+      "stem": "coco_000000011615",
+      "caption": "Directional road signs in German point to Severinsbrücke, Koelnmesse, and Im Sionst",
+      "target_offset": 0,
+      "target_token": "Direction",
+      "target_pos": 289,
+      "prompt_len": 289,
+      "grid": [
+        16,
+        16
+      ],
+      "vision_span": [
+        15,
+        271
+      ],
+      "layer": 7,
+      "hot": [
+        0,
+        7,
+        0,
+        4
+      ],
+      "cold": [
+        8,
+        15,
+        10,
+        14
+      ],
+      "hot_share": 0.5507,
+      "cold_share": 0.0237,
+      "hot_px": [
+        0.0,
+        0.0,
+        224.0,
+        140.0
+      ],
+      "cold_px": [
+        224.0,
+        280.0,
+        448.0,
+        420.0
+      ],
+      "degenerate": {
+        "degenerate": false,
+        "reasons": [],
+        "n_words": 13
+      },
+      "elapsed_s": 1.3,
+      "rendered": [
+        "coco_000000011615__hot__A1.png",
+        "coco_000000011615__hot__A2.png",
+        "coco_000000011615__hot__A3.png",
+        "coco_000000011615__hot__A4.png",
+        "coco_000000011615__hot__A5.png",
+        "coco_000000011615__hot__A6.png",
+        "coco_000000011615__cold__A1.png",
+        "coco_000000011615__cold__A2.png",
+        "coco_000000011615__cold__A3.png",
+        "coco_000000011615__cold__A4.png",
+        "coco_000000011615__cold__A5.png",
+        "coco_000000011615__cold__A6.png"
+      ]
+    },
+    {
+      "stem": "coco_000000011699",
+      "caption": "A woman and girl pose on a train platform, the girl making a peace sign while holding a colorful bag, with a",
+      "target_offset": 1,
+      "target_token": "woman",
+      "target_pos": 290,
+      "prompt_len": 289,
+      "grid": [
+        16,
+        16
+      ],
+      "vision_span": [
+        15,
+        271
+      ],
+      "layer": 7,
+      "hot": [
+        0,
+        9,
+        0,
+        3
+      ],
+      "cold": [
+        8,
+        15,
+        9,
+        13
+      ],
+      "hot_share": 0.382,
+      "cold_share": 0.0586,
+      "hot_px": [
+        0.0,
+        0.0,
+        280.0,
+        112.0
+      ],
+      "cold_px": [
+        224.0,
+        252.0,
+        448.0,
+        392.0
+      ],
+      "degenerate": {
+        "degenerate": false,
+        "reasons": [],
+        "n_words": 22
+      },
+      "elapsed_s": 1.0,
+      "rendered": [
+        "coco_000000011699__hot__A1.png",
+        "coco_000000011699__hot__A2.png",
+        "coco_000000011699__hot__A3.png",
+        "coco_000000011699__hot__A4.png",
+        "coco_000000011699__hot__A5.png",
+        "coco_000000011699__hot__A6.png",
+        "coco_000000011699__cold__A1.png",
+        "coco_000000011699__cold__A2.png",
+        "coco_000000011699__cold__A3.png",
+        "coco_000000011699__cold__A4.png",
+        "coco_000000011699__cold__A5.png",
+        "coco_000000011699__cold__A6.png"
+      ]
+    },
+    {
+      "stem": "coco_000000012280",
+      "caption": "A person in formal attire walks through an empty airport terminal, pulling a suitcase, with signs and escalators visible in the",
+      "target_offset": 1,
+      "target_token": "person",
+      "target_pos": 290,
+      "prompt_len": 289,
+      "grid": [
+        16,
+        16
+      ],
+      "vision_span": [
+        15,
+        271
+      ],
+      "layer": 7,
+      "hot": [
+        0,
+        7,
+        6,
+        10
+      ],
+      "cold": [
+        7,
+        14,
+        11,
+        15
+      ],
+      "hot_share": 0.2451,
+      "cold_share": 0.0839,
+      "hot_px": [
+        0.0,
+        168.0,
+        224.0,
+        308.0
+      ],
+      "cold_px": [
+        196.0,
+        308.0,
+        420.0,
+        448.0
+      ],
+      "degenerate": {
+        "degenerate": false,
+        "reasons": [],
+        "n_words": 21
+      },
+      "elapsed_s": 1.0,
+      "rendered": [
+        "coco_000000012280__hot__A1.png",
+        "coco_000000012280__hot__A2.png",
+        "coco_000000012280__hot__A3.png",
+        "coco_000000012280__hot__A4.png",
+        "coco_000000012280__hot__A5.png",
+        "coco_000000012280__hot__A6.png",
+        "coco_000000012280__cold__A1.png",
+        "coco_000000012280__cold__A2.png",
+        "coco_000000012280__cold__A3.png",
+        "coco_000000012280__cold__A4.png",
+        "coco_000000012280__cold__A5.png",
+        "coco_000000012280__cold__A6.png"
+      ]
+    },
+    {
+      "stem": "coco_000000012576",
+      "caption": "Three pizzas in open boxes on a table with glasses of water and utensils, suggesting to be a casual meal setting",
+      "target_offset": 0,
+      "target_token": "Three",
+      "target_pos": 289,
+      "prompt_len": 289,
+      "grid": [
+        16,
+        16
+      ],
+      "vision_span": [
+        15,
+        271
+      ],
+      "layer": 7,
+      "hot": [
+        0,
+        7,
+        0,
+        4
+      ],
+      "cold": [
+        5,
+        12,
+        11,
+        15
+      ],
+      "hot_share": 0.606,
+      "cold_share": 0.0126,
+      "hot_px": [
+        0.0,
+        0.0,
+        224.0,
+        140.0
+      ],
+      "cold_px": [
+        140.0,
+        308.0,
+        364.0,
+        448.0
+      ],
+      "degenerate": {
+        "degenerate": false,
+        "reasons": [],
+        "n_words": 21
+      },
+      "elapsed_s": 1.0,
+      "rendered": [
+        "coco_000000012576__hot__A1.png",
+        "coco_000000012576__hot__A2.png",
+        "coco_000000012576__hot__A3.png",
+        "coco_000000012576__hot__A4.png",
+        "coco_000000012576__hot__A5.png",
+        "coco_000000012576__hot__A6.png",
+        "coco_000000012576__cold__A1.png",
+        "coco_000000012576__cold__A2.png",
+        "coco_000000012576__cold__A3.png",
+        "coco_000000012576__cold__A4.png",
+        "coco_000000012576__cold__A5.png",
+        "coco_000000012576__cold__A6.png"
+      ]
+    },
+    {
+      "stem": "coco_000000013659",
+      "caption": "A group of people working in a cluttered office space, with one person using a laptop and others engaged in various tasks",
+      "target_offset": 1,
+      "target_token": "group",
+      "target_pos": 290,
+      "prompt_len": 289,
+      "grid": [
+        16,
+        16
+      ],
+      "vision_span": [
+        15,
+        271
+      ],
+      "layer": 7,
+      "hot": [
+        0,
+        9,
+        0,
+        3
+      ],
+      "cold": [
+        5,
+        14,
+        12,
+        15
+      ],
+      "hot_share": 0.288,
+      "cold_share": 0.0759,
+      "hot_px": [
+        0.0,
+        0.0,
+        280.0,
+        112.0
+      ],
+      "cold_px": [
+        140.0,
+        336.0,
+        420.0,
+        448.0
+      ],
+      "degenerate": {
+        "degenerate": false,
+        "reasons": [],
+        "n_words": 22
+      },
+      "elapsed_s": 1.0,
+      "rendered": [
+        "coco_000000013659__hot__A1.png",
+        "coco_000000013659__hot__A2.png",
+        "coco_000000013659__hot__A3.png",
+        "coco_000000013659__hot__A4.png",
+        "coco_000000013659__hot__A5.png",
+        "coco_000000013659__hot__A6.png",
+        "coco_000000013659__cold__A1.png",
+        "coco_000000013659__cold__A2.png",
+        "coco_000000013659__cold__A3.png",
+        "coco_000000013659__cold__A4.png",
+        "coco_000000013659__cold__A5.png",
+        "coco_000000013659__cold__A6.png"
+      ]
+    },
+    {
+      "stem": "coco_000000013729",
+      "caption": "Four people playing Wii in a living room with a blue couch and bottles on the table.",
+      "target_offset": 0,
+      "target_token": "Four",
+      "target_pos": 289,
+      "prompt_len": 289,
+      "grid": [
+        16,
+        16
+      ],
+      "vision_span": [
+        15,
+        271
+      ],
+      "layer": 7,
+      "hot": [
+        0,
+        7,
+        0,
+        4
+      ],
+      "cold": [
+        7,
+        14,
+        11,
+        15
+      ],
+      "hot_share": 0.6186,
+      "cold_share": 0.0215,
+      "hot_px": [
+        0.0,
+        0.0,
+        224.0,
+        140.0
+      ],
+      "cold_px": [
+        196.0,
+        308.0,
+        420.0,
+        448.0
+      ],
+      "degenerate": {
+        "degenerate": false,
+        "reasons": [],
+        "n_words": 17
+      },
+      "elapsed_s": 0.8,
+      "rendered": [
+        "coco_000000013729__hot__A1.png",
+        "coco_000000013729__hot__A2.png",
+        "coco_000000013729__hot__A3.png",
+        "coco_000000013729__hot__A4.png",
+        "coco_000000013729__hot__A5.png",
+        "coco_000000013729__hot__A6.png",
+        "coco_000000013729__cold__A1.png",
+        "coco_000000013729__cold__A2.png",
+        "coco_000000013729__cold__A3.png",
+        "coco_000000013729__cold__A4.png",
+        "coco_000000013729__cold__A5.png",
+        "coco_000000013729__cold__A6.png"
+      ]
+    },
+    {
+      "stem": "coco_000000013774",
+      "caption": "A lone figure stands on icy ground at sunset, with the sun low-shaped and a red ring above it, casting a",
+      "target_offset": 1,
+      "target_token": "lone",
+      "target_pos": 290,
+      "prompt_len": 289,
+      "grid": [
+        16,
+        16
+      ],
+      "vision_span": [
+        15,
+        271
+      ],
+      "layer": 7,
+      "hot": [
+        0,
+        7,
+        0,
+        4
+      ],
+      "cold": [
+        8,
+        15,
+        10,
+        14
+      ],
+      "hot_share": 0.3212,
+      "cold_share": 0.0596,
+      "hot_px": [
+        0.0,
+        0.0,
+        224.0,
+        140.0
+      ],
+      "cold_px": [
+        224.0,
+        280.0,
+        448.0,
+        420.0
+      ],
+      "degenerate": {
+        "degenerate": false,
+        "reasons": [],
+        "n_words": 22
+      },
+      "elapsed_s": 1.0,
+      "rendered": [
+        "coco_000000013774__hot__A1.png",
+        "coco_000000013774__hot__A2.png",
+        "coco_000000013774__hot__A3.png",
+        "coco_000000013774__hot__A4.png",
+        "coco_000000013774__hot__A5.png",
+        "coco_000000013774__hot__A6.png",
+        "coco_000000013774__cold__A1.png",
+        "coco_000000013774__cold__A2.png",
+        "coco_000000013774__cold__A3.png",
+        "coco_000000013774__cold__A4.png",
+        "coco_000000013774__cold__A5.png",
+        "coco_000000013774__cold__A6.png"
+      ]
+    },
+    {
+      "stem": "coco_000000014226",
+      "caption": "A man with red hair and headphones works on an Apple laptop while traveling by train, looking focused.",
+      "target_offset": 1,
+      "target_token": "man",
+      "target_pos": 290,
+      "prompt_len": 289,
+      "grid": [
+        16,
+        16
+      ],
+      "vision_span": [
+        15,
+        271
+      ],
+      "layer": 7,
+      "hot": [
+        0,
+        9,
+        0,
+        3
+      ],
+      "cold": [
+        4,
+        13,
+        12,
+        15
+      ],
+      "hot_share": 0.3637,
+      "cold_share": 0.0728,
+      "hot_px": [
+        0.0,
+        0.0,
+        280.0,
+        112.0
+      ],
+      "cold_px": [
+        112.0,
+        336.0,
+        392.0,
+        448.0
+      ],
+      "degenerate": {
+        "degenerate": false,
+        "reasons": [],
+        "n_words": 18
+      },
+      "elapsed_s": 0.9,
+      "rendered": [
+        "coco_000000014226__hot__A1.png",
+        "coco_000000014226__hot__A2.png",
+        "coco_000000014226__hot__A3.png",
+        "coco_000000014226__hot__A4.png",
+        "coco_000000014226__hot__A5.png",
+        "coco_000000014226__hot__A6.png",
+        "coco_000000014226__cold__A1.png",
+        "coco_000000014226__cold__A2.png",
+        "coco_000000014226__cold__A3.png",
+        "coco_000000014226__cold__A4.png",
+        "coco_000000014226__cold__A5.png",
+        "coco_000000014226__cold__A6.png"
+      ]
+    },
+    {
+      "stem": "coco_000000014831",
+      "caption": "Close-up of fluffy, light brown and white fur against a textured, beige knitted background.",
+      "target_offset": 0,
+      "target_token": "Close",
+      "target_pos": 289,
+      "prompt_len": 289,
+      "grid": [
+        16,
+        16
+      ],
+      "vision_span": [
+        15,
+        271
+      ],
+      "layer": 7,
+      "hot": [
+        0,
+        7,
+        0,
+        4
+      ],
+      "cold": [
+        1,
+        8,
+        9,
+        13
+      ],
+      "hot_share": 0.5094,
+      "cold_share": 0.0226,
+      "hot_px": [
+        0.0,
+        0.0,
+        224.0,
+        140.0
+      ],
+      "cold_px": [
+        28.0,
+        252.0,
+        252.0,
+        392.0
+      ],
+      "degenerate": {
+        "degenerate": false,
+        "reasons": [],
+        "n_words": 15
+      },
+      "elapsed_s": 0.9,
+      "rendered": [
+        "coco_000000014831__hot__A1.png",
+        "coco_000000014831__hot__A2.png",
+        "coco_000000014831__hot__A3.png",
+        "coco_000000014831__hot__A4.png",
+        "coco_000000014831__hot__A5.png",
+        "coco_000000014831__hot__A6.png",
+        "coco_000000014831__cold__A1.png",
+        "coco_000000014831__cold__A2.png",
+        "coco_000000014831__cold__A3.png",
+        "coco_000000014831__cold__A4.png",
+        "coco_000000014831__cold__A5.png",
+        "coco_000000014831__cold__A6.png"
+      ]
+    },
+    {
+      "stem": "coco_000000014888",
+      "caption": "A cow is being milked using a mechanical milking machine with three tubes connected to its.",
+      "target_offset": 1,
+      "target_token": "cow",
+      "target_pos": 290,
+      "prompt_len": 289,
+      "grid": [
+        16,
+        16
+      ],
+      "vision_span": [
+        15,
+        271
+      ],
+      "layer": 7,
+      "hot": [
+        0,
+        9,
+        0,
+        3
+      ],
+      "cold": [
+        1,
+        10,
+        12,
+        15
+      ],
+      "hot_share": 0.3554,
+      "cold_share": 0.0758,
+      "hot_px": [
+        0.0,
+        0.0,
+        280.0,
+        112.0
+      ],
+      "cold_px": [
+        28.0,
+        336.0,
+        308.0,
+        448.0
+      ],
+      "degenerate": {
+        "degenerate": false,
+        "reasons": [],
+        "n_words": 16
+      },
+      "elapsed_s": 1.4,
+      "rendered": [
+        "coco_000000014888__hot__A1.png",
+        "coco_000000014888__hot__A2.png",
+        "coco_000000014888__hot__A3.png",
+        "coco_000000014888__hot__A4.png",
+        "coco_000000014888__hot__A5.png",
+        "coco_000000014888__hot__A6.png",
+        "coco_000000014888__cold__A1.png",
+        "coco_000000014888__cold__A2.png",
+        "coco_000000014888__cold__A3.png",
+        "coco_000000014888__cold__A4.png",
+        "coco_000000014888__cold__A5.png",
+        "coco_000000014888__cold__A6.png"
+      ]
+    },
+    {
+      "stem": "coco_000000015517",
+      "caption": "A busy urban scene with buses parked on elevated platforms, surrounded by modern buildings under a partly cloudy sky.",
+      "target_offset": 1,
+      "target_token": "busy",
+      "target_pos": 290,
+      "prompt_len": 289,
+      "grid": [
+        16,
+        16
+      ],
+      "vision_span": [
+        15,
+        271
+      ],
+      "layer": 7,
+      "hot": [
+        0,
+        7,
+        0,
+        4
+      ],
+      "cold": [
+        8,
+        15,
+        3,
+        7
+      ],
+      "hot_share": 0.3421,
+      "cold_share": 0.0605,
+      "hot_px": [
+        0.0,
+        0.0,
+        224.0,
+        140.0
+      ],
+      "cold_px": [
+        224.0,
+        84.0,
+        448.0,
+        224.0
+      ],
+      "degenerate": {
+        "degenerate": false,
+        "reasons": [],
+        "n_words": 19
+      },
+      "elapsed_s": 0.9,
+      "rendered": [
+        "coco_000000015517__hot__A1.png",
+        "coco_000000015517__hot__A2.png",
+        "coco_000000015517__hot__A3.png",
+        "coco_000000015517__hot__A4.png",
+        "coco_000000015517__hot__A5.png",
+        "coco_000000015517__hot__A6.png",
+        "coco_000000015517__cold__A1.png",
+        "coco_000000015517__cold__A2.png",
+        "coco_000000015517__cold__A3.png",
+        "coco_000000015517__cold__A4.png",
+        "coco_000000015517__cold__A5.png",
+        "coco_000000015517__cold__A6.png"
+      ]
+    },
+    {
+      "stem": "coco_000000015956",
+      "caption": "A woman leads a horse in a barn, the horse is wearing a red saddle pad and the barn has wooden walls and",
+      "target_offset": 1,
+      "target_token": "woman",
+      "target_pos": 290,
+      "prompt_len": 289,
+      "grid": [
+        16,
+        16
+      ],
+      "vision_span": [
+        15,
+        271
+      ],
+      "layer": 7,
+      "hot": [
+        0,
+        7,
+        0,
+        4
+      ],
+      "cold": [
+        1,
+        10,
+        12,
+        15
+      ],
+      "hot_share": 0.3187,
+      "cold_share": 0.0547,
+      "hot_px": [
+        0.0,
+        0.0,
+        224.0,
+        140.0
+      ],
+      "cold_px": [
+        28.0,
+        336.0,
+        308.0,
+        448.0
+      ],
+      "degenerate": {
+        "degenerate": false,
+        "reasons": [],
+        "n_words": 23
+      },
+      "elapsed_s": 1.0,
+      "rendered": [
+        "coco_000000015956__hot__A1.png",
+        "coco_000000015956__hot__A2.png",
+        "coco_000000015956__hot__A3.png",
+        "coco_000000015956__hot__A4.png",
+        "coco_000000015956__hot__A5.png",
+        "coco_000000015956__hot__A6.png",
+        "coco_000000015956__cold__A1.png",
+        "coco_000000015956__cold__A2.png",
+        "coco_000000015956__cold__A3.png",
+        "coco_000000015956__cold__A4.png",
+        "coco_000000015956__cold__A5.png",
+        "coco_000000015956__cold__A6.png"
+      ]
+    },
+    {
+      "stem": "coco_000000016439",
+      "caption": "A desk setup with a laptop, lamp, glass of orange juice, and papers, illuminated by the lamp's warm glow",
+      "target_offset": 1,
+      "target_token": "desk",
+      "target_pos": 290,
+      "prompt_len": 289,
+      "grid": [
+        16,
+        16
+      ],
+      "vision_span": [
+        15,
+        271
+      ],
+      "layer": 7,
+      "hot": [
+        0,
+        7,
+        0,
+        4
+      ],
+      "cold": [
+        5,
+        14,
+        12,
+        15
+      ],
+      "hot_share": 0.3716,
+      "cold_share": 0.0622,
+      "hot_px": [
+        0.0,
+        0.0,
+        224.0,
+        140.0
+      ],
+      "cold_px": [
+        140.0,
+        336.0,
+        420.0,
+        448.0
+      ],
+      "degenerate": {
+        "degenerate": false,
+        "reasons": [],
+        "n_words": 19
+      },
+      "elapsed_s": 1.0,
+      "rendered": [
+        "coco_000000016439__hot__A1.png",
+        "coco_000000016439__hot__A2.png",
+        "coco_000000016439__hot__A3.png",
+        "coco_000000016439__hot__A4.png",
+        "coco_000000016439__hot__A5.png",
+        "coco_000000016439__hot__A6.png",
+        "coco_000000016439__cold__A1.png",
+        "coco_000000016439__cold__A2.png",
+        "coco_000000016439__cold__A3.png",
+        "coco_000000016439__cold__A4.png",
+        "coco_000000016439__cold__A5.png",
+        "coco_000000016439__cold__A6.png"
+      ]
+    },
+    {
+      "stem": "coco_000000016451",
+      "caption": "A beach scene with surfboards, a striped towel, a bag, and a chair under an umbrella near the ocean.",
+      "target_offset": 1,
+      "target_token": "beach",
+      "target_pos": 290,
+      "prompt_len": 289,
+      "grid": [
+        16,
+        16
+      ],
+      "vision_span": [
+        15,
+        271
+      ],
+      "layer": 7,
+      "hot": [
+        0,
+        9,
+        0,
+        3
+      ],
+      "cold": [
+        1,
+        10,
+        12,
+        15
+      ],
+      "hot_share": 0.3404,
+      "cold_share": 0.0675,
+      "hot_px": [
+        0.0,
+        0.0,
+        280.0,
+        112.0
+      ],
+      "cold_px": [
+        28.0,
+        336.0,
+        308.0,
+        448.0
+      ],
+      "degenerate": {
+        "degenerate": false,
+        "reasons": [],
+        "n_words": 19
+      },
+      "elapsed_s": 1.0,
+      "rendered": [
+        "coco_000000016451__hot__A1.png",
+        "coco_000000016451__hot__A2.png",
+        "coco_000000016451__hot__A3.png",
+        "coco_000000016451__hot__A4.png",
+        "coco_000000016451__hot__A5.png",
+        "coco_000000016451__hot__A6.png",
+        "coco_000000016451__cold__A1.png",
+        "coco_000000016451__cold__A2.png",
+        "coco_000000016451__cold__A3.png",
+        "coco_000000016451__cold__A4.png",
+        "coco_000000016451__cold__A5.png",
+        "coco_000000016451__cold__A6.png"
+      ]
+    },
+    {
+      "stem": "coco_000000017029",
+      "caption": "A black dog leaps mid-air to catch a red fris in a grassy yard with a car and tree in the",
+      "target_offset": 1,
+      "target_token": "black",
+      "target_pos": 290,
+      "prompt_len": 289,
+      "grid": [
+        16,
+        16
+      ],
+      "vision_span": [
+        15,
+        271
+      ],
+      "layer": 7,
+      "hot": [
+        0,
+        9,
+        0,
+        3
+      ],
+      "cold": [
+        7,
+        14,
+        11,
+        15
+      ],
+      "hot_share": 0.3167,
+      "cold_share": 0.072,
+      "hot_px": [
+        0.0,
+        0.0,
+        280.0,
+        112.0
+      ],
+      "cold_px": [
+        196.0,
+        308.0,
+        420.0,
+        448.0
+      ],
+      "degenerate": {
+        "degenerate": false,
+        "reasons": [],
+        "n_words": 22
+      },
+      "elapsed_s": 1.0,
+      "rendered": [
+        "coco_000000017029__hot__A1.png",
+        "coco_000000017029__hot__A2.png",
+        "coco_000000017029__hot__A3.png",
+        "coco_000000017029__hot__A4.png",
+        "coco_000000017029__hot__A5.png",
+        "coco_000000017029__hot__A6.png",
+        "coco_000000017029__cold__A1.png",
+        "coco_000000017029__cold__A2.png",
+        "coco_000000017029__cold__A3.png",
+        "coco_000000017029__cold__A4.png",
+        "coco_000000017029__cold__A5.png",
+        "coco_000000017029__cold__A6.png"
+      ]
+    },
+    {
+      "stem": "coco_000000017207",
+      "caption": "A bus with \"बदरपुर बार्डर' and '475'",
+      "target_offset": 1,
+      "target_token": "bus",
+      "target_pos": 290,
+      "prompt_len": 289,
+      "grid": [
+        16,
+        16
+      ],
+      "vision_span": [
+        15,
+        271
+      ],
+      "layer": 7,
+      "hot": [
+        0,
+        9,
+        0,
+        3
+      ],
+      "cold": [
+        4,
+        11,
+        11,
+        15
+      ],
+      "hot_share": 0.2384,
+      "cold_share": 0.0806,
+      "hot_px": [
+        0.0,
+        0.0,
+        280.0,
+        112.0
+      ],
+      "cold_px": [
+        112.0,
+        308.0,
+        336.0,
+        448.0
+      ],
+      "degenerate": {
+        "degenerate": false,
+        "reasons": [],
+        "n_words": 6
+      },
+      "elapsed_s": 1.0,
+      "rendered": [
+        "coco_000000017207__hot__A1.png",
+        "coco_000000017207__hot__A2.png",
+        "coco_000000017207__hot__A3.png",
+        "coco_000000017207__hot__A4.png",
+        "coco_000000017207__hot__A5.png",
+        "coco_000000017207__hot__A6.png",
+        "coco_000000017207__cold__A1.png",
+        "coco_000000017207__cold__A2.png",
+        "coco_000000017207__cold__A3.png",
+        "coco_000000017207__cold__A4.png",
+        "coco_000000017207__cold__A5.png",
+        "coco_000000017207__cold__A6.png"
+      ]
+    },
+    {
+      "stem": "coco_000000017436",
+      "caption": "A serene black-and white scene featuring a man sitting in a garden with a church and trees in the background under an over",
+      "target_offset": 1,
+      "target_token": "serene",
+      "target_pos": 290,
+      "prompt_len": 289,
+      "grid": [
+        16,
+        16
+      ],
+      "vision_span": [
+        15,
+        271
+      ],
+      "layer": 7,
+      "hot": [
+        0,
+        9,
+        0,
+        3
+      ],
+      "cold": [
+        7,
+        14,
+        5,
+        9
+      ],
+      "hot_share": 0.2877,
+      "cold_share": 0.0652,
+      "hot_px": [
+        0.0,
+        0.0,
+        280.0,
+        112.0
+      ],
+      "cold_px": [
+        196.0,
+        140.0,
+        420.0,
+        280.0
+      ],
+      "degenerate": {
+        "degenerate": false,
+        "reasons": [],
+        "n_words": 24
+      },
+      "elapsed_s": 1.0,
+      "rendered": [
+        "coco_000000017436__hot__A1.png",
+        "coco_000000017436__hot__A2.png",
+        "coco_000000017436__hot__A3.png",
+        "coco_000000017436__hot__A4.png",
+        "coco_000000017436__hot__A5.png",
+        "coco_000000017436__hot__A6.png",
+        "coco_000000017436__cold__A1.png",
+        "coco_000000017436__cold__A2.png",
+        "coco_000000017436__cold__A3.png",
+        "coco_000000017436__cold__A4.png",
+        "coco_000000017436__cold__A5.png",
+        "coco_000000017436__cold__A6.png"
+      ]
+    },
+    {
+      "stem": "coco_000000017627",
+      "caption": "A parking lot with several cars, a bus stop, and a stone building in the background under a clear blue sky.",
+      "target_offset": 1,
+      "target_token": "parking",
+      "target_pos": 290,
+      "prompt_len": 289,
+      "grid": [
+        16,
+        16
+      ],
+      "vision_span": [
+        15,
+        271
+      ],
+      "layer": 7,
+      "hot": [
+        0,
+        9,
+        0,
+        3
+      ],
+      "cold": [
+        5,
+        14,
+        12,
+        15
+      ],
+      "hot_share": 0.3232,
+      "cold_share": 0.0593,
+      "hot_px": [
+        0.0,
+        0.0,
+        280.0,
+        112.0
+      ],
+      "cold_px": [
+        140.0,
+        336.0,
+        420.0,
+        448.0
+      ],
+      "degenerate": {
+        "degenerate": false,
+        "reasons": [],
+        "n_words": 21
+      },
+      "elapsed_s": 1.0,
+      "rendered": [
+        "coco_000000017627__hot__A1.png",
+        "coco_000000017627__hot__A2.png",
+        "coco_000000017627__hot__A3.png",
+        "coco_000000017627__hot__A4.png",
+        "coco_000000017627__hot__A5.png",
+        "coco_000000017627__hot__A6.png",
+        "coco_000000017627__cold__A1.png",
+        "coco_000000017627__cold__A2.png",
+        "coco_000000017627__cold__A3.png",
+        "coco_000000017627__cold__A4.png",
+        "coco_000000017627__cold__A5.png",
+        "coco_000000017627__cold__A6.png"
+      ]
+    },
+    {
+      "stem": "coco_000000017714",
+      "caption": "A breakfast setup with an omelette topped with banana slices, a cup of tea, and a plate of sliced fruits",
+      "target_offset": 1,
+      "target_token": "breakfast",
+      "target_pos": 290,
+      "prompt_len": 289,
+      "grid": [
+        16,
+        16
+      ],
+      "vision_span": [
+        15,
+        271
+      ],
+      "layer": 7,
+      "hot": [
+        0,
+        7,
+        0,
+        4
+      ],
+      "cold": [
+        8,
+        15,
+        11,
+        15
+      ],
+      "hot_share": 0.3809,
+      "cold_share": 0.0837,
+      "hot_px": [
+        0.0,
+        0.0,
+        224.0,
+        140.0
+      ],
+      "cold_px": [
+        224.0,
+        308.0,
+        448.0,
+        448.0
+      ],
+      "degenerate": {
+        "degenerate": false,
+        "reasons": [],
+        "n_words": 20
+      },
+      "elapsed_s": 1.0,
+      "rendered": [
+        "coco_000000017714__hot__A1.png",
+        "coco_000000017714__hot__A2.png",
+        "coco_000000017714__hot__A3.png",
+        "coco_000000017714__hot__A4.png",
+        "coco_000000017714__hot__A5.png",
+        "coco_000000017714__hot__A6.png",
+        "coco_000000017714__cold__A1.png",
+        "coco_000000017714__cold__A2.png",
+        "coco_000000017714__cold__A3.png",
+        "coco_000000017714__cold__A4.png",
+        "coco_000000017714__cold__A5.png",
+        "coco_000000017714__cold__A6.png"
+      ]
+    },
+    {
+      "stem": "coco_000000017899",
+      "caption": "An elderly woman in an apron prepares cookies and bread on a table with various baked goods and glasses nearby.",
+      "target_offset": 1,
+      "target_token": "elderly",
+      "target_pos": 290,
+      "prompt_len": 289,
+      "grid": [
+        16,
+        16
+      ],
+      "vision_span": [
+        15,
+        271
+      ],
+      "layer": 7,
+      "hot": [
+        0,
+        9,
+        0,
+        3
+      ],
+      "cold": [
+        8,
+        15,
+        1,
+        5
+      ],
+      "hot_share": 0.3191,
+      "cold_share": 0.0557,
+      "hot_px": [
+        0.0,
+        0.0,
+        280.0,
+        112.0
+      ],
+      "cold_px": [
+        224.0,
+        28.0,
+        448.0,
+        168.0
+      ],
+      "degenerate": {
+        "degenerate": false,
+        "reasons": [],
+        "n_words": 20
+      },
+      "elapsed_s": 1.0,
+      "rendered": [
+        "coco_000000017899__hot__A1.png",
+        "coco_000000017899__hot__A2.png",
+        "coco_000000017899__hot__A3.png",
+        "coco_000000017899__hot__A4.png",
+        "coco_000000017899__hot__A5.png",
+        "coco_000000017899__hot__A6.png",
+        "coco_000000017899__cold__A1.png",
+        "coco_000000017899__cold__A2.png",
+        "coco_000000017899__cold__A3.png",
+        "coco_000000017899__cold__A4.png",
+        "coco_000000017899__cold__A5.png",
+        "coco_000000017899__cold__A6.png"
+      ]
+    },
+    {
+      "stem": "coco_000000017905",
+      "caption": "A man stands next to a traffic light sign in Australia, surrounded by lush greenery and flowers.",
+      "target_offset": 1,
+      "target_token": "man",
+      "target_pos": 290,
+      "prompt_len": 289,
+      "grid": [
+        16,
+        16
+      ],
+      "vision_span": [
+        15,
+        271
+      ],
+      "layer": 7,
+      "hot": [
+        0,
+        9,
+        0,
+        3
+      ],
+      "cold": [
+        8,
+        15,
+        10,
+        14
+      ],
+      "hot_share": 0.3112,
+      "cold_share": 0.0756,
+      "hot_px": [
+        0.0,
+        0.0,
+        280.0,
+        112.0
+      ],
+      "cold_px": [
+        224.0,
+        280.0,
+        448.0,
+        420.0
+      ],
+      "degenerate": {
+        "degenerate": false,
+        "reasons": [],
+        "n_words": 17
+      },
+      "elapsed_s": 0.9,
+      "rendered": [
+        "coco_000000017905__hot__A1.png",
+        "coco_000000017905__hot__A2.png",
+        "coco_000000017905__hot__A3.png",
+        "coco_000000017905__hot__A4.png",
+        "coco_000000017905__hot__A5.png",
+        "coco_000000017905__hot__A6.png",
+        "coco_000000017905__cold__A1.png",
+        "coco_000000017905__cold__A2.png",
+        "coco_000000017905__cold__A3.png",
+        "coco_000000017905__cold__A4.png",
+        "coco_000000017905__cold__A5.png",
+        "coco_000000017905__cold__A6.png"
+      ]
+    },
+    {
+      "stem": "coco_000000018193",
+      "caption": "A person sits outdoors at night, eating a sandwich and dipping chips into a sauce on a plate.",
+      "target_offset": 1,
+      "target_token": "person",
+      "target_pos": 290,
+      "prompt_len": 289,
+      "grid": [
+        16,
+        16
+      ],
+      "vision_span": [
+        15,
+        271
+      ],
+      "layer": 7,
+      "hot": [
+        0,
+        7,
+        0,
+        4
+      ],
+      "cold": [
+        0,
+        7,
+        8,
+        12
+      ],
+      "hot_share": 0.3872,
+      "cold_share": 0.0737,
+      "hot_px": [
+        0.0,
+        0.0,
+        224.0,
+        140.0
+      ],
+      "cold_px": [
+        0.0,
+        224.0,
+        224.0,
+        364.0
+      ],
+      "degenerate": {
+        "degenerate": false,
+        "reasons": [],
+        "n_words": 18
+      },
+      "elapsed_s": 0.9,
+      "rendered": [
+        "coco_000000018193__hot__A1.png",
+        "coco_000000018193__hot__A2.png",
+        "coco_000000018193__hot__A3.png",
+        "coco_000000018193__hot__A4.png",
+        "coco_000000018193__hot__A5.png",
+        "coco_000000018193__hot__A6.png",
+        "coco_000000018193__cold__A1.png",
+        "coco_000000018193__cold__A2.png",
+        "coco_000000018193__cold__A3.png",
+        "coco_000000018193__cold__A4.png",
+        "coco_000000018193__cold__A5.png",
+        "coco_000000018193__cold__A6.png"
+      ]
+    },
+    {
+      "stem": "coco_000000020571",
+      "caption": "A small fishing boat docked at a pier in a calm harbor with other mountains and houses in the background.",
+      "target_offset": 1,
+      "target_token": "small",
+      "target_pos": 290,
+      "prompt_len": 289,
+      "grid": [
+        16,
+        16
+      ],
+      "vision_span": [
+        15,
+        271
+      ],
+      "layer": 7,
+      "hot": [
+        0,
+        9,
+        0,
+        3
+      ],
+      "cold": [
+        7,
+        14,
+        10,
+        14
+      ],
+      "hot_share": 0.3262,
+      "cold_share": 0.0631,
+      "hot_px": [
+        0.0,
+        0.0,
+        280.0,
+        112.0
+      ],
+      "cold_px": [
+        196.0,
+        280.0,
+        420.0,
+        420.0
+      ],
+      "degenerate": {
+        "degenerate": false,
+        "reasons": [],
+        "n_words": 20
+      },
+      "elapsed_s": 1.2,
+      "rendered": [
+        "coco_000000020571__hot__A1.png",
+        "coco_000000020571__hot__A2.png",
+        "coco_000000020571__hot__A3.png",
+        "coco_000000020571__hot__A4.png",
+        "coco_000000020571__hot__A5.png",
+        "coco_000000020571__hot__A6.png",
+        "coco_000000020571__cold__A1.png",
+        "coco_000000020571__cold__A2.png",
+        "coco_000000020571__cold__A3.png",
+        "coco_000000020571__cold__A4.png",
+        "coco_000000020571__cold__A5.png",
+        "coco_000000020571__cold__A6.png"
+      ]
+    },
+    {
+      "stem": "coco_000000021503",
+      "caption": "A close-up of four slices of bread topped with melted cheese and possibly ham, on a plate.",
+      "target_offset": 1,
+      "target_token": "close",
+      "target_pos": 290,
+      "prompt_len": 289,
+      "grid": [
+        16,
+        16
+      ],
+      "vision_span": [
+        15,
+        271
+      ],
+      "layer": 7,
+      "hot": [
+        0,
+        9,
+        0,
+        3
+      ],
+      "cold": [
+        1,
+        10,
+        12,
+        15
+      ],
+      "hot_share": 0.4375,
+      "cold_share": 0.042,
+      "hot_px": [
+        0.0,
+        0.0,
+        280.0,
+        112.0
+      ],
+      "cold_px": [
+        28.0,
+        336.0,
+        308.0,
+        448.0
+      ],
+      "degenerate": {
+        "degenerate": false,
+        "reasons": [],
+        "n_words": 18
+      },
+      "elapsed_s": 1.0,
+      "rendered": [
+        "coco_000000021503__hot__A1.png",
+        "coco_000000021503__hot__A2.png",
+        "coco_000000021503__hot__A3.png",
+        "coco_000000021503__hot__A4.png",
+        "coco_000000021503__hot__A5.png",
+        "coco_000000021503__hot__A6.png",
+        "coco_000000021503__cold__A1.png",
+        "coco_000000021503__cold__A2.png",
+        "coco_000000021503__cold__A3.png",
+        "coco_000000021503__cold__A4.png",
+        "coco_000000021503__cold__A5.png",
+        "coco_000000021503__cold__A6.png"
+      ]
+    },
+    {
+      "stem": "coco_000000021903",
+      "caption": "A man feeds an elephant through a fence in a zoo-like setting with lush greenery in the background.",
+      "target_offset": 1,
+      "target_token": "man",
+      "target_pos": 290,
+      "prompt_len": 289,
+      "grid": [
+        16,
+        16
+      ],
+      "vision_span": [
+        15,
+        271
+      ],
+      "layer": 7,
+      "hot": [
+        0,
+        9,
+        0,
+        3
+      ],
+      "cold": [
+        0,
+        7,
+        10,
+        14
+      ],
+      "hot_share": 0.3148,
+      "cold_share": 0.0764,
+      "hot_px": [
+        0.0,
+        0.0,
+        280.0,
+        112.0
+      ],
+      "cold_px": [
+        0.0,
+        280.0,
+        224.0,
+        420.0
+      ],
+      "degenerate": {
+        "degenerate": false,
+        "reasons": [],
+        "n_words": 19
+      },
+      "elapsed_s": 0.9,
+      "rendered": [
+        "coco_000000021903__hot__A1.png",
+        "coco_000000021903__hot__A2.png",
+        "coco_000000021903__hot__A3.png",
+        "coco_000000021903__hot__A4.png",
+        "coco_000000021903__hot__A5.png",
+        "coco_000000021903__hot__A6.png",
+        "coco_000000021903__cold__A1.png",
+        "coco_000000021903__cold__A2.png",
+        "coco_000000021903__cold__A3.png",
+        "coco_000000021903__cold__A4.png",
+        "coco_000000021903__cold__A5.png",
+        "coco_000000021903__cold__A6.png"
+      ]
+    },
+    {
+      "stem": "coco_000000022396",
+      "caption": "A plane flies above a partially illuminated moon in a clear blue sky, creating a serene and dynamic scene.",
+      "target_offset": 1,
+      "target_token": "plane",
+      "target_pos": 290,
+      "prompt_len": 289,
+      "grid": [
+        16,
+        16
+      ],
+      "vision_span": [
+        15,
+        271
+      ],
+      "layer": 7,
+      "hot": [
+        0,
+        9,
+        0,
+        3
+      ],
+      "cold": [
+        5,
+        14,
+        10,
+        13
+      ],
+      "hot_share": 0.3536,
+      "cold_share": 0.0403,
+      "hot_px": [
+        0.0,
+        0.0,
+        280.0,
+        112.0
+      ],
+      "cold_px": [
+        140.0,
+        280.0,
+        420.0,
+        392.0
+      ],
+      "degenerate": {
+        "degenerate": false,
+        "reasons": [],
+        "n_words": 19
+      },
+      "elapsed_s": 1.0,
+      "rendered": [
+        "coco_000000022396__hot__A1.png",
+        "coco_000000022396__hot__A2.png",
+        "coco_000000022396__hot__A3.png",
+        "coco_000000022396__hot__A4.png",
+        "coco_000000022396__hot__A5.png",
+        "coco_000000022396__hot__A6.png",
+        "coco_000000022396__cold__A1.png",
+        "coco_000000022396__cold__A2.png",
+        "coco_000000022396__cold__A3.png",
+        "coco_000000022396__cold__A4.png",
+        "coco_000000022396__cold__A5.png",
+        "coco_000000022396__cold__A6.png"
+      ]
+    },
+    {
+      "stem": "coco_000000022479",
+      "caption": "A skateboarder in a tie-dye shirt and black pants performs a trick on a ramp at a skatepark with palm",
+      "target_offset": 1,
+      "target_token": "skateboard",
+      "target_pos": 290,
+      "prompt_len": 289,
+      "grid": [
+        16,
+        16
+      ],
+      "vision_span": [
+        15,
+        271
+      ],
+      "layer": 7,
+      "hot": [
+        0,
+        9,
+        0,
+        3
+      ],
+      "cold": [
+        8,
+        15,
+        1,
+        5
+      ],
+      "hot_share": 0.3735,
+      "cold_share": 0.0657,
+      "hot_px": [
+        0.0,
+        0.0,
+        280.0,
+        112.0
+      ],
+      "cold_px": [
+        224.0,
+        28.0,
+        448.0,
+        168.0
+      ],
+      "degenerate": {
+        "degenerate": false,
+        "reasons": [],
+        "n_words": 21
+      },
+      "elapsed_s": 1.0,
+      "rendered": [
+        "coco_000000022479__hot__A1.png",
+        "coco_000000022479__hot__A2.png",
+        "coco_000000022479__hot__A3.png",
+        "coco_000000022479__hot__A4.png",
+        "coco_000000022479__hot__A5.png",
+        "coco_000000022479__hot__A6.png",
+        "coco_000000022479__cold__A1.png",
+        "coco_000000022479__cold__A2.png",
+        "coco_000000022479__cold__A3.png",
+        "coco_000000022479__cold__A4.png",
+        "coco_000000022479__cold__A5.png",
+        "coco_000000022479__cold__A6.png"
+      ]
+    },
+    {
+      "stem": "coco_000000022589",
+      "caption": "A sheep with thick wool stands behind a wire fence in a grassy area surrounded by trees.",
+      "target_offset": 1,
+      "target_token": "sheep",
+      "target_pos": 290,
+      "prompt_len": 289,
+      "grid": [
+        16,
+        16
+      ],
+      "vision_span": [
+        15,
+        271
+      ],
+      "layer": 7,
+      "hot": [
+        0,
+        9,
+        0,
+        3
+      ],
+      "cold": [
+        7,
+        14,
+        4,
+        8
+      ],
+      "hot_share": 0.3113,
+      "cold_share": 0.0714,
+      "hot_px": [
+        0.0,
+        0.0,
+        280.0,
+        112.0
+      ],
+      "cold_px": [
+        196.0,
+        112.0,
+        420.0,
+        252.0
+      ],
+      "degenerate": {
+        "degenerate": false,
+        "reasons": [],
+        "n_words": 17
+      },
+      "elapsed_s": 0.8,
+      "rendered": [
+        "coco_000000022589__hot__A1.png",
+        "coco_000000022589__hot__A2.png",
+        "coco_000000022589__hot__A3.png",
+        "coco_000000022589__hot__A4.png",
+        "coco_000000022589__hot__A5.png",
+        "coco_000000022589__hot__A6.png",
+        "coco_000000022589__cold__A1.png",
+        "coco_000000022589__cold__A2.png",
+        "coco_000000022589__cold__A3.png",
+        "coco_000000022589__cold__A4.png",
+        "coco_000000022589__cold__A5.png",
+        "coco_000000022589__cold__A6.png"
+      ]
+    },
+    {
+      "stem": "coco_000000022705",
+      "caption": "A woman in a black dress stands next to a stainless steel refrigerator, holding a glass of wine, smiling.",
+      "target_offset": 1,
+      "target_token": "woman",
+      "target_pos": 290,
+      "prompt_len": 289,
+      "grid": [
+        16,
+        16
+      ],
+      "vision_span": [
+        15,
+        271
+      ],
+      "layer": 7,
+      "hot": [
+        0,
+        7,
+        0,
+        4
+      ],
+      "cold": [
+        8,
+        15,
+        10,
+        14
+      ],
+      "hot_share": 0.3835,
+      "cold_share": 0.0537,
+      "hot_px": [
+        0.0,
+        0.0,
+        224.0,
+        140.0
+      ],
+      "cold_px": [
+        224.0,
+        280.0,
+        448.0,
+        420.0
+      ],
+      "degenerate": {
+        "degenerate": false,
+        "reasons": [],
+        "n_words": 19
+      },
+      "elapsed_s": 1.0,
+      "rendered": [
+        "coco_000000022705__hot__A1.png",
+        "coco_000000022705__hot__A2.png",
+        "coco_000000022705__hot__A3.png",
+        "coco_000000022705__hot__A4.png",
+        "coco_000000022705__hot__A5.png",
+        "coco_000000022705__hot__A6.png",
+        "coco_000000022705__cold__A1.png",
+        "coco_000000022705__cold__A2.png",
+        "coco_000000022705__cold__A3.png",
+        "coco_000000022705__cold__A4.png",
+        "coco_000000022705__cold__A5.png",
+        "coco_000000022705__cold__A6.png"
+      ]
+    },
+    {
+      "stem": "coco_000000023230",
+      "caption": "Three geese swim in a calm pond surrounded by greenery and tall grasses under soft sunlight.",
+      "target_offset": 0,
+      "target_token": "Three",
+      "target_pos": 289,
+      "prompt_len": 289,
+      "grid": [
+        16,
+        16
+      ],
+      "vision_span": [
+        15,
+        271
+      ],
+      "layer": 7,
+      "hot": [
+        0,
+        7,
+        0,
+        4
+      ],
+      "cold": [
+        5,
+        14,
+        12,
+        15
+      ],
+      "hot_share": 0.4992,
+      "cold_share": 0.0111,
+      "hot_px": [
+        0.0,
+        0.0,
+        224.0,
+        140.0
+      ],
+      "cold_px": [
+        140.0,
+        336.0,
+        420.0,
+        448.0
+      ],
+      "degenerate": {
+        "degenerate": false,
+        "reasons": [],
+        "n_words": 16
+      },
+      "elapsed_s": 0.9,
+      "rendered": [
+        "coco_000000023230__hot__A1.png",
+        "coco_000000023230__hot__A2.png",
+        "coco_000000023230__hot__A3.png",
+        "coco_000000023230__hot__A4.png",
+        "coco_000000023230__hot__A5.png",
+        "coco_000000023230__hot__A6.png",
+        "coco_000000023230__cold__A1.png",
+        "coco_000000023230__cold__A2.png",
+        "coco_000000023230__cold__A3.png",
+        "coco_000000023230__cold__A4.png",
+        "coco_000000023230__cold__A5.png",
+        "coco_000000023230__cold__A6.png"
+      ]
+    },
+    {
+      "stem": "coco_000000023666",
+      "caption": "A rustic bathroom with a wooden toilet, white bathtub, exposed pipes, and a rag hanging on the wall.",
+      "target_offset": 1,
+      "target_token": "rustic",
+      "target_pos": 290,
+      "prompt_len": 289,
+      "grid": [
+        16,
+        16
+      ],
+      "vision_span": [
+        15,
+        271
+      ],
+      "layer": 7,
+      "hot": [
+        0,
+        9,
+        0,
+        3
+      ],
+      "cold": [
+        7,
+        14,
+        5,
+        9
+      ],
+      "hot_share": 0.3399,
+      "cold_share": 0.0648,
+      "hot_px": [
+        0.0,
+        0.0,
+        280.0,
+        112.0
+      ],
+      "cold_px": [
+        196.0,
+        140.0,
+        420.0,
+        280.0
+      ],
+      "degenerate": {
+        "degenerate": false,
+        "reasons": [],
+        "n_words": 18
+      },
+      "elapsed_s": 1.0,
+      "rendered": [
+        "coco_000000023666__hot__A1.png",
+        "coco_000000023666__hot__A2.png",
+        "coco_000000023666__hot__A3.png",
+        "coco_000000023666__hot__A4.png",
+        "coco_000000023666__hot__A5.png",
+        "coco_000000023666__hot__A6.png",
+        "coco_000000023666__cold__A1.png",
+        "coco_000000023666__cold__A2.png",
+        "coco_000000023666__cold__A3.png",
+        "coco_000000023666__cold__A4.png",
+        "coco_000000023666__cold__A5.png",
+        "coco_000000023666__cold__A6.png"
+      ]
+    },
+    {
+      "stem": "coco_000000024610",
+      "caption": "A cozy room with a bookshelf filled with books, a desk with a chair, and a hanging star decoration on the",
+      "target_offset": 1,
+      "target_token": "cozy",
+      "target_pos": 290,
+      "prompt_len": 289,
+      "grid": [
+        16,
+        16
+      ],
+      "vision_span": [
+        15,
+        271
+      ],
+      "layer": 7,
+      "hot": [
+        0,
+        7,
+        0,
+        4
+      ],
+      "cold": [
+        6,
+        13,
+        3,
+        7
+      ],
+      "hot_share": 0.3671,
+      "cold_share": 0.062,
+      "hot_px": [
+        0.0,
+        0.0,
+        224.0,
+        140.0
+      ],
+      "cold_px": [
+        168.0,
+        84.0,
+        392.0,
+        224.0
+      ],
+      "degenerate": {
+        "degenerate": false,
+        "reasons": [],
+        "n_words": 21
+      },
+      "elapsed_s": 1.0,
+      "rendered": [
+        "coco_000000024610__hot__A1.png",
+        "coco_000000024610__hot__A2.png",
+        "coco_000000024610__hot__A3.png",
+        "coco_000000024610__hot__A4.png",
+        "coco_000000024610__hot__A5.png",
+        "coco_000000024610__hot__A6.png",
+        "coco_000000024610__cold__A1.png",
+        "coco_000000024610__cold__A2.png",
+        "coco_000000024610__cold__A3.png",
+        "coco_000000024610__cold__A4.png",
+        "coco_000000024610__cold__A5.png",
+        "coco_000000024610__cold__A6.png"
+      ]
+    },
+    {
+      "stem": "coco_000000025986",
+      "caption": "A meal setup with plates of food (vegetables, rice, stew), a glass of water, and a foil-w",
+      "target_offset": 1,
+      "target_token": "meal",
+      "target_pos": 290,
+      "prompt_len": 289,
+      "grid": [
+        16,
+        16
+      ],
+      "vision_span": [
+        15,
+        271
+      ],
+      "layer": 7,
+      "hot": [
+        0,
+        7,
+        0,
+        4
+      ],
+      "cold": [
+        3,
+        10,
+        11,
+        15
+      ],
+      "hot_share": 0.3022,
+      "cold_share": 0.086,
+      "hot_px": [
+        0.0,
+        0.0,
+        224.0,
+        140.0
+      ],
+      "cold_px": [
+        84.0,
+        308.0,
+        308.0,
+        448.0
+      ],
+      "degenerate": {
+        "degenerate": false,
+        "reasons": [],
+        "n_words": 18
+      },
+      "elapsed_s": 1.0,
+      "rendered": [
+        "coco_000000025986__hot__A1.png",
+        "coco_000000025986__hot__A2.png",
+        "coco_000000025986__hot__A3.png",
+        "coco_000000025986__hot__A4.png",
+        "coco_000000025986__hot__A5.png",
+        "coco_000000025986__hot__A6.png",
+        "coco_000000025986__cold__A1.png",
+        "coco_000000025986__cold__A2.png",
+        "coco_000000025986__cold__A3.png",
+        "coco_000000025986__cold__A4.png",
+        "coco_000000025986__cold__A5.png",
+        "coco_000000025986__cold__A6.png"
+      ]
+    },
+    {
+      "stem": "coco_000000028993",
+      "caption": "Rusty fire hydrants in a city square with tall buildings and trees in the background.",
+      "target_offset": 0,
+      "target_token": "R",
+      "target_pos": 289,
+      "prompt_len": 289,
+      "grid": [
+        16,
+        16
+      ],
+      "vision_span": [
+        15,
+        271
+      ],
+      "layer": 7,
+      "hot": [
+        0,
+        7,
+        0,
+        4
+      ],
+      "cold": [
+        3,
+        10,
+        8,
+        12
+      ],
+      "hot_share": 0.446,
+      "cold_share": 0.0286,
+      "hot_px": [
+        0.0,
+        0.0,
+        224.0,
+        140.0
+      ],
+      "cold_px": [
+        84.0,
+        224.0,
+        308.0,
+        364.0
+      ],
+      "degenerate": {
+        "degenerate": false,
+        "reasons": [],
+        "n_words": 15
+      },
+      "elapsed_s": 0.8,
+      "rendered": [
+        "coco_000000028993__hot__A1.png",
+        "coco_000000028993__hot__A2.png",
+        "coco_000000028993__hot__A3.png",
+        "coco_000000028993__hot__A4.png",
+        "coco_000000028993__hot__A5.png",
+        "coco_000000028993__hot__A6.png",
+        "coco_000000028993__cold__A1.png",
+        "coco_000000028993__cold__A2.png",
+        "coco_000000028993__cold__A3.png",
+        "coco_000000028993__cold__A4.png",
+        "coco_000000028993__cold__A5.png",
+        "coco_000000028993__cold__A6.png"
+      ]
+    },
+    {
+      "stem": "coco_000000029984",
+      "caption": "A beach scene with two people in the water and three others swimming, under a green umbrella on the sand near two colorful",
+      "target_offset": 1,
+      "target_token": "beach",
+      "target_pos": 290,
+      "prompt_len": 289,
+      "grid": [
+        16,
+        16
+      ],
+      "vision_span": [
+        15,
+        271
+      ],
+      "layer": 7,
+      "hot": [
+        0,
+        7,
+        0,
+        4
+      ],
+      "cold": [
+        5,
+        14,
+        3,
+        6
+      ],
+      "hot_share": 0.3904,
+      "cold_share": 0.0761,
+      "hot_px": [
+        0.0,
+        0.0,
+        224.0,
+        140.0
+      ],
+      "cold_px": [
+        140.0,
+        84.0,
+        420.0,
+        196.0
+      ],
+      "degenerate": {
+        "degenerate": false,
+        "reasons": [],
+        "n_words": 23
+      },
+      "elapsed_s": 1.0,
+      "rendered": [
+        "coco_000000029984__hot__A1.png",
+        "coco_000000029984__hot__A2.png",
+        "coco_000000029984__hot__A3.png",
+        "coco_000000029984__hot__A4.png",
+        "coco_000000029984__hot__A5.png",
+        "coco_000000029984__hot__A6.png",
+        "coco_000000029984__cold__A1.png",
+        "coco_000000029984__cold__A2.png",
+        "coco_000000029984__cold__A3.png",
+        "coco_000000029984__cold__A4.png",
+        "coco_000000029984__cold__A5.png",
+        "coco_000000029984__cold__A6.png"
+      ]
+    },
+    {
+      "stem": "coco_000000030504",
+      "caption": "A person wearing a white hat and backpack is skiing uphill in deep snow, using a snowy trail with ski tracks visible.",
+      "target_offset": 1,
+      "target_token": "person",
+      "target_pos": 290,
+      "prompt_len": 289,
+      "grid": [
+        16,
+        16
+      ],
+      "vision_span": [
+        15,
+        271
+      ],
+      "layer": 7,
+      "hot": [
+        0,
+        7,
+        0,
+        4
+      ],
+      "cold": [
+        8,
+        15,
+        9,
+        13
+      ],
+      "hot_share": 0.3243,
+      "cold_share": 0.0615,
+      "hot_px": [
+        0.0,
+        0.0,
+        224.0,
+        140.0
+      ],
+      "cold_px": [
+        224.0,
+        252.0,
+        448.0,
+        392.0
+      ],
+      "degenerate": {
+        "degenerate": false,
+        "reasons": [],
+        "n_words": 22
+      },
+      "elapsed_s": 1.0,
+      "rendered": [
+        "coco_000000030504__hot__A1.png",
+        "coco_000000030504__hot__A2.png",
+        "coco_000000030504__hot__A3.png",
+        "coco_000000030504__hot__A4.png",
+        "coco_000000030504__hot__A5.png",
+        "coco_000000030504__hot__A6.png",
+        "coco_000000030504__cold__A1.png",
+        "coco_000000030504__cold__A2.png",
+        "coco_000000030504__cold__A3.png",
+        "coco_000000030504__cold__A4.png",
+        "coco_000000030504__cold__A5.png",
+        "coco_000000030504__cold__A6.png"
+      ]
+    },
+    {
+      "stem": "coco_000000031269",
+      "caption": "Two zebras graze in a grassy field with sparse trees and a clear sky in the background.",
+      "target_offset": 0,
+      "target_token": "Two",
+      "target_pos": 289,
+      "prompt_len": 289,
+      "grid": [
+        16,
+        16
+      ],
+      "vision_span": [
+        15,
+        271
+      ],
+      "layer": 7,
+      "hot": [
+        0,
+        9,
+        0,
+        3
+      ],
+      "cold": [
+        5,
+        14,
+        12,
+        15
+      ],
+      "hot_share": 0.6643,
+      "cold_share": 0.016,
+      "hot_px": [
+        0.0,
+        0.0,
+        280.0,
+        112.0
+      ],
+      "cold_px": [
+        140.0,
+        336.0,
+        420.0,
+        448.0
+      ],
+      "degenerate": {
+        "degenerate": false,
+        "reasons": [],
+        "n_words": 17
+      },
+      "elapsed_s": 0.9,
+      "rendered": [
+        "coco_000000031269__hot__A1.png",
+        "coco_000000031269__hot__A2.png",
+        "coco_000000031269__hot__A3.png",
+        "coco_000000031269__hot__A4.png",
+        "coco_000000031269__hot__A5.png",
+        "coco_000000031269__hot__A6.png",
+        "coco_000000031269__cold__A1.png",
+        "coco_000000031269__cold__A2.png",
+        "coco_000000031269__cold__A3.png",
+        "coco_000000031269__cold__A4.png",
+        "coco_000000031269__cold__A5.png",
+        "coco_000000031269__cold__A6.png"
+      ]
+    },
+    {
+      "stem": "coco_000000031620",
+      "caption": "A bride and groom cut their wedding cake at a tented reception with music equipment in the background.",
+      "target_offset": 1,
+      "target_token": "bride",
+      "target_pos": 290,
+      "prompt_len": 289,
+      "grid": [
+        16,
+        16
+      ],
+      "vision_span": [
+        15,
+        271
+      ],
+      "layer": 7,
+      "hot": [
+        0,
+        7,
+        0,
+        4
+      ],
+      "cold": [
+        1,
+        10,
+        12,
+        15
+      ],
+      "hot_share": 0.3238,
+      "cold_share": 0.0701,
+      "hot_px": [
+        0.0,
+        0.0,
+        224.0,
+        140.0
+      ],
+      "cold_px": [
+        28.0,
+        336.0,
+        308.0,
+        448.0
+      ],
+      "degenerate": {
+        "degenerate": false,
+        "reasons": [],
+        "n_words": 18
+      },
+      "elapsed_s": 0.9,
+      "rendered": [
+        "coco_000000031620__hot__A1.png",
+        "coco_000000031620__hot__A2.png",
+        "coco_000000031620__hot__A3.png",
+        "coco_000000031620__hot__A4.png",
+        "coco_000000031620__hot__A5.png",
+        "coco_000000031620__hot__A6.png",
+        "coco_000000031620__cold__A1.png",
+        "coco_000000031620__cold__A2.png",
+        "coco_000000031620__cold__A3.png",
+        "coco_000000031620__cold__A4.png",
+        "coco_000000031620__cold__A5.png",
+        "coco_000000031620__cold__A6.png"
+      ]
+    },
+    {
+      "stem": "coco_000000033114",
+      "caption": "A plane taxis on a runway with mountains in the background, surrounded by airport lighting equipment.",
+      "target_offset": 1,
+      "target_token": "plane",
+      "target_pos": 290,
+      "prompt_len": 289,
+      "grid": [
+        16,
+        16
+      ],
+      "vision_span": [
+        15,
+        271
+      ],
+      "layer": 7,
+      "hot": [
+        0,
+        7,
+        0,
+        4
+      ],
+      "cold": [
+        7,
+        14,
+        11,
+        15
+      ],
+      "hot_share": 0.4013,
+      "cold_share": 0.0695,
+      "hot_px": [
+        0.0,
+        0.0,
+        224.0,
+        140.0
+      ],
+      "cold_px": [
+        196.0,
+        308.0,
+        420.0,
+        448.0
+      ],
+      "degenerate": {
+        "degenerate": false,
+        "reasons": [],
+        "n_words": 16
+      },
+      "elapsed_s": 0.8,
+      "rendered": [
+        "coco_000000033114__hot__A1.png",
+        "coco_000000033114__hot__A2.png",
+        "coco_000000033114__hot__A3.png",
+        "coco_000000033114__hot__A4.png",
+        "coco_000000033114__hot__A5.png",
+        "coco_000000033114__hot__A6.png",
+        "coco_000000033114__cold__A1.png",
+        "coco_000000033114__cold__A2.png",
+        "coco_000000033114__cold__A3.png",
+        "coco_000000033114__cold__A4.png",
+        "coco_000000033114__cold__A5.png",
+        "coco_000000033114__cold__A6.png"
+      ]
+    },
+    {
+      "stem": "coco_000000033707",
+      "caption": "Two giraffss",
+      "target_offset": 0,
+      "target_token": "Two",
+      "target_pos": 289,
+      "prompt_len": 289,
+      "grid": [
+        16,
+        16
+      ],
+      "vision_span": [
+        15,
+        271
+      ],
+      "layer": 7,
+      "hot": [
+        0,
+        7,
+        0,
+        4
+      ],
+      "cold": [
+        7,
+        14,
+        8,
+        12
+      ],
+      "hot_share": 0.5123,
+      "cold_share": 0.02,
+      "hot_px": [
+        0.0,
+        0.0,
+        224.0,
+        140.0
+      ],
+      "cold_px": [
+        196.0,
+        224.0,
+        420.0,
+        364.0
+      ],
+      "degenerate": {
+        "degenerate": false,
+        "reasons": [],
+        "n_words": 2
+      },
+      "elapsed_s": 0.4,
+      "rendered": [
+        "coco_000000033707__hot__A1.png",
+        "coco_000000033707__hot__A2.png",
+        "coco_000000033707__hot__A3.png",
+        "coco_000000033707__hot__A4.png",
+        "coco_000000033707__hot__A5.png",
+        "coco_000000033707__hot__A6.png",
+        "coco_000000033707__cold__A1.png",
+        "coco_000000033707__cold__A2.png",
+        "coco_000000033707__cold__A3.png",
+        "coco_000000033707__cold__A4.png",
+        "coco_000000033707__cold__A5.png",
+        "coco_000000033707__cold__A6.png"
+      ]
+    },
+    {
+      "stem": "coco_000000035326",
+      "caption": "A kitchen scene featuring an electric cooktop, a spice rack, and a backsplash with multicolored tiles.",
+      "target_offset": 1,
+      "target_token": "kitchen",
+      "target_pos": 290,
+      "prompt_len": 289,
+      "grid": [
+        16,
+        16
+      ],
+      "vision_span": [
+        15,
+        271
+      ],
+      "layer": 7,
+      "hot": [
+        0,
+        7,
+        0,
+        4
+      ],
+      "cold": [
+        5,
+        14,
+        3,
+        6
+      ],
+      "hot_share": 0.3598,
+      "cold_share": 0.0436,
+      "hot_px": [
+        0.0,
+        0.0,
+        224.0,
+        140.0
+      ],
+      "cold_px": [
+        140.0,
+        84.0,
+        420.0,
+        196.0
+      ],
+      "degenerate": {
+        "degenerate": false,
+        "reasons": [],
+        "n_words": 16
+      },
+      "elapsed_s": 1.0,
+      "rendered": [
+        "coco_000000035326__hot__A1.png",
+        "coco_000000035326__hot__A2.png",
+        "coco_000000035326__hot__A3.png",
+        "coco_000000035326__hot__A4.png",
+        "coco_000000035326__hot__A5.png",
+        "coco_000000035326__hot__A6.png",
+        "coco_000000035326__cold__A1.png",
+        "coco_000000035326__cold__A2.png",
+        "coco_000000035326__cold__A3.png",
+        "coco_000000035326__cold__A4.png",
+        "coco_000000035326__cold__A5.png",
+        "coco_000000035326__cold__A6.png"
+      ]
+    },
+    {
+      "stem": "coco_000000035963",
+      "caption": "A grave marker with stuffed animals and a cross, inscribed with names and dates, symbolizing remembrance and love.",
+      "target_offset": 1,
+      "target_token": "grave",
+      "target_pos": 290,
+      "prompt_len": 289,
+      "grid": [
+        16,
+        16
+      ],
+      "vision_span": [
+        15,
+        271
+      ],
+      "layer": 7,
+      "hot": [
+        6,
+        15,
+        0,
+        3
+      ],
+      "cold": [
+        1,
+        10,
+        12,
+        15
+      ],
+      "hot_share": 0.267,
+      "cold_share": 0.0827,
+      "hot_px": [
+        168.0,
+        0.0,
+        448.0,
+        112.0
+      ],
+      "cold_px": [
+        28.0,
+        336.0,
+        308.0,
+        448.0
+      ],
+      "degenerate": {
+        "degenerate": false,
+        "reasons": [],
+        "n_words": 18
+      },
+      "elapsed_s": 1.0,
+      "rendered": [
+        "coco_000000035963__hot__A1.png",
+        "coco_000000035963__hot__A2.png",
+        "coco_000000035963__hot__A3.png",
+        "coco_000000035963__hot__A4.png",
+        "coco_000000035963__hot__A5.png",
+        "coco_000000035963__hot__A6.png",
+        "coco_000000035963__cold__A1.png",
+        "coco_000000035963__cold__A2.png",
+        "coco_000000035963__cold__A3.png",
+        "coco_000000035963__cold__A4.png",
+        "coco_000000035963__cold__A5.png",
+        "coco_000000035963__cold__A6.png"
+      ]
+    },
+    {
+      "stem": "coco_000000036844",
+      "caption": "A cozy living room with wooden floors, a red rug, a wheelchair, a TV, and various plants, all under",
+      "target_offset": 1,
+      "target_token": "cozy",
+      "target_pos": 290,
+      "prompt_len": 289,
+      "grid": [
+        16,
+        16
+      ],
+      "vision_span": [
+        15,
+        271
+      ],
+      "layer": 7,
+      "hot": [
+        0,
+        9,
+        0,
+        3
+      ],
+      "cold": [
+        8,
+        15,
+        3,
+        7
+      ],
+      "hot_share": 0.3837,
+      "cold_share": 0.0797,
+      "hot_px": [
+        0.0,
+        0.0,
+        280.0,
+        112.0
+      ],
+      "cold_px": [
+        224.0,
+        84.0,
+        448.0,
+        224.0
+      ],
+      "degenerate": {
+        "degenerate": false,
+        "reasons": [],
+        "n_words": 19
+      },
+      "elapsed_s": 1.1,
+      "rendered": [
+        "coco_000000036844__hot__A1.png",
+        "coco_000000036844__hot__A2.png",
+        "coco_000000036844__hot__A3.png",
+        "coco_000000036844__hot__A4.png",
+        "coco_000000036844__hot__A5.png",
+        "coco_000000036844__hot__A6.png",
+        "coco_000000036844__cold__A1.png",
+        "coco_000000036844__cold__A2.png",
+        "coco_000000036844__cold__A3.png",
+        "coco_000000036844__cold__A4.png",
+        "coco_000000036844__cold__A5.png",
+        "coco_000000036844__cold__A6.png"
+      ]
+    },
+    {
+      "stem": "coco_000000036861",
+      "caption": "A red parking meter with a large circular ring attached to its, in front of a building with a \"40 Years",
+      "target_offset": 1,
+      "target_token": "red",
+      "target_pos": 290,
+      "prompt_len": 289,
+      "grid": [
+        16,
+        16
+      ],
+      "vision_span": [
+        15,
+        271
+      ],
+      "layer": 7,
+      "hot": [
+        0,
+        7,
+        0,
+        4
+      ],
+      "cold": [
+        8,
+        15,
+        10,
+        14
+      ],
+      "hot_share": 0.3369,
+      "cold_share": 0.0624,
+      "hot_px": [
+        0.0,
+        0.0,
+        224.0,
+        140.0
+      ],
+      "cold_px": [
+        224.0,
+        280.0,
+        448.0,
+        420.0
+      ],
+      "degenerate": {
+        "degenerate": false,
+        "reasons": [],
+        "n_words": 21
+      },
+      "elapsed_s": 1.0,
+      "rendered": [
+        "coco_000000036861__hot__A1.png",
+        "coco_000000036861__hot__A2.png",
+        "coco_000000036861__hot__A3.png",
+        "coco_000000036861__hot__A4.png",
+        "coco_000000036861__hot__A5.png",
+        "coco_000000036861__hot__A6.png",
+        "coco_000000036861__cold__A1.png",
+        "coco_000000036861__cold__A2.png",
+        "coco_000000036861__cold__A3.png",
+        "coco_000000036861__cold__A4.png",
+        "coco_000000036861__cold__A5.png",
+        "coco_000000036861__cold__A6.png"
+      ]
+    },
+    {
+      "stem": "coco_000000037751",
+      "caption": "Motorcyclist on a gravel road overlooking a scenic mountain landscape under a partly cloudy sky.",
+      "target_offset": 0,
+      "target_token": "Motor",
+      "target_pos": 289,
+      "prompt_len": 289,
+      "grid": [
+        16,
+        16
+      ],
+      "vision_span": [
+        15,
+        271
+      ],
+      "layer": 7,
+      "hot": [
+        0,
+        9,
+        0,
+        3
+      ],
+      "cold": [
+        8,
+        15,
+        6,
+        10
+      ],
+      "hot_share": 0.6212,
+      "cold_share": 0.0193,
+      "hot_px": [
+        0.0,
+        0.0,
+        280.0,
+        112.0
+      ],
+      "cold_px": [
+        224.0,
+        168.0,
+        448.0,
+        308.0
+      ],
+      "degenerate": {
+        "degenerate": false,
+        "reasons": [],
+        "n_words": 15
+      },
+      "elapsed_s": 0.8,
+      "rendered": [
+        "coco_000000037751__hot__A1.png",
+        "coco_000000037751__hot__A2.png",
+        "coco_000000037751__hot__A3.png",
+        "coco_000000037751__hot__A4.png",
+        "coco_000000037751__hot__A5.png",
+        "coco_000000037751__hot__A6.png",
+        "coco_000000037751__cold__A1.png",
+        "coco_000000037751__cold__A2.png",
+        "coco_000000037751__cold__A3.png",
+        "coco_000000037751__cold__A4.png",
+        "coco_000000037751__cold__A5.png",
+        "coco_000000037751__cold__A6.png"
+      ]
+    },
+    {
+      "stem": "coco_000000037988",
+      "caption": "A female tennis player serves on a green court, wearing a white tank and black skirt, with a \"Polo\"",
+      "target_offset": 1,
+      "target_token": "female",
+      "target_pos": 290,
+      "prompt_len": 289,
+      "grid": [
+        16,
+        16
+      ],
+      "vision_span": [
+        15,
+        271
+      ],
+      "layer": 7,
+      "hot": [
+        8,
+        15,
+        0,
+        4
+      ],
+      "cold": [
+        0,
+        7,
+        10,
+        14
+      ],
+      "hot_share": 0.3296,
+      "cold_share": 0.0596,
+      "hot_px": [
+        224.0,
+        0.0,
+        448.0,
+        140.0
+      ],
+      "cold_px": [
+        0.0,
+        280.0,
+        224.0,
+        420.0
+      ],
+      "degenerate": {
+        "degenerate": false,
+        "reasons": [],
+        "n_words": 19
+      },
+      "elapsed_s": 1.0,
+      "rendered": [
+        "coco_000000037988__hot__A1.png",
+        "coco_000000037988__hot__A2.png",
+        "coco_000000037988__hot__A3.png",
+        "coco_000000037988__hot__A4.png",
+        "coco_000000037988__hot__A5.png",
+        "coco_000000037988__hot__A6.png",
+        "coco_000000037988__cold__A1.png",
+        "coco_000000037988__cold__A2.png",
+        "coco_000000037988__cold__A3.png",
+        "coco_000000037988__cold__A4.png",
+        "coco_000000037988__cold__A5.png",
+        "coco_000000037988__cold__A6.png"
+      ]
+    },
+    {
+      "stem": "coco_000000039405",
+      "caption": "A doubles tennis match in progress on a grass court with spectators watching from the stands.",
+      "target_offset": 1,
+      "target_token": "doubles",
+      "target_pos": 290,
+      "prompt_len": 289,
+      "grid": [
+        16,
+        16
+      ],
+      "vision_span": [
+        15,
+        271
+      ],
+      "layer": 7,
+      "hot": [
+        0,
+        7,
+        0,
+        4
+      ],
+      "cold": [
+        6,
+        15,
+        1,
+        4
+      ],
+      "hot_share": 0.3539,
+      "cold_share": 0.0671,
+      "hot_px": [
+        0.0,
+        0.0,
+        224.0,
+        140.0
+      ],
+      "cold_px": [
+        168.0,
+        28.0,
+        448.0,
+        140.0
+      ],
+      "degenerate": {
+        "degenerate": false,
+        "reasons": [],
+        "n_words": 16
+      },
+      "elapsed_s": 0.8,
+      "rendered": [
+        "coco_000000039405__hot__A1.png",
+        "coco_000000039405__hot__A2.png",
+        "coco_000000039405__hot__A3.png",
+        "coco_000000039405__hot__A4.png",
+        "coco_000000039405__hot__A5.png",
+        "coco_000000039405__hot__A6.png",
+        "coco_000000039405__cold__A1.png",
+        "coco_000000039405__cold__A2.png",
+        "coco_000000039405__cold__A3.png",
+        "coco_000000039405__cold__A4.png",
+        "coco_000000039405__cold__A5.png",
+        "coco_000000039405__cold__A6.png"
+      ]
+    },
+    {
+      "stem": "coco_000000039670",
+      "caption": "A blue\n 自动生成的图片描述",
+      "target_offset": 1,
+      "target_token": "blue",
+      "target_pos": 290,
+      "prompt_len": 289,
+      "grid": [
+        16,
+        16
+      ],
+      "vision_span": [
+        15,
+        271
+      ],
+      "layer": 7,
+      "hot": [
+        0,
+        9,
+        0,
+        3
+      ],
+      "cold": [
+        1,
+        8,
+        11,
+        15
+      ],
+      "hot_share": 0.337,
+      "cold_share": 0.0696,
+      "hot_px": [
+        0.0,
+        0.0,
+        280.0,
+        112.0
+      ],
+      "cold_px": [
+        28.0,
+        308.0,
+        252.0,
+        448.0
+      ],
+      "degenerate": {
+        "degenerate": false,
+        "reasons": [],
+        "n_words": 2
+      },
+      "elapsed_s": 0.5,
+      "rendered": [
+        "coco_000000039670__hot__A1.png",
+        "coco_000000039670__hot__A2.png",
+        "coco_000000039670__hot__A3.png",
+        "coco_000000039670__hot__A4.png",
+        "coco_000000039670__hot__A5.png",
+        "coco_000000039670__hot__A6.png",
+        "coco_000000039670__cold__A1.png",
+        "coco_000000039670__cold__A2.png",
+        "coco_000000039670__cold__A3.png",
+        "coco_000000039670__cold__A4.png",
+        "coco_000000039670__cold__A5.png",
+        "coco_000000039670__cold__A6.png"
+      ]
+    },
+    {
+      "stem": "coco_000000039914",
+      "caption": "A woman and child fly a colorful kite in a grassy park on a sunny day, surrounded by trees and otherlook",
+      "target_offset": 1,
+      "target_token": "woman",
+      "target_pos": 290,
+      "prompt_len": 289,
+      "grid": [
+        16,
+        16
+      ],
+      "vision_span": [
+        15,
+        271
+      ],
+      "layer": 7,
+      "hot": [
+        0,
+        7,
+        0,
+        4
+      ],
+      "cold": [
+        1,
+        10,
+        12,
+        15
+      ],
+      "hot_share": 0.3114,
+      "cold_share": 0.08,
+      "hot_px": [
+        0.0,
+        0.0,
+        224.0,
+        140.0
+      ],
+      "cold_px": [
+        28.0,
+        336.0,
+        308.0,
+        448.0
+      ],
+      "degenerate": {
+        "degenerate": false,
+        "reasons": [],
+        "n_words": 21
+      },
+      "elapsed_s": 1.0,
+      "rendered": [
+        "coco_000000039914__hot__A1.png",
+        "coco_000000039914__hot__A2.png",
+        "coco_000000039914__hot__A3.png",
+        "coco_000000039914__hot__A4.png",
+        "coco_000000039914__hot__A5.png",
+        "coco_000000039914__hot__A6.png",
+        "coco_000000039914__cold__A1.png",
+        "coco_000000039914__cold__A2.png",
+        "coco_000000039914__cold__A3.png",
+        "coco_000000039914__cold__A4.png",
+        "coco_000000039914__cold__A5.png",
+        "coco_000000039914__cold__A6.png"
+      ]
+    },
+    {
+      "stem": "coco_000000041635",
+      "caption": "A black and white photo of cows behind a barbed wire fence, with a grassy foreground and a rural landscape in",
+      "target_offset": 1,
+      "target_token": "black",
+      "target_pos": 290,
+      "prompt_len": 289,
+      "grid": [
+        16,
+        16
+      ],
+      "vision_span": [
+        15,
+        271
+      ],
+      "layer": 7,
+      "hot": [
+        0,
+        9,
+        0,
+        3
+      ],
+      "cold": [
+        5,
+        14,
+        12,
+        15
+      ],
+      "hot_share": 0.3133,
+      "cold_share": 0.071,
+      "hot_px": [
+        0.0,
+        0.0,
+        280.0,
+        112.0
+      ],
+      "cold_px": [
+        140.0,
+        336.0,
+        420.0,
+        448.0
+      ],
+      "degenerate": {
+        "degenerate": false,
+        "reasons": [],
+        "n_words": 21
+      },
+      "elapsed_s": 1.0,
+      "rendered": [
+        "coco_000000041635__hot__A1.png",
+        "coco_000000041635__hot__A2.png",
+        "coco_000000041635__hot__A3.png",
+        "coco_000000041635__hot__A4.png",
+        "coco_000000041635__hot__A5.png",
+        "coco_000000041635__hot__A6.png",
+        "coco_000000041635__cold__A1.png",
+        "coco_000000041635__cold__A2.png",
+        "coco_000000041635__cold__A3.png",
+        "coco_000000041635__cold__A4.png",
+        "coco_000000041635__cold__A5.png",
+        "coco_000000041635__cold__A6.png"
+      ]
+    },
+    {
+      "stem": "coco_000000042178",
+      "caption": "Rows of freight train cars line up under power lines in a foggy, industrial setting, creating a sense of stillness",
+      "target_offset": 0,
+      "target_token": "Rows",
+      "target_pos": 289,
+      "prompt_len": 289,
+      "grid": [
+        16,
+        16
+      ],
+      "vision_span": [
+        15,
+        271
+      ],
+      "layer": 7,
+      "hot": [
+        0,
+        7,
+        0,
+        4
+      ],
+      "cold": [
+        7,
+        14,
+        10,
+        14
+      ],
+      "hot_share": 0.6009,
+      "cold_share": 0.0205,
+      "hot_px": [
+        0.0,
+        0.0,
+        224.0,
+        140.0
+      ],
+      "cold_px": [
+        196.0,
+        280.0,
+        420.0,
+        420.0
+      ],
+      "degenerate": {
+        "degenerate": false,
+        "reasons": [],
+        "n_words": 20
+      },
+      "elapsed_s": 1.0,
+      "rendered": [
+        "coco_000000042178__hot__A1.png",
+        "coco_000000042178__hot__A2.png",
+        "coco_000000042178__hot__A3.png",
+        "coco_000000042178__hot__A4.png",
+        "coco_000000042178__hot__A5.png",
+        "coco_000000042178__hot__A6.png",
+        "coco_000000042178__cold__A1.png",
+        "coco_000000042178__cold__A2.png",
+        "coco_000000042178__cold__A3.png",
+        "coco_000000042178__cold__A4.png",
+        "coco_000000042178__cold__A5.png",
+        "coco_000000042178__cold__A6.png"
+      ]
+    },
+    {
+      "stem": "coco_000000043435",
+      "caption": "Two surfers ride waves in the ocean; one surfs a smaller wave while another catches a larger, powerful wave.",
+      "target_offset": 0,
+      "target_token": "Two",
+      "target_pos": 289,
+      "prompt_len": 289,
+      "grid": [
+        16,
+        16
+      ],
+      "vision_span": [
+        15,
+        271
+      ],
+      "layer": 7,
+      "hot": [
+        0,
+        9,
+        0,
+        3
+      ],
+      "cold": [
+        7,
+        14,
+        11,
+        15
+      ],
+      "hot_share": 0.5981,
+      "cold_share": 0.009,
+      "hot_px": [
+        0.0,
+        0.0,
+        280.0,
+        112.0
+      ],
+      "cold_px": [
+        196.0,
+        308.0,
+        420.0,
+        448.0
+      ],
+      "degenerate": {
+        "degenerate": false,
+        "reasons": [],
+        "n_words": 19
+      },
+      "elapsed_s": 1.0,
+      "rendered": [
+        "coco_000000043435__hot__A1.png",
+        "coco_000000043435__hot__A2.png",
+        "coco_000000043435__hot__A3.png",
+        "coco_000000043435__hot__A4.png",
+        "coco_000000043435__hot__A5.png",
+        "coco_000000043435__hot__A6.png",
+        "coco_000000043435__cold__A1.png",
+        "coco_000000043435__cold__A2.png",
+        "coco_000000043435__cold__A3.png",
+        "coco_000000043435__cold__A4.png",
+        "coco_000000043435__cold__A5.png",
+        "coco_000000043435__cold__A6.png"
+      ]
+    },
+    {
+      "stem": "coco_000000047010",
+      "caption": "Three giraffes walking near a pond in a lush, green environment with trees and bushes.",
+      "target_offset": 0,
+      "target_token": "Three",
+      "target_pos": 289,
+      "prompt_len": 289,
+      "grid": [
+        16,
+        16
+      ],
+      "vision_span": [
+        15,
+        271
+      ],
+      "layer": 7,
+      "hot": [
+        0,
+        7,
+        0,
+        4
+      ],
+      "cold": [
+        1,
+        10,
+        12,
+        15
+      ],
+      "hot_share": 0.5877,
+      "cold_share": 0.0208,
+      "hot_px": [
+        0.0,
+        0.0,
+        224.0,
+        140.0
+      ],
+      "cold_px": [
+        28.0,
+        336.0,
+        308.0,
+        448.0
+      ],
+      "degenerate": {
+        "degenerate": false,
+        "reasons": [],
+        "n_words": 15
+      },
+      "elapsed_s": 0.9,
+      "rendered": [
+        "coco_000000047010__hot__A1.png",
+        "coco_000000047010__hot__A2.png",
+        "coco_000000047010__hot__A3.png",
+        "coco_000000047010__hot__A4.png",
+        "coco_000000047010__hot__A5.png",
+        "coco_000000047010__hot__A6.png",
+        "coco_000000047010__cold__A1.png",
+        "coco_000000047010__cold__A2.png",
+        "coco_000000047010__cold__A3.png",
+        "coco_000000047010__cold__A4.png",
+        "coco_000000047010__cold__A5.png",
+        "coco_000000047010__cold__A6.png"
+      ]
+    },
+    {
+      "stem": "coco_000000050006",
+      "caption": "Boats docked near a grassy area with a large building and mountains in the background under a hazy sky.",
+      "target_offset": 0,
+      "target_token": "Bo",
+      "target_pos": 289,
+      "prompt_len": 289,
+      "grid": [
+        16,
+        16
+      ],
+      "vision_span": [
+        15,
+        271
+      ],
+      "layer": 7,
+      "hot": [
+        0,
+        7,
+        0,
+        4
+      ],
+      "cold": [
+        7,
+        14,
+        2,
+        6
+      ],
+      "hot_share": 0.6758,
+      "cold_share": 0.0171,
+      "hot_px": [
+        0.0,
+        0.0,
+        224.0,
+        140.0
+      ],
+      "cold_px": [
+        196.0,
+        56.0,
+        420.0,
+        196.0
+      ],
+      "degenerate": {
+        "degenerate": false,
+        "reasons": [],
+        "n_words": 19
+      },
+      "elapsed_s": 1.0,
+      "rendered": [
+        "coco_000000050006__hot__A1.png",
+        "coco_000000050006__hot__A2.png",
+        "coco_000000050006__hot__A3.png",
+        "coco_000000050006__hot__A4.png",
+        "coco_000000050006__hot__A5.png",
+        "coco_000000050006__hot__A6.png",
+        "coco_000000050006__cold__A1.png",
+        "coco_000000050006__cold__A2.png",
+        "coco_000000050006__cold__A3.png",
+        "coco_000000050006__cold__A4.png",
+        "coco_000000050006__cold__A5.png",
+        "coco_000000050006__cold__A6.png"
+      ]
+    },
+    {
+      "stem": "coco_000000050896",
+      "caption": "A bowl filled with bright orange tangerines fruits, arranged closely together on a textured surface.",
+      "target_offset": 1,
+      "target_token": "bowl",
+      "target_pos": 290,
+      "prompt_len": 289,
+      "grid": [
+        16,
+        16
+      ],
+      "vision_span": [
+        15,
+        271
+      ],
+      "layer": 7,
+      "hot": [
+        0,
+        7,
+        0,
+        4
+      ],
+      "cold": [
+        7,
+        14,
+        11,
+        15
+      ],
+      "hot_share": 0.338,
+      "cold_share": 0.0697,
+      "hot_px": [
+        0.0,
+        0.0,
+        224.0,
+        140.0
+      ],
+      "cold_px": [
+        196.0,
+        308.0,
+        420.0,
+        448.0
+      ],
+      "degenerate": {
+        "degenerate": false,
+        "reasons": [],
+        "n_words": 15
+      },
+      "elapsed_s": 0.9,
+      "rendered": [
+        "coco_000000050896__hot__A1.png",
+        "coco_000000050896__hot__A2.png",
+        "coco_000000050896__hot__A3.png",
+        "coco_000000050896__hot__A4.png",
+        "coco_000000050896__hot__A5.png",
+        "coco_000000050896__hot__A6.png",
+        "coco_000000050896__cold__A1.png",
+        "coco_000000050896__cold__A2.png",
+        "coco_000000050896__cold__A3.png",
+        "coco_000000050896__cold__A4.png",
+        "coco_000000050896__cold__A5.png",
+        "coco_000000050896__cold__A6.png"
+      ]
+    },
+    {
+      "stem": "coco_000000055528",
+      "caption": "A person wearing glasses and a plaid shirt sits on a couch, holding a small object in one hand and a brown",
+      "target_offset": 1,
+      "target_token": "person",
+      "target_pos": 290,
+      "prompt_len": 289,
+      "grid": [
+        16,
+        16
+      ],
+      "vision_span": [
+        15,
+        271
+      ],
+      "layer": 7,
+      "hot": [
+        0,
+        9,
+        0,
+        3
+      ],
+      "cold": [
+        3,
+        10,
+        11,
+        15
+      ],
+      "hot_share": 0.3157,
+      "cold_share": 0.0692,
+      "hot_px": [
+        0.0,
+        0.0,
+        280.0,
+        112.0
+      ],
+      "cold_px": [
+        84.0,
+        308.0,
+        308.0,
+        448.0
+      ],
+      "degenerate": {
+        "degenerate": false,
+        "reasons": [],
+        "n_words": 22
+      },
+      "elapsed_s": 1.0,
+      "rendered": [
+        "coco_000000055528__hot__A1.png",
+        "coco_000000055528__hot__A2.png",
+        "coco_000000055528__hot__A3.png",
+        "coco_000000055528__hot__A4.png",
+        "coco_000000055528__hot__A5.png",
+        "coco_000000055528__hot__A6.png",
+        "coco_000000055528__cold__A1.png",
+        "coco_000000055528__cold__A2.png",
+        "coco_000000055528__cold__A3.png",
+        "coco_000000055528__cold__A4.png",
+        "coco_000000055528__cold__A5.png",
+        "coco_000000055528__cold__A6.png"
+      ]
+    },
+    {
+      "stem": "coco_000000057232",
+      "caption": "A creative display of vintage baseball bats arranged in a chair-like structure with two geometric-patterned cushions on top.",
+      "target_offset": 1,
+      "target_token": "creative",
+      "target_pos": 290,
+      "prompt_len": 289,
+      "grid": [
+        16,
+        16
+      ],
+      "vision_span": [
+        15,
+        271
+      ],
+      "layer": 7,
+      "hot": [
+        0,
+        7,
+        0,
+        4
+      ],
+      "cold": [
+        5,
+        14,
+        10,
+        13
+      ],
+      "hot_share": 0.28,
+      "cold_share": 0.0645,
+      "hot_px": [
+        0.0,
+        0.0,
+        224.0,
+        140.0
+      ],
+      "cold_px": [
+        140.0,
+        280.0,
+        420.0,
+        392.0
+      ],
+      "degenerate": {
+        "degenerate": false,
+        "reasons": [],
+        "n_words": 20
+      },
+      "elapsed_s": 0.9,
+      "rendered": [
+        "coco_000000057232__hot__A1.png",
+        "coco_000000057232__hot__A2.png",
+        "coco_000000057232__hot__A3.png",
+        "coco_000000057232__hot__A4.png",
+        "coco_000000057232__hot__A5.png",
+        "coco_000000057232__hot__A6.png",
+        "coco_000000057232__cold__A1.png",
+        "coco_000000057232__cold__A2.png",
+        "coco_000000057232__cold__A3.png",
+        "coco_000000057232__cold__A4.png",
+        "coco_000000057232__cold__A5.png",
+        "coco_000000057232__cold__A6.png"
+      ]
+    },
+    {
+      "stem": "coco_000000064499",
+      "caption": "Two zebras stand near a white wall and greenery, one partially obscured by the other, in a shaded area.",
+      "target_offset": 0,
+      "target_token": "Two",
+      "target_pos": 289,
+      "prompt_len": 289,
+      "grid": [
+        16,
+        16
+      ],
+      "vision_span": [
+        15,
+        271
+      ],
+      "layer": 7,
+      "hot": [
+        0,
+        7,
+        0,
+        4
+      ],
+      "cold": [
+        6,
+        15,
+        9,
+        12
+      ],
+      "hot_share": 0.5622,
+      "cold_share": 0.0253,
+      "hot_px": [
+        0.0,
+        0.0,
+        224.0,
+        140.0
+      ],
+      "cold_px": [
+        168.0,
+        252.0,
+        448.0,
+        364.0
+      ],
+      "degenerate": {
+        "degenerate": false,
+        "reasons": [],
+        "n_words": 19
+      },
+      "elapsed_s": 1.0,
+      "rendered": [
+        "coco_000000064499__hot__A1.png",
+        "coco_000000064499__hot__A2.png",
+        "coco_000000064499__hot__A3.png",
+        "coco_000000064499__hot__A4.png",
+        "coco_000000064499__hot__A5.png",
+        "coco_000000064499__hot__A6.png",
+        "coco_000000064499__cold__A1.png",
+        "coco_000000064499__cold__A2.png",
+        "coco_000000064499__cold__A3.png",
+        "coco_000000064499__cold__A4.png",
+        "coco_000000064499__cold__A5.png",
+        "coco_000000064499__cold__A6.png"
+      ]
+    },
+    {
+      "stem": "coco_000000065798",
+      "caption": "A baseball game in progress with a batter at the plate, a catcher and umpire behind him, and a large crowd",
+      "target_offset": 1,
+      "target_token": "baseball",
+      "target_pos": 290,
+      "prompt_len": 289,
+      "grid": [
+        16,
+        16
+      ],
+      "vision_span": [
+        15,
+        271
+      ],
+      "layer": 7,
+      "hot": [
+        0,
+        9,
+        0,
+        3
+      ],
+      "cold": [
+        7,
+        14,
+        2,
+        6
+      ],
+      "hot_share": 0.293,
+      "cold_share": 0.0681,
+      "hot_px": [
+        0.0,
+        0.0,
+        280.0,
+        112.0
+      ],
+      "cold_px": [
+        196.0,
+        56.0,
+        420.0,
+        196.0
+      ],
+      "degenerate": {
+        "degenerate": false,
+        "reasons": [],
+        "n_words": 21
+      },
+      "elapsed_s": 1.0,
+      "rendered": [
+        "coco_000000065798__hot__A1.png",
+        "coco_000000065798__hot__A2.png",
+        "coco_000000065798__hot__A3.png",
+        "coco_000000065798__hot__A4.png",
+        "coco_000000065798__hot__A5.png",
+        "coco_000000065798__hot__A6.png",
+        "coco_000000065798__cold__A1.png",
+        "coco_000000065798__cold__A2.png",
+        "coco_000000065798__cold__A3.png",
+        "coco_000000065798__cold__A4.png",
+        "coco_000000065798__cold__A5.png",
+        "coco_000000065798__cold__A6.png"
+      ]
+    },
+    {
+      "stem": "coco_000000066817",
+      "caption": "A plate of rice topped with peas curry and fried patties, served with yogurt and fruit on the side.",
+      "target_offset": 1,
+      "target_token": "plate",
+      "target_pos": 290,
+      "prompt_len": 289,
+      "grid": [
+        16,
+        16
+      ],
+      "vision_span": [
+        15,
+        271
+      ],
+      "layer": 7,
+      "hot": [
+        0,
+        9,
+        0,
+        3
+      ],
+      "cold": [
+        8,
+        15,
+        9,
+        13
+      ],
+      "hot_share": 0.2584,
+      "cold_share": 0.0792,
+      "hot_px": [
+        0.0,
+        0.0,
+        280.0,
+        112.0
+      ],
+      "cold_px": [
+        224.0,
+        252.0,
+        448.0,
+        392.0
+      ],
+      "degenerate": {
+        "degenerate": false,
+        "reasons": [],
+        "n_words": 19
+      },
+      "elapsed_s": 0.9,
+      "rendered": [
+        "coco_000000066817__hot__A1.png",
+        "coco_000000066817__hot__A2.png",
+        "coco_000000066817__hot__A3.png",
+        "coco_000000066817__hot__A4.png",
+        "coco_000000066817__hot__A5.png",
+        "coco_000000066817__hot__A6.png",
+        "coco_000000066817__cold__A1.png",
+        "coco_000000066817__cold__A2.png",
+        "coco_000000066817__cold__A3.png",
+        "coco_000000066817__cold__A4.png",
+        "coco_000000066817__cold__A5.png",
+        "coco_000000066817__cold__A6.png"
+      ]
+    },
+    {
+      "stem": "coco_000000067310",
+      "caption": "A skateboarder performs an ollie over a ramp in a skate park, with spectators watching and trees in the background",
+      "target_offset": 1,
+      "target_token": "skateboard",
+      "target_pos": 290,
+      "prompt_len": 289,
+      "grid": [
+        16,
+        16
+      ],
+      "vision_span": [
+        15,
+        271
+      ],
+      "layer": 7,
+      "hot": [
+        0,
+        7,
+        0,
+        4
+      ],
+      "cold": [
+        8,
+        15,
+        6,
+        10
+      ],
+      "hot_share": 0.3319,
+      "cold_share": 0.0591,
+      "hot_px": [
+        0.0,
+        0.0,
+        224.0,
+        140.0
+      ],
+      "cold_px": [
+        224.0,
+        168.0,
+        448.0,
+        308.0
+      ],
+      "degenerate": {
+        "degenerate": false,
+        "reasons": [],
+        "n_words": 20
+      },
+      "elapsed_s": 1.1,
+      "rendered": [
+        "coco_000000067310__hot__A1.png",
+        "coco_000000067310__hot__A2.png",
+        "coco_000000067310__hot__A3.png",
+        "coco_000000067310__hot__A4.png",
+        "coco_000000067310__hot__A5.png",
+        "coco_000000067310__hot__A6.png",
+        "coco_000000067310__cold__A1.png",
+        "coco_000000067310__cold__A2.png",
+        "coco_000000067310__cold__A3.png",
+        "coco_000000067310__cold__A4.png",
+        "coco_000000067310__cold__A5.png",
+        "coco_000000067310__cold__A6.png"
+      ]
+    },
+    {
+      "stem": "coco_000000068833",
+      "caption": "Vintage kitchen with wooden cabinets, red patterned carpet, and a stained-g-glass light fixture above the island.",
+      "target_offset": 0,
+      "target_token": "Vintage",
+      "target_pos": 289,
+      "prompt_len": 289,
+      "grid": [
+        16,
+        16
+      ],
+      "vision_span": [
+        15,
+        271
+      ],
+      "layer": 7,
+      "hot": [
+        0,
+        9,
+        0,
+        3
+      ],
+      "cold": [
+        3,
+        12,
+        12,
+        15
+      ],
+      "hot_share": 0.5458,
+      "cold_share": 0.0222,
+      "hot_px": [
+        0.0,
+        0.0,
+        280.0,
+        112.0
+      ],
+      "cold_px": [
+        84.0,
+        336.0,
+        364.0,
+        448.0
+      ],
+      "degenerate": {
+        "degenerate": false,
+        "reasons": [],
+        "n_words": 18
+      },
+      "elapsed_s": 1.0,
+      "rendered": [
+        "coco_000000068833__hot__A1.png",
+        "coco_000000068833__hot__A2.png",
+        "coco_000000068833__hot__A3.png",
+        "coco_000000068833__hot__A4.png",
+        "coco_000000068833__hot__A5.png",
+        "coco_000000068833__hot__A6.png",
+        "coco_000000068833__cold__A1.png",
+        "coco_000000068833__cold__A2.png",
+        "coco_000000068833__cold__A3.png",
+        "coco_000000068833__cold__A4.png",
+        "coco_000000068833__cold__A5.png",
+        "coco_000000068833__cold__A6.png"
+      ]
+    },
+    {
+      "stem": "coco_000000071756",
+      "caption": "Nighttime trail camera photo of two black bears with glowing eyes reflections, standing on forest floor.",
+      "target_offset": 0,
+      "target_token": "Night",
+      "target_pos": 289,
+      "prompt_len": 289,
+      "grid": [
+        16,
+        16
+      ],
+      "vision_span": [
+        15,
+        271
+      ],
+      "layer": 7,
+      "hot": [
+        8,
+        15,
+        0,
+        4
+      ],
+      "cold": [
+        1,
+        10,
+        12,
+        15
+      ],
+      "hot_share": 0.3615,
+      "cold_share": 0.0289,
+      "hot_px": [
+        224.0,
+        0.0,
+        448.0,
+        140.0
+      ],
+      "cold_px": [
+        28.0,
+        336.0,
+        308.0,
+        448.0
+      ],
+      "degenerate": {
+        "degenerate": false,
+        "reasons": [],
+        "n_words": 16
+      },
+      "elapsed_s": 0.8,
+      "rendered": [
+        "coco_000000071756__hot__A1.png",
+        "coco_000000071756__hot__A2.png",
+        "coco_000000071756__hot__A3.png",
+        "coco_000000071756__hot__A4.png",
+        "coco_000000071756__hot__A5.png",
+        "coco_000000071756__hot__A6.png",
+        "coco_000000071756__cold__A1.png",
+        "coco_000000071756__cold__A2.png",
+        "coco_000000071756__cold__A3.png",
+        "coco_000000071756__cold__A4.png",
+        "coco_000000071756__cold__A5.png",
+        "coco_000000071756__cold__A6.png"
+      ]
+    },
+    {
+      "stem": "coco_000000076468",
+      "caption": "Two tennis players on a grass court, shaking hands after a match, with spectators in the background.",
+      "target_offset": 0,
+      "target_token": "Two",
+      "target_pos": 289,
+      "prompt_len": 289,
+      "grid": [
+        16,
+        16
+      ],
+      "vision_span": [
+        15,
+        271
+      ],
+      "layer": 7,
+      "hot": [
+        0,
+        7,
+        0,
+        4
+      ],
+      "cold": [
+        5,
+        14,
+        12,
+        15
+      ],
+      "hot_share": 0.5519,
+      "cold_share": 0.0192,
+      "hot_px": [
+        0.0,
+        0.0,
+        224.0,
+        140.0
+      ],
+      "cold_px": [
+        140.0,
+        336.0,
+        420.0,
+        448.0
+      ],
+      "degenerate": {
+        "degenerate": false,
+        "reasons": [],
+        "n_words": 17
+      },
+      "elapsed_s": 0.9,
+      "rendered": [
+        "coco_000000076468__hot__A1.png",
+        "coco_000000076468__hot__A2.png",
+        "coco_000000076468__hot__A3.png",
+        "coco_000000076468__hot__A4.png",
+        "coco_000000076468__hot__A5.png",
+        "coco_000000076468__hot__A6.png",
+        "coco_000000076468__cold__A1.png",
+        "coco_000000076468__cold__A2.png",
+        "coco_000000076468__cold__A3.png",
+        "coco_000000076468__cold__A4.png",
+        "coco_000000076468__cold__A5.png",
+        "coco_000000076468__cold__A6.png"
+      ]
+    },
+    {
+      "stem": "coco_000000095899",
+      "caption": "A stop sign and Fort York Blvd street sign are against a backdrop of construction cranes under a clear blue sky.",
+      "target_offset": 1,
+      "target_token": "stop",
+      "target_pos": 290,
+      "prompt_len": 289,
+      "grid": [
+        16,
+        16
+      ],
+      "vision_span": [
+        15,
+        271
+      ],
+      "layer": 7,
+      "hot": [
+        0,
+        9,
+        0,
+        3
+      ],
+      "cold": [
+        8,
+        15,
+        1,
+        5
+      ],
+      "hot_share": 0.3613,
+      "cold_share": 0.0781,
+      "hot_px": [
+        0.0,
+        0.0,
+        280.0,
+        112.0
+      ],
+      "cold_px": [
+        224.0,
+        28.0,
+        448.0,
+        168.0
+      ],
+      "degenerate": {
+        "degenerate": false,
+        "reasons": [],
+        "n_words": 21
+      },
+      "elapsed_s": 1.0,
+      "rendered": [
+        "coco_000000095899__hot__A1.png",
+        "coco_000000095899__hot__A2.png",
+        "coco_000000095899__hot__A3.png",
+        "coco_000000095899__hot__A4.png",
+        "coco_000000095899__hot__A5.png",
+        "coco_000000095899__hot__A6.png",
+        "coco_000000095899__cold__A1.png",
+        "coco_000000095899__cold__A2.png",
+        "coco_000000095899__cold__A3.png",
+        "coco_000000095899__cold__A4.png",
+        "coco_000000095899__cold__A5.png",
+        "coco_000000095899__cold__A6.png"
+      ]
+    },
+    {
+      "stem": "coco_000000097679",
+      "caption": "A silver sedan with a snowboard on its top rack is parked in a gravel lot near another car.",
+      "target_offset": 1,
+      "target_token": "silver",
+      "target_pos": 290,
+      "prompt_len": 289,
+      "grid": [
+        16,
+        16
+      ],
+      "vision_span": [
+        15,
+        271
+      ],
+      "layer": 7,
+      "hot": [
+        0,
+        7,
+        0,
+        4
+      ],
+      "cold": [
+        1,
+        10,
+        12,
+        15
+      ],
+      "hot_share": 0.3519,
+      "cold_share": 0.0565,
+      "hot_px": [
+        0.0,
+        0.0,
+        224.0,
+        140.0
+      ],
+      "cold_px": [
+        28.0,
+        336.0,
+        308.0,
+        448.0
+      ],
+      "degenerate": {
+        "degenerate": false,
+        "reasons": [],
+        "n_words": 19
+      },
+      "elapsed_s": 1.0,
+      "rendered": [
+        "coco_000000097679__hot__A1.png",
+        "coco_000000097679__hot__A2.png",
+        "coco_000000097679__hot__A3.png",
+        "coco_000000097679__hot__A4.png",
+        "coco_000000097679__hot__A5.png",
+        "coco_000000097679__hot__A6.png",
+        "coco_000000097679__cold__A1.png",
+        "coco_000000097679__cold__A2.png",
+        "coco_000000097679__cold__A3.png",
+        "coco_000000097679__cold__A4.png",
+        "coco_000000097679__cold__A5.png",
+        "coco_000000097679__cold__A6.png"
+      ]
+    },
+    {
+      "stem": "coco_000000099024",
+      "caption": "A person is assembling a kite frame using plastic sheeting and sticks on a tiled floor.",
+      "target_offset": 1,
+      "target_token": "person",
+      "target_pos": 290,
+      "prompt_len": 289,
+      "grid": [
+        16,
+        16
+      ],
+      "vision_span": [
+        15,
+        271
+      ],
+      "layer": 7,
+      "hot": [
+        0,
+        7,
+        0,
+        4
+      ],
+      "cold": [
+        5,
+        14,
+        12,
+        15
+      ],
+      "hot_share": 0.3586,
+      "cold_share": 0.0563,
+      "hot_px": [
+        0.0,
+        0.0,
+        224.0,
+        140.0
+      ],
+      "cold_px": [
+        140.0,
+        336.0,
+        420.0,
+        448.0
+      ],
+      "degenerate": {
+        "degenerate": false,
+        "reasons": [],
+        "n_words": 16
+      },
+      "elapsed_s": 0.8,
+      "rendered": [
+        "coco_000000099024__hot__A1.png",
+        "coco_000000099024__hot__A2.png",
+        "coco_000000099024__hot__A3.png",
+        "coco_000000099024__hot__A4.png",
+        "coco_000000099024__hot__A5.png",
+        "coco_000000099024__hot__A6.png",
+        "coco_000000099024__cold__A1.png",
+        "coco_000000099024__cold__A2.png",
+        "coco_000000099024__cold__A3.png",
+        "coco_000000099024__cold__A4.png",
+        "coco_000000099024__cold__A5.png",
+        "coco_000000099024__cold__A6.png"
+      ]
+    },
+    {
+      "stem": "coco_000000117645",
+      "caption": "A lone snowboarder descendses a snowy slope, surrounded by tracks and a small tree in the distance.",
+      "target_offset": 1,
+      "target_token": "lone",
+      "target_pos": 290,
+      "prompt_len": 289,
+      "grid": [
+        16,
+        16
+      ],
+      "vision_span": [
+        15,
+        271
+      ],
+      "layer": 7,
+      "hot": [
+        0,
+        9,
+        0,
+        3
+      ],
+      "cold": [
+        1,
+        10,
+        12,
+        15
+      ],
+      "hot_share": 0.3569,
+      "cold_share": 0.0419,
+      "hot_px": [
+        0.0,
+        0.0,
+        280.0,
+        112.0
+      ],
+      "cold_px": [
+        28.0,
+        336.0,
+        308.0,
+        448.0
+      ],
+      "degenerate": {
+        "degenerate": false,
+        "reasons": [],
+        "n_words": 17
+      },
+      "elapsed_s": 1.0,
+      "rendered": [
+        "coco_000000117645__hot__A1.png",
+        "coco_000000117645__hot__A2.png",
+        "coco_000000117645__hot__A3.png",
+        "coco_000000117645__hot__A4.png",
+        "coco_000000117645__hot__A5.png",
+        "coco_000000117645__hot__A6.png",
+        "coco_000000117645__cold__A1.png",
+        "coco_000000117645__cold__A2.png",
+        "coco_000000117645__cold__A3.png",
+        "coco_000000117645__cold__A4.png",
+        "coco_000000117645__cold__A5.png",
+        "coco_000000117645__cold__A6.png"
+      ]
+    },
+    {
+      "stem": "coco_000000135561",
+      "caption": "A kitchen with white cabinets, a refrigerator covered in magnets and papers, a fan on top, and a ceiling light fixture",
+      "target_offset": 1,
+      "target_token": "kitchen",
+      "target_pos": 290,
+      "prompt_len": 289,
+      "grid": [
+        16,
+        16
+      ],
+      "vision_span": [
+        15,
+        271
+      ],
+      "layer": 7,
+      "hot": [
+        0,
+        9,
+        0,
+        3
+      ],
+      "cold": [
+        8,
+        15,
+        7,
+        11
+      ],
+      "hot_share": 0.348,
+      "cold_share": 0.0713,
+      "hot_px": [
+        0.0,
+        0.0,
+        280.0,
+        112.0
+      ],
+      "cold_px": [
+        224.0,
+        196.0,
+        448.0,
+        336.0
+      ],
+      "degenerate": {
+        "degenerate": false,
+        "reasons": [],
+        "n_words": 21
+      },
+      "elapsed_s": 1.0,
+      "rendered": [
+        "coco_000000135561__hot__A1.png",
+        "coco_000000135561__hot__A2.png",
+        "coco_000000135561__hot__A3.png",
+        "coco_000000135561__hot__A4.png",
+        "coco_000000135561__hot__A5.png",
+        "coco_000000135561__hot__A6.png",
+        "coco_000000135561__cold__A1.png",
+        "coco_000000135561__cold__A2.png",
+        "coco_000000135561__cold__A3.png",
+        "coco_000000135561__cold__A4.png",
+        "coco_000000135561__cold__A5.png",
+        "coco_000000135561__cold__A6.png"
+      ]
+    },
+    {
+      "stem": "coco_000000257169",
+      "caption": "A hand holds a hairdryer in a bathroom with towels and a mirror showing a toothbrush holder.",
+      "target_offset": 1,
+      "target_token": "hand",
+      "target_pos": 290,
+      "prompt_len": 289,
+      "grid": [
+        16,
+        16
+      ],
+      "vision_span": [
+        15,
+        271
+      ],
+      "layer": 7,
+      "hot": [
+        0,
+        9,
+        0,
+        3
+      ],
+      "cold": [
+        0,
+        9,
+        12,
+        15
+      ],
+      "hot_share": 0.2806,
+      "cold_share": 0.0802,
+      "hot_px": [
+        0.0,
+        0.0,
+        280.0,
+        112.0
+      ],
+      "cold_px": [
+        0.0,
+        336.0,
+        280.0,
+        448.0
+      ],
+      "degenerate": {
+        "degenerate": false,
+        "reasons": [],
+        "n_words": 17
+      },
+      "elapsed_s": 1.0,
+      "rendered": [
+        "coco_000000257169__hot__A1.png",
+        "coco_000000257169__hot__A2.png",
+        "coco_000000257169__hot__A3.png",
+        "coco_000000257169__hot__A4.png",
+        "coco_000000257169__hot__A5.png",
+        "coco_000000257169__hot__A6.png",
+        "coco_000000257169__cold__A1.png",
+        "coco_000000257169__cold__A2.png",
+        "coco_000000257169__cold__A3.png",
+        "coco_000000257169__cold__A4.png",
+        "coco_000000257169__cold__A5.png",
+        "coco_000000257169__cold__A6.png"
+      ]
+    }
+  ],
+  "cuda": {
+    "peak_mem_gb": 16.91,
+    "device": "cuda:0",
+    "gpu": "NVIDIA A100-PCIE-40GB"
+  }
+}
