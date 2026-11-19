@@ -8,7 +8,9 @@
 # IDE / 工具
 .idea/
 .trae/
+.relay/
 .githooks/
+.ai/
 
 # PDF / 二进制文档
 *.pdf
@@ -17,3 +19,8 @@
 # Python 缓存
 __pycache__/
 *.pyc
+
+# 依赖与工具产物
+node_modules
+.trae/documents
+.trae/specs
