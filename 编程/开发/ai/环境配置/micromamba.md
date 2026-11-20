@@ -83,3 +83,30 @@ conda config --show-sources
 conda config --show channels
 conda search numpy
 ```
+
+## PowerShell 启动时加载 Conda
+
+在新电脑上配置 Conda 后，PowerShell 可能出现以下错误：
+
+```text
+无法加载文件 profile.ps1，因为在此系统上禁止运行脚本。
+```
+
+这是 PowerShell 的执行策略阻止了 Conda 的启动脚本。
+
+查看当前执行策略：
+
+```powershell
+Get-ExecutionPolicy -List
+```
+应该会显示 `undefined`。
+
+执行下面的命令，允许当前用户运行本地脚本和经过签名的远程脚本：
+```powershell
+Set-ExecutionPolicy -Scope CurrentUser -ExecutionPolicy RemoteSigned
+```
+
+关闭并重新打开 PowerShell，即可启动 Conda 环境。
+
+
+
