@@ -100,7 +100,7 @@ $$\min_{\theta}\ \mathbb{E}_{x \sim D_{\text{train}}} \max_{\delta_x}\ \frac{1}{
 
 原始 CLIP 的 SG 近乎随机、不突出任何有意义模式，换提示也几乎不变；AFT 后 SG 准确抓住与提示相关的物体，并对提示变化更敏感。GC 在原模型上质量优于 SG，但仍受背景噪声干扰；AFT 后更贴合前景物体。ViT 最后一层注意力图（[cls] token 对各图像 token 的注意力，其机制可回看 [[自注意力机制 (Self-Attention)|自注意力]] 的 CLS 聚合）在 AFT 后呈现更细粒度的结构。
 
-进一步在更先进的归因方法上检验：Rollout（注意力流式方法，与 [[AttentionFlow与Kobayashi范数-注意力可信吗|注意力流与范数分析]] 同源）、面向 Transformer 的归因，以及 CLIP 专用的 M2IB、Grad-ECLIP。这些方法在原模型上已能给出不错的图，但 AFT 仍一致地让显著性图更稀疏、更对齐文本描述的物体——即提升与解释方法无关（explanation-agnostic）。
+进一步在更先进的归因方法上检验：Rollout（注意力流式方法，与注意力流与范数分析 同源）、面向 Transformer 的归因，以及 CLIP 专用的 M2IB、Grad-ECLIP。这些方法在原模型上已能给出不错的图，但 AFT 仍一致地让显著性图更稀疏、更对齐文本描述的物体——即提升与解释方法无关（explanation-agnostic）。
 
 ### 3.3 特征重要性：ROAR 分析
 
@@ -108,7 +108,7 @@ $$\min_{\theta}\ \mathbb{E}_{x \sim D_{\text{train}}} \max_{\delta_x}\ \frac{1}{
 
 ### 3.4 定位精度：Pointing Game 与分割指标
 
-在 ImageNet-Segmentation 验证集（含 ImageNet 中 919 类、12,419 张图的分割标注）上评估定位能力。**Pointing Game（PG）**：若文本相关热图的最大值点落在该类别的分割掩码内记为命中，对所有样本取平均；**PG-energy**：掩码内热图能量占整张热图的比例，反映热图的弥散程度；另按 Chefer 等的做法把热图当作软分割结果，计算 Pixel Acc.、AP 与 maskIoU（这一软分割口径源自 Chefer et al. 2021a;b，即 [[Chefer-Transformer可解释性-相关性传播|Chefer 相关性传播笔记]] 所解读的工作）。
+在 ImageNet-Segmentation 验证集（含 ImageNet 中 919 类、12,419 张图的分割标注）上评估定位能力。**Pointing Game（PG）**：若文本相关热图的最大值点落在该类别的分割掩码内记为命中，对所有样本取平均；**PG-energy**：掩码内热图能量占整张热图的比例，反映热图的弥散程度；另按 Chefer 等的做法把热图当作软分割结果，计算 Pixel Acc.、AP 与 maskIoU（这一软分割口径源自 Chefer et al. 2021a;b，即 Chefer 相关性传播笔记 所解读的工作）。
 
 正文表 1 的关键数字（零样本分类列）：
 
@@ -169,4 +169,4 @@ AFT 只在 ImageNet 上做了 2 个 epoch 的微调，但收益外溢：在细�
 
 ## 与既有笔记的衔接
 
-这篇笔记与 [[Chefer-Transformer可解释性-相关性传播|Chefer 相关性传播笔记]] 构成"解释算法"与"模型改造"的对照：后者复现的梯度修正 rollout 属于事后归因，AFT 则直接改变被解释的对象；两者共同面对的现象——Grad-CAM 在 ViT 上热图弥散、对目标层敏感——在 [[2026-11-14-注意力可视化复现实验|注意力可视化复现实验]] 中已有定量记录，而 AFT 恰好从训练侧缓解这类噪声。显著性图、SmoothGrad、network dissection、ROAR、Pointing Game 等判据的统一释义见 [[注意力可解释性术语详解|术语详解]]；AFT 的复现安排（成本高，可只跑评估脚本做微调前后对比）登记在 [[2026-11-19-注意力可视化新文献复现规划|新文献复现规划]] 中。若关心"注意力/范数本身是否可信"，可对照 [[AttentionFlow与Kobayashi范数-注意力可信吗|注意力流与范数分析]]：AFT 提升的正是这类分析所依赖的底层表示质量。
+这篇笔记与 Chefer 相关性传播笔记 构成"解释算法"与"模型改造"的对照：后者复现的梯度修正 rollout 属于事后归因，AFT 则直接改变被解释的对象；两者共同面对的现象——Grad-CAM 在 ViT 上热图弥散、对目标层敏感——在注意力可视化复现实验 中已有定量记录，而 AFT 恰好从训练侧缓解这类噪声。显著性图、SmoothGrad、network dissection、ROAR、Pointing Game 等判据的统一释义见术语详解；AFT 的复现安排（成本高，可只跑评估脚本做微调前后对比）登记在 [[2026-11-19-注意力可视化新文献复现规划|新文献复现规划]] 中。若关心"注意力/范数本身是否可信"，可对照注意力流与范数分析：AFT 提升的正是这类分析所依赖的底层表示质量。
