@@ -1,4 +1,5 @@
-```
+
+```python
 # image_encoder - ResNet or Vision Transformer 
 # text_encoder - CBOW or Text Transformer 
 # I[n, h, w, c] - minibatch of aligned images 
@@ -23,7 +24,6 @@ labels = np.arange(n)
 loss_i = cross_entropy_loss(logits, labels, axis=0) 
 loss_t = cross_entropy_loss(logits, labels, axis=1) 
 loss = (loss_i + loss_t)/2
-
 ```
 
 
@@ -99,3 +99,4 @@ $$ \mathcal{L}=\frac{1}{2}\left(\underbrace{\frac{1}{n}\sum_{i=1}^{n}-\log\frac{
 
 1. **batch size 就是负样本数量**：每个样本的“错选项”只有同一个 batch 里的其他样本，$n=32$ 的负样本质量远不如 $n=32768$。CLIP 用超大 batch（并配梯度累积/跨卡通信）正是为了让 $n^2$ 个负样本足够多样，这也解释了后来 SigLIP 改用 sigmoid 损失的原因——它不再需要全局 softmax，从而绕开跨设备同步的瓶颈。
 2. **归一化 + 点积 + 温度**三步合起来，等价于“把图文对齐问题化成一个温度可调的 softmax 分类”，代码短但所有设计选择（L2 归一化、log 空间温度、对称损失、对角线标签）都在为训练稳定性服务。
+
