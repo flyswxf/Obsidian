@@ -1,0 +1,501 @@
+{
+  "model": "llava-hf/llava-1.5-7b-hf",
+  "layer_index": 0,
+  "timestamp": "20261126-103959",
+  "num_images": 8,
+  "plain_forward_seconds": 0.1537,
+  "records": [
+    {
+      "tag": "00_2008_000019",
+      "target_sentence": "This is a photo of a dog.",
+      "prompt": "USER: <image>\nDescribe the image. ASSISTANT:",
+      "layer_index": 0,
+      "num_tokens": 8,
+      "tokens": [
+        "This",
+        "is",
+        "a",
+        "photo",
+        "of",
+        "a",
+        "dog",
+        "."
+      ],
+      "token_weights": [
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        3.34375,
+        0.011719
+      ],
+      "seconds": 5.512,
+      "filtered": {
+        "top10_mass": 0.228,
+        "entropy_norm": 0.9794,
+        "peak": [
+          4,
+          10
+        ]
+      },
+      "unfiltered": {
+        "top10_mass": 0.1148,
+        "entropy_norm": 0.9982,
+        "peak": [
+          3,
+          9
+        ]
+      },
+      "bbox": [
+        0.2896,
+        0.0074,
+        0.775,
+        0.7243
+      ],
+      "filtered_bbox": {
+        "peak_in_bbox": true,
+        "mass_in_bbox": 0.487
+      },
+      "unfiltered_bbox": {
+        "peak_in_bbox": true,
+        "mass_in_bbox": 0.4212
+      },
+      "image": "/public/home/yhhao/wyf/datasets/voc/VOCdevkit/VOC2012/JPEGImages/2008_000019.jpg"
+    },
+    {
+      "tag": "01_2008_000060",
+      "target_sentence": "This is a photo of a cat.",
+      "prompt": "USER: <image>\nDescribe the image. ASSISTANT:",
+      "layer_index": 0,
+      "num_tokens": 8,
+      "tokens": [
+        "This",
+        "is",
+        "a",
+        "photo",
+        "of",
+        "a",
+        "cat",
+        "."
+      ],
+      "token_weights": [
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        3.722656,
+        0.558594
+      ],
+      "seconds": 1.141,
+      "filtered": {
+        "top10_mass": 0.2696,
+        "entropy_norm": 0.9679,
+        "peak": [
+          16,
+          4
+        ]
+      },
+      "unfiltered": {
+        "top10_mass": 0.1154,
+        "entropy_norm": 0.9978,
+        "peak": [
+          16,
+          4
+        ]
+      },
+      "bbox": [
+        0.0022,
+        0.0952,
+        0.7656,
+        1.0
+      ],
+      "filtered_bbox": {
+        "peak_in_bbox": true,
+        "mass_in_bbox": 0.8316
+      },
+      "unfiltered_bbox": {
+        "peak_in_bbox": true,
+        "mass_in_bbox": 0.7361
+      },
+      "image": "/public/home/yhhao/wyf/datasets/voc/VOCdevkit/VOC2012/JPEGImages/2008_000060.jpg"
+    },
+    {
+      "tag": "02_2008_000036",
+      "target_sentence": "This is a photo of a bicycle.",
+      "prompt": "USER: <image>\nDescribe the image. ASSISTANT:",
+      "layer_index": 0,
+      "num_tokens": 10,
+      "tokens": [
+        "This",
+        "is",
+        "a",
+        "photo",
+        "of",
+        "a",
+        "b",
+        "icy",
+        "cle",
+        "."
+      ],
+      "token_weights": [
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        3.335938,
+        0.0,
+        0.0,
+        0.457031
+      ],
+      "seconds": 1.407,
+      "filtered": {
+        "top10_mass": 0.1775,
+        "entropy_norm": 0.9863,
+        "peak": [
+          7,
+          12
+        ]
+      },
+      "unfiltered": {
+        "top10_mass": 0.1134,
+        "entropy_norm": 0.9984,
+        "peak": [
+          5,
+          6
+        ]
+      },
+      "bbox": [
+        0.24,
+        0.0027,
+        0.406,
+        0.0933
+      ],
+      "filtered_bbox": {
+        "peak_in_bbox": false,
+        "mass_in_bbox": 0.0313
+      },
+      "unfiltered_bbox": {
+        "peak_in_bbox": false,
+        "mass_in_bbox": 0.0273
+      },
+      "image": "/public/home/yhhao/wyf/datasets/voc/VOCdevkit/VOC2012/JPEGImages/2008_000036.jpg"
+    },
+    {
+      "tag": "03_2008_000033",
+      "target_sentence": "This is a photo of a aeroplane.",
+      "prompt": "USER: <image>\nDescribe the image. ASSISTANT:",
+      "layer_index": 0,
+      "num_tokens": 10,
+      "tokens": [
+        "This",
+        "is",
+        "a",
+        "photo",
+        "of",
+        "a",
+        "aer",
+        "op",
+        "lane",
+        "."
+      ],
+      "token_weights": [
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.515625,
+        0.392578,
+        0.0,
+        0.308594
+      ],
+      "seconds": 1.409,
+      "filtered": {
+        "top10_mass": 0.1523,
+        "entropy_norm": 0.9936,
+        "peak": [
+          14,
+          9
+        ]
+      },
+      "unfiltered": {
+        "top10_mass": 0.1196,
+        "entropy_norm": 0.9979,
+        "peak": [
+          7,
+          4
+        ]
+      },
+      "bbox": [
+        0.208,
+        0.1832,
+        0.952,
+        0.7718
+      ],
+      "filtered_bbox": {
+        "peak_in_bbox": true,
+        "mass_in_bbox": 0.5479
+      },
+      "unfiltered_bbox": {
+        "peak_in_bbox": true,
+        "mass_in_bbox": 0.5187
+      },
+      "image": "/public/home/yhhao/wyf/datasets/voc/VOCdevkit/VOC2012/JPEGImages/2008_000033.jpg"
+    },
+    {
+      "tag": "04_2008_000008",
+      "target_sentence": "This is a photo of a horse.",
+      "prompt": "USER: <image>\nDescribe the image. ASSISTANT:",
+      "layer_index": 0,
+      "num_tokens": 8,
+      "tokens": [
+        "This",
+        "is",
+        "a",
+        "photo",
+        "of",
+        "a",
+        "horse",
+        "."
+      ],
+      "token_weights": [
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        2.802734,
+        0.0
+      ],
+      "seconds": 1.177,
+      "filtered": {
+        "top10_mass": 0.2594,
+        "entropy_norm": 0.973,
+        "peak": [
+          6,
+          8
+        ]
+      },
+      "unfiltered": {
+        "top10_mass": 0.1172,
+        "entropy_norm": 0.9982,
+        "peak": [
+          7,
+          5
+        ]
+      },
+      "bbox": [
+        0.106,
+        0.1968,
+        0.942,
+        0.9502
+      ],
+      "filtered_bbox": {
+        "peak_in_bbox": true,
+        "mass_in_bbox": 0.784
+      },
+      "unfiltered_bbox": {
+        "peak_in_bbox": true,
+        "mass_in_bbox": 0.7021
+      },
+      "image": "/public/home/yhhao/wyf/datasets/voc/VOCdevkit/VOC2012/JPEGImages/2008_000008.jpg"
+    },
+    {
+      "tag": "05_2008_000132",
+      "target_sentence": "This is a photo of a bus.",
+      "prompt": "USER: <image>\nDescribe the image. ASSISTANT:",
+      "layer_index": 0,
+      "num_tokens": 8,
+      "tokens": [
+        "This",
+        "is",
+        "a",
+        "photo",
+        "of",
+        "a",
+        "bus",
+        "."
+      ],
+      "token_weights": [
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        5.511719,
+        0.066406
+      ],
+      "seconds": 1.149,
+      "filtered": {
+        "top10_mass": 0.2526,
+        "entropy_norm": 0.9774,
+        "peak": [
+          18,
+          1
+        ]
+      },
+      "unfiltered": {
+        "top10_mass": 0.1199,
+        "entropy_norm": 0.9976,
+        "peak": [
+          18,
+          16
+        ]
+      },
+      "bbox": [
+        0.002,
+        0.68,
+        1.0,
+        1.0
+      ],
+      "filtered_bbox": {
+        "peak_in_bbox": true,
+        "mass_in_bbox": 0.489
+      },
+      "unfiltered_bbox": {
+        "peak_in_bbox": true,
+        "mass_in_bbox": 0.353
+      },
+      "image": "/public/home/yhhao/wyf/datasets/voc/VOCdevkit/VOC2012/JPEGImages/2008_000132.jpg"
+    },
+    {
+      "tag": "06_2008_000015",
+      "target_sentence": "This is a photo of a bottle.",
+      "prompt": "USER: <image>\nDescribe the image. ASSISTANT:",
+      "layer_index": 0,
+      "num_tokens": 9,
+      "tokens": [
+        "This",
+        "is",
+        "a",
+        "photo",
+        "of",
+        "a",
+        "bott",
+        "le",
+        "."
+      ],
+      "token_weights": [
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        2.03125,
+        0.0,
+        0.574219
+      ],
+      "seconds": 1.28,
+      "filtered": {
+        "top10_mass": 0.2319,
+        "entropy_norm": 0.9809,
+        "peak": [
+          5,
+          4
+        ]
+      },
+      "unfiltered": {
+        "top10_mass": 0.1129,
+        "entropy_norm": 0.9977,
+        "peak": [
+          11,
+          16
+        ]
+      },
+      "bbox": [
+        0.54,
+        0.0031,
+        0.756,
+        0.5382
+      ],
+      "filtered_bbox": {
+        "peak_in_bbox": false,
+        "mass_in_bbox": 0.2485
+      },
+      "unfiltered_bbox": {
+        "peak_in_bbox": true,
+        "mass_in_bbox": 0.1656
+      },
+      "image": "/public/home/yhhao/wyf/datasets/voc/VOCdevkit/VOC2012/JPEGImages/2008_000015.jpg"
+    },
+    {
+      "tag": "07_2008_000041",
+      "target_sentence": "This is a photo of a chair.",
+      "prompt": "USER: <image>\nDescribe the image. ASSISTANT:",
+      "layer_index": 0,
+      "num_tokens": 8,
+      "tokens": [
+        "This",
+        "is",
+        "a",
+        "photo",
+        "of",
+        "a",
+        "chair",
+        "."
+      ],
+      "token_weights": [
+        0.0,
+        0.0,
+        0.0,
+        0.238281,
+        0.0,
+        0.212891,
+        8.164062,
+        0.191406
+      ],
+      "seconds": 1.162,
+      "filtered": {
+        "top10_mass": 0.222,
+        "entropy_norm": 0.9826,
+        "peak": [
+          18,
+          5
+        ]
+      },
+      "unfiltered": {
+        "top10_mass": 0.112,
+        "entropy_norm": 0.9972,
+        "peak": [
+          18,
+          10
+        ]
+      },
+      "bbox": [
+        0.702,
+        0.7253,
+        0.904,
+        1.0
+      ],
+      "filtered_bbox": {
+        "peak_in_bbox": false,
+        "mass_in_bbox": 0.098
+      },
+      "unfiltered_bbox": {
+        "peak_in_bbox": false,
+        "mass_in_bbox": 0.0716
+      },
+      "image": "/public/home/yhhao/wyf/datasets/voc/VOCdevkit/VOC2012/JPEGImages/2008_000041.jpg"
+    }
+  ],
+  "mean_top10_mass_filtered": 0.2242,
+  "mean_top10_mass_unfiltered": 0.1157,
+  "mean_entropy_filtered": 0.9801,
+  "mean_entropy_unfiltered": 0.9979,
+  "filtered_sharper_frac": 1.0,
+  "num_with_bbox": 8,
+  "filtered_peak_hit": 0.625,
+  "unfiltered_peak_hit": 0.75,
+  "mean_mass_in_bbox_filtered": 0.4397,
+  "mean_mass_in_bbox_unfiltered": 0.3745
+}
