@@ -762,13 +762,13 @@ AI技术应用岗位知识体系
 
 #### 🎓 大学课程与在线课程
 
-| 序号 | 名称 | 来源 | 类型 | 难度 | 推荐理由 |
-|------|------|------|------|------|----------|
-| 1 | **Full Stack Deep Learning (FSDL)** | FSDL社区 | 在线课程 | ⭐⭐⭐ | 全栈深度学习课程，2024版覆盖LLM应用工程化、部署、监控。https://fullstackdeeplearning.com/ |
-| 2 | **DeepLearning.AI: Building Systems with the ChatGPT API** | DeepLearning.AI | 在线课程 | ⭐⭐ | 使用ChatGPT API构建应用系统，覆盖Prompt链/分类/评估/总结。https://www.deeplearning.ai/short-courses/ |
-| 3 | **DeepLearning.AI: LangChain for LLM App Development** | DeepLearning.AI | 在线课程 | ⭐⭐ | LangChain框架入门课程，学习LLM应用开发基础。 |
-| 4 | **Berkeley CS294/194-196: Large Language Model Agents** | UC Berkeley | 大学课程 | ⭐⭐⭐⭐ | Berkeley LLM Agent课程，前沿Agent系统设计。 |
-| 5 | **MLOps Zoomcamp** | DataTalksClub | 在线课程 | ⭐⭐⭐ | MLOps实践课程，覆盖模型部署/监控/管道自动化。https://github.com/DataTalksClub/mlops-zoomcamp |
+| 序号  | 名称                                                         | 来源              | 类型   | 难度   | 推荐理由                                                                              |
+| --- | ---------------------------------------------------------- | --------------- | ---- | ---- | --------------------------------------------------------------------------------- |
+| 1   | **Full Stack Deep Learning (FSDL)**                        | FSDL社区          | 在线课程 | ⭐⭐⭐  | 全栈深度学习课程，2024版覆盖LLM应用工程化、部署、监控。https://fullstackdeeplearning.com/                 |
+| 2   | **DeepLearning.AI: Building Systems with the ChatGPT API** | DeepLearning.AI | 在线课程 | ⭐⭐   | 使用ChatGPT API构建应用系统，覆盖Prompt链/分类/评估/总结。https://www.deeplearning.ai/short-courses/ |
+| 3   | **DeepLearning.AI: LangChain for LLM App Development**     | DeepLearning.AI | 在线课程 | ⭐⭐   | LangChain框架入门课程，学习LLM应用开发基础。                                                      |
+| 4   | **Berkeley CS294/194-196: Large Language Model Agents**    | UC Berkeley     | 大学课程 | ⭐⭐⭐⭐ | Berkeley LLM Agent课程，前沿Agent系统设计。                                                 |
+| 5   | **MLOps Zoomcamp**                                         | DataTalksClub   | 在线课程 | ⭐⭐⭐  | MLOps实践课程，覆盖模型部署/监控/管道自动化。https://github.com/DataTalksClub/mlops-zoomcamp         |
 
 #### 📝 博客与文章
 
